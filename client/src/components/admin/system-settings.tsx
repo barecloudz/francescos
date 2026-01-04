@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Save, Eye, EyeOff, AlertTriangle, Settings, Key, CreditCard, Truck, Printer, Zap, Palette, Upload, Image } from 'lucide-react';
+import { Save, Eye, EyeOff, AlertTriangle, Settings, Key, CreditCard, Truck, Printer, Zap, Palette, Upload, Image, Crown } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { apiRequest, queryClient } from '@/lib/queryClient';
@@ -61,6 +61,12 @@ const categoryConfig = {
     description: 'External API keys and integrations',
     icon: Zap,
     color: 'text-orange-600'
+  },
+  subscription: {
+    title: 'Subscription',
+    description: 'Manage your subscription plan and billing',
+    icon: Crown,
+    color: 'text-yellow-600'
   }
 };
 
@@ -325,7 +331,8 @@ export function SystemSettings() {
     );
   }
 
-  const categories = Object.keys(settings);
+  // Ensure subscription tab always appears
+  const categories = [...new Set([...Object.keys(settings), 'subscription'])];
 
   return (
     <div className="space-y-6">
@@ -375,7 +382,92 @@ export function SystemSettings() {
           {categories.map(category => {
             const config = categoryConfig[category as keyof typeof categoryConfig];
             const categorySettings = settings[category] || [];
-            
+
+            // Special subscription tab content
+            if (category === 'subscription') {
+              return (
+                <TabsContent key={category} value={category}>
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <Crown className="h-5 w-5 text-yellow-600" />
+                        Subscription
+                      </CardTitle>
+                      <CardDescription>
+                        Manage your subscription plan and billing
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-lg p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <div>
+                            <h3 className="text-lg font-semibold text-gray-900">Current Plan</h3>
+                            <p className="text-sm text-gray-600">Your active subscription</p>
+                          </div>
+                          <Badge className="bg-yellow-500 text-white text-lg px-4 py-1">
+                            Pro Plan
+                          </Badge>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                          <div className="bg-white rounded-lg p-4 border">
+                            <p className="text-sm text-gray-500">Status</p>
+                            <p className="text-lg font-semibold text-green-600">Active</p>
+                          </div>
+                          <div className="bg-white rounded-lg p-4 border">
+                            <p className="text-sm text-gray-500">Billing Cycle</p>
+                            <p className="text-lg font-semibold">Monthly</p>
+                          </div>
+                          <div className="bg-white rounded-lg p-4 border">
+                            <p className="text-sm text-gray-500">Next Billing Date</p>
+                            <p className="text-lg font-semibold">--</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border rounded-lg p-6">
+                        <h3 className="text-lg font-semibold mb-4">Plan Features</h3>
+                        <ul className="space-y-2">
+                          <li className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Unlimited orders</span>
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Customer rewards program</span>
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Kitchen display system</span>
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Thermal printer support</span>
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Email marketing tools</span>
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Priority support</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="flex gap-4">
+                        <Button variant="outline" className="flex-1">
+                          View Billing History
+                        </Button>
+                        <Button variant="outline" className="flex-1">
+                          Update Payment Method
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              );
+            }
+
             return (
               <TabsContent key={category} value={category}>
                 <Card>
@@ -397,7 +489,7 @@ export function SystemSettings() {
                       categorySettings.map(setting => (
                         <div key={setting.setting_key} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <Label 
+                            <Label
                               htmlFor={setting.setting_key}
                               className="text-sm font-medium flex items-center gap-2"
                             >
@@ -413,9 +505,9 @@ export function SystemSettings() {
                               <AlertTriangle className="h-4 w-4 text-yellow-500" title="Has validation rules" />
                             )}
                           </div>
-                          
+
                           {renderSettingInput(setting)}
-                          
+
                           {setting.description && (
                             <p className="text-xs text-gray-500">{setting.description}</p>
                           )}
