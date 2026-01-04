@@ -113,6 +113,11 @@ const Footer = () => {
                   <div className="text-gray-300 hover:text-white hover:underline transition-colors cursor-pointer">Login / Register</div>
                 </Link>
               </li>
+              <li>
+                <Link href="/community-impact">
+                  <div className="text-gray-300 hover:text-white hover:underline transition-colors cursor-pointer">Community Impact</div>
+                </Link>
+              </li>
             </ul>
           </div>
           

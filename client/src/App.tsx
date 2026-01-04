@@ -31,6 +31,7 @@ import EmployeeClockPage from "@/pages/employee-clock";
 import FixPointsPage from "@/pages/fix-points-page";
 import TermsPage from "@/pages/terms-page";
 import PrivacyPage from "@/pages/privacy-page";
+import CommunityImpactPage from "@/pages/community-impact-page";
 
 // Neighborhood pages
 import SouthAshevillePage from "@/pages/South-Asheville";
@@ -105,6 +106,7 @@ function Router() {
         <Route path="/profile" component={ProfilePage} />
         <Route path="/terms" component={TermsPage} />
         <Route path="/privacy" component={PrivacyPage} />
+        <Route path="/community-impact" component={CommunityImpactPage} />
 
         {/* Neighborhood Pages */}
         <Route path="/South-Asheville" component={SouthAshevillePage} />

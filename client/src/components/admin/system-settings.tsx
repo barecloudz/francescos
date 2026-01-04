@@ -366,7 +366,7 @@ export function SystemSettings() {
         </Card>
       ) : (
         <Tabs defaultValue={categories[0]} className="space-y-4">
-          <TabsList className="grid w-full grid-cols-6">
+          <TabsList className="flex flex-wrap gap-2 h-auto p-2">
             {categories.map(category => {
               const config = categoryConfig[category as keyof typeof categoryConfig];
               const Icon = config?.icon || Settings;

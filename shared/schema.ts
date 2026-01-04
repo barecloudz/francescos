@@ -584,6 +584,46 @@ export const insertPauseServiceSchema = createInsertSchema(pauseServices).omit({
   updatedAt: true,
 });
 
+// Community Impact / Charity Organizations schema
+export const charityOrganizations = pgTable("charity_organizations", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  description: text("description").notNull(),
+  imageUrl: text("image_url"),
+  promoCode: text("promo_code").notNull(),
+  websiteUrl: text("website_url"),
+  customerDiscount: integer("customer_discount").default(5).notNull(), // Percentage discount for customers
+  donationPercent: integer("donation_percent").default(10).notNull(), // Percentage donated to charity
+  featuredDays: text("featured_days").array(), // Array of days like ["Monday", "Tuesday", "Sunday"]
+  startDate: date("start_date").notNull(),
+  endDate: date("end_date").notNull(),
+  isActive: boolean("is_active").default(true).notNull(),
+  displayOrder: integer("display_order").default(0).notNull(),
+  totalRaised: decimal("total_raised", { precision: 10, scale: 2 }).default("0"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const insertCharityOrganizationSchema = createInsertSchema(charityOrganizations).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+  totalRaised: true,
+});
+
+// Community Impact Settings schema
+export const communityImpactSettings = pgTable("community_impact_settings", {
+  id: serial("id").primaryKey(),
+  settingKey: text("setting_key").notNull().unique(),
+  settingValue: text("setting_value").notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const insertCommunityImpactSettingSchema = createInsertSchema(communityImpactSettings).omit({
+  id: true,
+  updatedAt: true,
+});
+
 // Type definitions
 export type User = typeof users.$inferSelect;
 export type SelectUser = typeof users.$inferSelect;
@@ -868,3 +908,10 @@ export const sessions = pgTable("sessions", {
 });
 
 export type Session = typeof sessions.$inferSelect;
+
+// Community Impact types
+export type CharityOrganization = typeof charityOrganizations.$inferSelect;
+export type InsertCharityOrganization = z.infer<typeof insertCharityOrganizationSchema>;
+
+export type CommunityImpactSetting = typeof communityImpactSettings.$inferSelect;
+export type InsertCommunityImpactSetting = z.infer<typeof insertCommunityImpactSettingSchema>;

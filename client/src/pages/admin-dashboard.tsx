@@ -97,6 +97,7 @@ import {
   RefreshCw,
   Star,
   Heart,
+  HeartHandshake,
   MessageSquare,
   Camera,
   Video,
@@ -125,6 +126,7 @@ import { RestaurantSettings } from "@/components/admin/restaurant-settings";
 import FrontendCustomization from "@/components/admin/frontend-customization";
 import { TipsReport } from "@/components/admin/tips-report";
 import { AnalyticsChart } from "@/components/admin/analytics-chart";
+import { CommunityImpactTab } from "@/components/admin/community-impact-tab";
 
 const AdminDashboard = () => {
   const { user, logoutMutation, isLoading } = useAuth();
@@ -943,13 +945,13 @@ const AdminDashboard = () => {
   // Validate activeTab - moved to after queries to prevent hook violations
   useEffect(() => {
     // Define tabs inline to avoid dependency issues
-    const primaryTabsHrefs = ["dashboard", "orders", "catering"];
+    const primaryTabsHrefs = ["dashboard", "orders", "catering", "community-impact"];
     const categoryTabsHrefs = [
       "analytics", "reports", "tips-report", "refunds",
       "menu-editor", "pricing", "out-of-stock", "multi-location", "experimental",
       "frontend", "qr-codes", "widget", "smart-links", "printer", "receipt-templates", "scheduling", "reservations",
       "vacation-mode", "delivery", "taxation",
-      "promo-codes", "rewards", "subscribed-users", "kickstarter", "email-campaigns", "sms-marketing", "local-seo", "animations", "christmas",
+      "promo-codes", "rewards", "subscribed-users", "kickstarter", "email-campaigns", "sms-marketing", "local-seo", "animations", "christmas", "community-impact",
       "customers", "users", "reviews",
       "employee-schedules", "payroll", "tip-settings",
       "api", "pos-integration", "integrations", "webhooks",
@@ -1091,6 +1093,7 @@ const AdminDashboard = () => {
     { name: "Overview", icon: Home, href: "dashboard" },
     { name: "Orders", icon: ShoppingCart, href: "orders" },
     { name: "Catering", icon: Utensils, href: "catering" },
+    { name: "Community", icon: HeartHandshake, href: "community-impact" },
   ];
 
   // Categorized dropdown sections
@@ -1581,6 +1584,10 @@ const AdminDashboard = () => {
 
             {activeTab === "christmas" && (
               <ChristmasTab />
+            )}
+
+            {activeTab === "community-impact" && (
+              <CommunityImpactTab />
             )}
 
             {activeTab === "reviews" && (

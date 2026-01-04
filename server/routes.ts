@@ -9,7 +9,7 @@ import { storage } from "./storage";
 import { authenticateSupabaseUser, requireAuth } from "./supabase-auth";
 import { setupTimeTrackingRoutes } from "./time-tracking-routes";
 import { db } from "./db";
-import { insertMenuItemSchema, insertOrderSchema, insertOrderItemSchema, insertRewardSchema, insertUserRewardSchema, insertPromoCodeSchema, insertChoiceGroupSchema, insertChoiceItemSchema, insertMenuItemChoiceGroupSchema, insertCategoryChoiceGroupSchema, insertTaxCategorySchema, insertTaxSettingsSchema, insertPauseServiceSchema, orders, orderItems, menuItemChoiceGroups, menuItems, pointsTransactions, userVouchers, userPointsRedemptions, users, rewards } from "@shared/schema";
+import { insertMenuItemSchema, insertOrderSchema, insertOrderItemSchema, insertRewardSchema, insertUserRewardSchema, insertPromoCodeSchema, insertChoiceGroupSchema, insertChoiceItemSchema, insertMenuItemChoiceGroupSchema, insertCategoryChoiceGroupSchema, insertTaxCategorySchema, insertTaxSettingsSchema, insertPauseServiceSchema, orders, orderItems, menuItemChoiceGroups, menuItems, pointsTransactions, userVouchers, userPointsRedemptions, users, rewards, charityOrganizations, communityImpactSettings } from "@shared/schema";
 import { eq, sql, desc } from "drizzle-orm";
 import { z } from "zod";
 import { log } from "./vite";
@@ -5547,7 +5547,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Test various database operations
       const menuItems = await db.query.menuItems.findMany({ limit: 5 });
       const categories = await db.query.categories.findMany({ limit: 5 });
-      
+
       res.json({
         success: true,
         message: 'Database connection successful',
@@ -5564,6 +5564,255 @@ export async function registerRoutes(app: Express): Promise<Server> {
         message: 'Database connection failed',
         error: error.message
       });
+    }
+  });
+
+  // ============================================
+  // COMMUNITY IMPACT / CHARITY ROUTES
+  // ============================================
+
+  // Get all charity organizations (public)
+  app.get("/api/charities", async (req, res) => {
+    try {
+      const charities = await db.query.charityOrganizations.findMany({
+        orderBy: (charityOrganizations, { asc }) => [asc(charityOrganizations.displayOrder)]
+      });
+      res.json(charities);
+    } catch (error: any) {
+      console.error('Error fetching charities:', error);
+      res.status(500).json({ message: 'Failed to fetch charities', error: error.message });
+    }
+  });
+
+  // Get active charities for the current month (public)
+  app.get("/api/charities/active", async (req, res) => {
+    try {
+      const today = new Date().toISOString().split('T')[0];
+      const charities = await db.query.charityOrganizations.findMany({
+        where: (charityOrganizations, { and, eq, lte, gte }) => and(
+          eq(charityOrganizations.isActive, true),
+          lte(charityOrganizations.startDate, today),
+          gte(charityOrganizations.endDate, today)
+        ),
+        orderBy: (charityOrganizations, { asc }) => [asc(charityOrganizations.displayOrder)]
+      });
+      res.json(charities);
+    } catch (error: any) {
+      console.error('Error fetching active charities:', error);
+      res.status(500).json({ message: 'Failed to fetch active charities', error: error.message });
+    }
+  });
+
+  // Get a single charity by ID (public)
+  app.get("/api/charities/:id", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      const charity = await db.query.charityOrganizations.findFirst({
+        where: (charityOrganizations, { eq }) => eq(charityOrganizations.id, id)
+      });
+
+      if (!charity) {
+        return res.status(404).json({ message: 'Charity not found' });
+      }
+
+      res.json(charity);
+    } catch (error: any) {
+      console.error('Error fetching charity:', error);
+      res.status(500).json({ message: 'Failed to fetch charity', error: error.message });
+    }
+  });
+
+  // Validate charity promo code (public)
+  app.post("/api/charities/validate-code", async (req, res) => {
+    try {
+      const { code } = req.body;
+      const today = new Date().toISOString().split('T')[0];
+
+      const charity = await db.query.charityOrganizations.findFirst({
+        where: (charityOrganizations, { and, eq, lte, gte }) => and(
+          eq(charityOrganizations.promoCode, code.toUpperCase()),
+          eq(charityOrganizations.isActive, true),
+          lte(charityOrganizations.startDate, today),
+          gte(charityOrganizations.endDate, today)
+        )
+      });
+
+      if (!charity) {
+        return res.json({ valid: false, message: 'Invalid or expired charity code' });
+      }
+
+      res.json({
+        valid: true,
+        charityId: charity.id,
+        charityName: charity.name,
+        customerDiscount: charity.customerDiscount,
+        donationPercent: charity.donationPercent
+      });
+    } catch (error: any) {
+      console.error('Error validating charity code:', error);
+      res.status(500).json({ message: 'Failed to validate code', error: error.message });
+    }
+  });
+
+  // Admin: Create a charity organization
+  app.post("/api/admin/charities", async (req, res) => {
+    try {
+      const data = req.body;
+
+      const newCharity = await db.insert(charityOrganizations).values({
+        name: data.name,
+        description: data.description,
+        imageUrl: data.imageUrl || null,
+        promoCode: data.promoCode.toUpperCase(),
+        websiteUrl: data.websiteUrl || null,
+        customerDiscount: data.customerDiscount || 5,
+        donationPercent: data.donationPercent || 10,
+        featuredDays: data.featuredDays || [],
+        startDate: data.startDate,
+        endDate: data.endDate,
+        isActive: data.isActive !== false,
+        displayOrder: data.displayOrder || 0
+      }).returning();
+
+      res.status(201).json(newCharity[0]);
+    } catch (error: any) {
+      console.error('Error creating charity:', error);
+      res.status(500).json({ message: 'Failed to create charity', error: error.message });
+    }
+  });
+
+  // Admin: Update a charity organization
+  app.put("/api/admin/charities/:id", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      const data = req.body;
+
+      const updated = await db.update(charityOrganizations)
+        .set({
+          name: data.name,
+          description: data.description,
+          imageUrl: data.imageUrl,
+          promoCode: data.promoCode?.toUpperCase(),
+          websiteUrl: data.websiteUrl,
+          customerDiscount: data.customerDiscount,
+          donationPercent: data.donationPercent,
+          featuredDays: data.featuredDays,
+          startDate: data.startDate,
+          endDate: data.endDate,
+          isActive: data.isActive,
+          displayOrder: data.displayOrder,
+          totalRaised: data.totalRaised,
+          updatedAt: new Date()
+        })
+        .where(eq(charityOrganizations.id, id))
+        .returning();
+
+      if (updated.length === 0) {
+        return res.status(404).json({ message: 'Charity not found' });
+      }
+
+      res.json(updated[0]);
+    } catch (error: any) {
+      console.error('Error updating charity:', error);
+      res.status(500).json({ message: 'Failed to update charity', error: error.message });
+    }
+  });
+
+  // Admin: Delete a charity organization
+  app.delete("/api/admin/charities/:id", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+
+      const result = await db.delete(charityOrganizations)
+        .where(eq(charityOrganizations.id, id))
+        .returning({ id: charityOrganizations.id });
+
+      if (result.length === 0) {
+        return res.status(404).json({ message: 'Charity not found' });
+      }
+
+      res.json({ success: true, message: 'Charity deleted' });
+    } catch (error: any) {
+      console.error('Error deleting charity:', error);
+      res.status(500).json({ message: 'Failed to delete charity', error: error.message });
+    }
+  });
+
+  // Admin: Update total raised for a charity
+  app.post("/api/admin/charities/:id/add-donation", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      const { amount } = req.body;
+
+      const charity = await db.query.charityOrganizations.findFirst({
+        where: (charityOrganizations, { eq }) => eq(charityOrganizations.id, id)
+      });
+
+      if (!charity) {
+        return res.status(404).json({ message: 'Charity not found' });
+      }
+
+      const currentTotal = parseFloat(charity.totalRaised || '0');
+      const newTotal = currentTotal + parseFloat(amount);
+
+      const updated = await db.update(charityOrganizations)
+        .set({
+          totalRaised: newTotal.toFixed(2),
+          updatedAt: new Date()
+        })
+        .where(eq(charityOrganizations.id, id))
+        .returning();
+
+      res.json(updated[0]);
+    } catch (error: any) {
+      console.error('Error adding donation:', error);
+      res.status(500).json({ message: 'Failed to add donation', error: error.message });
+    }
+  });
+
+  // Get community impact settings
+  app.get("/api/community-impact/settings", async (req, res) => {
+    try {
+      const settings = await db.query.communityImpactSettings.findFirst();
+      res.json(settings || { comingSoon: true });
+    } catch (error: any) {
+      console.error('Error fetching community impact settings:', error);
+      res.status(500).json({ message: 'Failed to fetch settings', error: error.message });
+    }
+  });
+
+  // Admin: Update community impact settings
+  app.post("/api/admin/community-impact/settings", async (req, res) => {
+    try {
+      const data = req.body;
+
+      // Check if settings exist
+      const existing = await db.query.communityImpactSettings.findFirst();
+
+      if (existing) {
+        const updated = await db.update(communityImpactSettings)
+          .set({
+            comingSoon: data.comingSoon,
+            pageTitle: data.pageTitle,
+            pageDescription: data.pageDescription,
+            monthlyGoal: data.monthlyGoal,
+            updatedAt: new Date()
+          })
+          .where(eq(communityImpactSettings.id, existing.id))
+          .returning();
+        res.json(updated[0]);
+      } else {
+        const created = await db.insert(communityImpactSettings).values({
+          comingSoon: data.comingSoon !== false,
+          pageTitle: data.pageTitle || 'Community Impact',
+          pageDescription: data.pageDescription || '',
+          monthlyGoal: data.monthlyGoal || null
+        }).returning();
+        res.json(created[0]);
+      }
+    } catch (error: any) {
+      console.error('Error updating community impact settings:', error);
+      res.status(500).json({ message: 'Failed to update settings', error: error.message });
     }
   });
 
