@@ -17,7 +17,6 @@ import {
   Heart,
   Clock
 } from 'lucide-react';
-import Navbar from '@/components/home/navbar';
 import Footer from '@/components/layout/footer';
 
 interface CharityOrganization {
@@ -96,7 +95,6 @@ const CommunityImpactPage: React.FC = () => {
           <title>Community Impact - Coming Soon | Genova's Pizza & Pasta</title>
           <meta name="description" content="We're launching our community impact program soon. Stay tuned to learn how Genova's Pizza gives back to Myrtle Beach!" />
         </Helmet>
-        <Navbar />
         <div className="min-h-screen bg-gradient-to-b from-red-50 to-white pt-24">
           <div className="container mx-auto px-4 py-16 text-center">
             <HeartHandshake className="h-24 w-24 mx-auto text-red-500 mb-6" />
@@ -132,7 +130,6 @@ const CommunityImpactPage: React.FC = () => {
         <title>{settings?.pageTitle || 'Community Impact'} | Genova's Pizza & Pasta</title>
         <meta name="description" content="Discover how Genova's Pizza & Pasta partners with local organizations to give back to the Myrtle Beach community. Use partner promo codes for discounts while supporting great causes!" />
       </Helmet>
-      <Navbar />
 
       <div className="min-h-screen bg-gradient-to-b from-red-50 to-white pt-24">
         {/* Hero Section */}
