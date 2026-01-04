@@ -404,8 +404,8 @@ export function SystemSettings() {
                             <h3 className="text-lg font-semibold text-gray-900">Current Plan</h3>
                             <p className="text-sm text-gray-600">Your active subscription</p>
                           </div>
-                          <Badge className="bg-yellow-500 text-white text-lg px-4 py-1">
-                            Pro Plan
+                          <Badge className="bg-green-500 text-white text-lg px-4 py-1">
+                            Active
                           </Badge>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
@@ -424,43 +424,80 @@ export function SystemSettings() {
                         </div>
                       </div>
 
-                      <div className="border rounded-lg p-6">
-                        <h3 className="text-lg font-semibold mb-4">Plan Features</h3>
-                        <ul className="space-y-2">
-                          <li className="flex items-center gap-2">
-                            <span className="text-green-500">✓</span>
-                            <span>Unlimited orders</span>
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <span className="text-green-500">✓</span>
-                            <span>Customer rewards program</span>
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <span className="text-green-500">✓</span>
-                            <span>Kitchen display system</span>
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <span className="text-green-500">✓</span>
-                            <span>Thermal printer support</span>
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <span className="text-green-500">✓</span>
-                            <span>Email marketing tools</span>
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <span className="text-green-500">✓</span>
-                            <span>Priority support</span>
-                          </li>
-                        </ul>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="border-2 border-blue-200 rounded-lg p-6 bg-blue-50">
+                          <div className="text-center mb-4">
+                            <h3 className="text-xl font-bold text-gray-900">Marketing Partner</h3>
+                            <p className="text-sm text-gray-600 mt-1">Recommended</p>
+                          </div>
+                          <div className="text-center mb-4">
+                            <span className="text-3xl font-bold text-blue-600">Included</span>
+                            <p className="text-sm text-gray-500">with active marketing subscription</p>
+                          </div>
+                          <p className="text-sm text-gray-600 text-center mb-4">
+                            Full access to all features when you maintain an active marketing subscription with Nardoni Digital LLC
+                          </p>
+                          <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                            <a href="https://nardonidigital.com" target="_blank" rel="noopener noreferrer" className="text-white">
+                              Contact Nardoni Digital
+                            </a>
+                          </Button>
+                        </div>
+
+                        <div className="border rounded-lg p-6">
+                          <div className="text-center mb-4">
+                            <h3 className="text-xl font-bold text-gray-900">Standalone License</h3>
+                            <p className="text-sm text-gray-600 mt-1">Full ownership</p>
+                          </div>
+                          <div className="text-center mb-4">
+                            <span className="text-3xl font-bold text-gray-900">$1,700</span>
+                            <span className="text-gray-500">/month</span>
+                          </div>
+                          <p className="text-sm text-gray-600 text-center mb-4">
+                            Full access to all application features without a marketing subscription requirement
+                          </p>
+                          <Button variant="outline" className="w-full">
+                            Contact for Standalone License
+                          </Button>
+                        </div>
                       </div>
 
-                      <div className="flex gap-4">
-                        <Button variant="outline" className="flex-1">
-                          View Billing History
-                        </Button>
-                        <Button variant="outline" className="flex-1">
-                          Update Payment Method
-                        </Button>
+                      <div className="border rounded-lg p-6">
+                        <h3 className="text-lg font-semibold mb-4">Included Features</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                          <div className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Unlimited orders</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Customer rewards program</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Kitchen display system</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Thermal printer support</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Email marketing tools</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Online ordering system</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Menu management</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>Priority support</span>
+                          </div>
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
