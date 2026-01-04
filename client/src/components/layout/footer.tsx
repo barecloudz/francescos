@@ -11,28 +11,8 @@ const Footer = () => {
   const { address, phone, email } = useRestaurantSettings();
   const [showNeighborhoodModal, setShowNeighborhoodModal] = useState(false);
 
-  const neighborhoods = [
-    { name: "South Asheville", slug: "South-Asheville" },
-    { name: "Arden", slug: "Arden" },
-    { name: "Downtown Asheville", slug: "Downtown-Asheville" },
-    { name: "Biltmore Village", slug: "Biltmore-Village" },
-    { name: "Kenilworth", slug: "Kenilworth" },
-    { name: "West Asheville", slug: "West-Asheville" },
-    { name: "North Asheville", slug: "North-Asheville" },
-    { name: "East Asheville", slug: "East-Asheville" },
-    { name: "Biltmore Park", slug: "Biltmore-Park" },
-    { name: "Oakley", slug: "Oakley" },
-    { name: "Candler", slug: "Candler" },
-    { name: "Swannanoa", slug: "Swannanoa" },
-    { name: "Fairview", slug: "Fairview" },
-    { name: "Skyland", slug: "Skyland" },
-    { name: "Fletcher", slug: "Fletcher" },
-    { name: "Montford", slug: "Montford" },
-    { name: "River Arts District", slug: "River-Arts-District" },
-    { name: "Haw Creek", slug: "Haw-Creek" },
-    { name: "Enka", slug: "Enka" },
-    { name: "Woodfin", slug: "Woodfin" },
-  ];
+  // Myrtle Beach area neighborhoods - can be expanded later
+  const neighborhoods: { name: string; slug: string }[] = [];
   
   return (
     <footer className="bg-[#222] text-white pt-16 pb-8">
@@ -44,27 +24,27 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="text-left">
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                  Welcome to Favilla's, where authentic Italian tradition meets the heart of Asheville.
-                  As a real Italian family, we've poured our heritage into every pizza we craft—using time-honored recipes,
-                  fresh ingredients, and a whole lot of amore.
+                  Welcome to Genova's Pizza & Pasta, where authentic Italian tradition meets the heart of Myrtle Beach.
+                  We've poured our passion into every dish we craft—using time-honored recipes,
+                  fresh ingredients, and a whole lot of love.
                 </p>
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                  Our community agrees: it's the best pizza in town. Come taste the difference at Favilla's—where every slice feels like home.
+                  Come taste the difference at Genova's—where every bite feels like home.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <p className="text-lg font-bold text-[#d73a31]">
-                    Family-owned since 1969
+                    Fresh Ingredients Daily
                   </p>
                   <div className="hidden sm:block w-0.5 bg-gray-600 mx-2"></div>
                   <p className="text-lg font-bold text-[#d73a31]">
-                    Authentic NY Style
+                    Authentic Italian
                   </p>
                 </div>
               </div>
               <div>
                 <img
                   src="/images/lineup.jpg"
-                  alt="Favilla's Pizza Team"
+                  alt="Genova's Pizza & Pasta Team"
                   className="rounded-xl shadow-xl w-full h-64 object-cover"
                   loading="lazy"
                 />
@@ -83,17 +63,17 @@ const Footer = () => {
               {companyTagline}
             </p>
             <div className="flex space-x-4 justify-center md:justify-start">
-              <a 
-                href="https://www.facebook.com/favillaspizzeria/" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/profile.php?id=61580096004134"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#d73a31] hover:bg-[#f2c94c] text-white p-2 rounded-full transition-colors" 
+                className="bg-[#d73a31] hover:bg-[#f2c94c] text-white p-2 rounded-full transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="https://www.instagram.com/favillaspizza/"
+                href="https://www.instagram.com/genovasmyrtlebeach/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#d73a31] hover:bg-[#f2c94c] text-white p-2 rounded-full transition-colors"
@@ -132,14 +112,6 @@ const Footer = () => {
                 <Link href="/auth">
                   <div className="text-gray-300 hover:text-white hover:underline transition-colors cursor-pointer">Login / Register</div>
                 </Link>
-              </li>
-              <li>
-                <div
-                  onClick={() => setShowNeighborhoodModal(true)}
-                  className="text-gray-300 hover:text-white hover:underline transition-colors cursor-pointer"
-                >
-                  The Neighborhood
-                </div>
               </li>
             </ul>
           </div>
@@ -180,51 +152,30 @@ const Footer = () => {
               <li className="text-gray-300">
                 <span className="flex items-center mb-1 justify-center md:justify-start">
                   <Clock className="mr-2 h-5 w-5 text-[#d73a31] flex-shrink-0" />
-                  <span className="font-semibold">Monday</span>
-                </span>
-                <span className="block pl-0 md:pl-7 text-red-400 font-semibold">CLOSED</span>
-              </li>
-              <li className="text-gray-300">
-                <span className="flex items-center mb-1 justify-center md:justify-start">
-                  <Clock className="mr-2 h-5 w-5 text-[#d73a31] flex-shrink-0" />
-                  <span className="font-semibold">Tuesday - Thursday</span>
-                </span>
-                <span className="block pl-0 md:pl-7">11:00 AM - 8:00 PM</span>
-              </li>
-              <li className="text-gray-300">
-                <span className="flex items-center mb-1 justify-center md:justify-start">
-                  <Clock className="mr-2 h-5 w-5 text-[#d73a31] flex-shrink-0" />
-                  <span className="font-semibold">Friday - Saturday</span>
+                  <span className="font-semibold">Every Day</span>
                 </span>
                 <span className="block pl-0 md:pl-7">11:00 AM - 9:00 PM</span>
-              </li>
-              <li className="text-gray-300">
-                <span className="flex items-center mb-1 justify-center md:justify-start">
-                  <Clock className="mr-2 h-5 w-5 text-[#d73a31] flex-shrink-0" />
-                  <span className="font-semibold">Sunday</span>
-                </span>
-                <span className="block pl-0 md:pl-7">12:00 PM - 8:00 PM</span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Map Section - SEO for "pizza asheville" */}
+        {/* Map Section */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="text-center mb-6">
             <h3 className="text-xl font-bold text-[#f2c94c] mb-2">FIND US</h3>
-            <p className="text-gray-400 text-sm">Best Pizza in Asheville, NC</p>
+            <p className="text-gray-400 text-sm">Best Pizza & Pasta in Myrtle Beach, SC</p>
           </div>
           <div className="rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3247.0!2d-82.5967883!3d35.5793183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88598c5f7b8b8b8b%3A0x1234567890abcdef!2s5%20Regent%20Park%20Blvd%2C%20Asheville%2C%20NC%2028806!5e0!3m2!1sen!2sus!4v1703097600000!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.0!2d-78.8843!3d33.7093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s4620%20Dick%20Pond%20Rd%2C%20Myrtle%20Beach%2C%20SC%2029588!5e0!3m2!1sen!2sus!4v1703097600000!5m2!1sen!2sus"
               width="100%"
               height="250"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Favilla's NY Pizza Location - Best Pizza in Asheville"
+              title="Genova's Pizza & Pasta Location - Best Pizza in Myrtle Beach"
             />
           </div>
         </div>

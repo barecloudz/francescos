@@ -13,12 +13,12 @@ interface BrandingSettings {
 }
 
 const defaultBranding: BrandingSettings = {
-  COMPANY_NAME: "FAVILLA'S NY PIZZA",
-  COMPANY_TAGLINE: "Authentic New York Style Pizza",
-  COMPANY_ADDRESS: "123 Main St, Asheville, NC",
-  COMPANY_PHONE: "(828) 555-0123",
-  COMPANY_EMAIL: "info@favillaspizza.com",
-  COMPANY_WEBSITE: "https://favillaspizza.com",
+  COMPANY_NAME: "GENOVA'S PIZZA & PASTA",
+  COMPANY_TAGLINE: "Authentic Italian Pizza & Pasta",
+  COMPANY_ADDRESS: "4620 Dick Pond Rd, Myrtle Beach, SC",
+  COMPANY_PHONE: "(843) 831-0800",
+  COMPANY_EMAIL: "info@genovaspizzaandpasta.com",
+  COMPANY_WEBSITE: "https://genovaspizzaandpasta.com",
   LOGO_URL: "/images/logopng.png",
   FAVICON_URL: "/favicon.ico"
 };
