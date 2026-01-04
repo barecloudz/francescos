@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Favilla's NY Pizza</title>
+    <title>Welcome to Genova's Pizza & Pasta</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -132,22 +132,22 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🍕 Favilla's NY Pizza</h1>
-            <p>Authentic New York Style Pizza</p>
+            <h1>Genova's Pizza & Pasta</h1>
+            <p>Authentic NY Style Pizza in Myrtle Beach</p>
         </div>
 
         <div class="content">
             <div class="welcome-message">
-                Welcome{{#if .Data.firstName}}, {{ .Data.firstName }}{{/if}}! 🎉
+                Welcome{{#if .Data.firstName}}, {{ .Data.firstName }}{{/if}}!
             </div>
 
             <div class="description">
-                Thanks for joining the Favilla's family! We're excited to serve you the most authentic New York style pizza.
+                Thanks for joining the Genova's family! We're excited to serve you the most authentic New York style pizza in Myrtle Beach.
                 Please confirm your email address to activate your account and start earning reward points.
             </div>
 
             <a href="{{ .SiteURL }}/auth/confirm?token={{ .TokenHash }}&type=signup" class="confirm-button">
-                ✅ Confirm My Email Address
+                Confirm My Email Address
             </a>
 
             <div class="otp-section">
@@ -157,13 +157,13 @@
             </div>
 
             <div class="benefits">
-                <h3>🎁 What you get as a member:</h3>
+                <h3>What you get as a member:</h3>
                 <ul>
-                    <li>🍕 Earn 1 point for every $1 spent</li>
-                    <li>🎂 Special birthday rewards and discounts</li>
-                    <li>⚡ Faster checkout with saved preferences</li>
-                    <li>📧 Exclusive offers and early access to new items</li>
-                    <li>🍰 Free rewards when you reach point milestones</li>
+                    <li>Earn 1 point for every $1 spent</li>
+                    <li>Special birthday rewards and discounts</li>
+                    <li>Faster checkout with saved preferences</li>
+                    <li>Exclusive offers and early access to new items</li>
+                    <li>Free rewards when you reach point milestones</li>
                 </ul>
             </div>
 
@@ -174,13 +174,12 @@
 
         <div class="footer">
             <div class="social-links">
-                <a href="https://facebook.com/favillaspizza">Facebook</a> |
-                <a href="https://instagram.com/favillaspizza">Instagram</a> |
-                <a href="https://twitter.com/favillaspizza">Twitter</a>
+                <a href="https://www.facebook.com/profile.php?id=61580096004134">Facebook</a> |
+                <a href="https://www.instagram.com/genovasmyrtlebeach/">Instagram</a>
             </div>
-            <p>Favilla's NY Pizza</p>
-            <p>📍 [Your Restaurant Address]</p>
-            <p>📞 [Your Phone Number] | 🌐 {{ .SiteURL }}</p>
+            <p>Genova's Pizza & Pasta</p>
+            <p>4620 Dick Pond Rd, Myrtle Beach, SC 29588</p>
+            <p>(843) 831-0800 | {{ .SiteURL }}</p>
             <p style="margin-top: 20px;">
                 <a href="{{ .SiteURL }}/unsubscribe" style="color: #999; font-size: 12px;">Unsubscribe</a>
             </p>

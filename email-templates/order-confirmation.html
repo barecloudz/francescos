@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Confirmation #{{ORDER_ID}} | Favilla's NY Pizza</title>
+    <title>Order Confirmation #{{ORDER_ID}} | Genova's Pizza & Pasta</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -240,13 +240,13 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🍕 Order Confirmed!</h1>
+            <h1>Order Confirmed!</h1>
             <div class="order-number">Order #{{ORDER_ID}}</div>
         </div>
 
         <div class="content">
             <div class="order-status">
-                <div class="status-badge">✅ {{ORDER_STATUS}}</div>
+                <div class="status-badge">{{ORDER_STATUS}}</div>
                 <p style="color: #666; margin: 0;">
                     {{#if IS_DELIVERY}}
                         Estimated delivery: {{ESTIMATED_TIME}}
@@ -283,7 +283,7 @@
 
             {{#if IS_DELIVERY}}
             <div class="delivery-info">
-                <h4>🚚 Delivery Information</h4>
+                <h4>Delivery Information</h4>
                 <p><strong>Address:</strong> {{DELIVERY_ADDRESS}}</p>
                 <p><strong>Phone:</strong> {{CUSTOMER_PHONE}}</p>
                 {{#if DELIVERY_INSTRUCTIONS}}
@@ -293,7 +293,7 @@
             {{/if}}
 
             <div class="items-section">
-                <h3>📋 Order Items</h3>
+                <h3>Order Items</h3>
                 {{#each ORDER_ITEMS}}
                 <div class="order-item">
                     <div class="item-details">
@@ -310,7 +310,7 @@
 
             {{#if POINTS_EARNED}}
             <div class="points-section">
-                <h3>🎁 Reward Points Earned!</h3>
+                <h3>Reward Points Earned!</h3>
                 <div class="points-earned">+{{POINTS_EARNED}} Points</div>
                 <p>You now have {{TOTAL_POINTS}} total points</p>
                 <p style="font-size: 14px; opacity: 0.9;">
@@ -321,24 +321,24 @@
 
             <div style="text-align: center;">
                 <a href="{{SITE_URL}}/orders" class="track-button">
-                    📱 Track Your Order
+                    Track Your Order
                 </a>
             </div>
 
             <div class="contact-section">
-                <h4>📞 Need Help?</h4>
+                <h4>Need Help?</h4>
                 <p>Contact us if you have any questions about your order</p>
                 <div class="contact-links">
-                    <a href="tel:{{RESTAURANT_PHONE}}">📞 Call Us</a>
-                    <a href="mailto:{{RESTAURANT_EMAIL}}">📧 Email Us</a>
-                    <a href="{{SITE_URL}}">🌐 Visit Website</a>
+                    <a href="tel:{{RESTAURANT_PHONE}}">Call Us</a>
+                    <a href="mailto:{{RESTAURANT_EMAIL}}">Email Us</a>
+                    <a href="{{SITE_URL}}">Visit Website</a>
                 </div>
             </div>
 
             {{#if SPECIAL_OFFER}}
             <div class="voucher-section">
-                <h4>🎉 Special Offer for Your Next Order!</h4>
-                <p>Thank you for choosing Favilla's! Here's a special discount for your next visit:</p>
+                <h4>Special Offer for Your Next Order!</h4>
+                <p>Thank you for choosing Genova's! Here's a special discount for your next visit:</p>
                 <div class="voucher-code">
                     <strong>{{SPECIAL_OFFER_CODE}}</strong><br>
                     <small>{{SPECIAL_OFFER_DESCRIPTION}}</small>
@@ -351,15 +351,14 @@
         </div>
 
         <div class="footer">
-            <h3 style="margin-top: 0;">Favilla's NY Pizza</h3>
-            <p>Authentic New York Style Pizza</p>
-            <p>📍 {{RESTAURANT_ADDRESS}}</p>
-            <p>📞 {{RESTAURANT_PHONE}} | 🌐 {{SITE_URL}}</p>
+            <h3 style="margin-top: 0;">Genova's Pizza & Pasta</h3>
+            <p>Authentic NY Style Pizza in Myrtle Beach</p>
+            <p>{{RESTAURANT_ADDRESS}}</p>
+            <p>{{RESTAURANT_PHONE}} | {{SITE_URL}}</p>
 
             <div class="social-links">
                 <a href="{{FACEBOOK_URL}}">Facebook</a> |
-                <a href="{{INSTAGRAM_URL}}">Instagram</a> |
-                <a href="{{TWITTER_URL}}">Twitter</a>
+                <a href="{{INSTAGRAM_URL}}">Instagram</a>
             </div>
 
             <p style="margin-top: 30px; font-size: 12px;">
