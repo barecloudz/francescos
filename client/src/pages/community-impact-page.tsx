@@ -18,7 +18,7 @@ import {
   Clock
 } from 'lucide-react';
 import Navbar from '@/components/home/navbar';
-import Footer from '@/components/home/footer';
+import Footer from '@/components/layout/footer';
 
 interface CharityOrganization {
   id: number;
