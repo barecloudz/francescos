@@ -24,14 +24,14 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-[#d73a31]">CUSTOMER FAVORITES</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Voted the best pizza delivery in Asheville! Our authentic New York style pizzas are made with Italian family recipes passed down since 1969. Order online for delivery or pickup, or stop by for pizza by the slice. Experience the perfect blend of Brooklyn tradition and Italian heritage.
+            The best pizza in Myrtle Beach! Our authentic New York style pizzas are made with Italian family recipes passed down through generations. Order online for pickup and experience the perfect blend of Sicilian tradition and Italian heritage.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {menuItems && menuItems.length > 0 ? (
-            // Show featured menu items from backend
-            menuItems.map((item) => (
+            // Show up to 3 featured menu items from backend
+            menuItems.slice(0, 3).map((item) => (
               <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div className="h-60 overflow-hidden">
                   {item.imageUrl ? (
