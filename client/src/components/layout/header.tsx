@@ -17,6 +17,7 @@ import {
   Star,
   Clock,
   UtensilsCrossed,
+  HeartHandshake,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -135,7 +136,7 @@ const Header = () => {
                     Menu
                   </div>
                 </Link>
-                <button 
+                <button
                   onClick={() => {
                     if (location === "/") {
                       // If already on home page, scroll to location section
@@ -152,6 +153,13 @@ const Header = () => {
                 >
                   Location
                 </button>
+                <Link href="/community-impact">
+                  <div className={`text-lg font-medium transition-colors ${
+                    location === "/community-impact" ? "text-[#d73a31]" : "text-gray-700 hover:text-[#d73a31]"
+                  }`}>
+                    Community
+                  </div>
+                </Link>
                 <Link href="/catering">
                   <div className={`text-lg font-medium transition-colors ${
                     location === "/catering" ? "text-[#d73a31]" : "text-gray-700 hover:text-[#d73a31]"
@@ -222,6 +230,16 @@ const Header = () => {
                             <Star className="h-5 w-5 text-yellow-600" />
                           </div>
                           <span className="font-semibold text-gray-900 text-base">Rewards</span>
+                        </button>
+
+                        <button
+                          onClick={() => navigate("/community-impact")}
+                          className="w-full flex items-center space-x-3 px-5 py-4 rounded-xl bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-[1.02]"
+                        >
+                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm">
+                            <HeartHandshake className="h-5 w-5 text-red-500" />
+                          </div>
+                          <span className="font-semibold text-gray-900 text-base">Community Impact</span>
                         </button>
 
                         {(user.role === "employee" || user.isAdmin) && (
@@ -470,6 +488,19 @@ const Header = () => {
                 <div className="flex-1 text-left">
                   <h3 className="font-semibold text-gray-900">Rewards</h3>
                   <p className="text-sm text-gray-500">View your points and rewards</p>
+                </div>
+              </button>
+
+              <button
+                onClick={() => handleNavigate("/community-impact")}
+                className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+              >
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-red-50">
+                  <HeartHandshake className="h-6 w-6 text-red-500" />
+                </div>
+                <div className="flex-1 text-left">
+                  <h3 className="font-semibold text-gray-900">Community Impact</h3>
+                  <p className="text-sm text-gray-500">Support local organizations</p>
                 </div>
               </button>
 
