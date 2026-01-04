@@ -8,10 +8,10 @@ const WhyFavillasSection: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-[#d73a31]">
-              Why Favilla's is Asheville's #1 Pizza
+              Why Genova's is Myrtle Beach's Best Pizza
             </h2>
             <p className="text-xl text-gray-700">
-              Voted Best Pizza in Asheville for a Reason
+              Over 40 Years of Sicilian Heritage & Family Tradition
             </p>
           </div>
 
@@ -25,8 +25,8 @@ const WhyFavillasSection: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-gray-900">⭐ 1,081+ Five-Star Reviews</h3>
-                  <p className="text-gray-600">Rated 4.5 stars by the Asheville community. Our customers speak for themselves!</p>
+                  <h3 className="font-bold text-lg mb-2 text-gray-900">👨‍👩‍👧‍👦 Family Devotion</h3>
+                  <p className="text-gray-600">Born from a family's devotion to one another. Every slice is a story, every bite a reminder that family is the greatest ingredient!</p>
                 </div>
               </div>
 
@@ -37,8 +37,8 @@ const WhyFavillasSection: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-gray-900">Brooklyn Family Recipes Since 1969</h3>
-                  <p className="text-gray-600">Authentic Italian recipes perfected in Brooklyn and brought to Asheville with love.</p>
+                  <h3 className="font-bold text-lg mb-2 text-gray-900">🏛️ Sicilian Heritage Since 1980s</h3>
+                  <p className="text-gray-600">Over 40 years carrying forward authentic Sicilian flavors. Family traditions & recipes passed down by our Nonna.</p>
                 </div>
               </div>
 
@@ -61,8 +61,8 @@ const WhyFavillasSection: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-gray-900">Pizza by the Slice & Full Pies</h3>
-                  <p className="text-gray-600">Grab a quick slice in-store or order a whole pie online for delivery or pickup.</p>
+                  <h3 className="font-bold text-lg mb-2 text-gray-900">Hand-Tossed NY Style Pizza</h3>
+                  <p className="text-gray-600">Authentic New York style pizza made the traditional way—hand-tossed and baked to perfection.</p>
                 </div>
               </div>
             </div>
@@ -76,8 +76,8 @@ const WhyFavillasSection: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-gray-900">Fast Delivery Across Asheville</h3>
-                  <p className="text-gray-600">Hot, fresh pizza delivered quickly to your door throughout Asheville and surrounding areas.</p>
+                  <h3 className="font-bold text-lg mb-2 text-gray-900">🏠 A Gathering Place</h3>
+                  <p className="text-gray-600">Each Genova's table is a gathering place where strangers become friends & friends become family!</p>
                 </div>
               </div>
 
@@ -88,8 +88,8 @@ const WhyFavillasSection: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-gray-900">Family-Owned Since 2013</h3>
-                  <p className="text-gray-600">Not a chain! We're a local family business that treats every customer like family.</p>
+                  <h3 className="font-bold text-lg mb-2 text-gray-900">From NY to Myrtle Beach</h3>
+                  <p className="text-gray-600">From the bustling streets of New York to South Carolina, bringing authentic flavors to our new community.</p>
                 </div>
               </div>
 
@@ -113,7 +113,7 @@ const WhyFavillasSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2 text-gray-900">Rewards Program for Loyal Customers</h3>
-                  <p className="text-gray-600">Earn points with every order and get rewarded for being a Favilla's fan!</p>
+                  <p className="text-gray-600">Earn points with every order and get rewarded for being part of the Genova family!</p>
                 </div>
               </div>
             </div>
@@ -122,8 +122,8 @@ const WhyFavillasSection: React.FC = () => {
           {/* Bottom CTA */}
           <div className="mt-12 text-center">
             <div className="bg-[#d73a31] text-white py-8 px-6 rounded-lg shadow-xl">
-              <h3 className="text-3xl font-bold mb-4">Experience the Best Pizza in Asheville Today!</h3>
-              <p className="text-lg mb-6">Join thousands of satisfied customers. Order online for delivery or pickup.</p>
+              <h3 className="text-3xl font-bold mb-4">Welcome to Our Family!</h3>
+              <p className="text-lg mb-6">Experience the warmth of our Sicilian heritage. Order online for pickup today!</p>
               <a href="/menu" className="inline-block bg-white text-[#d73a31] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg">
                 Order Now
               </a>

@@ -20,106 +20,87 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Best Pizza Delivery Asheville NC | Favilla's NY Pizza - Pizza by the Slice</title>
-        <meta name="description" content="⭐ 4.5 Stars from 1,081+ Reviews! Best pizza delivery in Asheville. Favilla's serves authentic NY pizza by the slice & whole pies with Brooklyn family recipes since 1969. Order online now!" />
-        <meta name="keywords" content="pizza delivery asheville, best pizza delivery asheville, pizza by the slice asheville, ny pizza asheville, best pizza in asheville, new york pizza asheville, brooklyn pizza asheville, pizza asheville, authentic ny pizza, pizza near me asheville, pizza near me, best pizza near me, food near me, pizza delivery near me" />
-        <link rel="canonical" href="https://favillaspizzeria.com/" />
+        <title>Best Pizza in Myrtle Beach | Pizza Near Me | Genova's Pizza & Pasta</title>
+        <meta name="description" content="Best pizza in Myrtle Beach! Genova's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria on Dick Pond Road. Order online for pickup!" />
+        <meta name="keywords" content="pizza near me, best pizza in myrtle beach, pizza myrtle beach, myrtle beach pizza, pizza delivery myrtle beach, pizza place near me, pizzeria myrtle beach, Genovas Pizza, NY style pizza, hand tossed pizza, pasta myrtle beach, italian food myrtle beach" />
+        <link rel="canonical" href="https://genovaspizzaandpasta.com/" />
 
         {/* Open Graph Tags */}
-        <meta property="og:title" content="Best Pizza Delivery Asheville NC | Favilla's NY Pizza" />
-        <meta property="og:description" content="⭐ 4.5 Stars from 1,081+ Reviews! Best pizza delivery in Asheville. Authentic NY pizza by the slice & whole pies with Brooklyn family recipes since 1969." />
-        <meta property="og:url" content="https://favillaspizzeria.com/" />
+        <meta property="og:title" content="Best Pizza in Myrtle Beach | Genova's Pizza & Pasta" />
+        <meta property="og:description" content="Best pizza in Myrtle Beach! Genova's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria." />
+        <meta property="og:url" content="https://genovaspizzaandpasta.com/" />
         <meta property="og:type" content="restaurant" />
-        <meta property="og:image" content="https://favillaspizzeria.com/images/hero-bg.jpg" />
+        <meta property="og:image" content="https://genovaspizzaandpasta.com/images/hero-bg.jpg" />
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Best Pizza Delivery Asheville NC | Favilla's NY Pizza" />
-        <meta name="twitter:description" content="⭐ 4.5 Stars from 1,081+ Reviews! Best pizza delivery in Asheville. Authentic NY pizza by the slice & whole pies." />
-        <meta name="twitter:image" content="https://favillaspizzeria.com/images/hero-bg.jpg" />
+        <meta name="twitter:title" content="Best Pizza in Myrtle Beach | Genova's Pizza & Pasta" />
+        <meta name="twitter:description" content="Best pizza in Myrtle Beach! Hand-tossed NY style pizza, pasta, calzones & subs." />
+        <meta name="twitter:image" content="https://genovaspizzaandpasta.com/images/hero-bg.jpg" />
 
         {/* Enhanced Restaurant & LocalBusiness Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Restaurant",
-            "name": "Favilla's NY Pizza",
-            "alternateName": "Favilla's Pizzeria",
-            "description": "Authentic New York-style pizza in Asheville, NC. Serving pizza by the slice and whole pies with Brooklyn family recipes since 1969.",
+            "name": "Genova's Pizza & Pasta",
+            "alternateName": "Genovas Pizza",
+            "description": "Family-owned authentic Italian pizzeria serving Myrtle Beach with hand-tossed NY style pizza, pasta, calzones, and subs. Over 40 years of Sicilian heritage.",
             "image": [
-              "https://favillaspizzeria.com/images/hero-bg.jpg",
-              "https://favillaspizzeria.com/images/lineup.jpg"
+              "https://genovaspizzaandpasta.com/images/hero-bg.jpg",
+              "https://genovaspizzaandpasta.com/images/logopng.png"
             ],
-            "logo": "https://favillaspizzeria.com/logo.png",
-            "@id": "https://favillaspizzeria.com/#restaurant",
-            "url": "https://favillaspizzeria.com/",
-            "telephone": "+1-828-225-2885",
-            "email": "info@favillaspizzeria.com",
+            "logo": "https://genovaspizzaandpasta.com/images/logopng.png",
+            "@id": "https://genovaspizzaandpasta.com/#restaurant",
+            "url": "https://genovaspizzaandpasta.com/",
+            "telephone": "+1-843-831-0800",
+            "email": "genovapizzapasta@gmail.com",
             "priceRange": "$$",
-            "servesCuisine": ["Pizza", "Italian", "New York Style Pizza"],
-            "menu": "https://favillaspizzeria.com/menu",
+            "servesCuisine": ["Pizza", "Italian", "Pasta", "New York Style Pizza"],
+            "menu": "https://genovaspizzaandpasta.com/menu",
             "acceptsReservations": false,
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "5 Regent Park Blvd",
-              "addressLocality": "Asheville",
-              "addressRegion": "NC",
-              "postalCode": "28806",
+              "streetAddress": "4620 Dick Pond Rd",
+              "addressLocality": "Myrtle Beach",
+              "addressRegion": "SC",
+              "postalCode": "29588",
               "addressCountry": "US"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "35.5793183",
-              "longitude": "-82.5967883"
+              "latitude": "33.7376",
+              "longitude": "-78.8531"
             },
             "openingHoursSpecification": [
               {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"],
-                "opens": "11:00",
-                "closes": "20:00"
-              },
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Friday", "Saturday"],
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
                 "opens": "11:00",
                 "closes": "21:00"
-              },
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Sunday",
-                "opens": "12:00",
-                "closes": "20:00"
               }
             ],
             "paymentAccepted": ["Cash", "Credit Card", "Debit Card"],
             "currenciesAccepted": "USD",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.5",
-              "reviewCount": "1081",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "Pizza Menu",
+              "name": "Pizza & Pasta Menu",
               "itemListElement": [
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "MenuItem",
-                    "name": "NY Style Pizza by the Slice",
-                    "description": "Authentic New York style pizza sold by the slice"
+                    "name": "NY Style Pizza",
+                    "description": "Authentic hand-tossed New York style pizza"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "MenuItem",
-                    "name": "NY Style Whole Pies",
-                    "description": "Authentic New York style whole pizzas"
+                    "name": "Fresh Pasta",
+                    "description": "Authentic Italian pasta dishes"
                   }
                 },
                 {
@@ -134,8 +115,8 @@ const HomePage = () => {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "MenuItem",
-                    "name": "Italian Classics",
-                    "description": "Authentic Italian dishes"
+                    "name": "Subs & Wraps",
+                    "description": "Delicious subs and pizza wraps"
                   }
                 }
               ]
@@ -148,20 +129,21 @@ const HomePage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Favilla's NY Pizza",
-            "alternateName": "Favilla's Pizzeria",
-            "url": "https://favillaspizzeria.com/",
-            "logo": "https://favillaspizzeria.com/logo.png",
+            "name": "Genova's Pizza & Pasta",
+            "alternateName": "Genovas Pizza Myrtle Beach",
+            "url": "https://genovaspizzaandpasta.com/",
+            "logo": "https://genovaspizzaandpasta.com/images/logopng.png",
             "contactPoint": {
               "@type": "ContactPoint",
-              "telephone": "+1-828-225-2885",
+              "telephone": "+1-843-831-0800",
               "contactType": "customer service",
               "areaServed": "US",
               "availableLanguage": "en"
             },
             "sameAs": [
-              "https://www.facebook.com/favillaspizza",
-              "https://www.instagram.com/favillaspizza"
+              "https://www.facebook.com/profile.php?id=61580096004134",
+              "https://www.instagram.com/genovasmyrtlebeach/",
+              "https://www.tiktok.com/@genovasofmyrtlebeach"
             ]
           })}
         </script>
@@ -176,7 +158,7 @@ const HomePage = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://favillaspizzeria.com/"
+                "item": "https://genovaspizzaandpasta.com/"
               }
             ]
           })}
