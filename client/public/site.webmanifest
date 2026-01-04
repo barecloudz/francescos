@@ -1,7 +1,7 @@
 {
-  "name": "Favilla's NY Pizza",
-  "short_name": "Favilla's",
-  "description": "Best pizza delivery in Asheville, NC. Authentic NY-style pizza by the slice & whole pies.",
+  "name": "Genova's Pizza & Pasta",
+  "short_name": "Genova's",
+  "description": "Best pizza & pasta in Myrtle Beach, SC. Authentic NY-style pizza with Italian family recipes.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -45,14 +45,14 @@
       "short_name": "Order",
       "description": "Start ordering pizza",
       "url": "/menu",
-      "icons": [{ "src": "/favicon-96x96.png", "sizes": "96x96" }]
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
     },
     {
       "name": "Rewards",
       "short_name": "Rewards",
       "description": "Check your rewards",
       "url": "/rewards",
-      "icons": [{ "src": "/favicon-96x96.png", "sizes": "96x96" }]
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
     }
   ]
 }
