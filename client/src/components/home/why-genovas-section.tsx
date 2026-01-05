@@ -1,7 +1,7 @@
 import React from "react";
 import { Check } from "lucide-react";
 
-const WhyFavillasSection: React.FC = () => {
+const WhyGenovasSection: React.FC = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
@@ -25,7 +25,7 @@ const WhyFavillasSection: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-gray-900">👨‍👩‍👧‍👦 Family Devotion</h3>
+                  <h3 className="font-bold text-lg mb-2 text-gray-900">Family Devotion</h3>
                   <p className="text-gray-600">Born from a family's devotion to one another. Every slice is a story, every bite a reminder that family is the greatest ingredient!</p>
                 </div>
               </div>
@@ -37,7 +37,7 @@ const WhyFavillasSection: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-gray-900">🏛️ Sicilian Heritage Since 1980s</h3>
+                  <h3 className="font-bold text-lg mb-2 text-gray-900">Sicilian Heritage Since 1980s</h3>
                   <p className="text-gray-600">Over 40 years carrying forward authentic Sicilian flavors. Family traditions & recipes passed down by our Nonna.</p>
                 </div>
               </div>
@@ -62,7 +62,7 @@ const WhyFavillasSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2 text-gray-900">Hand-Tossed NY Style Pizza</h3>
-                  <p className="text-gray-600">Authentic New York style pizza made the traditional way—hand-tossed and baked to perfection.</p>
+                  <p className="text-gray-600">Authentic New York style pizza made the traditional way, hand-tossed and baked to perfection.</p>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ const WhyFavillasSection: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-gray-900">🏠 A Gathering Place</h3>
+                  <h3 className="font-bold text-lg mb-2 text-gray-900">A Gathering Place</h3>
                   <p className="text-gray-600">Each Genova's table is a gathering place where strangers become friends & friends become family!</p>
                 </div>
               </div>
@@ -135,4 +135,4 @@ const WhyFavillasSection: React.FC = () => {
   );
 };
 
-export default WhyFavillasSection;
+export default WhyGenovasSection;

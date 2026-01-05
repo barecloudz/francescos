@@ -16,6 +16,7 @@ interface AuthContextType {
   session: Session | null;
   loading: boolean;
   isLoading: boolean; // For backward compatibility
+  profileLoading: boolean; // True while fetching complete profile from database
   signInWithGoogle: () => Promise<void>;
   signOut: () => Promise<void>;
   loginMutation: UseMutationResult<SelectUser, Error, LoginData>;
@@ -31,6 +32,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<MappedUser | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
+  const [profileLoading, setProfileLoading] = useState(false); // True while fetching database profile
   const [showEmailConfirmationModal, setShowEmailConfirmationModal] = useState(false);
   const [confirmationEmail, setConfirmationEmail] = useState<string>('');
   const { toast } = useToast();
@@ -109,6 +111,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           const mappedUser = mapSupabaseUser(session?.user || null);
           setUser(mappedUser);
           setLoading(false); // User can interact immediately
+          setProfileLoading(true); // Start loading profile from database
 
           // BACKGROUND: Fetch complete profile asynchronously
           fetchUserProfile()
@@ -117,6 +120,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 // Update with enriched profile data
                 setUser(completeProfile);
               }
+              setProfileLoading(false);
             })
             .catch(async (profileError) => {
               console.warn('Failed to fetch complete profile:', profileError);
@@ -131,13 +135,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 console.warn('Failed to create user record:', createError);
                 // Keep using the mapped user from session metadata
               }
+              setProfileLoading(false);
             });
         } else {
           setLoading(false);
+          setProfileLoading(false);
         }
       } catch (error) {
         console.error('Error initializing auth:', error);
         setLoading(false);
+        setProfileLoading(false);
       }
     };
 
@@ -151,6 +158,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           const mappedUser = mapSupabaseUser(session?.user || null);
           setUser(mappedUser);
           setLoading(false); // User can interact immediately
+          setProfileLoading(true); // Start loading profile from database
 
           // BACKGROUND: Fetch complete profile asynchronously (no blocking, no timeout)
           fetchUserProfile()
@@ -159,14 +167,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 // Update with enriched profile data
                 setUser(completeProfile);
               }
+              setProfileLoading(false);
             })
             .catch((profileError) => {
               console.warn('Failed to fetch complete profile in auth listener:', profileError);
               // Keep using the mapped user from session metadata
+              setProfileLoading(false);
             });
         } else {
           setUser(null);
           setLoading(false);
+          setProfileLoading(false);
         }
       }
     );
@@ -537,6 +548,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       session,
       loading,
       isLoading: loading, // For backward compatibility
+      profileLoading,
       signInWithGoogle,
       signOut,
       loginMutation,

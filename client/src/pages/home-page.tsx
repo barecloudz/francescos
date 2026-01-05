@@ -5,7 +5,7 @@ import HeroSection from "@/components/home/hero-section";
 import ChristmasPromoSection from "@/components/home/christmas-promo-section";
 import FeaturedSection from "@/components/home/featured-section";
 import CateringSection from "@/components/home/catering-section";
-import WhyFavillasSection from "@/components/home/why-favilias-section";
+import WhyGenovasSection from "@/components/home/why-genovas-section";
 import RewardsSection from "@/components/home/rewards-section";
 import LocationSection from "@/components/home/location-section";
 import SeoContentSection from "@/components/home/seo-content-section";
@@ -30,14 +30,14 @@ const HomePage = () => {
         <meta property="og:description" content="Best pizza in Myrtle Beach! Genova's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria." />
         <meta property="og:url" content="https://genovaspizzaandpasta.com/" />
         <meta property="og:type" content="restaurant" />
-        <meta property="og:image" content="https://genovaspizzaandpasta.com/images/hero-bg.jpg" />
+        <meta property="og:image" content="https://genovaspizzaandpasta.com/images/hero-bg.jpeg" />
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Best Pizza in Myrtle Beach | Genova's Pizza & Pasta" />
         <meta name="twitter:description" content="Best pizza in Myrtle Beach! Hand-tossed NY style pizza, pasta, calzones & subs." />
-        <meta name="twitter:image" content="https://genovaspizzaandpasta.com/images/hero-bg.jpg" />
+        <meta name="twitter:image" content="https://genovaspizzaandpasta.com/images/hero-bg.jpeg" />
 
         {/* Enhanced Restaurant & LocalBusiness Schema */}
         <script type="application/ld+json">
@@ -48,7 +48,7 @@ const HomePage = () => {
             "alternateName": "Genovas Pizza",
             "description": "Family-owned authentic Italian pizzeria serving Myrtle Beach with hand-tossed NY style pizza, pasta, calzones, and subs. Over 40 years of Sicilian heritage.",
             "image": [
-              "https://genovaspizzaandpasta.com/images/hero-bg.jpg",
+              "https://genovaspizzaandpasta.com/images/hero-bg.jpeg",
               "https://genovaspizzaandpasta.com/images/logopng.png"
             ],
             "logo": "https://genovaspizzaandpasta.com/images/logopng.png",
@@ -178,8 +178,8 @@ const HomePage = () => {
         {/* Catering Section */}
         <CateringSection />
 
-        {/* Why Favilla's Section - Competitive advantages */}
-        <WhyFavillasSection />
+        {/* Why Genova's Section - Competitive advantages */}
+        <WhyGenovasSection />
 
         {/* SEO Content Section - Rich keyword content for search engines */}
         <SeoContentSection />

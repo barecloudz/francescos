@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Loader2 } from "lucide-react";
 import { Redirect, Route } from "wouter";
 import { useAuth } from "@/hooks/use-supabase-auth";
@@ -10,12 +9,14 @@ export function AdminProtectedRoute({
   path: string;
   component: () => React.JSX.Element;
 }) {
-  const { user, isLoading } = useAuth();
+  const { user, isLoading, profileLoading } = useAuth();
 
   // Check if user is authenticated and has admin privileges
   const isAdmin = user && (user.role === 'admin' || user.role === 'super_admin' || user.isAdmin === true);
 
-  if (isLoading) {
+  // Show loading while either initial auth or profile is loading
+  // This prevents premature redirect before we know the actual role from database
+  if (isLoading || (user && profileLoading)) {
     return (
       <Route path={path}>
         <div className="flex items-center justify-center min-h-screen">

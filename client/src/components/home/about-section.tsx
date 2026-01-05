@@ -11,12 +11,12 @@ const AboutSection: React.FC = () => {
             <div className="bg-white p-6 md:p-10 rounded-xl shadow-lg h-full flex flex-col justify-center">
               <h3 className="text-2xl md:text-4xl font-bold text-[#d73a31] mb-4 md:mb-8">OUR STORY</h3>
               <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6 leading-relaxed">
-                Welcome to Favilla's, where authentic Italian tradition meets the heart of Asheville.
-                As a real Italian family, we've poured our heritage into every pizza we craft—using time-honored recipes,
+                Welcome to Genova's, where authentic Italian tradition meets the heart of Myrtle Beach.
+                As a real Italian family, we've poured our heritage into every pizza we craft, using time-honored recipes,
                 fresh ingredients, and a whole lot of amore.
               </p>
               <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed">
-                Our community agrees: it's the best pizza in town. Come taste the difference at Favilla's—where every slice feels like home.
+                Our community agrees: it's the best pizza in town. Come taste the difference at Genova's, where every slice feels like home.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-10">
                 <p className="text-base md:text-lg font-bold text-[#d73a31]">
@@ -41,7 +41,7 @@ const AboutSection: React.FC = () => {
             <div className="h-full">
               <img
                 src="/images/lineup.jpg"
-                alt="Favilla's Pizza Team"
+                alt="Genova's Pizza Team"
                 className="rounded-xl shadow-xl w-full h-full object-cover"
                 loading="lazy"
               />
