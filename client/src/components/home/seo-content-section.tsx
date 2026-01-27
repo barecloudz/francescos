@@ -22,7 +22,7 @@ const SeoContentSection: React.FC = () => {
                 </>
               ) : (
                 <>
-                  About Genova's Pizza <ChevronDown className="ml-2 h-5 w-5" />
+                  About Francesco's Pizza <ChevronDown className="ml-2 h-5 w-5" />
                 </>
               )}
             </Button>
@@ -40,7 +40,7 @@ const SeoContentSection: React.FC = () => {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Authentic Sicilian Heritage - Over 40 Years of Family Tradition</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Welcome to <strong>Genova's Pizza & Pasta</strong>, Myrtle Beach's destination for <strong>authentic NY style pizza</strong>,
+              Welcome to <strong>Francesco's Pizza & Pasta</strong>, Myrtle Beach's destination for <strong>authentic NY style pizza</strong>,
               <strong> fresh pasta</strong>, and traditional Italian cuisine.
               As a family-owned restaurant carrying forward over 40 years of Sicilian heritage, we've been serving the
               <strong> best pizza in Myrtle Beach</strong> with recipes passed down by our Nonna.
@@ -57,7 +57,7 @@ const SeoContentSection: React.FC = () => {
 
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Calzones, Pasta & Italian Specialties</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Beyond our award-winning pizza, Genova's offers an extensive menu of <strong>Italian food in Myrtle Beach</strong>.
+              Beyond our award-winning pizza, Francesco's offers an extensive menu of <strong>Italian food in Myrtle Beach</strong>.
               Our <strong>calzones</strong> are hand-folded masterpieces, stuffed with ricotta, mozzarella, and your choice of
               premium toppings. Try our fresh <strong>pasta dishes</strong> - from classic spaghetti and meatballs to creamy
               fettuccine alfredo, each dish is made with love and authentic Italian flavors.
@@ -78,7 +78,7 @@ const SeoContentSection: React.FC = () => {
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Order Online for Pickup in Myrtle Beach, SC</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               Craving <strong>pizza in Myrtle Beach</strong>? Order online for fast, convenient pickup.
-              Searching for <strong>best pizza near me</strong> or <strong>Italian food near me</strong>? Genova's offers
+              Searching for <strong>best pizza near me</strong> or <strong>Italian food near me</strong>? Francesco's offers
               easy online ordering - just place your order and we'll have your food ready when you arrive.
               Our online ordering system makes it easy to customize your pizza, add sides,
               and earn rewards points with every order.
@@ -92,7 +92,7 @@ const SeoContentSection: React.FC = () => {
               passion and dedication to every dish we serve.
             </p>
 
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Why Genova's is the Best Pizza in Myrtle Beach</h2>
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">Why Francesco's is the Best Pizza in Myrtle Beach</h2>
             <ul className="list-disc list-inside mb-6 text-gray-700 space-y-2">
               <li>Over 40 years of Sicilian family heritage</li>
               <li>Fresh, high-quality ingredients sourced daily</li>
@@ -108,7 +108,7 @@ const SeoContentSection: React.FC = () => {
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               Ready to taste why we're known as the <strong>best pizza in Myrtle Beach</strong>? Order online now for
               fast pickup. Whether you're craving a classic cheese pizza, loaded specialty pie, hearty calzone,
-              or delicious pasta, Genova's has something for everyone.
+              or delicious pasta, Francesco's has something for everyone.
               Join our rewards program and earn points with every order.
               Experience the authentic taste of NY style pizza right here in Myrtle Beach, SC!
             </p>

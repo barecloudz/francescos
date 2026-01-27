@@ -13,12 +13,12 @@ interface BrandingSettings {
 }
 
 const defaultBranding: BrandingSettings = {
-  COMPANY_NAME: "GENOVA'S PIZZA & PASTA",
+  COMPANY_NAME: "FRANCESCO'S PIZZA & PASTA",
   COMPANY_TAGLINE: "Authentic Italian Pizza & Pasta",
   COMPANY_ADDRESS: "4620 Dick Pond Rd, Myrtle Beach, SC",
   COMPANY_PHONE: "(843) 831-0800",
-  COMPANY_EMAIL: "info@genovaspizzaandpasta.com",
-  COMPANY_WEBSITE: "https://genovaspizzaandpasta.com",
+  COMPANY_EMAIL: "info@francescospizzaandpasta.com",
+  COMPANY_WEBSITE: "https://francescospizzaandpasta.com",
   LOGO_URL: "/images/logopng.png",
   FAVICON_URL: "/favicon.ico"
 };

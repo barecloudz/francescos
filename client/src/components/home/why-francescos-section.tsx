@@ -1,14 +1,14 @@
 import React from "react";
 import { Check } from "lucide-react";
 
-const WhyGenovasSection: React.FC = () => {
+const WhyFrancescosSection: React.FC = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-[#d73a31]">
-              Why Genova's is Myrtle Beach's Best Pizza
+              Why Francesco's is Myrtle Beach's Best Pizza
             </h2>
             <p className="text-xl text-gray-700">
               Over 40 Years of Sicilian Heritage & Family Tradition
@@ -77,7 +77,7 @@ const WhyGenovasSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2 text-gray-900">A Gathering Place</h3>
-                  <p className="text-gray-600">Each Genova's table is a gathering place where strangers become friends & friends become family!</p>
+                  <p className="text-gray-600">Each Francesco's table is a gathering place where strangers become friends & friends become family!</p>
                 </div>
               </div>
 
@@ -113,7 +113,7 @@ const WhyGenovasSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2 text-gray-900">Rewards Program for Loyal Customers</h3>
-                  <p className="text-gray-600">Earn points with every order and get rewarded for being part of the Genova family!</p>
+                  <p className="text-gray-600">Earn points with every order and get rewarded for being part of the Francesco's family!</p>
                 </div>
               </div>
             </div>
@@ -135,4 +135,4 @@ const WhyGenovasSection: React.FC = () => {
   );
 };
 
-export default WhyGenovasSection;
+export default WhyFrancescosSection;

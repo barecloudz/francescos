@@ -2,10 +2,11 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet";
 import HeroSection from "@/components/home/hero-section";
+import GrandOpeningCountdown from "@/components/home/grand-opening-countdown";
 import ChristmasPromoSection from "@/components/home/christmas-promo-section";
 import FeaturedSection from "@/components/home/featured-section";
 import CateringSection from "@/components/home/catering-section";
-import WhyGenovasSection from "@/components/home/why-genovas-section";
+import WhyFrancescosSection from "@/components/home/why-francescos-section";
 import RewardsSection from "@/components/home/rewards-section";
 import LocationSection from "@/components/home/location-section";
 import SeoContentSection from "@/components/home/seo-content-section";
@@ -20,45 +21,45 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Best Pizza in Myrtle Beach | Pizza Near Me | Genova's Pizza & Pasta</title>
-        <meta name="description" content="Best pizza in Myrtle Beach! Genova's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria on Dick Pond Road. Order online for pickup!" />
-        <meta name="keywords" content="pizza near me, best pizza in myrtle beach, pizza myrtle beach, myrtle beach pizza, pizza delivery myrtle beach, pizza place near me, pizzeria myrtle beach, Genovas Pizza, NY style pizza, hand tossed pizza, pasta myrtle beach, italian food myrtle beach" />
-        <link rel="canonical" href="https://genovaspizzaandpasta.com/" />
+        <title>Best Pizza in Myrtle Beach | Pizza Near Me | Francesco's Pizza & Pasta</title>
+        <meta name="description" content="Best pizza in Myrtle Beach! Francesco's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria on Dick Pond Road. Order online for pickup!" />
+        <meta name="keywords" content="pizza near me, best pizza in myrtle beach, pizza myrtle beach, myrtle beach pizza, pizza delivery myrtle beach, pizza place near me, pizzeria myrtle beach, Francescos Pizza, NY style pizza, hand tossed pizza, pasta myrtle beach, italian food myrtle beach" />
+        <link rel="canonical" href="https://francescospizzaandpasta.com/" />
 
         {/* Open Graph Tags */}
-        <meta property="og:title" content="Best Pizza in Myrtle Beach | Genova's Pizza & Pasta" />
-        <meta property="og:description" content="Best pizza in Myrtle Beach! Genova's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria." />
-        <meta property="og:url" content="https://genovaspizzaandpasta.com/" />
+        <meta property="og:title" content="Best Pizza in Myrtle Beach | Francesco's Pizza & Pasta" />
+        <meta property="og:description" content="Best pizza in Myrtle Beach! Francesco's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria." />
+        <meta property="og:url" content="https://francescospizzaandpasta.com/" />
         <meta property="og:type" content="restaurant" />
-        <meta property="og:image" content="https://genovaspizzaandpasta.com/images/hero-bg.jpeg" />
+        <meta property="og:image" content="https://francescospizzaandpasta.com/images/hero-bg.jpeg" />
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Best Pizza in Myrtle Beach | Genova's Pizza & Pasta" />
+        <meta name="twitter:title" content="Best Pizza in Myrtle Beach | Francesco's Pizza & Pasta" />
         <meta name="twitter:description" content="Best pizza in Myrtle Beach! Hand-tossed NY style pizza, pasta, calzones & subs." />
-        <meta name="twitter:image" content="https://genovaspizzaandpasta.com/images/hero-bg.jpeg" />
+        <meta name="twitter:image" content="https://francescospizzaandpasta.com/images/hero-bg.jpeg" />
 
         {/* Enhanced Restaurant & LocalBusiness Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Restaurant",
-            "name": "Genova's Pizza & Pasta",
-            "alternateName": "Genovas Pizza",
+            "name": "Francesco's Pizza & Pasta",
+            "alternateName": "Francescos Pizza",
             "description": "Family-owned authentic Italian pizzeria serving Myrtle Beach with hand-tossed NY style pizza, pasta, calzones, and subs. Over 40 years of Sicilian heritage.",
             "image": [
-              "https://genovaspizzaandpasta.com/images/hero-bg.jpeg",
-              "https://genovaspizzaandpasta.com/images/logopng.png"
+              "https://francescospizzaandpasta.com/images/hero-bg.jpeg",
+              "https://francescospizzaandpasta.com/images/logopng.png"
             ],
-            "logo": "https://genovaspizzaandpasta.com/images/logopng.png",
-            "@id": "https://genovaspizzaandpasta.com/#restaurant",
-            "url": "https://genovaspizzaandpasta.com/",
+            "logo": "https://francescospizzaandpasta.com/images/logopng.png",
+            "@id": "https://francescospizzaandpasta.com/#restaurant",
+            "url": "https://francescospizzaandpasta.com/",
             "telephone": "+1-843-831-0800",
-            "email": "genovapizzapasta@gmail.com",
+            "email": "francescopizzapasta@gmail.com",
             "priceRange": "$$",
             "servesCuisine": ["Pizza", "Italian", "Pasta", "New York Style Pizza"],
-            "menu": "https://genovaspizzaandpasta.com/menu",
+            "menu": "https://francescospizzaandpasta.com/menu",
             "acceptsReservations": false,
             "address": {
               "@type": "PostalAddress",
@@ -129,10 +130,10 @@ const HomePage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Genova's Pizza & Pasta",
-            "alternateName": "Genovas Pizza Myrtle Beach",
-            "url": "https://genovaspizzaandpasta.com/",
-            "logo": "https://genovaspizzaandpasta.com/images/logopng.png",
+            "name": "Francesco's Pizza & Pasta",
+            "alternateName": "Francescos Pizza Myrtle Beach",
+            "url": "https://francescospizzaandpasta.com/",
+            "logo": "https://francescospizzaandpasta.com/images/logopng.png",
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+1-843-831-0800",
@@ -142,8 +143,8 @@ const HomePage = () => {
             },
             "sameAs": [
               "https://www.facebook.com/profile.php?id=61580096004134",
-              "https://www.instagram.com/genovasmyrtlebeach/",
-              "https://www.tiktok.com/@genovasofmyrtlebeach"
+              "https://www.instagram.com/francescosmyrtlebeach/",
+              "https://www.tiktok.com/@francescosofmyrtlebeach"
             ]
           })}
         </script>
@@ -158,7 +159,7 @@ const HomePage = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://genovaspizzaandpasta.com/"
+                "item": "https://francescospizzaandpasta.com/"
               }
             ]
           })}
@@ -169,6 +170,9 @@ const HomePage = () => {
         {/* Hero Section */}
         <HeroSection />
 
+        {/* Grand Opening Countdown */}
+        <GrandOpeningCountdown />
+
         {/* Christmas Promo Section - Only shows in December */}
         <ChristmasPromoSection />
 
@@ -178,8 +182,8 @@ const HomePage = () => {
         {/* Catering Section */}
         <CateringSection />
 
-        {/* Why Genova's Section - Competitive advantages */}
-        <WhyGenovasSection />
+        {/* Why Francesco's Section - Competitive advantages */}
+        <WhyFrancescosSection />
 
         {/* SEO Content Section - Rich keyword content for search engines */}
         <SeoContentSection />

@@ -26,14 +26,14 @@ const LocationSection: React.FC = () => {
                 style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
-                title="Genova's Pizza & Pasta Myrtle Beach Location"
+                title="Francesco's Pizza & Pasta Myrtle Beach Location"
               ></iframe>
             </div>
 
             {/* Location Details */}
             <div className="p-8 md:p-12">
               <div className="bg-[#f9f5f0] p-8 rounded-xl">
-                <h3 className="text-3xl font-bold text-[#d73a31] mb-8">GENOVA'S PIZZA & PASTA</h3>
+                <h3 className="text-3xl font-bold text-[#d73a31] mb-8">FRANCESCO'S PIZZA & PASTA</h3>
 
                 <div className="space-y-6">
                   <div className="flex items-start">

@@ -24,12 +24,12 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="text-left">
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                  Welcome to Genova's Pizza & Pasta, where authentic Italian tradition meets the heart of Myrtle Beach.
-                  We've poured our passion into every dish we craft—using time-honored recipes,
+                  Welcome to Francesco's Pizza & Pasta, where authentic Italian tradition meets the heart of Myrtle Beach.
+                  We've poured our passion into every dish we craft, using time-honored recipes,
                   fresh ingredients, and a whole lot of love.
                 </p>
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                  Come taste the difference at Genova's—where every bite feels like home.
+                  Come taste the difference at Francesco's, where every bite feels like home.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <p className="text-lg font-bold text-[#d73a31]">
@@ -44,7 +44,7 @@ const Footer = () => {
               <div>
                 <img
                   src="/images/lineup.jpg"
-                  alt="Genova's Pizza & Pasta Team"
+                  alt="Francesco's Pizza & Pasta Team"
                   className="rounded-xl shadow-xl w-full h-64 object-cover"
                   loading="lazy"
                 />
@@ -73,7 +73,7 @@ const Footer = () => {
                 <Facebook size={20} />
               </a>
               <a
-                href="https://www.instagram.com/genovasmyrtlebeach/"
+                href="https://www.instagram.com/francescosmyrtlebeach/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#d73a31] hover:bg-[#f2c94c] text-white p-2 rounded-full transition-colors"
@@ -180,7 +180,7 @@ const Footer = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Genova's Pizza & Pasta Location - Best Pizza in Myrtle Beach"
+              title="Francesco's Pizza & Pasta Location - Best Pizza in Myrtle Beach"
             />
           </div>
         </div>
@@ -221,7 +221,7 @@ const Footer = () => {
         <DialogContent className="sm:max-w-3xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-[#d73a31]">
-              Welcome to the neighborhood — pick your area
+              Welcome to the neighborhood - pick your area
             </DialogTitle>
             <DialogDescription className="text-lg pt-2">
               We deliver authentic NY-style pizza to neighborhoods across Asheville!
