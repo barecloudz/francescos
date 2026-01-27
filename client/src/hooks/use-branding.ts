@@ -19,7 +19,7 @@ const defaultBranding: BrandingSettings = {
   COMPANY_PHONE: "(843) 831-0800",
   COMPANY_EMAIL: "info@francescospizzaandpasta.com",
   COMPANY_WEBSITE: "https://francescospizzaandpasta.com",
-  LOGO_URL: "/images/logopng.png",
+  LOGO_URL: "/images/logo.png",
   FAVICON_URL: "/favicon.ico"
 };
 

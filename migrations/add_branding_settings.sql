@@ -6,6 +6,6 @@ INSERT INTO system_settings (setting_key, setting_value, setting_type, category,
 ('COMPANY_PHONE', '(828) 555-0123', 'text', 'branding', 'Company Phone', 'Your business phone number', false),
 ('COMPANY_EMAIL', 'info@favillaspizza.com', 'text', 'branding', 'Company Email', 'Your business email address', false),
 ('COMPANY_WEBSITE', 'https://favillaspizza.com', 'text', 'branding', 'Company Website', 'Your business website URL', false),
-('LOGO_URL', '/images/logopng.png', 'text', 'branding', 'Logo URL', 'Path to your company logo image (relative to public folder)', false),
+('LOGO_URL', '/images/logo.png', 'text', 'branding', 'Logo URL', 'Path to your company logo image (relative to public folder)', false),
 ('FAVICON_URL', '/favicon.ico', 'text', 'branding', 'Favicon URL', 'Path to your website favicon', false)
 ON CONFLICT (setting_key) DO NOTHING;

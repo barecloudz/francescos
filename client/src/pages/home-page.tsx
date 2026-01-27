@@ -50,9 +50,9 @@ const HomePage = () => {
             "description": "Family-owned authentic Italian pizzeria serving Myrtle Beach with hand-tossed NY style pizza, pasta, calzones, and subs. Over 40 years of Sicilian heritage.",
             "image": [
               "https://francescospizzaandpasta.com/images/hero-bg.jpeg",
-              "https://francescospizzaandpasta.com/images/logopng.png"
+              "https://francescospizzaandpasta.com/images/logo.png"
             ],
-            "logo": "https://francescospizzaandpasta.com/images/logopng.png",
+            "logo": "https://francescospizzaandpasta.com/images/logo.png",
             "@id": "https://francescospizzaandpasta.com/#restaurant",
             "url": "https://francescospizzaandpasta.com/",
             "telephone": "+1-843-831-0800",
@@ -133,7 +133,7 @@ const HomePage = () => {
             "name": "Francesco's Pizza & Pasta",
             "alternateName": "Francescos Pizza Myrtle Beach",
             "url": "https://francescospizzaandpasta.com/",
-            "logo": "https://francescospizzaandpasta.com/images/logopng.png",
+            "logo": "https://francescospizzaandpasta.com/images/logo.png",
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+1-843-831-0800",
