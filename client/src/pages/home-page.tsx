@@ -167,11 +167,11 @@ const HomePage = () => {
       </Helmet>
 
       <div className="min-h-screen lg:pt-20 pt-12">
-        {/* Hero Section */}
-        <HeroSection />
-
         {/* Grand Opening Countdown */}
         <GrandOpeningCountdown />
+
+        {/* Hero Section */}
+        <HeroSection />
 
         {/* Christmas Promo Section - Only shows in December */}
         <ChristmasPromoSection />
