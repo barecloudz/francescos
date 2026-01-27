@@ -54,29 +54,40 @@ const GrandOpeningCountdown: React.FC = () => {
   );
 
   return (
-    <section className="bg-black py-8 md:py-12">
+    <section className="bg-black py-2 md:py-3">
       <div className="container mx-auto px-4">
-        <div className="text-center">
-          <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
-            GRAND OPENING
-          </h2>
-          <p className="text-[#f2c94c] text-lg md:text-xl mb-6">
-            March 11, 2026
-          </p>
+        {/* Glossy red border wrapper */}
+        <div
+          className="p-[3px] rounded-xl"
+          style={{
+            background: "linear-gradient(135deg, #ff6b6b 0%, #d73a31 25%, #8b0000 50%, #d73a31 75%, #ff6b6b 100%)",
+            boxShadow: "0 0 20px rgba(215, 58, 49, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2)"
+          }}
+        >
+          <div className="bg-black rounded-xl py-6 md:py-10 px-4">
+            <div className="text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
+                GRAND OPENING
+              </h2>
+              <p className="text-[#f2c94c] text-lg md:text-xl mb-6">
+                March 11, 2026
+              </p>
 
-          <div className="flex justify-center items-center gap-3 md:gap-6">
-            <TimeBlock value={timeLeft.days} label="Days" />
-            <span className="text-3xl md:text-5xl font-bold text-[#d73a31] mt-[-20px]">:</span>
-            <TimeBlock value={timeLeft.hours} label="Hours" />
-            <span className="text-3xl md:text-5xl font-bold text-[#d73a31] mt-[-20px]">:</span>
-            <TimeBlock value={timeLeft.minutes} label="Minutes" />
-            <span className="text-3xl md:text-5xl font-bold text-[#d73a31] mt-[-20px]">:</span>
-            <TimeBlock value={timeLeft.seconds} label="Seconds" />
+              <div className="flex justify-center items-center gap-3 md:gap-6">
+                <TimeBlock value={timeLeft.days} label="Days" />
+                <span className="text-3xl md:text-5xl font-bold text-[#d73a31] mt-[-20px]">:</span>
+                <TimeBlock value={timeLeft.hours} label="Hours" />
+                <span className="text-3xl md:text-5xl font-bold text-[#d73a31] mt-[-20px]">:</span>
+                <TimeBlock value={timeLeft.minutes} label="Minutes" />
+                <span className="text-3xl md:text-5xl font-bold text-[#d73a31] mt-[-20px]">:</span>
+                <TimeBlock value={timeLeft.seconds} label="Seconds" />
+              </div>
+
+              <p className="text-gray-400 mt-6 text-sm md:text-base">
+                Be the first to taste authentic NY style pizza in Myrtle Beach!
+              </p>
+            </div>
           </div>
-
-          <p className="text-gray-400 mt-6 text-sm md:text-base">
-            Be the first to taste authentic NY style pizza in Myrtle Beach!
-          </p>
         </div>
       </div>
     </section>
