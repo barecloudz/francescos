@@ -44,50 +44,90 @@ const GrandOpeningCountdown: React.FC = () => {
 
   const TimeBlock = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center">
-      <div className="bg-black rounded-lg p-3 md:p-4 min-w-[60px] md:min-w-[80px]">
-        <span className="text-3xl md:text-5xl font-bold text-[#d73a31] font-mono">
+      <div
+        className="bg-black border-2 border-red-900 rounded p-2 md:p-3 min-w-[50px] md:min-w-[70px]"
+        style={{
+          boxShadow: "inset 0 0 20px rgba(220, 38, 38, 0.3)"
+        }}
+      >
+        <span
+          className="text-3xl md:text-5xl font-bold font-mono"
+          style={{
+            color: "#ff0000",
+            textShadow: "0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #cc0000"
+          }}
+        >
           {value.toString().padStart(2, "0")}
         </span>
       </div>
-      <span className="text-xs md:text-sm text-gray-300 mt-2 uppercase tracking-wider">{label}</span>
+      <span className="text-[10px] md:text-xs text-red-400 mt-1 uppercase tracking-widest font-bold">{label}</span>
     </div>
   );
 
   return (
-    <section className="bg-black py-2 md:py-3">
+    <section className="bg-black py-6 md:py-8 border-y-4 border-red-600">
+      {/* Pulsing red glow animation */}
+      <style>{`
+        @keyframes pulse-glow {
+          0%, 100% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.6), inset 0 0 30px rgba(220, 38, 38, 0.1); }
+          50% { box-shadow: 0 0 50px rgba(220, 38, 38, 0.9), inset 0 0 40px rgba(220, 38, 38, 0.2); }
+        }
+        @keyframes text-pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.8; }
+        }
+      `}</style>
+
       <div className="container mx-auto px-4">
-        {/* Glossy red border wrapper */}
-        <div
-          className="p-[3px] rounded-xl"
-          style={{
-            background: "linear-gradient(135deg, #ff6b6b 0%, #d73a31 25%, #8b0000 50%, #d73a31 75%, #ff6b6b 100%)",
-            boxShadow: "0 0 20px rgba(215, 58, 49, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2)"
-          }}
-        >
-          <div className="bg-black rounded-xl py-6 md:py-10 px-4">
-            <div className="text-center">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
-                GRAND OPENING
-              </h2>
-              <p className="text-[#f2c94c] text-lg md:text-xl mb-6">
-                March 11, 2026
-              </p>
+        <div className="text-center">
+          <h2
+            className="text-2xl md:text-4xl font-black text-white mb-1 uppercase tracking-wider"
+            style={{
+              textShadow: "0 0 10px rgba(255,255,255,0.5)",
+              animation: "text-pulse 2s ease-in-out infinite"
+            }}
+          >
+            Grand Opening
+          </h2>
+          <p className="text-red-500 text-base md:text-lg mb-4 font-bold tracking-wide">
+            MARCH 11, 2026
+          </p>
 
-              <div className="flex justify-center items-center gap-3 md:gap-6">
-                <TimeBlock value={timeLeft.days} label="Days" />
-                <span className="text-3xl md:text-5xl font-bold text-[#d73a31] mt-[-20px]">:</span>
-                <TimeBlock value={timeLeft.hours} label="Hours" />
-                <span className="text-3xl md:text-5xl font-bold text-[#d73a31] mt-[-20px]">:</span>
-                <TimeBlock value={timeLeft.minutes} label="Minutes" />
-                <span className="text-3xl md:text-5xl font-bold text-[#d73a31] mt-[-20px]">:</span>
-                <TimeBlock value={timeLeft.seconds} label="Seconds" />
+          {/* Urgent countdown display */}
+          <div className="flex justify-center">
+            <div
+              className="rounded-lg p-1 inline-block"
+              style={{
+                background: "linear-gradient(180deg, #7f1d1d 0%, #450a0a 50%, #7f1d1d 100%)",
+                animation: "pulse-glow 2s ease-in-out infinite"
+              }}
+            >
+              <div className="bg-black rounded-md py-4 md:py-5 px-3 md:px-6">
+                <div className="flex justify-center items-center gap-1 md:gap-3">
+                  <TimeBlock value={timeLeft.days} label="Days" />
+                  <span
+                    className="text-2xl md:text-4xl font-bold mt-[-16px]"
+                    style={{ color: "#ff0000", textShadow: "0 0 10px #ff0000" }}
+                  >:</span>
+                  <TimeBlock value={timeLeft.hours} label="Hours" />
+                  <span
+                    className="text-2xl md:text-4xl font-bold mt-[-16px]"
+                    style={{ color: "#ff0000", textShadow: "0 0 10px #ff0000" }}
+                  >:</span>
+                  <TimeBlock value={timeLeft.minutes} label="Mins" />
+                  <span
+                    className="text-2xl md:text-4xl font-bold mt-[-16px]"
+                    style={{ color: "#ff0000", textShadow: "0 0 10px #ff0000" }}
+                  >:</span>
+                  <TimeBlock value={timeLeft.seconds} label="Secs" />
+                </div>
               </div>
-
-              <p className="text-gray-400 mt-6 text-sm md:text-base">
-                Be the first to taste authentic NY style pizza in Myrtle Beach!
-              </p>
             </div>
           </div>
+
+          <p className="text-gray-400 mt-4 text-xs md:text-sm uppercase tracking-wider">
+            Be the first to taste authentic NY style pizza in Myrtle Beach
+          </p>
         </div>
       </div>
     </section>
