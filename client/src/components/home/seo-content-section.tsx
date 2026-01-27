@@ -34,22 +34,22 @@ const SeoContentSection: React.FC = () => {
             }`}
           >
             <h3 className="text-4xl md:text-5xl font-bold text-center mb-8 text-[#d73a31]">
-              Best Pizza in Myrtle Beach, SC - Authentic NY Style Pizza
+              Best Pizza in Murrells Inlet, SC - Authentic NY Style Pizza
             </h3>
 
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Authentic Sicilian Heritage - Over 40 Years of Family Tradition</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Welcome to <strong>Francesco's Pizza & Pasta</strong>, Myrtle Beach's destination for <strong>authentic NY style pizza</strong>,
+              Welcome to <strong>Francesco's Pizza & Pasta</strong>, Murrells Inlet's destination for <strong>authentic NY style pizza</strong>,
               <strong> fresh pasta</strong>, and traditional Italian cuisine.
               As a family-owned restaurant carrying forward over 40 years of Sicilian heritage, we've been serving the
-              <strong> best pizza in Myrtle Beach</strong> with recipes passed down by our Nonna.
+              <strong> best pizza in Murrells Inlet</strong> with recipes passed down by our Nonna.
               Our commitment to traditional recipes and fresh, quality ingredients makes every bite a taste of home.
             </p>
 
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Hand-Tossed NY Style Pizza in Myrtle Beach</h2>
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">Hand-Tossed NY Style Pizza in Murrells Inlet</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Looking for <strong>pizza near me in Myrtle Beach</strong>? Look no further! Our <strong>New York style pizza</strong> features
+              Looking for <strong>pizza near me in Murrells Inlet</strong>? Look no further! Our <strong>New York style pizza</strong> features
               a perfectly thin, crispy crust that folds just right, topped with our signature sauce made from fresh Italian tomatoes
               and premium mozzarella cheese. Every pie is hand-tossed and baked to perfection in our traditional pizza ovens.
               We also serve delicious <strong>Sicilian style pizza</strong> with a thick, fluffy crust that's a local favorite.
@@ -57,7 +57,7 @@ const SeoContentSection: React.FC = () => {
 
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Calzones, Pasta & Italian Specialties</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Beyond our award-winning pizza, Francesco's offers an extensive menu of <strong>Italian food in Myrtle Beach</strong>.
+              Beyond our award-winning pizza, Francesco's offers an extensive menu of <strong>Italian food in Murrells Inlet</strong>.
               Our <strong>calzones</strong> are hand-folded masterpieces, stuffed with ricotta, mozzarella, and your choice of
               premium toppings. Try our fresh <strong>pasta dishes</strong> - from classic spaghetti and meatballs to creamy
               fettuccine alfredo, each dish is made with love and authentic Italian flavors.
@@ -75,9 +75,9 @@ const SeoContentSection: React.FC = () => {
             </ul>
 
             <h4 className="text-2xl font-bold mb-2 text-gray-900">Pizza Near Me</h4>
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Order Online for Pickup in Myrtle Beach, SC</h2>
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">Order Online for Pickup in Murrells Inlet, SC</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Craving <strong>pizza in Myrtle Beach</strong>? Order online for fast, convenient pickup.
+              Craving <strong>pizza in Murrells Inlet</strong>? Order online for fast, convenient pickup.
               Searching for <strong>best pizza near me</strong> or <strong>Italian food near me</strong>? Francesco's offers
               easy online ordering - just place your order and we'll have your food ready when you arrive.
               Our online ordering system makes it easy to customize your pizza, add sides,
@@ -86,13 +86,13 @@ const SeoContentSection: React.FC = () => {
 
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Family-Owned Italian Restaurant - Sicilian Heritage Since the 1980s</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              As a <strong>family-owned pizza restaurant in Myrtle Beach</strong>, we take pride in treating every customer like family.
+              As a <strong>family-owned pizza restaurant in Murrells Inlet</strong>, we take pride in treating every customer like family.
               Our recipes have been perfected over generations, bringing true <strong>authentic NY pizza and Italian specialties</strong> to South Carolina.
-              From the bustling streets of New York to the beautiful shores of Myrtle Beach, we bring the same
+              From the bustling streets of New York to the beautiful shores of Murrells Inlet, we bring the same
               passion and dedication to every dish we serve.
             </p>
 
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Why Francesco's is the Best Pizza in Myrtle Beach</h2>
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">Why Francesco's is the Best Pizza in Murrells Inlet</h2>
             <ul className="list-disc list-inside mb-6 text-gray-700 space-y-2">
               <li>Over 40 years of Sicilian family heritage</li>
               <li>Fresh, high-quality ingredients sourced daily</li>
@@ -104,25 +104,25 @@ const SeoContentSection: React.FC = () => {
               <li>Rewards program for loyal customers</li>
             </ul>
 
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Order the Best Pizza in Myrtle Beach Today</h2>
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">Order the Best Pizza in Murrells Inlet Today</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Ready to taste why we're known as the <strong>best pizza in Myrtle Beach</strong>? Order online now for
+              Ready to taste why we're known as the <strong>best pizza in Murrells Inlet</strong>? Order online now for
               fast pickup. Whether you're craving a classic cheese pizza, loaded specialty pie, hearty calzone,
               or delicious pasta, Francesco's has something for everyone.
               Join our rewards program and earn points with every order.
-              Experience the authentic taste of NY style pizza right here in Myrtle Beach, SC!
+              Experience the authentic taste of NY style pizza right here in Murrells Inlet, SC!
             </p>
           </div>
 
           {/* Location & Service Area Keywords */}
           <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-            <h3 className="text-xl font-bold mb-3 text-gray-900">Serving Myrtle Beach & Surrounding Areas</h3>
+            <h3 className="text-xl font-bold mb-3 text-gray-900">Serving Murrells Inlet & Surrounding Areas</h3>
             <p className="text-gray-700 mb-3">
-              <strong>Myrtle Beach Pizza:</strong> We proudly serve customers from across the Grand Strand area
-              including Myrtle Beach, Surfside Beach, Garden City, Murrells Inlet, and surrounding communities in South Carolina.
+              <strong>Murrells Inlet Pizza:</strong> We proudly serve customers from across the Grand Strand area
+              including Murrells Inlet, Surfside Beach, Garden City, Murrells Inlet, and surrounding communities in South Carolina.
             </p>
             <p className="text-gray-700">
-              <strong>Our Location:</strong> Visit us at 4620 Dick Pond Rd, Myrtle Beach, SC 29588.
+              <strong>Our Location:</strong> Visit us at 4620 Dick Pond Rd, Murrells Inlet, SC 29588.
               Order online for pickup and enjoy the best NY style pizza in town!
             </p>
           </div>

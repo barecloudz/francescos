@@ -126,7 +126,7 @@ const GrandOpeningCountdown: React.FC = () => {
           </div>
 
           <p className="text-gray-400 mt-4 text-xs md:text-sm uppercase tracking-wider">
-            Be the first to taste authentic NY style pizza in Myrtle Beach
+            Be the first to taste authentic NY style pizza in Murrells Inlet
           </p>
         </div>
       </div>

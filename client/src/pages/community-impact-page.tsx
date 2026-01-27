@@ -93,7 +93,7 @@ const CommunityImpactPage: React.FC = () => {
       <>
         <Helmet>
           <title>Community Impact - Coming Soon | Francesco's Pizza & Pasta</title>
-          <meta name="description" content="We're launching our community impact program soon. Stay tuned to learn how Francesco's Pizza gives back to Myrtle Beach!" />
+          <meta name="description" content="We're launching our community impact program soon. Stay tuned to learn how Francesco's Pizza gives back to Murrells Inlet!" />
         </Helmet>
         <div className="min-h-screen bg-gradient-to-b from-red-50 to-white pt-24">
           <div className="container mx-auto px-4 py-16 text-center">
@@ -103,7 +103,7 @@ const CommunityImpactPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               We're working on something special! Our community giving program is coming soon.
-              Check back to see how Francesco's Pizza & Pasta gives back to Myrtle Beach.
+              Check back to see how Francesco's Pizza & Pasta gives back to Murrells Inlet.
             </p>
             <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md mx-auto">
               <Clock className="h-12 w-12 mx-auto text-red-500 mb-4" />
@@ -128,7 +128,7 @@ const CommunityImpactPage: React.FC = () => {
     <>
       <Helmet>
         <title>{settings?.pageTitle || 'Community Impact'} | Francesco's Pizza & Pasta</title>
-        <meta name="description" content="Discover how Francesco's Pizza & Pasta partners with local organizations to give back to the Myrtle Beach community. Use partner promo codes for discounts while supporting great causes!" />
+        <meta name="description" content="Discover how Francesco's Pizza & Pasta partners with local organizations to give back to the Murrells Inlet community. Use partner promo codes for discounts while supporting great causes!" />
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-b from-red-50 to-white pt-24">
@@ -139,7 +139,7 @@ const CommunityImpactPage: React.FC = () => {
             {settings?.pageTitle || 'Community Impact'}
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {settings?.pageDescription || "At Francesco's Pizza & Pasta, we believe in giving back to the community that has supported us for over 40 years. Each month, we partner with local organizations to make a real difference in Myrtle Beach."}
+            {settings?.pageDescription || "At Francesco's Pizza & Pasta, we believe in giving back to the community that has supported us for over 40 years. Each month, we partner with local organizations to make a real difference in Murrells Inlet."}
           </p>
         </section>
 
@@ -365,7 +365,7 @@ const CommunityImpactPage: React.FC = () => {
         <section className="container mx-auto px-4 py-12 text-center">
           <h2 className="text-2xl font-bold mb-4">Want to Partner With Us?</h2>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            If you represent a local non-profit or community organization in Myrtle Beach and would like to partner with Francesco's Pizza & Pasta, we'd love to hear from you!
+            If you represent a local non-profit or community organization in Murrells Inlet and would like to partner with Francesco's Pizza & Pasta, we'd love to hear from you!
           </p>
           <a href="mailto:info@francescospizzamb.com?subject=Community Impact Partnership Inquiry">
             <Button variant="outline" size="lg">

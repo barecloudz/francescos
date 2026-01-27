@@ -7,7 +7,7 @@
 CREATE TABLE IF NOT EXISTS restaurant_settings (
   id SERIAL PRIMARY KEY,
   restaurant_name TEXT NOT NULL DEFAULT 'Francesco''s Pizza & Pasta',
-  address TEXT NOT NULL DEFAULT '4620 Dick Pond Rd, Myrtle Beach, SC 29588',
+  address TEXT NOT NULL DEFAULT '4620 Dick Pond Rd, Murrells Inlet, SC 29588',
   phone TEXT NOT NULL DEFAULT '(843) 831-0800',
   email TEXT NOT NULL DEFAULT 'francescopizzapasta@gmail.com',
   website TEXT NOT NULL DEFAULT 'https://francescospizzaandpasta.com',
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS restaurant_settings (
 
 -- Insert default settings if table is empty
 INSERT INTO restaurant_settings (restaurant_name, address, phone, email, website)
-SELECT 'Francesco''s Pizza & Pasta', '4620 Dick Pond Rd, Myrtle Beach, SC 29588', '(843) 831-0800', 'francescopizzapasta@gmail.com', 'https://francescospizzaandpasta.com'
+SELECT 'Francesco''s Pizza & Pasta', '4620 Dick Pond Rd, Murrells Inlet, SC 29588', '(843) 831-0800', 'francescopizzapasta@gmail.com', 'https://francescospizzaandpasta.com'
 WHERE NOT EXISTS (SELECT 1 FROM restaurant_settings LIMIT 1);
 
 -- ========================================

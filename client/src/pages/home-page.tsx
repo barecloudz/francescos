@@ -21,14 +21,14 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Best Pizza in Myrtle Beach | Pizza Near Me | Francesco's Pizza & Pasta</title>
-        <meta name="description" content="Best pizza in Myrtle Beach! Francesco's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria on Dick Pond Road. Order online for pickup!" />
-        <meta name="keywords" content="pizza near me, best pizza in myrtle beach, pizza myrtle beach, myrtle beach pizza, pizza delivery myrtle beach, pizza place near me, pizzeria myrtle beach, Francescos Pizza, NY style pizza, hand tossed pizza, pasta myrtle beach, italian food myrtle beach" />
+        <title>Best Pizza in Murrells Inlet | Pizza Near Me | Francesco's Pizza & Pasta</title>
+        <meta name="description" content="Best pizza in Murrells Inlet! Francesco's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria on Dick Pond Road. Order online for pickup!" />
+        <meta name="keywords" content="pizza near me, best pizza in murrells inlet, pizza murrells inlet, murrells inlet pizza, pizza delivery murrells inlet, pizza place near me, pizzeria murrells inlet, Francescos Pizza, NY style pizza, hand tossed pizza, pasta murrells inlet, italian food murrells inlet" />
         <link rel="canonical" href="https://francescospizzaandpasta.com/" />
 
         {/* Open Graph Tags */}
-        <meta property="og:title" content="Best Pizza in Myrtle Beach | Francesco's Pizza & Pasta" />
-        <meta property="og:description" content="Best pizza in Myrtle Beach! Francesco's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria." />
+        <meta property="og:title" content="Best Pizza in Murrells Inlet | Francesco's Pizza & Pasta" />
+        <meta property="og:description" content="Best pizza in Murrells Inlet! Francesco's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria." />
         <meta property="og:url" content="https://francescospizzaandpasta.com/" />
         <meta property="og:type" content="restaurant" />
         <meta property="og:image" content="https://francescospizzaandpasta.com/images/hero-bg.jpeg" />
@@ -36,8 +36,8 @@ const HomePage = () => {
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Best Pizza in Myrtle Beach | Francesco's Pizza & Pasta" />
-        <meta name="twitter:description" content="Best pizza in Myrtle Beach! Hand-tossed NY style pizza, pasta, calzones & subs." />
+        <meta name="twitter:title" content="Best Pizza in Murrells Inlet | Francesco's Pizza & Pasta" />
+        <meta name="twitter:description" content="Best pizza in Murrells Inlet! Hand-tossed NY style pizza, pasta, calzones & subs." />
         <meta name="twitter:image" content="https://francescospizzaandpasta.com/images/hero-bg.jpeg" />
 
         {/* Enhanced Restaurant & LocalBusiness Schema */}
@@ -47,7 +47,7 @@ const HomePage = () => {
             "@type": "Restaurant",
             "name": "Francesco's Pizza & Pasta",
             "alternateName": "Francescos Pizza",
-            "description": "Family-owned authentic Italian pizzeria serving Myrtle Beach with hand-tossed NY style pizza, pasta, calzones, and subs. Over 40 years of Sicilian heritage.",
+            "description": "Family-owned authentic Italian pizzeria serving Murrells Inlet with hand-tossed NY style pizza, pasta, calzones, and subs. Over 40 years of Sicilian heritage.",
             "image": [
               "https://francescospizzaandpasta.com/images/hero-bg.jpeg",
               "https://francescospizzaandpasta.com/images/logo.png"
@@ -64,7 +64,7 @@ const HomePage = () => {
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "4620 Dick Pond Rd",
-              "addressLocality": "Myrtle Beach",
+              "addressLocality": "Murrells Inlet",
               "addressRegion": "SC",
               "postalCode": "29588",
               "addressCountry": "US"
@@ -131,7 +131,7 @@ const HomePage = () => {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Francesco's Pizza & Pasta",
-            "alternateName": "Francescos Pizza Myrtle Beach",
+            "alternateName": "Francescos Pizza Murrells Inlet",
             "url": "https://francescospizzaandpasta.com/",
             "logo": "https://francescospizzaandpasta.com/images/logo.png",
             "contactPoint": {
@@ -143,8 +143,8 @@ const HomePage = () => {
             },
             "sameAs": [
               "https://www.facebook.com/profile.php?id=61580096004134",
-              "https://www.instagram.com/francescosmyrtlebeach/",
-              "https://www.tiktok.com/@francescosofmyrtlebeach"
+              "https://www.instagram.com/francescosmurrellsinlet/",
+              "https://www.tiktok.com/@francescosofmurrellsinlet"
             ]
           })}
         </script>

@@ -11,7 +11,7 @@ const Footer = () => {
   const { address, phone, email } = useRestaurantSettings();
   const [showNeighborhoodModal, setShowNeighborhoodModal] = useState(false);
 
-  // Myrtle Beach area neighborhoods - can be expanded later
+  // Murrells Inlet area neighborhoods - can be expanded later
   const neighborhoods: { name: string; slug: string }[] = [];
   
   return (
@@ -24,7 +24,7 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="text-left">
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                  Welcome to Francesco's Pizza & Pasta, where authentic Italian tradition meets the heart of Myrtle Beach.
+                  Welcome to Francesco's Pizza & Pasta, where authentic Italian tradition meets the heart of Murrells Inlet.
                   We've poured our passion into every dish we craft, using time-honored recipes,
                   fresh ingredients, and a whole lot of love.
                 </p>
@@ -73,7 +73,7 @@ const Footer = () => {
                 <Facebook size={20} />
               </a>
               <a
-                href="https://www.instagram.com/francescosmyrtlebeach/"
+                href="https://www.instagram.com/francescosmurrellsinlet/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#d73a31] hover:bg-[#f2c94c] text-white p-2 rounded-full transition-colors"
@@ -169,7 +169,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="text-center mb-6">
             <h3 className="text-xl font-bold text-[#f2c94c] mb-2">FIND US</h3>
-            <p className="text-gray-400 text-sm">Best Pizza & Pasta in Myrtle Beach, SC</p>
+            <p className="text-gray-400 text-sm">Best Pizza & Pasta in Murrells Inlet, SC</p>
           </div>
           <div className="rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto">
             <iframe
@@ -180,7 +180,7 @@ const Footer = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Francesco's Pizza & Pasta Location - Best Pizza in Myrtle Beach"
+              title="Francesco's Pizza & Pasta Location - Best Pizza in Murrells Inlet"
             />
           </div>
         </div>

@@ -15,7 +15,7 @@ interface BrandingSettings {
 const defaultBranding: BrandingSettings = {
   COMPANY_NAME: "FRANCESCO'S PIZZA & PASTA",
   COMPANY_TAGLINE: "Authentic Italian Pizza & Pasta",
-  COMPANY_ADDRESS: "4620 Dick Pond Rd, Myrtle Beach, SC",
+  COMPANY_ADDRESS: "4620 Dick Pond Rd, Murrells Inlet, SC",
   COMPANY_PHONE: "(843) 831-0800",
   COMPANY_EMAIL: "info@francescospizzaandpasta.com",
   COMPANY_WEBSITE: "https://francescospizzaandpasta.com",

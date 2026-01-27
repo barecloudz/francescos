@@ -24,7 +24,7 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-[#d73a31]">CUSTOMER FAVORITES</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            The best pizza in Myrtle Beach! Our authentic New York style pizzas are made with Italian family recipes passed down through generations. Order online for pickup and experience the perfect blend of Sicilian tradition and Italian heritage.
+            The best pizza in Murrells Inlet! Our authentic New York style pizzas are made with Italian family recipes passed down through generations. Order online for pickup and experience the perfect blend of Sicilian tradition and Italian heritage.
           </p>
         </div>
         

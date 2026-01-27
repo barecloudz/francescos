@@ -11,7 +11,7 @@ const AboutSection: React.FC = () => {
             <div className="bg-white p-6 md:p-10 rounded-xl shadow-lg h-full flex flex-col justify-center">
               <h3 className="text-2xl md:text-4xl font-bold text-[#d73a31] mb-4 md:mb-8">OUR STORY</h3>
               <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6 leading-relaxed">
-                Welcome to Francesco's, where authentic Italian tradition meets the heart of Myrtle Beach.
+                Welcome to Francesco's, where authentic Italian tradition meets the heart of Murrells Inlet.
                 As a real Italian family, we've poured our heritage into every pizza we craft, using time-honored recipes,
                 fresh ingredients, and a whole lot of amore.
               </p>

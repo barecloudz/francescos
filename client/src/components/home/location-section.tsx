@@ -10,7 +10,7 @@ const LocationSection: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-[#d73a31]">VISIT US</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Experience our authentic Italian cuisine at our Myrtle Beach location on Dick Pond Road!
+            Experience our authentic Italian cuisine at our Murrells Inlet location on Dick Pond Road!
             We're open 7 days a week to serve you the best NY style pizza and pasta in town!
           </p>
         </div>
@@ -26,7 +26,7 @@ const LocationSection: React.FC = () => {
                 style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
-                title="Francesco's Pizza & Pasta Myrtle Beach Location"
+                title="Francesco's Pizza & Pasta Murrells Inlet Location"
               ></iframe>
             </div>
 
@@ -42,7 +42,7 @@ const LocationSection: React.FC = () => {
                       <h4 className="text-xl font-bold mb-2">Address</h4>
                       <address className="not-italic text-gray-700">
                         <p>4620 Dick Pond Rd</p>
-                        <p>Myrtle Beach, SC 29588</p>
+                        <p>Murrells Inlet, SC 29588</p>
                       </address>
                     </div>
                   </div>
