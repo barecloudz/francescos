@@ -17,7 +17,7 @@ const CateringSection: React.FC = () => {
               Catering for Any Occasion
             </h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              From office parties to family gatherings, let Favilla's bring authentic NY pizza to your next event
+              From office parties to family gatherings, let Francesco's bring authentic NY pizza to your next event
             </p>
           </div>
 

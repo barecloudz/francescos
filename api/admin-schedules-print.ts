@@ -488,7 +488,7 @@ export const handler: Handler = async (event, context) => {
                     <div class="pizza-icon">🍕</div>
                 </div>
                 <div class="company-info">
-                    <h1>Favilla's NY Pizza</h1>
+                    <h1>Francesco's</h1>
                     <div class="company-tagline">Authentic New York Style Pizza</div>
                 </div>
             </div>
@@ -621,7 +621,7 @@ export const handler: Handler = async (event, context) => {
               minute: '2-digit'
             })}
             <br>
-            Favilla's NY Pizza - Employee Schedule System
+            Francesco's - Employee Schedule System
         </div>
     </div>
 </body>

@@ -3,11 +3,11 @@ import { NeighborhoodData } from "../neighborhoods";
 export const southAshevilleData: NeighborhoodData = {
   slug: "South-Asheville",
   name: "South Asheville",
-  title: "Best Pizza in South Asheville NC | Favilla's NY Pizza - Pizza Delivery Near Me",
-  metaDescription: "Craving the best pizza in South Asheville? Favilla's serves authentic NY-style pizza, calzones & stromboli. Fast delivery to South Asheville. Order online now!",
+  title: "Best Pizza in South Asheville NC | Francesco's - Pizza Delivery Near Me",
+  metaDescription: "Craving the best pizza in South Asheville? Francesco's serves authentic NY-style pizza, calzones & stromboli. Fast delivery to South Asheville. Order online now!",
   heroSubheadline: "Serving residents of South Asheville with dine-in, pickup, and fast delivery.",
-  introText: "Located right here in South Asheville on Regent Park Blvd (next to Sam's Club), Favilla's is your neighborhood pizza spot for authentic New York-style pizza. We're not just near you—we're part of your community, serving up hand-tossed pies, fresh calzones, and classic Italian favorites since 2013.",
-  distanceFromFavillas: "You're here!",
+  introText: "Located right here in South Asheville on Regent Park Blvd (next to Sam's Club), Francesco's is your neighborhood pizza spot for authentic New York-style pizza. We're not just near you—we're part of your community, serving up hand-tossed pies, fresh calzones, and classic Italian favorites since 2013.",
+  distanceFromFrancescos: "You're here!",
   deliveryTime: "10-20 minutes",
   areasServed: [
     "Regent Park",
@@ -29,19 +29,19 @@ export const southAshevilleData: NeighborhoodData = {
     {
       name: "Sarah M.",
       location: "Regent Park, South Asheville",
-      text: "Best pizza in South Asheville, hands down! We order from Favilla's at least twice a month. The delivery is always fast and the pizza is always hot!",
+      text: "Best pizza in South Asheville, hands down! We order from Francesco's at least twice a month. The delivery is always fast and the pizza is always hot!",
       rating: 5
     },
     {
       name: "Mike T.",
       location: "Airport Road",
-      text: "Real NY pizza—and I'm from Brooklyn! Favilla's nails the crust every single time. So glad they're right here in South Asheville.",
+      text: "Real NY pizza—and I'm from Brooklyn! Francesco's nails the crust every single time. So glad they're right here in South Asheville.",
       rating: 5
     },
     {
       name: "Jennifer L.",
       location: "Skyland",
-      text: "The garlic knots are addictive and the stromboli is HUGE! Perfect for feeding the whole family. Love having Favilla's in our neighborhood.",
+      text: "The garlic knots are addictive and the stromboli is HUGE! Perfect for feeding the whole family. Love having Francesco's in our neighborhood.",
       rating: 5
     }
   ],

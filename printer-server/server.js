@@ -89,7 +89,7 @@ async function printReceipt(printer, receipt) {
     .align('ct')
     .style('bu')
     .size(2, 2)
-    .text(receipt.storeName || "Favilla's NY Pizza")
+    .text(receipt.storeName || "Francesco's")
     .size(1, 1)
     .style('normal');
 

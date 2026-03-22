@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Database Setup Script for Favilla's Pizza
+ * Database Setup Script for Francesco's Pizza
  *
  * This script sets up the complete choice groups system and populates sample data
  * Run with: node scripts/setup-database.js
@@ -20,7 +20,7 @@ const sql = postgres(process.env.DATABASE_URL, {
 });
 
 async function setupDatabase() {
-  console.log('🍕 Setting up Favilla\'s Pizza Database...\n');
+  console.log('🍕 Setting up Francesco\'s Pizza Database...\n');
 
   try {
     // Step 1: Create choice groups
@@ -352,9 +352,9 @@ async function setupDatabase() {
     if (existingSettings.length > 0) {
       await sql`
         UPDATE restaurant_settings
-        SET restaurant_name = 'Favilla''s NY Pizza', address = '123 Main Street, New York, NY 10001',
-            phone = '(555) 123-4567', email = 'info@favillas.com',
-            website = 'https://favillas.com', updated_at = NOW()
+        SET restaurant_name = 'Francesco''s NY Pizza', address = '123 Main Street, New York, NY 10001',
+            phone = '(555) 123-4567', email = 'info@francescos.com',
+            website = 'https://francescos.com', updated_at = NOW()
         WHERE id = ${existingSettings[0].id}
       `;
     } else {
@@ -364,8 +364,8 @@ async function setupDatabase() {
           auto_accept_orders, delivery_enabled, pickup_enabled, created_at, updated_at
         )
         VALUES (
-          'Favilla''s NY Pizza', '123 Main Street, New York, NY 10001', '(555) 123-4567',
-          'info@favillas.com', 'https://favillas.com', 3.99, 15.00,
+          'Francesco''s NY Pizza', '123 Main Street, New York, NY 10001', '(555) 123-4567',
+          'info@francescos.com', 'https://francescos.com', 3.99, 15.00,
           true, true, true, NOW(), NOW()
         )
       `;

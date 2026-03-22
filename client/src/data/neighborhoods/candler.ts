@@ -3,11 +3,11 @@ import { NeighborhoodData } from "../neighborhoods";
 export const candlerData: NeighborhoodData = {
   slug: "Candler",
   name: "Candler",
-  title: "Best Pizza in Candler NC | Favilla's NY Pizza - Pizza Delivery Candler",
-  metaDescription: "Craving pizza in Candler? Favilla's delivers authentic NY-style pizza to Candler, NC. Family-owned since 2013. Order online for fast delivery!",
+  title: "Best Pizza in Candler NC | Francesco's - Pizza Delivery Candler",
+  metaDescription: "Craving pizza in Candler? Francesco's delivers authentic NY-style pizza to Candler, NC. Family-owned since 2013. Order online for fast delivery!",
   heroSubheadline: "Bringing authentic NY-style pizza to Candler—dine-in, pickup, and delivery.",
-  introText: "Candler might be a bit west of Asheville, but Favilla's makes sure you're never far from great pizza. We deliver hand-tossed NY-style pies, fresh calzones, and classic Italian favorites right to your Candler home, hot and ready to enjoy.",
-  distanceFromFavillas: "8 miles west",
+  introText: "Candler might be a bit west of Asheville, but Francesco's makes sure you're never far from great pizza. We deliver hand-tossed NY-style pies, fresh calzones, and classic Italian favorites right to your Candler home, hot and ready to enjoy.",
+  distanceFromFrancescos: "8 miles west",
   deliveryTime: "30-40 minutes",
   areasServed: [
     "Downtown Candler",
@@ -21,18 +21,18 @@ export const candlerData: NeighborhoodData = {
     "Smokey Park Highway businesses",
     "Hominy Creek Greenway"
   ],
-  localAnecdote: "Candler is a hardworking community, and Favilla's is here to make your dinner easy. Whether you're coming home from a long shift or hosting friends for the weekend, we bring authentic New York pizza right to your door. Candler families know us for consistency, quality, and that perfect crispy crust that keeps you coming back.",
+  localAnecdote: "Candler is a hardworking community, and Francesco's is here to make your dinner easy. Whether you're coming home from a long shift or hosting friends for the weekend, we bring authentic New York pizza right to your door. Candler families know us for consistency, quality, and that perfect crispy crust that keeps you coming back.",
   testimonials: [
     {
       name: "Tommy R.",
       location: "Candler",
-      text: "So glad Favilla's delivers to Candler! We order every Friday and the pizza is always hot and delicious. Best pizza around!",
+      text: "So glad Francesco's delivers to Candler! We order every Friday and the pizza is always hot and delicious. Best pizza around!",
       rating: 5
     },
     {
       name: "Jessica M.",
       location: "Smokey Park Highway",
-      text: "Finally found a pizza place that delivers to our area AND makes great pizza! Favilla's is our new go-to spot.",
+      text: "Finally found a pizza place that delivers to our area AND makes great pizza! Francesco's is our new go-to spot.",
       rating: 5
     },
     {

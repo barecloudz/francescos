@@ -34,7 +34,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const { data, error } = await resend.emails.send({
       from: emailConfig.from,
       to: [customerEmail],
-      subject: `Order Confirmation - #${orderData.orderNumber} | Favillas Pizzeria`,
+      subject: `Order Confirmation - #${orderData.orderNumber} | Francescos Pizzeria`,
       html: htmlTemplate,
       replyTo: emailConfig.replyTo,
       tags: [

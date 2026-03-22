@@ -10,7 +10,7 @@
 
 1. Go to: https://resend.com/domains
 2. Click "Add Domain"
-3. Enter your domain (e.g., `favillaspizza.com`)
+3. Enter your domain (e.g., `francescospizza.com`)
 4. Add the DNS records Resend provides:
    - **SPF Record**: Add TXT record to DNS
    - **DKIM Record**: Add TXT record to DNS
@@ -39,7 +39,7 @@ npx netlify env:set RESTAURANT_PHONE "(Your) Phone-Number"
 
 ### 4. Update Netlify Site Settings
 
-1. Go to: https://app.netlify.com/sites/favillasnypizza/settings/domain
+1. Go to: https://app.netlify.com/sites/francescos/settings/domain
 2. Add your custom domain
 3. Configure DNS:
    - **If using Netlify DNS**: They'll handle it automatically
@@ -75,7 +75,7 @@ Most templates use `process.env.SITE_URL` so they should update automatically.
 
 ## Testing Before Migration
 
-Current test endpoint: `https://favillasnypizza.netlify.app/api/test-resend-email`
+Current test endpoint: `https://francescos.netlify.app/api/test-resend-email`
 
 This will send a test email using whatever `RESEND_FROM_EMAIL` is configured.
 

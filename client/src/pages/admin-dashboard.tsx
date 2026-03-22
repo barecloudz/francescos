@@ -1202,7 +1202,7 @@ const AdminDashboard = () => {
   return (
     <>
       <Helmet>
-        <title>Admin Dashboard | Favilla's NY Pizza</title>
+        <title>Admin Dashboard | Francesco's</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       
@@ -1224,7 +1224,7 @@ const AdminDashboard = () => {
           <div className="p-4 border-b">
             <div className="flex items-center justify-between">
               {!sidebarCollapsed && (
-                <h1 className="text-xl font-bold text-gray-800">Favilla's Admin</h1>
+                <h1 className="text-xl font-bold text-gray-800">Francesco's Admin</h1>
               )}
               <Button
                 variant="ghost"
@@ -3437,7 +3437,7 @@ const OrdersManagement = ({ orders, cateringData, onUpdateStatus }: any) => {
               <div id="receipt-content" className="bg-white p-6 font-mono text-sm overflow-y-auto flex-1">
                 {/* Header */}
                 <div className="text-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
-                  <h1 className="text-xl font-bold tracking-wide">FAVILLA'S NY PIZZA</h1>
+                  <h1 className="text-xl font-bold tracking-wide">FRANCESCO'S NY PIZZA</h1>
                   <p className="text-xs text-gray-600 mt-1">5 Regent Park Blvd</p>
                   <p className="text-xs text-gray-600">Asheville, NC 28806</p>
                   <p className="text-xs text-gray-600">(828) 225-2885</p>
@@ -3598,7 +3598,7 @@ const OrdersManagement = ({ orders, cateringData, onUpdateStatus }: any) => {
                 <div className="text-center border-t-2 border-dashed border-gray-300 pt-4">
                   <p className="font-bold">Thank You!</p>
                   <p className="text-xs text-gray-500 mt-1">Family-owned since 1969</p>
-                  <p className="text-xs text-gray-500">www.favillaspizzeria.com</p>
+                  <p className="text-xs text-gray-500">www.francescospizzeria.com</p>
                 </div>
               </div>
 
@@ -3625,7 +3625,7 @@ const OrdersManagement = ({ orders, cateringData, onUpdateStatus }: any) => {
                     // Header
                     doc.setFontSize(12);
                     doc.setFont('helvetica', 'bold');
-                    doc.text("FAVILLA'S NY PIZZA", 40, y, { align: 'center' });
+                    doc.text("FRANCESCO'S NY PIZZA", 40, y, { align: 'center' });
                     y += lineHeight;
 
                     doc.setFontSize(8);
@@ -3808,10 +3808,10 @@ const OrdersManagement = ({ orders, cateringData, onUpdateStatus }: any) => {
                     doc.setFont('helvetica', 'normal');
                     doc.text("Family-owned since 1969", 40, y, { align: 'center' });
                     y += lineHeight - 1;
-                    doc.text("www.favillaspizzeria.com", 40, y, { align: 'center' });
+                    doc.text("www.francescospizzeria.com", 40, y, { align: 'center' });
 
                     // Save PDF
-                    doc.save(`Favillas-Order-${order.id}.pdf`);
+                    doc.save(`Francescos-Order-${order.id}.pdf`);
                   }}
                   className="bg-[#d73a31] hover:bg-[#b52d26]"
                 >
@@ -9370,11 +9370,11 @@ const SettingsPanel = () => {
   });
 
   const [settings, setSettings] = useState({
-    restaurantName: "Favilla's NY Pizza",
+    restaurantName: "Francesco's",
     address: "123 Main Street, New York, NY 10001",
     phone: "(555) 123-4567",
-    email: "info@favillas.com",
-    website: "https://favillas.com",
+    email: "info@francescos.com",
+    website: "https://francescos.com",
     currency: "USD",
     timezone: "America/New_York",
     deliveryFee: 3.99,
@@ -16075,7 +16075,7 @@ const SMSMarketingTab = ({ users }: { users: any[] }) => {
                         id="cta-url"
                         value={formData.ctaUrl}
                         onChange={(e) => setFormData({ ...formData, ctaUrl: e.target.value })}
-                        placeholder="https://favillaspizzeria.com/menu"
+                        placeholder="https://francescospizzeria.com/menu"
                       />
                     </div>
                   </div>
@@ -16169,7 +16169,7 @@ const SMSMarketingTab = ({ users }: { users: any[] }) => {
                   className="p-4 text-white text-center rounded-t"
                   style={{ background: `linear-gradient(135deg, ${formData.accentColor}, ${formData.accentColor}dd)` }}
                 >
-                  <h2 className="text-xl font-bold">🍕 Favilla's Pizzeria</h2>
+                  <h2 className="text-xl font-bold">🍕 Francesco's Pizzeria</h2>
                   <p className="opacity-90 text-sm">Your favorite pizza just got better!</p>
                 </div>
                 <div className="p-6">
@@ -16190,7 +16190,7 @@ const SMSMarketingTab = ({ users }: { users: any[] }) => {
                     </div>
                   )}
                   <div className="text-xs text-gray-500 text-center pt-4 border-t">
-                    <p>Favilla's Pizzeria | favillaspizzeria.com</p>
+                    <p>Francesco's Pizzeria | francescospizzeria.com</p>
                   </div>
                 </div>
               </div>
@@ -16272,7 +16272,7 @@ const SMSMarketingTab = ({ users }: { users: any[] }) => {
                 <div className="mt-2 border rounded-lg p-4 bg-gray-50">
                   <div className="bg-white rounded border shadow-sm max-w-md mx-auto">
                     <div className="p-4 text-white text-center rounded-t bg-gradient-to-r from-[#d73a31] to-[#e74c3c]">
-                      <h2 className="text-lg font-bold">🍕 Favilla's Pizzeria</h2>
+                      <h2 className="text-lg font-bold">🍕 Francesco's Pizzeria</h2>
                       <p className="opacity-90 text-sm">Your favorite pizza just got better!</p>
                     </div>
                     <div className="p-4">
@@ -17795,11 +17795,11 @@ const HelpSupportTab = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-gray-500" />
-                <span className="text-sm">support@favillas.com</span>
+                <span className="text-sm">support@francescos.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-gray-500" />
-                <span className="text-sm">1-800-FAVILLA</span>
+                <span className="text-sm">1-800-FRANCESCO</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="h-4 w-4 text-gray-500" />
@@ -17899,10 +17899,10 @@ const HelpSupportTab = () => {
 
 const LocalSEOToolsTab = () => {
   const [businessInfo, setBusinessInfo] = useState({
-    name: "Favilla's Pizza",
+    name: "Francesco's Pizza",
     address: "123 Main St, City, State 12345",
     phone: "(555) 123-4567",
-    website: "https://favillas.com",
+    website: "https://francescos.com",
     hours: "Mon-Sun: 11AM-11PM",
     description: "Authentic Italian pizza with fresh ingredients and traditional recipes.",
     keywords: "pizza, italian restaurant, delivery, takeout"
@@ -17910,8 +17910,8 @@ const LocalSEOToolsTab = () => {
 
   const [citations, setCitations] = useState([
     { platform: "Google My Business", status: "verified", url: "https://business.google.com", lastUpdated: "2024-01-15" },
-    { platform: "Yelp", status: "claimed", url: "https://yelp.com/biz/favillas", lastUpdated: "2024-01-10" },
-    { platform: "Facebook", status: "verified", url: "https://facebook.com/favillas", lastUpdated: "2024-01-12" },
+    { platform: "Yelp", status: "claimed", url: "https://yelp.com/biz/francescos", lastUpdated: "2024-01-10" },
+    { platform: "Facebook", status: "verified", url: "https://facebook.com/francescos", lastUpdated: "2024-01-12" },
     { platform: "TripAdvisor", status: "pending", url: "", lastUpdated: "" },
     { platform: "Yellow Pages", status: "unverified", url: "", lastUpdated: "" }
   ]);

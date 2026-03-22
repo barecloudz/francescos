@@ -105,7 +105,7 @@ export const handler: Handler = async (event, context) => {
       }
 
       // Generate QR code data URL
-      const baseUrl = process.env.URL || 'https://favillasnypizza.netlify.app';
+      const baseUrl = process.env.URL || 'https://francescos.netlify.app';
       const fullUrl = url.startsWith('http') ? url : `${baseUrl}${url}`;
 
       // For now, we'll store the URL directly. In a production app, you'd generate actual QR code image data
@@ -152,7 +152,7 @@ export const handler: Handler = async (event, context) => {
       };
 
       if (url) {
-        const baseUrl = process.env.URL || 'https://favillasnypizza.netlify.app';
+        const baseUrl = process.env.URL || 'https://francescos.netlify.app';
         const fullUrl = url.startsWith('http') ? url : `${baseUrl}${url}`;
         updateData.url = fullUrl;
         updateData.qr_data = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(fullUrl)}`;

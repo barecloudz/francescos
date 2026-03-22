@@ -62,7 +62,7 @@ export const handler: Handler = async (event, context) => {
     });
 
     // Create initial super admin
-    const email = 'superadmin@favillaspizzeria.com';
+    const email = 'superadmin@francescospizzeria.com';
     const password = 'superadmin123'; // User should change this after first login
 
     console.log('Creating initial super admin in Supabase...');
@@ -176,7 +176,7 @@ export const handler: Handler = async (event, context) => {
               body: JSON.stringify({
                 success: true,
                 message: 'Super admin privileges updated in database',
-                note: 'You can now login with: superadmin@favillaspizzeria.com / superadmin123'
+                note: 'You can now login with: superadmin@francescospizzeria.com / superadmin123'
               })
             };
           }
@@ -276,7 +276,7 @@ export const handler: Handler = async (event, context) => {
         success: true,
         message: 'Initial super admin created successfully in Supabase and database',
         credentials: {
-          email: 'superadmin@favillaspizzeria.com',
+          email: 'superadmin@francescospizzeria.com',
           password: 'superadmin123',
           note: 'PLEASE CHANGE THIS PASSWORD IMMEDIATELY AFTER FIRST LOGIN'
         },

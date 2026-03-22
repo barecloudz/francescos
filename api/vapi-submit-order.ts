@@ -188,7 +188,7 @@ export const handler: Handler = async (event, context) => {
       statusCode: 200,
       headers,
       body: JSON.stringify({
-        result: `Great! Your order has been placed successfully. Your order number is ${result.id}. We'll have that ready for you soon. Thank you for choosing Favilla's Pizzeria!`
+        result: `Great! Your order has been placed successfully. Your order number is ${result.id}. We'll have that ready for you soon. Thank you for choosing Francesco's Pizzeria!`
       })
     };
 

@@ -1,6 +1,6 @@
 # Epson TM-M32 Printer Integration Guide
 
-This guide explains how to set up and use the Epson TM-M32 thermal printer with your Favilla's Pizza ordering system using the ePOS-Print API.
+This guide explains how to set up and use the Epson TM-M32 thermal printer with your Francesco's Pizza ordering system using the ePOS-Print API.
 
 ## 🖨️ Printer Requirements
 

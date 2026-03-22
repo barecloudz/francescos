@@ -2,7 +2,7 @@
 ## Final Report for Production Deployment
 
 **Date:** October 4, 2025
-**Application:** Pizza Spin Rewards (Favilla's NY Pizza)
+**Application:** Pizza Spin Rewards (Francesco's)
 **Stack:** React + Netlify Functions + PostgreSQL + Supabase
 
 ---

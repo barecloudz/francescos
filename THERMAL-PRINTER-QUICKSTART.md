@@ -121,7 +121,7 @@ curl -X POST http://localhost:3001/test-print
 ## Receipt Format
 
 Receipts automatically include:
-- Restaurant name (FAVILLA'S NY PIZZA)
+- Restaurant name (FRANCESCO'S NY PIZZA)
 - Order number and type (Delivery/Pickup)
 - Customer info (name, phone, address for delivery)
 - All items with quantities, options, and special instructions

@@ -32,12 +32,12 @@ async function createFAQsTable() {
     const initialFAQs = [
       {
         question: "Do you deliver pizza in Asheville?",
-        answer: "Yes! We deliver fresh, hot pizza throughout Asheville, NC including Downtown Asheville, West Asheville, Biltmore Village, North Asheville, South Asheville, East Asheville, and Kenilworth. Order online at favillaspizzeria.com or call (828) 225-2885 for fast delivery.",
+        answer: "Yes! We deliver fresh, hot pizza throughout Asheville, NC including Downtown Asheville, West Asheville, Biltmore Village, North Asheville, South Asheville, East Asheville, and Kenilworth. Order online at francescospizzeria.com or call (828) 225-2885 for fast delivery.",
         display_order: 1
       },
       {
         question: "What are your hours in Asheville?",
-        answer: "We're open Tuesday-Thursday 11:00 AM - 8:00 PM, Friday-Saturday 11:00 AM - 9:00 PM, and Sunday 12:00 PM - 8:00 PM. We're CLOSED on Mondays. Order online 24/7 at favillaspizzeria.com for pickup or delivery!",
+        answer: "We're open Tuesday-Thursday 11:00 AM - 8:00 PM, Friday-Saturday 11:00 AM - 9:00 PM, and Sunday 12:00 PM - 8:00 PM. We're CLOSED on Mondays. Order online 24/7 at francescospizzeria.com for pickup or delivery!",
         display_order: 2
       },
       {
@@ -47,7 +47,7 @@ async function createFAQsTable() {
       },
       {
         question: "What's the best pizza in Asheville?",
-        answer: "Favilla's NY Pizza has been voted Best Pizza in Asheville! We're a family-owned Italian restaurant serving authentic NY style pizza, calzones, and stromboli since 1969. Our secret? Fresh ingredients, family recipes, and over 50 years of pizza-making tradition.",
+        answer: "Francesco's has been voted Best Pizza in Asheville! We're a family-owned Italian restaurant serving authentic NY style pizza, calzones, and stromboli since 1969. Our secret? Fresh ingredients, family recipes, and over 50 years of pizza-making tradition.",
         display_order: 4
       },
       {
@@ -57,7 +57,7 @@ async function createFAQsTable() {
       },
       {
         question: "Can I order pizza online for pickup?",
-        answer: "Yes! Order online at favillaspizzeria.com for quick and easy pickup. Place your order, choose pickup, and we'll have your hot, fresh pizza ready when you arrive at our Regent Park Blvd location in Asheville.",
+        answer: "Yes! Order online at francescospizzeria.com for quick and easy pickup. Place your order, choose pickup, and we'll have your hot, fresh pizza ready when you arrive at our Regent Park Blvd location in Asheville.",
         display_order: 6
       },
       {
@@ -66,7 +66,7 @@ async function createFAQsTable() {
         display_order: 7
       },
       {
-        question: "Where is Favilla's Pizza located in Asheville?",
+        question: "Where is Francesco's Pizza located in Asheville?",
         answer: "We're located at 5 Regent Park Blvd, Asheville, NC 28806. We're easily accessible from all areas of Asheville with plenty of parking. Call us at (828) 225-2885 or order online for delivery or pickup!",
         display_order: 8
       }

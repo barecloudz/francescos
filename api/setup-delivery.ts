@@ -60,7 +60,7 @@ export const handler: Handler = async (event, context) => {
     if (existingSettings.length === 0) {
       // Create default delivery settings
       await db.insert(deliverySettings).values({
-        restaurantAddress: "Favilla's NY Pizza, 123 Main St, New York, NY",
+        restaurantAddress: "Francesco's, 123 Main St, New York, NY",
         maxDeliveryRadius: "10.0",
         distanceUnit: "miles",
         isGoogleMapsEnabled: true,
@@ -72,7 +72,7 @@ export const handler: Handler = async (event, context) => {
         .update(deliverySettings)
         .set({
           isGoogleMapsEnabled: true,
-          restaurantAddress: existingSettings[0].restaurantAddress || "Favilla's NY Pizza, 123 Main St, New York, NY"
+          restaurantAddress: existingSettings[0].restaurantAddress || "Francesco's, 123 Main St, New York, NY"
         })
         .where(eq(deliverySettings.id, existingSettings[0].id));
     }

@@ -1,7 +1,7 @@
-# Favilla's NY Pizza - Neighborhood SEO Pages Plan
+# Francesco's - Neighborhood SEO Pages Plan
 
 ## Location Context
-**Favilla's Address**: 5 Regent Park Blvd, Asheville, NC 28806
+**Francesco's Address**: 5 Regent Park Blvd, Asheville, NC 28806
 **Coverage Area**: 10-mile radius from location (South Asheville near Sam's Club)
 
 ---
@@ -39,13 +39,13 @@
 ---
 
 ## URL Structure
-All pages follow pattern: `favillaspizzeria.com/[neighborhood-name]`
+All pages follow pattern: `francescospizzeria.com/[neighborhood-name]`
 
 Examples:
-- favillaspizzeria.com/South-Asheville
-- favillaspizzeria.com/Arden
-- favillaspizzeria.com/Downtown-Asheville
-- favillaspizzeria.com/Biltmore-Village
+- francescospizzeria.com/South-Asheville
+- francescospizzeria.com/Arden
+- francescospizzeria.com/Downtown-Asheville
+- francescospizzeria.com/Biltmore-Village
 
 **Note**: Hyphens in URLs for multi-word neighborhoods
 
@@ -65,7 +65,7 @@ Examples:
 Each page will reference 2-3 specific landmarks in that neighborhood to establish geographic authority.
 
 ### Content Differentiation:
-- Unique distance from Favilla's
+- Unique distance from Francesco's
 - Unique neighborhood characteristics
 - Unique landmark mentions
 - Unique delivery time estimates

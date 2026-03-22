@@ -89,7 +89,7 @@ function processTemplate(template: string, data: any): string {
 }
 
 function getDefaultCustomerTemplate(): string {
-  return `FAVILLA'S NY PIZZA
+  return `FRANCESCO'S NY PIZZA
 123 Main St, Asheville, NC
 (828) 555-0123
 ======================
@@ -164,7 +164,7 @@ Ready by: {{estimatedReadyTime}}
 
 function getDefaultRecordsTemplate(): string {
   return `*** RECORDS COPY ***
-FAVILLA'S NY PIZZA
+FRANCESCO'S NY PIZZA
 ===================
 
 Order #: {{orderNumber}}
@@ -1665,7 +1665,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             }),
             totalAmount: parseFloat(req.body.total),
             specialInstructions: req.body.specialInstructions || "",
-            restaurantName: "Favilla's NY Pizza",
+            restaurantName: "Francesco's",
             restaurantPhone: "(828) 555-0123",
             restaurantAddress: "123 Main St, Asheville, NC 28801",
             fulfillmentTime: completedOrder.fulfillmentTime || "asap",
@@ -4106,7 +4106,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Return system settings
       res.json({
         restaurant: {
-          name: "Favilla's NY Pizza",
+          name: "Francesco's",
           phone: "(555) 123-4567",
           address: "123 Main St, New York, NY 10001",
           hours: "Mon-Sun: 11AM-11PM"
@@ -4322,7 +4322,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           {
             username: "superadmin",
             password: "superadmin123",
-            email: "superadmin@favillas.com",
+            email: "superadmin@francescos.com",
             firstName: "Super",
             lastName: "Admin",
             isAdmin: true,
@@ -4332,7 +4332,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           {
             username: "admin",
             password: "admin123",
-            email: "admin@favillas.com",
+            email: "admin@francescos.com",
             firstName: "Admin",
             lastName: "User",
             isAdmin: true,
@@ -4342,7 +4342,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           {
             username: "employee",
             password: "employee123",
-            email: "employee@favillas.com",
+            email: "employee@francescos.com",
             firstName: "Employee",
             lastName: "User",
             isAdmin: false,
@@ -5504,7 +5504,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         res.json({
           id: 1,
           username: 'admin',
-          email: 'admin@favillas.com',
+          email: 'admin@francescos.com',
           firstName: 'Admin',
           lastName: 'User',
           role: 'admin',

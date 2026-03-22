@@ -55,7 +55,7 @@ const NeighborhoodContent: React.FC<NeighborhoodContentProps> = ({
             </h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Looking for the <strong>best pizza in {neighborhoodName}</strong>? You've found it! Favilla's serves authentic New York-style pizza with a perfectly crispy, hand-tossed crust that folds just right. Every pie is made fresh to order with our signature sauce from Italian tomatoes and premium mozzarella cheese.
+                Looking for the <strong>best pizza in {neighborhoodName}</strong>? You've found it! Francesco's serves authentic New York-style pizza with a perfectly crispy, hand-tossed crust that folds just right. Every pie is made fresh to order with our signature sauce from Italian tomatoes and premium mozzarella cheese.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 We're proud to serve residents of {neighborhoodName} with fast delivery, pickup, and dine-in options. Whether you're craving a classic cheese slice or a loaded specialty pizza, we've got something for everyone.
@@ -152,7 +152,7 @@ const NeighborhoodContent: React.FC<NeighborhoodContentProps> = ({
               <a href="https://share.google/8zWZ62d06mHJ4GZ1o" target="_blank" rel="noopener noreferrer">
                 <Button variant="secondary" className="bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg rounded-full font-semibold">
                   <MapPin className="w-5 h-5 mr-2" />
-                  Get Directions to Favilla's
+                  Get Directions to Francesco's
                 </Button>
               </a>
             </div>

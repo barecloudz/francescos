@@ -292,8 +292,8 @@ const RewardsPage = () => {
     return (
       <>
         <Helmet>
-          <title>Pizza Rewards Program - Asheville NC | Favilla's NY Pizza</title>
-          <meta name="description" content="Join Favilla's Pizza Spin Rewards in Asheville, NC! Earn points with every pizza order and get free pizza, exclusive discounts, and special offers. Sign up free today!" />
+          <title>Pizza Rewards Program - Asheville NC | Francesco's</title>
+          <meta name="description" content="Join Francesco's Pizza Spin Rewards in Asheville, NC! Earn points with every pizza order and get free pizza, exclusive discounts, and special offers. Sign up free today!" />
         </Helmet>
         <main className="min-h-screen bg-gray-50 flex items-center justify-center">
           <div className="text-center">
@@ -310,8 +310,8 @@ const RewardsPage = () => {
   return (
     <>
       <Helmet>
-        <title>My Rewards - Pizza Spin Rewards | Favilla's NY Pizza Asheville</title>
-        <meta name="description" content="View your Pizza Spin Rewards points, redeem free pizza, and track your rewards history at Favilla's NY Pizza in Asheville, NC. Earn points with every order!" />
+        <title>My Rewards - Pizza Spin Rewards | Francesco's Asheville</title>
+        <meta name="description" content="View your Pizza Spin Rewards points, redeem free pizza, and track your rewards history at Francesco's in Asheville, NC. Earn points with every order!" />
       </Helmet>
 
       <main className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 py-8 md:pt-[72px] pt-14">

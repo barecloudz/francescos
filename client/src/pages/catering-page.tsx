@@ -159,7 +159,7 @@ const CateringPage = () => {
     return (
       <>
         <Helmet>
-          <title>Catering Inquiry Submitted | Favilla's NY Pizza</title>
+          <title>Catering Inquiry Submitted | Francesco's</title>
         </Helmet>
         <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
           <Card className="max-w-md mx-auto text-center">
@@ -194,8 +194,8 @@ const CateringPage = () => {
   return (
     <>
       <Helmet>
-        <title>Catering Services | Favilla's NY Pizza</title>
-        <meta name="description" content="Let Favilla's cater your next event! Corporate meetings, weddings, parties and more. Get a custom quote today." />
+        <title>Catering Services | Francesco's</title>
+        <meta name="description" content="Let Francesco's cater your next event! Corporate meetings, weddings, parties and more. Get a custom quote today." />
       </Helmet>
 
       <div className="min-h-screen bg-gray-50">

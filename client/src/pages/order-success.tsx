@@ -507,7 +507,7 @@ const OrderSuccessPage = () => {
   const handleDownloadReceipt = () => {
     // Create a simple receipt for download
     const receipt = `
-Favilla's NY Pizza - Receipt
+Francesco's - Receipt
 Order #${order?.id}
 Date: ${order?.createdAt ? parseESTTimestamp(order.createdAt).toLocaleDateString() : 'N/A'}
 Time: ${order?.createdAt ? parseESTTimestamp(order.createdAt).toLocaleTimeString() : 'N/A'}
@@ -558,7 +558,7 @@ Total: ${formatCurrency(parseFloat(order?.total || 0))}
 Payment Status: ${order?.paymentStatus}
 Order Status: ${order?.status}
 
-Thank you for choosing Favilla's NY Pizza!
+Thank you for choosing Francesco's!
     `.trim();
 
     const blob = new Blob([receipt], { type: 'text/plain' });
@@ -580,13 +580,13 @@ Thank you for choosing Favilla's NY Pizza!
   const handleShareOrder = () => {
     if (navigator.share) {
       navigator.share({
-        title: `My Order from Favilla's NY Pizza`,
-        text: `I just ordered from Favilla's NY Pizza! Order #${order?.id}`,
+        title: `My Order from Francesco's`,
+        text: `I just ordered from Francesco's! Order #${order?.id}`,
         url: window.location.href,
       });
     } else {
       // Fallback: copy to clipboard
-      navigator.clipboard.writeText(`I just ordered from Favilla's NY Pizza! Order #${order?.id}`);
+      navigator.clipboard.writeText(`I just ordered from Francesco's! Order #${order?.id}`);
       toast({
         title: "Order Shared",
         description: "Order details copied to clipboard!",
@@ -630,7 +630,7 @@ Thank you for choosing Favilla's NY Pizza!
     return (
       <>
         <Helmet>
-          <title>Order Processing Error | Favilla's NY Pizza</title>
+          <title>Order Processing Error | Francesco's</title>
         </Helmet>
 
         <main className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
@@ -690,7 +690,7 @@ Thank you for choosing Favilla's NY Pizza!
     return (
       <>
         <Helmet>
-          <title>Order Confirmation | Favilla's NY Pizza</title>
+          <title>Order Confirmation | Francesco's</title>
         </Helmet>
 
         <main className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -713,7 +713,7 @@ Thank you for choosing Favilla's NY Pizza!
     return (
       <>
         <Helmet>
-          <title>Order Not Found | Favilla's NY Pizza</title>
+          <title>Order Not Found | Francesco's</title>
         </Helmet>
 
         <main className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -734,7 +734,7 @@ Thank you for choosing Favilla's NY Pizza!
     return (
       <>
         <Helmet>
-          <title>Order Confirmation | Favilla's NY Pizza</title>
+          <title>Order Confirmation | Francesco's</title>
         </Helmet>
 
         <main className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -753,7 +753,7 @@ Thank you for choosing Favilla's NY Pizza!
   return (
     <>
       <Helmet>
-        <title>Order Confirmation | Favilla's NY Pizza</title>
+        <title>Order Confirmation | Francesco's</title>
       </Helmet>
 
       <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8 lg:pt-24 pt-16">

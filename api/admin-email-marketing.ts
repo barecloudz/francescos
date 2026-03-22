@@ -71,7 +71,7 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
 </div>
 
 <div style="text-align: center; margin: 30px 0;">
-  <a href="${process.env.SITE_URL || 'https://favillasnypizza.netlify.app'}" style="background: linear-gradient(135deg, #d73a31 0%, #c73128 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 25px; font-weight: bold; display: inline-block;">
+  <a href="${process.env.SITE_URL || 'https://francescos.netlify.app'}" style="background: linear-gradient(135deg, #d73a31 0%, #c73128 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 25px; font-weight: bold; display: inline-block;">
     🍕 Order Now
   </a>
 </div>
@@ -87,7 +87,7 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
     name: 'Birthday Offer',
     subject: '🎉 Happy Birthday! Enjoy Your FREE Personal Pizza + Dessert',
     description: 'Special birthday rewards for customers celebrating this month',
-    htmlContent: `<h2 style="color: #d73a31; text-align: center; margin-bottom: 20px;">🎉 Happy Birthday from Favilla's!</h2>
+    htmlContent: `<h2 style="color: #d73a31; text-align: center; margin-bottom: 20px;">🎉 Happy Birthday from Francesco's!</h2>
 
 <div style="background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%); color: white; padding: 20px; border-radius: 10px; text-align: center; margin: 20px 0;">
   <h3 style="margin: 0; font-size: 24px;">🎂 Your Birthday Gift</h3>
@@ -109,12 +109,12 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
 </div>
 
 <div style="text-align: center; margin: 30px 0;">
-  <a href="${process.env.SITE_URL || 'https://favillasnypizza.netlify.app'}" style="background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 25px; font-weight: bold; display: inline-block;">
+  <a href="${process.env.SITE_URL || 'https://francescos.netlify.app'}" style="background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 25px; font-weight: bold; display: inline-block;">
     🎉 Claim Your Birthday Treat
   </a>
 </div>
 
-<p>We're grateful to have you as part of the Favilla's family, and we hope your birthday is as special as you are!</p>
+<p>We're grateful to have you as part of the Francesco's family, and we hope your birthday is as special as you are!</p>
 
 <p style="font-size: 14px; color: #666; text-align: center; margin-top: 30px;">
   Valid for 30 days from your birthday. One per customer. Cannot be combined with other offers.
@@ -152,12 +152,12 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
     <p style="margin: 5px 0; font-size: 24px; font-weight: bold; color: #0c5460; letter-spacing: 3px;">LOYAL25</p>
   </div>
 
-  <a href="${process.env.SITE_URL || 'https://favillasnypizza.netlify.app'}" style="background: linear-gradient(135deg, #d73a31 0%, #c73128 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 25px; font-weight: bold; display: inline-block;">
+  <a href="${process.env.SITE_URL || 'https://francescos.netlify.app'}" style="background: linear-gradient(135deg, #d73a31 0%, #c73128 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 25px; font-weight: bold; display: inline-block;">
     ⭐ Order Now & Save
   </a>
 </div>
 
-<p>Thank you for choosing Favilla's time and time again. Customers like you make our pizza family complete!</p>
+<p>Thank you for choosing Francesco's time and time again. Customers like you make our pizza family complete!</p>
 
 <p style="font-size: 14px; color: #666; text-align: center; margin-top: 30px;">
   Code expires in 14 days. Cannot be combined with other offers. Maximum discount $20.
@@ -204,7 +204,7 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
 </div>
 
 <div style="text-align: center; margin: 30px 0;">
-  <a href="${process.env.SITE_URL || 'https://favillasnypizza.netlify.app'}" style="background: linear-gradient(135deg, #fd7e14 0%, #e55a4e 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 25px; font-weight: bold; display: inline-block;">
+  <a href="${process.env.SITE_URL || 'https://francescos.netlify.app'}" style="background: linear-gradient(135deg, #fd7e14 0%, #e55a4e 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 25px; font-weight: bold; display: inline-block;">
     🍕 Try Them Now
   </a>
 </div>
@@ -229,7 +229,7 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
 
 <p>Hey there! 👋</p>
 
-<p>It's been a while since we've seen you at Favilla's, and frankly, we miss you! We've been thinking about our amazing customers, and you came to mind.</p>
+<p>It's been a while since we've seen you at Francesco's, and frankly, we miss you! We've been thinking about our amazing customers, and you came to mind.</p>
 
 <p>We know life gets busy, but we'd love to welcome you back with something special. How does <strong>30% off your next order</strong> sound?</p>
 
@@ -249,7 +249,7 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
     <p style="margin: 5px 0; font-size: 24px; font-weight: bold; color: #856404; letter-spacing: 3px;">WELCOME30</p>
   </div>
 
-  <a href="${process.env.SITE_URL || 'https://favillasnypizza.netlify.app'}" style="background: linear-gradient(135deg, #d73a31 0%, #c73128 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 25px; font-weight: bold; display: inline-block;">
+  <a href="${process.env.SITE_URL || 'https://francescos.netlify.app'}" style="background: linear-gradient(135deg, #d73a31 0%, #c73128 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 25px; font-weight: bold; display: inline-block;">
     🏠 Welcome Me Back
   </a>
 </div>
@@ -339,7 +339,7 @@ const generatePromotionalEmailHTML = (customerName: string, htmlContent: string)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Offer from Favilla's NY Pizza</title>
+    <title>Special Offer from Francesco's</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -398,7 +398,7 @@ const generatePromotionalEmailHTML = (customerName: string, htmlContent: string)
 <body>
     <div class="container">
         <div class="header">
-            <h1>🍕 Favilla's NY Pizza</h1>
+            <h1>🍕 Francesco's</h1>
             <p>Authentic New York Style Pizza</p>
         </div>
 
@@ -411,14 +411,14 @@ const generatePromotionalEmailHTML = (customerName: string, htmlContent: string)
         </div>
 
         <div class="footer">
-            <h3 style="margin-top: 0;">Favilla's NY Pizza</h3>
+            <h3 style="margin-top: 0;">Francesco's</h3>
             <p>Authentic New York Style Pizza</p>
             <p>📍 ${process.env.RESTAURANT_ADDRESS || 'Your Restaurant Address'}</p>
             <p>📞 ${process.env.RESTAURANT_PHONE || '(555) 123-4567'}</p>
 
             <div class="unsubscribe">
                 <p>You're receiving this email because you opted in to marketing communications.</p>
-                <p><a href="${process.env.SITE_URL || 'https://favillasnypizza.netlify.app'}/unsubscribe">Unsubscribe from promotional emails</a></p>
+                <p><a href="${process.env.SITE_URL || 'https://francescos.netlify.app'}/unsubscribe">Unsubscribe from promotional emails</a></p>
             </div>
         </div>
     </div>
@@ -582,7 +582,7 @@ export const handler: Handler = async (event, context) => {
 
             console.log(`📧 Attempting to send test email to: ${testEmail}`);
             const emailResult = await resend.emails.send({
-              from: process.env.RESEND_FROM_EMAIL || 'noreply@favillaspizza.com',
+              from: process.env.RESEND_FROM_EMAIL || 'noreply@francescospizza.com',
               to: [testEmail],
               subject: `[TEST] ${campaignData.subject}`,
               html: htmlContent,
@@ -682,7 +682,7 @@ export const handler: Handler = async (event, context) => {
             const htmlContent = generatePromotionalEmailHTML(customerName, campaignData.htmlContent);
 
             const emailResult = await resend.emails.send({
-              from: process.env.RESEND_FROM_EMAIL || 'noreply@favillaspizza.com',
+              from: process.env.RESEND_FROM_EMAIL || 'noreply@francescospizza.com',
               to: [customer.email],
               subject: campaignData.subject,
               html: htmlContent,

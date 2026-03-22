@@ -68,7 +68,7 @@ export const handler: Handler = async (event, context) => {
           updated_at
         ) VALUES (
           'superadmin',
-          'superadmin@favillas.com',
+          'superadmin@francescos.com',
           ${hashedPassword},
           'Super',
           'Admin',

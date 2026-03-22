@@ -281,7 +281,7 @@ export const insertPromoCodeSchema = z.object({
 // Loyalty Program schema
 export const loyaltyProgram = pgTable("loyalty_program", {
   id: serial("id").primaryKey(),
-  name: text("name").notNull().default("Favilla's Loyalty Program"),
+  name: text("name").notNull().default("Francesco's Loyalty Program"),
   description: text("description"),
   pointsPerDollar: decimal("points_per_dollar", { precision: 10, scale: 2 }).notNull().default("1.00"),
   bonusPointsThreshold: decimal("bonus_points_threshold", { precision: 10, scale: 2 }).notNull().default("50.00"),
@@ -417,11 +417,11 @@ export const insertStoreHoursSchema = createInsertSchema(storeHours).omit({
 // Restaurant Settings schema
 export const restaurantSettings = pgTable("restaurant_settings", {
   id: serial("id").primaryKey(),
-  restaurantName: text("restaurant_name").notNull().default("Favilla's NY Pizza"),
+  restaurantName: text("restaurant_name").notNull().default("Francesco's"),
   address: text("address").notNull().default("123 Main Street, New York, NY 10001"),
   phone: text("phone").notNull().default("(555) 123-4567"),
-  email: text("email").notNull().default("info@favillas.com"),
-  website: text("website").notNull().default("https://favillas.com"),
+  email: text("email").notNull().default("info@francescos.com"),
+  website: text("website").notNull().default("https://francescos.com"),
   currency: text("currency").notNull().default("USD"),
   timezone: text("timezone").notNull().default("America/New_York"),
   deliveryFee: decimal("delivery_fee", { precision: 10, scale: 2 }).notNull().default("3.99"),

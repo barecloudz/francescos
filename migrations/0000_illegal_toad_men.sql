@@ -44,7 +44,7 @@ CREATE TABLE "choice_items" (
 --> statement-breakpoint
 CREATE TABLE "loyalty_program" (
 	"id" serial PRIMARY KEY NOT NULL,
-	"name" text DEFAULT 'Favilla''s Loyalty Program' NOT NULL,
+	"name" text DEFAULT 'Francesco''s Loyalty Program' NOT NULL,
 	"description" text,
 	"points_per_dollar" numeric(10, 2) DEFAULT '1.00' NOT NULL,
 	"bonus_points_threshold" numeric(10, 2) DEFAULT '50.00' NOT NULL,
@@ -176,11 +176,11 @@ CREATE TABLE "promo_codes" (
 --> statement-breakpoint
 CREATE TABLE "restaurant_settings" (
 	"id" serial PRIMARY KEY NOT NULL,
-	"restaurant_name" text DEFAULT 'Favilla''s NY Pizza' NOT NULL,
+	"restaurant_name" text DEFAULT 'Francesco''s NY Pizza' NOT NULL,
 	"address" text DEFAULT '123 Main Street, New York, NY 10001' NOT NULL,
 	"phone" text DEFAULT '(555) 123-4567' NOT NULL,
-	"email" text DEFAULT 'info@favillas.com' NOT NULL,
-	"website" text DEFAULT 'https://favillas.com' NOT NULL,
+	"email" text DEFAULT 'info@francescos.com' NOT NULL,
+	"website" text DEFAULT 'https://francescos.com' NOT NULL,
 	"currency" text DEFAULT 'USD' NOT NULL,
 	"timezone" text DEFAULT 'America/New_York' NOT NULL,
 	"delivery_fee" numeric(10, 2) DEFAULT '3.99' NOT NULL,

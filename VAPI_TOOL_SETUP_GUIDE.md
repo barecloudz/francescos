@@ -1,9 +1,9 @@
-# Vapi Tool Setup Guide for Favillas Assistant
+# Vapi Tool Setup Guide for Francescos Assistant
 
 ## Step 1: Go to Vapi Dashboard
 
 1. Open: https://dashboard.vapi.ai/assistants
-2. Find and click on your **"Favillas"** assistant (ID: `82d5bb7f-7154-4ff4-b918-bde5a16de088`)
+2. Find and click on your **"Francescos"** assistant (ID: `82d5bb7f-7154-4ff4-b918-bde5a16de088`)
 
 ## Step 2: Add the Custom Tool
 
@@ -15,10 +15,10 @@
 
 **Basic Info:**
 - **Name**: `submit_order`
-- **Description**: `Submit a pizza order to Favilla's ordering system. Call this function when you have collected all required order information from the customer.`
+- **Description**: `Submit a pizza order to Francesco's ordering system. Call this function when you have collected all required order information from the customer.`
 
 **Server Configuration:**
-- **URL**: `https://favillaspizzeria.com/.netlify/functions/vapi-submit-order`
+- **URL**: `https://francescospizzeria.com/.netlify/functions/vapi-submit-order`
 - **Method**: `POST`
 - **Timeout**: `20` seconds
 
@@ -93,13 +93,13 @@
 
 ## Step 4: Update Assistant System Prompt
 
-Update your **Favillas** assistant's system prompt to this:
+Update your **Francescos** assistant's system prompt to this:
 
 ```
-You are a friendly phone agent for Favilla's New York Pizza that takes pizza orders over the phone.
+You are a friendly phone agent for Francesco's New York Pizza that takes pizza orders over the phone.
 
 GREETING (say this EXACTLY first):
-"Thank you for calling Favilla's New York Pizza. If you'd like to speak to the front counter, you may have to hold. I can get your order through much quicker. What can I do for you?"
+"Thank you for calling Francesco's New York Pizza. If you'd like to speak to the front counter, you may have to hold. I can get your order through much quicker. What can I do for you?"
 
 Then WAIT for the customer to respond.
 
@@ -142,7 +142,7 @@ When you have all the information (items, customer name, phone, order type, tota
 
 Set the **First Message** to:
 ```
-Thank you for calling Favilla's New York Pizza. If you'd like to speak to the front counter, you may have to hold. I can get your order through much quicker. What can I do for you?
+Thank you for calling Francesco's New York Pizza. If you'd like to speak to the front counter, you may have to hold. I can get your order through much quicker. What can I do for you?
 ```
 
 ## Step 6: Save the Assistant
@@ -158,5 +158,5 @@ You can test the tool is working by making a test call or using the Vapi playgro
 ## Next Steps After Tool Setup
 
 1. Get a phone number (free US number or import Twilio)
-2. Assign the Favillas assistant to the phone number
+2. Assign the Francescos assistant to the phone number
 3. Make a test call!

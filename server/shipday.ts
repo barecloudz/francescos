@@ -123,7 +123,7 @@ class ShipDayService {
             country: "United States"
           },
           contactPerson: {
-            name: "Favillas NY Pizza", // Ensure proper restaurant name
+            name: "Francescos NY Pizza", // Ensure proper restaurant name
             phone: "5551234567" // Update with actual restaurant phone
           }
         },

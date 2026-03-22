@@ -3,11 +3,11 @@ import { NeighborhoodData } from "../neighborhoods";
 export const hawCreekData: NeighborhoodData = {
   slug: "Haw-Creek",
   name: "Haw Creek",
-  title: "Best Pizza in Haw Creek Asheville | Favilla's NY Pizza - Pizza Delivery Haw Creek",
-  metaDescription: "Craving pizza in Haw Creek? Favilla's delivers authentic NY-style pizza to Haw Creek, Asheville. Fast delivery to East Asheville. Order online!",
+  title: "Best Pizza in Haw Creek Asheville | Francesco's - Pizza Delivery Haw Creek",
+  metaDescription: "Craving pizza in Haw Creek? Francesco's delivers authentic NY-style pizza to Haw Creek, Asheville. Fast delivery to East Asheville. Order online!",
   heroSubheadline: "Bringing authentic NY-style pizza to Haw Creek—dine-in, pickup, and delivery.",
-  introText: "Haw Creek is a peaceful East Asheville neighborhood, and Favilla's is here to serve you. We deliver hand-tossed NY-style pies, fresh calzones, and Italian classics right to your Haw Creek home, hot and ready.",
-  distanceFromFavillas: "9 miles",
+  introText: "Haw Creek is a peaceful East Asheville neighborhood, and Francesco's is here to serve you. We deliver hand-tossed NY-style pies, fresh calzones, and Italian classics right to your Haw Creek home, hot and ready.",
+  distanceFromFrancescos: "9 miles",
   deliveryTime: "30-40 minutes",
   areasServed: [
     "Haw Creek",
@@ -20,18 +20,18 @@ export const hawCreekData: NeighborhoodData = {
     "Tunnel Road",
     "Blue Ridge Parkway access"
   ],
-  localAnecdote: "Haw Creek is a hidden gem in East Asheville, and Favilla's is proud to deliver to you. Whether you're unwinding after a hike on the Blue Ridge Parkway or settling in for a quiet Friday night at home, we bring the authentic taste of New York right to Haw Creek. Quality pizza, delivered with care.",
+  localAnecdote: "Haw Creek is a hidden gem in East Asheville, and Francesco's is proud to deliver to you. Whether you're unwinding after a hike on the Blue Ridge Parkway or settling in for a quiet Friday night at home, we bring the authentic taste of New York right to Haw Creek. Quality pizza, delivered with care.",
   testimonials: [
     {
       name: "Greg W.",
       location: "Haw Creek",
-      text: "So glad Favilla's delivers to Haw Creek! The pizza is always hot and delicious. Best we've found in East Asheville!",
+      text: "So glad Francesco's delivers to Haw Creek! The pizza is always hot and delicious. Best we've found in East Asheville!",
       rating: 5
     },
     {
       name: "Karen M.",
       location: "Haw Creek",
-      text: "We order from Favilla's at least once a week. The quality is always consistent and the delivery is fast for being out in Haw Creek!",
+      text: "We order from Francesco's at least once a week. The quality is always consistent and the delivery is fast for being out in Haw Creek!",
       rating: 5
     },
     {

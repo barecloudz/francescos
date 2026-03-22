@@ -29,7 +29,7 @@ const NeighborhoodMap: React.FC<NeighborhoodMapProps> = ({ neighborhoodName }) =
                 style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
-                title="Favilla's Pizza Asheville Location"
+                title="Francesco's Pizza Asheville Location"
               ></iframe>
             </div>
           </div>

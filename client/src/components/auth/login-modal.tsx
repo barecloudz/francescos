@@ -97,7 +97,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
       });
       toast({
         title: "Registration successful",
-        description: "Welcome to Favilla's!",
+        description: "Welcome to Francesco's!",
       });
       onSuccess?.();
       onClose();
@@ -183,7 +183,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
           </Button>
           <div className="text-center mt-2">
             <DialogTitle className="text-3xl font-bold mb-2 drop-shadow-lg">
-              Welcome to Favilla's
+              Welcome to Francesco's
             </DialogTitle>
             <DialogDescription className="text-red-100 text-base font-medium">
               Sign in to earn rewards on every order

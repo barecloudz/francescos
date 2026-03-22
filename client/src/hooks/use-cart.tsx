@@ -59,10 +59,10 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 const TAX_RATE = 0.0825;
 
 // Local storage key
-const CART_STORAGE_KEY = "favillasCart";
+const CART_STORAGE_KEY = "francescosCart";
 
 // Global function to clear cart data (useful for debugging)
-(window as any).clearFavillasCart = () => {
+(window as any).clearFrancescosCart = () => {
   localStorage.removeItem(CART_STORAGE_KEY);
   localStorage.clear(); // Clear ALL localStorage data
   console.log("ALL localStorage data cleared - reloading page");

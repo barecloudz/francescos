@@ -1,7 +1,7 @@
 # SMS Marketing Setup Guide
 
 ## Overview
-SMS marketing integration for Favilla's NY Pizza using Twilio for promotional campaigns, order updates, and customer engagement.
+SMS marketing integration for Francesco's using Twilio for promotional campaigns, order updates, and customer engagement.
 
 ## Required Environment Variables
 ```bash
@@ -12,7 +12,7 @@ TWILIO_PHONE_NUMBER=+1234567890  # Your Twilio phone number
 
 # SMS settings
 SMS_ENABLED=true
-SMS_FROM_NAME="Favilla's Pizza"
+SMS_FROM_NAME="Francesco's Pizza"
 ```
 
 ## Features to Implement

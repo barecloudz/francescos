@@ -6,11 +6,11 @@ Your app uses **two different domains** for sending emails:
 
 | Email Type | Sent From | Why |
 |------------|-----------|-----|
-| **Order Confirmations** | `orders@favillaspizzeria.com` | Main domain = trusted, critical |
-| **Password Resets** | `noreply@favillaspizzeria.com` | Main domain = trusted, critical |
-| **Marketing Campaigns** | `noreply@updates.favillaspizzeria.com` | Subdomain = isolated reputation |
+| **Order Confirmations** | `orders@francescospizzeria.com` | Main domain = trusted, critical |
+| **Password Resets** | `noreply@francescospizzeria.com` | Main domain = trusted, critical |
+| **Marketing Campaigns** | `noreply@updates.francescospizzeria.com` | Subdomain = isolated reputation |
 
-**All replies go to:** `info@favillaspizzeria.com`
+**All replies go to:** `info@francescospizzeria.com`
 
 ---
 
@@ -20,7 +20,7 @@ Your app uses **two different domains** for sending emails:
 ✅ **Critical** - customers NEED order confirmations
 ✅ **Trusted** - customers recognize your actual business domain
 ✅ **Maximum deliverability** - main domain has best reputation
-✅ **Professional** - `orders@favillaspizzeria.com` > `noreply@updates...`
+✅ **Professional** - `orders@francescospizzeria.com` > `noreply@updates...`
 
 ### Marketing Emails (Subdomain):
 ✅ **Isolated** - spam complaints don't affect critical emails
@@ -35,7 +35,7 @@ Your app uses **two different domains** for sending emails:
 ### ✅ Step 1: Verify Subdomain (DONE!)
 
 You already completed this:
-- Domain verified: `updates.favillaspizzeria.com`
+- Domain verified: `updates.francescospizzeria.com`
 - DNS records added (MX, SPF, DKIM, DMARC)
 - Status: **Verified** ✅
 
@@ -43,12 +43,12 @@ You already completed this:
 
 ### 🔧 Step 2: Verify Main Domain (REQUIRED!)
 
-Since order confirmations send from `orders@favillaspizzeria.com`, you need to verify the main domain too.
+Since order confirmations send from `orders@francescospizzeria.com`, you need to verify the main domain too.
 
 **In Resend Dashboard:**
 
 1. Click **"Domains"** → **"Add Domain"**
-2. Enter: `favillaspizzeria.com` (main domain, not subdomain)
+2. Enter: `francescospizzeria.com` (main domain, not subdomain)
 3. Resend will show DNS records to add
 
 **Add These Records to Netlify DNS:**
@@ -58,7 +58,7 @@ Resend will show you exact values, but they'll look similar to:
 #### SPF Record:
 ```
 Type: TXT
-Name: favillaspizzeria.com (or just "@")
+Name: francescospizzeria.com (or just "@")
 Value: v=spf1 include:_spf.resend.com ~all
 TTL: Auto
 ```
@@ -75,7 +75,7 @@ TTL: Auto
 ```
 Type: TXT
 Name: _dmarc
-Value: v=DMARC1; p=none; rua=mailto:postmaster@favillaspizzeria.com
+Value: v=DMARC1; p=none; rua=mailto:postmaster@francescospizzeria.com
 TTL: Auto
 ```
 
@@ -97,7 +97,7 @@ v=spf1 include:_spf.resend.com include:netlify.com ~all
 
 1. Resend Dashboard → **"API Keys"**
 2. Click **"Create API Key"**
-3. Name: "Favillas Pizza Production"
+3. Name: "Francescos Pizza Production"
 4. Copy the key (starts with `re_...`)
 
 ---
@@ -120,15 +120,15 @@ v=spf1 include:_spf.resend.com include:netlify.com ~all
 ### Test 1: Marketing Email (Subdomain)
 
 **Via Admin Dashboard:**
-1. Go to `https://favillaspizzeria.com/admin`
+1. Go to `https://francescospizzeria.com/admin`
 2. Click **"Email Marketing"** tab
 3. Create Campaign → Select template
 4. **Test Mode** → Enter your email
 5. Send
 
 **Check email:**
-- FROM: `Favillas Pizzeria <noreply@updates.favillaspizzeria.com>` ✅
-- REPLY-TO: `info@favillaspizzeria.com` ✅
+- FROM: `Francescos Pizzeria <noreply@updates.francescospizzeria.com>` ✅
+- REPLY-TO: `info@francescospizzeria.com` ✅
 
 ---
 
@@ -140,9 +140,9 @@ v=spf1 include:_spf.resend.com include:netlify.com ~all
 3. Check your email
 
 **Check email:**
-- FROM: `Favillas Pizzeria <orders@favillaspizzeria.com>` ✅
-- REPLY-TO: `info@favillaspizzeria.com>` ✅
-- Subject: `Order Confirmation - #12345 | Favillas Pizzeria` ✅
+- FROM: `Francescos Pizzeria <orders@francescospizzeria.com>` ✅
+- REPLY-TO: `info@francescospizzeria.com>` ✅
+- Subject: `Order Confirmation - #12345 | Francescos Pizzeria` ✅
 
 ---
 
@@ -152,8 +152,8 @@ Check both domains are verified in Resend:
 
 | Domain | Status | Used For |
 |--------|--------|----------|
-| `updates.favillaspizzeria.com` | ✅ Verified | Marketing campaigns |
-| `favillaspizzeria.com` | ⏳ Pending | Order confirmations, password resets |
+| `updates.francescospizzeria.com` | ✅ Verified | Marketing campaigns |
+| `francescospizzeria.com` | ⏳ Pending | Order confirmations, password resets |
 
 **Both must show green checkmarks before emails will send!**
 
@@ -174,7 +174,7 @@ Check both domains are verified in Resend:
 ### Issue: Emails from main domain not sending
 
 **Solution:**
-1. Verify `favillaspizzeria.com` is verified in Resend (green checkmark)
+1. Verify `francescospizzeria.com` is verified in Resend (green checkmark)
 2. Check `RESEND_API_KEY` is set in Netlify
 3. Check Netlify function logs for errors
 4. Ensure DNS records for main domain are correct
@@ -206,23 +206,23 @@ Your emails will show as:
 
 **Marketing Emails:**
 ```
-From: Favillas Pizzeria <noreply@updates.favillaspizzeria.com>
-Reply-To: info@favillaspizzeria.com
+From: Francescos Pizzeria <noreply@updates.francescospizzeria.com>
+Reply-To: info@francescospizzeria.com
 ```
 
 **Order Confirmations:**
 ```
-From: Favillas Pizzeria <orders@favillaspizzeria.com>
-Reply-To: info@favillaspizzeria.com
+From: Francescos Pizzeria <orders@francescospizzeria.com>
+Reply-To: info@francescospizzeria.com
 ```
 
 **Password Resets:**
 ```
-From: Favillas Pizzeria <noreply@favillaspizzeria.com>
-Reply-To: info@favillaspizzeria.com
+From: Francescos Pizzeria <noreply@francescospizzeria.com>
+Reply-To: info@francescospizzeria.com
 ```
 
-Customers see **"Favillas Pizzeria"** in their inbox, with the technical email address in small print.
+Customers see **"Francescos Pizzeria"** in their inbox, with the technical email address in small print.
 
 ---
 
@@ -240,8 +240,8 @@ Customers see **"Favillas Pizzeria"** in their inbox, with the technical email a
 
 ## ✅ Checklist
 
-- [x] Subdomain verified: `updates.favillaspizzeria.com`
-- [ ] Main domain verified: `favillaspizzeria.com`
+- [x] Subdomain verified: `updates.francescospizzeria.com`
+- [ ] Main domain verified: `francescospizzeria.com`
 - [ ] API key created in Resend
 - [ ] API key added to Netlify environment variables
 - [ ] Test marketing email sent successfully

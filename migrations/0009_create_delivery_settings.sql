@@ -4,7 +4,7 @@
 -- Store location settings
 CREATE TABLE IF NOT EXISTS store_settings (
   id SERIAL PRIMARY KEY,
-  store_name VARCHAR(255) NOT NULL DEFAULT 'Favillas NY Pizza',
+  store_name VARCHAR(255) NOT NULL DEFAULT 'Francescos NY Pizza',
   address TEXT NOT NULL,
   latitude DECIMAL(10, 8) NOT NULL,
   longitude DECIMAL(11, 8) NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS delivery_blackouts (
 
 -- Insert actual store location
 INSERT INTO store_settings (store_name, address, latitude, longitude, phone) VALUES
-('Favillas NY Pizza', '5 Regent Park Blvd #107, Asheville, NC 28806', 35.59039, -82.58198, '(828) 225-2885')
+('Francescos NY Pizza', '5 Regent Park Blvd #107, Asheville, NC 28806', 35.59039, -82.58198, '(828) 225-2885')
 ON CONFLICT DO NOTHING;
 
 -- Insert default delivery zones

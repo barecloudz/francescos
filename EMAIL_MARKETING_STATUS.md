@@ -36,7 +36,7 @@ You need to create two database tables in Supabase. Run the SQL scripts in `docs
 Set these environment variables in Netlify:
 
 - `RESEND_API_KEY` - Your Resend API key
-- `RESEND_FROM_EMAIL` - Verified sender email (e.g., noreply@favillaspizza.com)
+- `RESEND_FROM_EMAIL` - Verified sender email (e.g., noreply@francescospizza.com)
 
 **To set this up:**
 1. Go to https://resend.com and create an account

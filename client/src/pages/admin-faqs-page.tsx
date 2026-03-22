@@ -257,7 +257,7 @@ const AdminFAQsPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Admin - FAQ Management | Favilla's NY Pizza</title>
+        <title>Admin - FAQ Management | Francesco's</title>
       </Helmet>
 
       {/* Navigation Header */}

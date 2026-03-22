@@ -135,7 +135,7 @@ app.post('/test-print', async (req, res) => {
       `${ESC}@` + // Initialize
       `${ESC}a\x01` + // Center align
       `${ESC}E\x01` + // Bold on
-      `FAVILLAS NY PIZZA\n` +
+      `FRANCESCOS NY PIZZA\n` +
       `${ESC}E\x00` + // Bold off
       `Test Print\n` +
       `${new Date().toLocaleString()}\n` +

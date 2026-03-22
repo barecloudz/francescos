@@ -147,8 +147,8 @@ const AuthPage = () => {
   return (
     <>
       <Helmet>
-        <title>Login or Sign Up | Favilla's NY Pizza</title>
-        <meta name="description" content="Login to your Favilla's NY Pizza account or create a new one to order delicious authentic Italian pizza online and earn rewards." />
+        <title>Login or Sign Up | Francesco's</title>
+        <meta name="description" content="Login to your Francesco's account or create a new one to order delicious authentic Italian pizza online and earn rewards." />
       </Helmet>
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-4">
@@ -167,7 +167,7 @@ const AuthPage = () => {
             <div className="w-full md:w-1/2">
               <Card className="w-full">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold">Welcome to Favilla's</CardTitle>
+                  <CardTitle className="text-2xl font-bold">Welcome to Francesco's</CardTitle>
                   <CardDescription>
                     Login to your account or create a new one to order and earn rewards
                   </CardDescription>
@@ -464,7 +464,7 @@ const AuthPage = () => {
             
             <div className="w-full md:w-1/2 bg-white rounded-lg overflow-hidden shadow-md">
               <div className="p-6 bg-[#d73a31] text-white">
-                <h2 className="text-2xl font-bold mb-2">Join the Favilla's Family</h2>
+                <h2 className="text-2xl font-bold mb-2">Join the Francesco's Family</h2>
                 <p>Create an account today and enjoy exclusive member benefits</p>
               </div>
               <div className="p-6">

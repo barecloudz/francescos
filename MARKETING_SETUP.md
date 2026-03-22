@@ -6,7 +6,7 @@
 - **Beautiful 3-step campaign builder** (Template → Content → Review)
 - **Live email preview** with custom colors and branding
 - **Template selection** (Classic Pizza, Modern)
-- **Professional HTML templates** with Favilla's Pizzeria branding
+- **Professional HTML templates** with Francesco's Pizzeria branding
 - **Unlimited email sending** via Resend (no more 2/hour Supabase limits)
 - **Order confirmation emails** sent automatically
 

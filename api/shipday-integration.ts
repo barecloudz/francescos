@@ -215,7 +215,7 @@ export async function createShipDayOrder(orderId: number): Promise<{ success: bo
           country: "United States"
         },
         contactPerson: {
-          name: "Favillas NY Pizza", // TODO: Get from restaurant settings
+          name: "Francescos NY Pizza", // TODO: Get from restaurant settings
           phone: "5551234567" // TODO: Get from restaurant settings
         }
       },

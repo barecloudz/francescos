@@ -83,7 +83,7 @@ const EmailConfirmedPage = () => {
         return {
           icon: <Check className="w-16 h-16 text-green-600" />,
           title: 'Email Confirmed Successfully! 🎉',
-          description: 'Welcome to Favilla\'s NY Pizza! Your account is now active and you can start earning reward points. You\'ll be redirected to your rewards dashboard in a moment.',
+          description: 'Welcome to Francesco\'s NY Pizza! Your account is now active and you can start earning reward points. You\'ll be redirected to your rewards dashboard in a moment.',
           buttonText: 'Go to Rewards Dashboard',
           buttonAction: () => setLocation('/rewards'),
           bgColor: 'bg-green-50',
@@ -126,8 +126,8 @@ const EmailConfirmedPage = () => {
   return (
     <>
       <Helmet>
-        <title>Email Confirmation | Favilla's NY Pizza</title>
-        <meta name="description" content="Confirm your email address to activate your Favilla's NY Pizza rewards account." />
+        <title>Email Confirmation | Francesco's</title>
+        <meta name="description" content="Confirm your email address to activate your Francesco's rewards account." />
       </Helmet>
 
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
@@ -187,8 +187,8 @@ const EmailConfirmedPage = () => {
                 <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
                   <p className="text-sm text-gray-600">
                     <strong>Need help?</strong> Contact our support team at{' '}
-                    <a href="mailto:support@favillaspizza.com" className="text-[#d73a31] hover:underline">
-                      support@favillaspizza.com
+                    <a href="mailto:support@francescospizza.com" className="text-[#d73a31] hover:underline">
+                      support@francescospizza.com
                     </a>
                   </p>
                 </div>
@@ -199,7 +199,7 @@ const EmailConfirmedPage = () => {
           {/* Branding Footer */}
           <div className="text-center mt-6">
             <p className="text-gray-500 text-sm">
-              🍕 Favilla's NY Pizza - Authentic New York Style
+              🍕 Francesco's - Authentic New York Style
             </p>
           </div>
         </div>

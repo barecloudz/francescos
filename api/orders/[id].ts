@@ -372,7 +372,7 @@ export const handler: Handler = async (event, context) => {
                       country: "United States"
                     },
                     contactPerson: {
-                      name: "Favillas NY Pizza",
+                      name: "Francescos NY Pizza",
                       phone: "5551234567" // Update with actual restaurant phone
                     }
                   },

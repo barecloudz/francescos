@@ -143,11 +143,11 @@ export const handler: Handler = async (event) => {
     const orderTypeText = orderType === 'delivery' ? 'delivery' : 'pickup';
     const timeText = estimatedTime ? ` Ready in ${estimatedTime}.` : '';
 
-    let message = `Favilla's Pizza: Order #${orderId} confirmed!${timeText} Total: $${parseFloat(orderTotal).toFixed(2)} (${orderTypeText}). Track your order at favillaspizzeria.com/orders`;
+    let message = `Francesco's Pizza: Order #${orderId} confirmed!${timeText} Total: $${parseFloat(orderTotal).toFixed(2)} (${orderTypeText}). Track your order at francescospizzeria.com/orders`;
 
     // Keep message under 160 characters if possible
     if (message.length > 160) {
-      message = `Favilla's: Order #${orderId} confirmed! $${parseFloat(orderTotal).toFixed(2)} (${orderTypeText}). Track at favillaspizzeria.com`;
+      message = `Francesco's: Order #${orderId} confirmed! $${parseFloat(orderTotal).toFixed(2)} (${orderTypeText}). Track at francescospizzeria.com`;
     }
 
     console.log(`📱 Sending order confirmation SMS to ${formattedPhone}`);

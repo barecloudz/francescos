@@ -1,8 +1,8 @@
-# Email Subdomain Setup: updates.favillaspizzeria.com
+# Email Subdomain Setup: updates.francescospizzeria.com
 
 ## Why Use a Subdomain for Email?
 
-Using `updates.favillaspizzeria.com` instead of `favillaspizzeria.com` for sending emails is a **best practice** to:
+Using `updates.francescospizzeria.com` instead of `francescospizzeria.com` for sending emails is a **best practice** to:
 
 ✅ Protect your main domain's reputation
 ✅ Prevent marketing emails from affecting transactional email deliverability
@@ -10,9 +10,9 @@ Using `updates.favillaspizzeria.com` instead of `favillaspizzeria.com` for sendi
 ✅ Allow independent monitoring of email campaigns
 
 **How it works:**
-- Emails sent FROM: `noreply@updates.favillaspizzeria.com`
-- Customers reply TO: `info@favillaspizzeria.com` (main domain)
-- Your website stays on: `favillaspizzeria.com` (main domain)
+- Emails sent FROM: `noreply@updates.francescospizzeria.com`
+- Customers reply TO: `info@francescospizzeria.com` (main domain)
+- Your website stays on: `francescospizzeria.com` (main domain)
 
 ---
 
@@ -23,19 +23,19 @@ Using `updates.favillaspizzeria.com` instead of `favillaspizzeria.com` for sendi
 Since you're using **Netlify DNS**, add the subdomain:
 
 **Option A: Via Netlify DNS Dashboard**
-1. Go to Netlify → Domains → DNS settings for `favillaspizzeria.com`
+1. Go to Netlify → Domains → DNS settings for `francescospizzeria.com`
 2. Add a CNAME record:
    - **Name**: `updates`
-   - **Value**: `favillaspizzeria.com`
+   - **Value**: `francescospizzeria.com`
    - **TTL**: 3600 (or leave default)
 
 **Option B: Via Namecheap (if you want to manage there)**
 1. Log in to Namecheap
-2. Go to Domain List → Manage `favillaspizzeria.com`
+2. Go to Domain List → Manage `francescospizzeria.com`
 3. Advanced DNS → Add New Record
 4. Add a CNAME:
    - **Host**: `updates`
-   - **Value**: `favillaspizzeria.com`
+   - **Value**: `francescospizzeria.com`
    - **TTL**: Automatic
 
 **Note**: Since this is only for email (not hosting), you can skip this step and go straight to Resend verification. Resend will tell you what DNS records to add.
@@ -51,7 +51,7 @@ Since you're using **Netlify DNS**, add the subdomain:
 2. **Add Your Domain**:
    - In Resend Dashboard → Click **"Domains"**
    - Click **"Add Domain"**
-   - Enter: `updates.favillaspizzeria.com`
+   - Enter: `updates.francescospizzeria.com`
    - Click **"Add"**
 
 3. **Add DNS Records**:
@@ -61,22 +61,22 @@ Since you're using **Netlify DNS**, add the subdomain:
    **SPF Record** (Sender Policy Framework):
    ```
    Type: TXT
-   Name: updates.favillaspizzeria.com (or just "updates")
+   Name: updates.francescospizzeria.com (or just "updates")
    Value: v=spf1 include:_spf.resend.com ~all
    ```
 
    **DKIM Record** (Domain Keys Identified Mail):
    ```
    Type: TXT
-   Name: resend._domainkey.updates.favillaspizzeria.com
+   Name: resend._domainkey.updates.francescospizzeria.com
    Value: [Resend will provide this - it's a long string]
    ```
 
    **DMARC Record** (Domain-based Message Authentication):
    ```
    Type: TXT
-   Name: _dmarc.updates.favillaspizzeria.com
-   Value: v=DMARC1; p=none; rua=mailto:postmaster@favillaspizzeria.com
+   Name: _dmarc.updates.francescospizzeria.com
+   Value: v=DMARC1; p=none; rua=mailto:postmaster@francescospizzeria.com
    ```
 
 4. **Wait for Verification**:
@@ -112,8 +112,8 @@ Netlify will automatically redeploy to pick up the new variable.
 
 ## What's Already Configured in Code ✅
 
-- ✅ Email FROM address: `noreply@updates.favillaspizzeria.com`
-- ✅ Email Reply-To: `info@favillaspizzeria.com`
+- ✅ Email FROM address: `noreply@updates.francescospizzeria.com`
+- ✅ Email Reply-To: `info@francescospizzeria.com`
 - ✅ Resend client initialized
 - ✅ Order confirmation email templates
 - ✅ Marketing campaign templates
@@ -169,7 +169,7 @@ After setup is complete, test sending an email:
 2. **Only email opted-in customers**: Respect the marketing_opt_in flag
 3. **Include unsubscribe links**: Already built into templates
 4. **Monitor bounce rates**: Check Resend dashboard
-5. **Use clear "From" names**: "Favillas Pizzeria" instead of "noreply"
+5. **Use clear "From" names**: "Francescos Pizzeria" instead of "noreply"
 
 ---
 
@@ -186,14 +186,14 @@ After setup is complete, test sending an email:
 **Order Placed:**
 1. Customer completes checkout
 2. System calls `/api/email/send-order-confirmation`
-3. Email sent from: `noreply@updates.favillaspizzeria.com`
+3. Email sent from: `noreply@updates.francescospizzeria.com`
 4. Customer receives professional order confirmation
-5. Customer can reply to: `info@favillaspizzeria.com`
+5. Customer can reply to: `info@francescospizzeria.com`
 
 **Marketing Campaign:**
 1. Admin creates campaign in dashboard
 2. System calls `/api/admin/email-marketing`
-3. Emails sent from: `noreply@updates.favillaspizzeria.com`
+3. Emails sent from: `noreply@updates.francescospizzeria.com`
 4. Customers receive marketing email
 5. Tracking records opens/clicks
 6. Customers can unsubscribe or reply

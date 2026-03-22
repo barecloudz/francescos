@@ -129,7 +129,7 @@ fetch('http://<raspberry-pi-ip>:3001/print', {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     receipt: {
-      storeName: "Favilla's NY Pizza",
+      storeName: "Francesco's",
       orderId: 123,
       orderDate: new Date(),
       orderType: 'pickup',

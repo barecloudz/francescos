@@ -183,9 +183,9 @@ exports.handler = async (event, context) => {
     // Customize response message based on payment preference
     let responseMessage;
     if (payment_preference === 'payment_link') {
-      responseMessage = `Great! Your order has been placed. I'm texting you a secure payment link right now. Once you complete payment, we'll start preparing your order. Thank you for choosing Favilla's Pizzeria!`;
+      responseMessage = `Great! Your order has been placed. I'm texting you a secure payment link right now. Once you complete payment, we'll start preparing your order. Thank you for choosing Francesco's Pizzeria!`;
     } else {
-      responseMessage = `Great! Your order is confirmed. You can pay when you pick up. We'll have it ready for you soon. Thank you for choosing Favilla's Pizzeria!`;
+      responseMessage = `Great! Your order is confirmed. You can pay when you pick up. We'll have it ready for you soon. Thank you for choosing Francesco's Pizzeria!`;
     }
 
     // Return immediate success response to VAPI

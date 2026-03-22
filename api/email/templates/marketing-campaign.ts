@@ -19,14 +19,14 @@ export function getMarketingCampaignTemplate(data: MarketingCampaignData): strin
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${data.subject} - Favilla's Pizzeria</title>
+  <title>${data.subject} - Francesco's Pizzeria</title>
 </head>
 <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f4;">
   <div style="background: white; padding: 0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden;">
 
     <!-- Header -->
     <div style="background: linear-gradient(135deg, ${accentColor}, ${accentColor}dd); color: white; text-align: center; padding: 30px 20px;">
-      <h1 style="margin: 0; font-size: 28px;">🍕 Favilla's Pizzeria</h1>
+      <h1 style="margin: 0; font-size: 28px;">🍕 Francesco's Pizzeria</h1>
       <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">Your favorite pizza just got better!</p>
     </div>
 
@@ -70,9 +70,9 @@ export function getMarketingCampaignTemplate(data: MarketingCampaignData): strin
       </div>
 
       <div style="color: #666; font-size: 12px; line-height: 1.4;">
-        <p style="margin: 5px 0;"><strong>Favilla's Pizzeria</strong></p>
+        <p style="margin: 5px 0;"><strong>Francesco's Pizzeria</strong></p>
         <p style="margin: 5px 0;">123 Pizza Street, Food City, FC 12345</p>
-        <p style="margin: 5px 0;">📞 (555) 123-PIZZA | 📧 support@favillaspizzeria.com</p>
+        <p style="margin: 5px 0;">📞 (555) 123-PIZZA | 📧 support@francescospizzeria.com</p>
       </div>
 
       <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #ddd; color: #999; font-size: 11px;">
@@ -83,7 +83,7 @@ export function getMarketingCampaignTemplate(data: MarketingCampaignData): strin
             Unsubscribe from marketing emails
           </a>
         </p>
-        <p style="margin: 10px 0 0 0;">© 2025 Favilla's Pizzeria. All rights reserved.</p>
+        <p style="margin: 10px 0 0 0;">© 2025 Francesco's Pizzeria. All rights reserved.</p>
       </div>
     </div>
 

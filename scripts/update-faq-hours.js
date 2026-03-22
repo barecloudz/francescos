@@ -14,7 +14,7 @@ async function updateFAQHours() {
     // Update the FAQ about hours to reflect Monday as CLOSED
     const result = await sql`
       UPDATE faqs
-      SET answer = 'We''re open Tuesday-Thursday 11:00 AM - 8:00 PM, Friday-Saturday 11:00 AM - 9:00 PM, and Sunday 12:00 PM - 8:00 PM. We''re CLOSED on Mondays. Order online 24/7 at favillaspizzeria.com for pickup or delivery!',
+      SET answer = 'We''re open Tuesday-Thursday 11:00 AM - 8:00 PM, Friday-Saturday 11:00 AM - 9:00 PM, and Sunday 12:00 PM - 8:00 PM. We''re CLOSED on Mondays. Order online 24/7 at francescospizzeria.com for pickup or delivery!',
           updated_at = CURRENT_TIMESTAMP
       WHERE question = 'What are your hours in Asheville?'
       RETURNING *

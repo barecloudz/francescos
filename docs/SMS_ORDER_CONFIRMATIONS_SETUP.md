@@ -150,12 +150,12 @@ if (customerEmail) {
 
 **Standard message (149 chars):**
 ```
-Favilla's Pizza: Order #123 confirmed! Ready in 20-30 min. Total: $24.99 (pickup). Track your order at favillaspizzeria.com/orders
+Francesco's Pizza: Order #123 confirmed! Ready in 20-30 min. Total: $24.99 (pickup). Track your order at francescospizzeria.com/orders
 ```
 
 **Compact message (if needed, <160 chars):**
 ```
-Favilla's: Order #123 confirmed! $24.99 (pickup). Track at favillaspizzeria.com
+Francesco's: Order #123 confirmed! $24.99 (pickup). Track at francescospizzeria.com
 ```
 
 ## Features

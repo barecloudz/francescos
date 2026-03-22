@@ -106,11 +106,11 @@ export const handler: Handler = async (event, context) => {
         // Return default settings if none exist
         const defaultSettings = {
           id: 1,
-          restaurantName: "Favilla's NY Pizza",
+          restaurantName: "Francesco's",
           address: "123 Main Street, New York, NY 10001",
           phone: "(555) 123-4567",
-          email: "info@favillas.com",
-          website: "https://favillas.com",
+          email: "info@francescos.com",
+          website: "https://francescos.com",
           currency: "USD",
           timezone: "America/New_York",
           deliveryFee: "3.99",

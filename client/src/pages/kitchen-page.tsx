@@ -1665,7 +1665,7 @@ const KitchenPage = () => {
   return (
     <>
       <Helmet>
-        <title>Kitchen Display | Favilla's NY Pizza</title>
+        <title>Kitchen Display | Francesco's</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
@@ -1699,7 +1699,7 @@ const KitchenPage = () => {
         <header className="bg-gradient-to-r from-[#d73a31] via-[#c22d25] to-[#d73a31] text-white p-4 md:p-6 shadow-2xl border-b-4 border-red-700">
           <div className="container mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold tracking-tight drop-shadow-lg">Favilla's Kitchen</h1>
+              <h1 className="text-2xl md:text-3xl font-bold tracking-tight drop-shadow-lg">Francesco's Kitchen</h1>
               <p className="text-red-100 text-sm mt-1 font-medium">Professional Order Management</p>
             </div>
             <div className="flex items-center gap-2 md:gap-3 text-sm md:text-base">

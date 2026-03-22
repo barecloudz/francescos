@@ -6,7 +6,7 @@ export interface NeighborhoodData {
   metaDescription: string; // Meta description
   heroSubheadline: string; // Hero subheadline
   introText: string; // Unique intro paragraph
-  distanceFromFavillas: string; // e.g., "2.5 miles"
+  distanceFromFrancescos: string; // e.g., "2.5 miles"
   deliveryTime: string; // e.g., "15-25 minutes"
   areasServed: string[]; // List of specific areas within neighborhood
   landmarks: string[]; // 2-3 local landmarks

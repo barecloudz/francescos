@@ -426,7 +426,7 @@
           "type": "text",
           "primaryKey": false,
           "notNull": true,
-          "default": "'Favilla''s Loyalty Program'"
+          "default": "'Francesco''s Loyalty Program'"
         },
         "description": {
           "name": "description",
@@ -1379,7 +1379,7 @@
           "type": "text",
           "primaryKey": false,
           "notNull": true,
-          "default": "'Favilla''s NY Pizza'"
+          "default": "'Francesco''s NY Pizza'"
         },
         "address": {
           "name": "address",
@@ -1400,14 +1400,14 @@
           "type": "text",
           "primaryKey": false,
           "notNull": true,
-          "default": "'info@favillas.com'"
+          "default": "'info@francescos.com'"
         },
         "website": {
           "name": "website",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
-          "default": "'https://favillas.com'"
+          "default": "'https://francescos.com'"
         },
         "currency": {
           "name": "currency",

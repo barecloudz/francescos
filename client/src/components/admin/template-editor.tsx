@@ -21,7 +21,7 @@ const defaultTemplates: ReceiptTemplate[] = [
     id: 'customer',
     name: 'Customer Receipt',
     description: 'Receipt given to customer with order details and pickup info',
-    template: `FAVILLA'S NY PIZZA
+    template: `FRANCESCO'S NY PIZZA
 123 Main St, Asheville, NC
 (828) 555-0123
 ======================
@@ -107,7 +107,7 @@ WHAT YOU NEED TO MAKE:
     name: 'Records Copy',
     description: 'Complete transaction record for business accounting',
     template: `*** RECORDS COPY ***
-FAVILLA'S NY PIZZA
+FRANCESCO'S NY PIZZA
 ===================
 
 Order #: {{orderNumber}}

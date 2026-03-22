@@ -234,7 +234,7 @@ function generateCustomerReceipt(data: OrderData): string {
   let receiptText = '';
   
   // Header with branding
-  receiptText += "FAVILLA'S NY PIZZA\n";
+  receiptText += "FRANCESCO'S NY PIZZA\n";
   receiptText += '123 Main St, Asheville, NC\n';
   receiptText += '(828) 555-0123\n';
   receiptText += '======================\n\n';
@@ -360,7 +360,7 @@ function generateCustomerReceipt(data: OrderData): string {
       receiptText += `   Only ${data.nextReward.pointsNeeded} more points!\n`;
     }
     
-    receiptText += '\nRedeem at favillas.com/rewards\n';
+    receiptText += '\nRedeem at francescos.com/rewards\n';
     receiptText += '═══════════════════════\n';
   }
 
@@ -490,7 +490,7 @@ function generateRecordsCopy(data: OrderData): string {
   
   // Header
   recordText += '*** RECORDS COPY ***\n';
-  recordText += "FAVILLA'S NY PIZZA\n";
+  recordText += "FRANCESCO'S NY PIZZA\n";
   recordText += '===================\n\n';
   
   // Complete order details

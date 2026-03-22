@@ -174,7 +174,7 @@ const OrdersPage = () => {
 
   const handleDownloadReceipt = (order: any) => {
     const receipt = `
-Favilla's NY Pizza - Receipt
+Francesco's - Receipt
 Order #${order.id}
 Date: ${new Date(order.createdAt).toLocaleDateString()}
 Time: ${new Date(order.createdAt).toLocaleTimeString()}
@@ -198,7 +198,7 @@ Total: ${formatCurrency((order.total || 0) + (order.tax || 0) + (order.deliveryF
 Payment Status: ${order.paymentStatus}
 Order Status: ${order.status}
 
-Thank you for choosing Favilla's NY Pizza!
+Thank you for choosing Francesco's!
     `.trim();
 
     const blob = new Blob([receipt], { type: 'text/plain' });
@@ -225,7 +225,7 @@ Thank you for choosing Favilla's NY Pizza!
     return (
       <>
         <Helmet>
-          <title>My Orders | Favilla's NY Pizza</title>
+          <title>My Orders | Francesco's</title>
         </Helmet>
         <main className="min-h-screen bg-gray-50 flex items-center justify-center">
           <div className="text-center">
@@ -242,7 +242,7 @@ Thank you for choosing Favilla's NY Pizza!
   return (
     <>
       <Helmet>
-        <title>My Orders | Favilla's NY Pizza</title>
+        <title>My Orders | Francesco's</title>
       </Helmet>
       
       <main className="min-h-screen bg-gray-50 py-8 pt-header" style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 8rem)' }}>

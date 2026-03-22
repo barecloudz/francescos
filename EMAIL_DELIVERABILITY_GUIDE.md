@@ -14,17 +14,17 @@ Your emails are going to spam because:
 
 ### 1. Verify All DNS Records Are Set
 
-Check that these records exist for `favillaspizzeria.com`:
+Check that these records exist for `francescospizzeria.com`:
 
 ```bash
 # Check SPF record
-nslookup -type=TXT favillaspizzeria.com
+nslookup -type=TXT francescospizzeria.com
 
 # Check DKIM record
-nslookup -type=TXT resend._domainkey.favillaspizzeria.com
+nslookup -type=TXT resend._domainkey.francescospizzeria.com
 
 # Check DMARC record
-nslookup -type=TXT _dmarc.favillaspizzeria.com
+nslookup -type=TXT _dmarc.francescospizzeria.com
 ```
 
 **Expected Results:**
@@ -41,7 +41,7 @@ v=DKIM1; k=rsa; p=[long key from Resend]
 
 **DMARC Record:**
 ```
-v=DMARC1; p=quarantine; rua=mailto:dmarc-reports@favillaspizzeria.com
+v=DMARC1; p=quarantine; rua=mailto:dmarc-reports@francescospizzeria.com
 ```
 
 ### 2. Update DMARC Policy (If Too Strict)
@@ -49,7 +49,7 @@ v=DMARC1; p=quarantine; rua=mailto:dmarc-reports@favillaspizzeria.com
 If your DMARC is set to `p=reject`, change it to `p=quarantine` or `p=none` while warming up:
 
 ```
-v=DMARC1; p=none; rua=mailto:dmarc-reports@favillaspizzeria.com
+v=DMARC1; p=none; rua=mailto:dmarc-reports@francescospizzeria.com
 ```
 
 This allows emails to be delivered while monitoring for issues.
@@ -60,7 +60,7 @@ Make sure you have SPF record for the main domain, not just subdomain:
 
 ```
 Type: TXT
-Name: @ (or favillaspizzeria.com)
+Name: @ (or francescospizzeria.com)
 Value: v=spf1 include:_spf.resend.com ~all
 TTL: 3600
 ```
@@ -115,7 +115,7 @@ TTL: 3600
 ```
 ✅ Thank you! 25% off your next pizza order
 ✅ Exclusive offer for loyal customers
-✅ Your reward: 25% off at Favilla's
+✅ Your reward: 25% off at Francesco's
 ```
 
 ### Content Guidelines:
@@ -155,7 +155,7 @@ Use these free tools to test your email authentication:
 ### 2. Google Postmaster Tools
 ```
 1. Go to https://postmaster.google.com
-2. Add your domain: favillaspizzeria.com
+2. Add your domain: francescospizzeria.com
 3. Verify domain ownership
 4. Monitor:
    - Spam rate (keep under 0.3%)
@@ -247,13 +247,13 @@ Run these commands to check DNS:
 
 ```bash
 # Check if SPF is set
-dig TXT favillaspizzeria.com +short | grep spf
+dig TXT francescospizzeria.com +short | grep spf
 
 # Check if DKIM is set
-dig TXT resend._domainkey.favillaspizzeria.com +short
+dig TXT resend._domainkey.francescospizzeria.com +short
 
 # Check if DMARC is set
-dig TXT _dmarc.favillaspizzeria.com +short
+dig TXT _dmarc.francescospizzeria.com +short
 ```
 
 **Expected output:**
@@ -301,18 +301,18 @@ Create a text-only version for email clients that block HTML:
 ```
 Hello [Name]!
 
-Thank you for being a loyal Favilla's customer!
+Thank you for being a loyal Francesco's customer!
 
 We're giving you 25% off your next order.
 
 Use code: LOYAL25
 
-Order now: https://favillaspizzeria.com
+Order now: https://francescospizzeria.com
 
 This offer expires in 14 days.
 
 ---
-Favilla's NY Pizza
+Francesco's
 5 Regent Park Blvd, Asheville, NC 28806
 (828) 225-2885
 
@@ -367,7 +367,7 @@ Add this to your website/confirmation emails:
 ```
 📧 To ensure you receive our emails:
 
-Gmail: Add orders@favillaspizzeria.com to your contacts
+Gmail: Add orders@francescospizzeria.com to your contacts
 Outlook: Move to "Focused" inbox
 Yahoo: Add to contacts and mark as "Not Spam"
 ```

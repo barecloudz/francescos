@@ -204,7 +204,7 @@ The system prints directly from your HTTPS website to the printer using:
 
 ### Receipt Format
 Receipts include:
-- **Header**: Restaurant name (FAVILLA'S NY PIZZA)
+- **Header**: Restaurant name (FRANCESCO'S NY PIZZA)
 - **Order Info**: Order #, type (delivery/pickup), date/time
 - **Customer Info**: Name, phone, address (for delivery)
 - **Items**: Quantity, name, options, special instructions, price

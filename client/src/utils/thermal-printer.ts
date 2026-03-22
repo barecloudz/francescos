@@ -115,7 +115,7 @@ function formatCustomerReceipt(order: OrderPrintData): string {
   receipt += `${ESC}a\x01`; // Center align
   receipt += `${ESC}E\x01`; // Bold on
   receipt += `${GS}!\x11`; // Double height and width
-  receipt += `FAVILLAS NY PIZZA\n`;
+  receipt += `FRANCESCOS NY PIZZA\n`;
   receipt += `${GS}!\x00`; // Normal size
   receipt += `${ESC}E\x00`; // Bold off
   receipt += `\n`;
@@ -350,7 +350,7 @@ function formatCustomerReceipt(order: OrderPrintData): string {
     receipt += `You could have earned ${potentialPoints}\n`;
     receipt += `reward points with an account!\n`;
     receipt += `${ESC}E\x00`; // Bold off
-    receipt += `Sign up at favillaspizzeria.com\n`;
+    receipt += `Sign up at francescospizzeria.com\n`;
   }
   receipt += `--------------------------------\n`;
 
@@ -795,7 +795,7 @@ function buildEposReceipt(builder: ePOSBuilder, order: OrderPrintData): string {
     .addTextAlign(ALIGN_CENTER)
     .addTextStyle(false, false, true, 0)
     .addTextSize(2, 2)
-    .addText("FAVILLA'S NY PIZZA\n")
+    .addText("FRANCESCO'S NY PIZZA\n")
     .addTextSize(1, 1)
     .addTextStyle(false, false, false, 0)
     .addFeedLine(1);
@@ -925,7 +925,7 @@ export function printDailySummary(orders: OrderPrintData[]): string {
   receipt += `${ESC}a\x01`; // Center align
   receipt += `${ESC}E\x01`; // Bold on
   receipt += `${GS}!\x11`; // Double height and width
-  receipt += `FAVILLA'S NY PIZZA\n`;
+  receipt += `FRANCESCO'S NY PIZZA\n`;
   receipt += `${GS}!\x00`; // Normal size
   receipt += `DAILY SUMMARY\n`;
   receipt += `${ESC}E\x00`; // Bold off

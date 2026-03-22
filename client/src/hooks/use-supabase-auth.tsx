@@ -481,7 +481,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       } else {
         toast({
           title: "Registration successful",
-          description: `Welcome to Favilla's, ${user.firstName || user.username}!`,
+          description: `Welcome to Francesco's, ${user.firstName || user.username}!`,
         });
       }
     },
@@ -532,7 +532,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       toast({
         title: "Email confirmed!",
-        description: "Your account is now active. Welcome to Favilla's!",
+        description: "Your account is now active. Welcome to Francesco's!",
       });
 
       return { data };

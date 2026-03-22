@@ -80,7 +80,7 @@ curl -X POST "http://localhost:5000/api/print/all" \
 
 ### Customer Receipt Format
 ```
-FAVILLA'S NY PIZZA
+FRANCESCO'S NY PIZZA
 123 Main St, Asheville, NC
 (828) 555-0123
 ======================
@@ -130,7 +130,7 @@ Ready by: 12:20 PM
 ### Records Copy Format
 ```
 *** RECORDS COPY ***
-FAVILLA'S NY PIZZA
+FRANCESCO'S NY PIZZA
 ===================
 
 Order #: 28

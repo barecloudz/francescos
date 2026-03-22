@@ -100,7 +100,7 @@ const FixPointsPage: React.FC = () => {
       const verifyResult = await verifyResponse.json();
 
       const adminDiagnosis = verifyResult.diagnostics?.find((d: any) =>
-        d.user.email === 'admin@favillasnypizza.com'
+        d.user.email === 'admin@francescos.com'
       );
 
       if (adminDiagnosis) {

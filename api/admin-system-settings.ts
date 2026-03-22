@@ -228,7 +228,7 @@ export const handler: Handler = async (event, context) => {
       const defaultBrandingSettings = [
         {
           setting_key: 'company_name',
-          setting_value: "Favilla's NY Pizza",
+          setting_value: "Francesco's",
           category: 'branding',
           description: 'Restaurant name',
           setting_type: 'text'

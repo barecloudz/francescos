@@ -52,7 +52,7 @@ async function geocodeAddress(address: string): Promise<{ lat: number; lng: numb
 
     const response = await fetch(url, {
       headers: {
-        'User-Agent': 'Favillas-Pizza-Delivery-System/1.0'
+        'User-Agent': 'Francescos-Pizza-Delivery-System/1.0'
       }
     });
 

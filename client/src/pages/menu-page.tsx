@@ -456,27 +456,27 @@ const MenuPage = () => {
   return (
     <>
       <Helmet>
-        <title>Menu - Order Pizza Online in Asheville NC | Favilla's NY Pizza</title>
+        <title>Menu - Order Pizza Online in Asheville NC | Francesco's</title>
         <meta name="description" content="Order authentic NY style pizza online in Asheville, NC. Browse our menu of pizzas, calzones, stromboli & more. Fast delivery & pickup available. Order now!" />
         <meta name="keywords" content="pizza menu asheville, order pizza online asheville, ny pizza delivery asheville, pizza pickup asheville nc, italian food menu asheville" />
-        <link rel="canonical" href="https://favillaspizzeria.com/menu" />
+        <link rel="canonical" href="https://francescospizzeria.com/menu" />
 
         {/* Open Graph Tags */}
-        <meta property="og:title" content="Menu - Order Pizza Online | Favilla's NY Pizza" />
+        <meta property="og:title" content="Menu - Order Pizza Online | Francesco's" />
         <meta property="og:description" content="Order authentic NY style pizza online in Asheville, NC. Browse our menu of pizzas, calzones, stromboli & more." />
-        <meta property="og:url" content="https://favillaspizzeria.com/menu" />
+        <meta property="og:url" content="https://francescospizzeria.com/menu" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://favillaspizzeria.com/images/hero-bg.jpg" />
+        <meta property="og:image" content="https://francescospizzeria.com/images/hero-bg.jpg" />
 
         {/* Restaurant Schema with Menu Focus */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Restaurant",
-            "name": "Favilla's NY Pizza",
+            "name": "Francesco's",
             "description": "Authentic New York-style pizza menu in Asheville, NC",
-            "url": "https://favillaspizzeria.com/menu",
-            "menu": "https://favillaspizzeria.com/menu",
+            "url": "https://francescospizzeria.com/menu",
+            "menu": "https://francescospizzeria.com/menu",
             "telephone": "+1-828-225-2885",
             "address": {
               "@type": "PostalAddress",
@@ -496,7 +496,7 @@ const MenuPage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Menu",
-            "name": "Favilla's NY Pizza Menu",
+            "name": "Francesco's Menu",
             "description": "Complete menu featuring authentic New York-style pizzas, calzones, stromboli, and Italian classics",
             "hasMenuSection": [
               {
@@ -574,13 +574,13 @@ const MenuPage = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://favillaspizzeria.com/"
+                "item": "https://francescospizzeria.com/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Menu",
-                "item": "https://favillaspizzeria.com/menu"
+                "item": "https://francescospizzeria.com/menu"
               }
             ]
           })}

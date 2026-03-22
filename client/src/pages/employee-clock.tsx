@@ -130,7 +130,7 @@ const EmployeeClockPage: React.FC = () => {
     return (
       <>
         <Helmet>
-          <title>Time Clock - Favilla's NY Pizza</title>
+          <title>Time Clock - Francesco's</title>
         </Helmet>
 
         <div className="min-h-screen bg-gray-50 py-8 overflow-y-auto">
@@ -174,7 +174,7 @@ const EmployeeClockPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Time Clock - Favilla's NY Pizza</title>
+        <title>Time Clock - Francesco's</title>
       </Helmet>
       
       <div className="min-h-screen bg-gray-50 py-8 overflow-y-auto">

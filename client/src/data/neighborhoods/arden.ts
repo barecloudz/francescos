@@ -3,11 +3,11 @@ import { NeighborhoodData } from "../neighborhoods";
 export const ardenData: NeighborhoodData = {
   slug: "Arden",
   name: "Arden",
-  title: "Best Pizza in Arden NC | Favilla's NY Pizza - Pizza Delivery & Pickup",
-  metaDescription: "Craving pizza in Arden? Favilla's delivers authentic NY-style pizza, calzones & more to Arden, NC. Family-owned since 2013. Order online for fast delivery!",
+  title: "Best Pizza in Arden NC | Francesco's - Pizza Delivery & Pickup",
+  metaDescription: "Craving pizza in Arden? Francesco's delivers authentic NY-style pizza, calzones & more to Arden, NC. Family-owned since 2013. Order online for fast delivery!",
   heroSubheadline: "Serving Arden residents with authentic NY-style pizza, dine-in, pickup, and delivery.",
-  introText: "Just down the road in Arden? Favilla's brings you the real deal—authentic New York-style pizza made with recipes passed down since 1969. We're your go-to spot for hand-tossed pizzas, overstuffed calzones, and that unmistakable taste of Italy, delivered hot and fresh to your Arden doorstep.",
-  distanceFromFavillas: "5 miles south",
+  introText: "Just down the road in Arden? Francesco's brings you the real deal—authentic New York-style pizza made with recipes passed down since 1969. We're your go-to spot for hand-tossed pizzas, overstuffed calzones, and that unmistakable taste of Italy, delivered hot and fresh to your Arden doorstep.",
+  distanceFromFrancescos: "5 miles south",
   deliveryTime: "20-30 minutes",
   areasServed: [
     "Downtown Arden",
@@ -23,12 +23,12 @@ export const ardenData: NeighborhoodData = {
     "Asheville Outlets",
     "Blue Ridge Parkway (Southern entrance)"
   ],
-  localAnecdote: "Arden folks know good pizza when they taste it. Whether you're grabbing dinner after shopping at the outlets or feeding the family after a day exploring the Blue Ridge Parkway, Favilla's has been Arden's trusted pizza spot for over a decade. We treat every order like it's for our own family—because around here, that's exactly what you are.",
+  localAnecdote: "Arden folks know good pizza when they taste it. Whether you're grabbing dinner after shopping at the outlets or feeding the family after a day exploring the Blue Ridge Parkway, Francesco's has been Arden's trusted pizza spot for over a decade. We treat every order like it's for our own family—because around here, that's exactly what you are.",
   testimonials: [
     {
       name: "David R.",
       location: "Arden, NC",
-      text: "We've tried every pizza place in Arden and Favilla's is hands-down the best. The crust is perfection and they don't skimp on toppings!",
+      text: "We've tried every pizza place in Arden and Francesco's is hands-down the best. The crust is perfection and they don't skimp on toppings!",
       rating: 5
     },
     {

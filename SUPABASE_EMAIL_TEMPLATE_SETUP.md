@@ -58,7 +58,7 @@ Your template uses these patterns - make sure they match Supabase's format:
 After saving:
 1. Sign up with a new email address
 2. Check your inbox for the styled email
-3. Should see the custom Favillas branding
+3. Should see the custom Francescos branding
 
 ---
 
@@ -86,7 +86,7 @@ Here's your template updated for Supabase:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Favilla's NY Pizza</title>
+    <title>Welcome to Francesco's</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -206,7 +206,7 @@ Here's your template updated for Supabase:
 <body>
     <div class="container">
         <div class="header">
-            <h1>🍕 Favilla's NY Pizza</h1>
+            <h1>🍕 Francesco's</h1>
             <p>Authentic New York Style Pizza</p>
         </div>
 
@@ -216,7 +216,7 @@ Here's your template updated for Supabase:
             </div>
 
             <div class="description">
-                Thanks for joining the Favilla's family! We're excited to serve you the most authentic New York style pizza.
+                Thanks for joining the Francesco's family! We're excited to serve you the most authentic New York style pizza.
                 Please confirm your email address to activate your account and start earning reward points.
             </div>
 
@@ -247,7 +247,7 @@ Here's your template updated for Supabase:
         </div>
 
         <div class="footer">
-            <p>Favilla's NY Pizza</p>
+            <p>Francesco's</p>
             <p>📍 Your Restaurant Address</p>
             <p>📞 Your Phone Number</p>
             <p>{{ .SiteURL }}</p>

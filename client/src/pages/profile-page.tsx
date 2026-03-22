@@ -282,7 +282,7 @@ const ProfilePage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>My Profile | Favilla's NY Pizza</title>
+        <title>My Profile | Francesco's</title>
         <meta name="description" content="Manage your account information, saved addresses, and preferences." />
       </Helmet>
 

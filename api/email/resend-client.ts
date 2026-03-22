@@ -18,17 +18,17 @@ export enum EmailType {
 export const EMAIL_CONFIG = {
   // Transactional emails - use main domain for maximum deliverability
   transactional: {
-    from: 'Favillas Pizzeria <orders@favillaspizzeria.com>',
-    replyTo: 'info@favillaspizzeria.com'
+    from: 'Francescos Pizzeria <orders@francescospizzeria.com>',
+    replyTo: 'info@francescospizzeria.com'
   },
   // Marketing emails - use subdomain to protect main domain reputation
   marketing: {
-    from: 'Favillas Pizzeria <noreply@updates.favillaspizzeria.com>',
-    replyTo: 'info@favillaspizzeria.com'
+    from: 'Francescos Pizzeria <noreply@updates.francescospizzeria.com>',
+    replyTo: 'info@francescospizzeria.com'
   },
   // Default fallback
-  from: 'Favillas Pizzeria <noreply@favillaspizzeria.com>',
-  replyTo: 'info@favillaspizzeria.com'
+  from: 'Francescos Pizzeria <noreply@francescospizzeria.com>',
+  replyTo: 'info@francescospizzeria.com'
 };
 
 /**

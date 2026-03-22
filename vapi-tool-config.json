@@ -4,7 +4,7 @@
   "messages": [],
   "function": {
     "name": "submit_order",
-    "description": "Submit a pizza order to Favilla's ordering system. Call this function when you have collected all required order information from the customer.",
+    "description": "Submit a pizza order to Francesco's ordering system. Call this function when you have collected all required order information from the customer.",
     "parameters": {
       "type": "object",
       "properties": {
@@ -71,7 +71,7 @@
     }
   },
   "server": {
-    "url": "https://favillaspizzeria.com/.netlify/functions/vapi-submit-order",
+    "url": "https://francescospizzeria.com/.netlify/functions/vapi-submit-order",
     "timeoutSeconds": 20
   }
 }

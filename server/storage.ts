@@ -344,7 +344,7 @@ export class MemStorage implements IStorage {
     // Create admin users
     const adminUser = await this.createUser({
       username: "admin",
-      email: "admin@favillas.com",
+      email: "admin@francescos.com",
       password: "e36e06853d8be329715adab3e520913bf7d63039c084b0ce775f4ffcc98a6829a2ddf3196f5d19483b58ef86ecf2824c637f004863c881dcc1934d9afce01e18.7d43812587dbac804d1608c6dc4918a7", // "password"
       firstName: "Super",
       lastName: "Admin",
@@ -357,7 +357,7 @@ export class MemStorage implements IStorage {
 
     const superAdminUser = await this.createUser({
       username: "superadmin",
-      email: "superadmin@favillas.com",
+      email: "superadmin@francescos.com",
       password: "0e4f012c77eb59901e58c427862703e7f1cdee73645a560b02e3d80f129ba6238bb281b7b0f19bb9b69b64e0a7f2cf5428699afd72826c01c8f12e5738aa4ec9.082eda566d01ce0528bee7add3247a7c", // "superadmin123"
       firstName: "Super",
       lastName: "Admin",
@@ -2757,11 +2757,11 @@ export class DatabaseStorage implements IStorage {
         .insert(restaurantSettings)
         .values({
           ...settingsData,
-          restaurantName: settingsData.restaurantName || "Favilla's NY Pizza",
+          restaurantName: settingsData.restaurantName || "Francesco's",
           address: settingsData.address || "123 Main Street, New York, NY 10001",
           phone: settingsData.phone || "(555) 123-4567",
-          email: settingsData.email || "info@favillas.com",
-          website: settingsData.website || "https://favillas.com",
+          email: settingsData.email || "info@francescos.com",
+          website: settingsData.website || "https://francescos.com",
           currency: settingsData.currency || "USD",
           timezone: settingsData.timezone || "America/New_York",
           deliveryFee: settingsData.deliveryFee || "3.99",

@@ -3,11 +3,11 @@ import { NeighborhoodData } from "../neighborhoods";
 export const northAshevilleData: NeighborhoodData = {
   slug: "North-Asheville",
   name: "North Asheville",
-  title: "Best Pizza in North Asheville NC | Favilla's NY Pizza - Pizza Delivery",
-  metaDescription: "Craving pizza in North Asheville? Favilla's delivers authentic NY-style pizza to North Asheville. Family-owned since 2013. Order online for fast delivery!",
+  title: "Best Pizza in North Asheville NC | Francesco's - Pizza Delivery",
+  metaDescription: "Craving pizza in North Asheville? Francesco's delivers authentic NY-style pizza to North Asheville. Family-owned since 2013. Order online for fast delivery!",
   heroSubheadline: "Serving North Asheville with authentic NY-style pizza, dine-in, pickup, and delivery.",
-  introText: "North Asheville families know what they want—quality, consistency, and pizza that tastes like it came straight from a New York pizzeria. Favilla's delivers all three, bringing hand-tossed pies, fresh calzones, and Italian classics right to your North Asheville doorstep.",
-  distanceFromFavillas: "8 miles",
+  introText: "North Asheville families know what they want—quality, consistency, and pizza that tastes like it came straight from a New York pizzeria. Francesco's delivers all three, bringing hand-tossed pies, fresh calzones, and Italian classics right to your North Asheville doorstep.",
+  distanceFromFrancescos: "8 miles",
   deliveryTime: "30-40 minutes",
   areasServed: [
     "Merrimon Avenue corridor",
@@ -23,12 +23,12 @@ export const northAshevilleData: NeighborhoodData = {
     "UNC Asheville",
     "Grove Park Inn"
   ],
-  localAnecdote: "North Asheville is all about community, great schools, and beautiful neighborhoods—and Favilla's is proud to be part of that. Whether you're feeding the soccer team after practice, hosting a family dinner, or just treating yourself to a Friday night pie, we deliver the kind of quality North Asheville families trust.",
+  localAnecdote: "North Asheville is all about community, great schools, and beautiful neighborhoods—and Francesco's is proud to be part of that. Whether you're feeding the soccer team after practice, hosting a family dinner, or just treating yourself to a Friday night pie, we deliver the kind of quality North Asheville families trust.",
   testimonials: [
     {
       name: "Jennifer W.",
       location: "North Asheville",
-      text: "We've been ordering from Favilla's for years! The pizza is always consistent and delicious. Perfect for family pizza night!",
+      text: "We've been ordering from Francesco's for years! The pizza is always consistent and delicious. Perfect for family pizza night!",
       rating: 5
     },
     {
@@ -40,7 +40,7 @@ export const northAshevilleData: NeighborhoodData = {
     {
       name: "Amy R.",
       location: "Merrimon Avenue",
-      text: "Favilla's is our go-to for pizza delivery. Always hot, always fresh, always on time. Highly recommend!",
+      text: "Francesco's is our go-to for pizza delivery. Always hot, always fresh, always on time. Highly recommend!",
       rating: 5
     }
   ],

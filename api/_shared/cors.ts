@@ -29,8 +29,8 @@ const DEFAULT_CORS_CONFIG: Required<CorsOptions> = {
     'https://pizza-spin-rewards.netlify.app',
     'https://pizzaspin.netlify.app',
     'https://preview--pizzaspin.netlify.app',
-    'https://favillaspizzeria.com',
-    'https://www.favillaspizzeria.com'
+    'https://francescospizzeria.com',
+    'https://www.francescospizzeria.com'
   ],
   allowedMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: [

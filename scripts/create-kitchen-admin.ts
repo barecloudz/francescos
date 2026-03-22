@@ -20,8 +20,8 @@ async function createKitchenAdmin() {
 
     // Create auth user
     const { data: authData, error: authError } = await supabase.auth.admin.createUser({
-      email: 'kitchen@favillaspizzeria.com',
-      password: 'Favillas69',
+      email: 'kitchen@francescospizzeria.com',
+      password: 'Francescos69',
       email_confirm: true,
       user_metadata: {
         firstName: 'Kitchen',
@@ -50,7 +50,7 @@ async function createKitchenAdmin() {
         .from('users')
         .insert({
           supabase_user_id: authData.user.id,
-          email: 'kitchen@favillaspizzeria.com',
+          email: 'kitchen@francescospizzeria.com',
           first_name: 'Kitchen',
           last_name: 'Admin',
           role: 'kitchen_admin',
@@ -90,8 +90,8 @@ async function createKitchenAdmin() {
     console.log('');
     console.log('🎉 Kitchen admin user created successfully!');
     console.log('');
-    console.log('📧 Email: kitchen@favillaspizzeria.com');
-    console.log('🔑 Password: Favillas69');
+    console.log('📧 Email: kitchen@francescospizzeria.com');
+    console.log('🔑 Password: Francescos69');
     console.log('👤 Role: kitchen_admin');
     console.log('');
     console.log('This user has access to:');

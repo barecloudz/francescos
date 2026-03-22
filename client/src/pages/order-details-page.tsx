@@ -125,7 +125,7 @@ const OrderDetailsPage = () => {
     return (
       <>
         <Helmet>
-          <title>Order Details | Favilla's NY Pizza</title>
+          <title>Order Details | Francesco's</title>
         </Helmet>
         <main className="min-h-screen bg-gray-50 flex items-center justify-center py-8">
           <div className="text-center">
@@ -145,7 +145,7 @@ const OrderDetailsPage = () => {
     return (
       <>
         <Helmet>
-          <title>Order Details | Favilla's NY Pizza</title>
+          <title>Order Details | Francesco's</title>
         </Helmet>
         <main className="min-h-screen bg-gray-50 flex items-center justify-center py-8">
           <div className="text-center">
@@ -162,7 +162,7 @@ const OrderDetailsPage = () => {
     return (
       <>
         <Helmet>
-          <title>Order Not Found | Favilla's NY Pizza</title>
+          <title>Order Not Found | Francesco's</title>
         </Helmet>
         <main className="min-h-screen bg-gray-50 flex items-center justify-center py-8">
           <div className="text-center">
@@ -184,7 +184,7 @@ const OrderDetailsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Order #{orderId} Details | Favilla's NY Pizza</title>
+        <title>Order #{orderId} Details | Francesco's</title>
       </Helmet>
 
       <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8 lg:pt-24 pt-16">

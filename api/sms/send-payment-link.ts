@@ -55,7 +55,7 @@ export const handler: Handler = async (event, context) => {
     // Create SMS message
     const message = `Hi ${customerName || 'there'}!
 
-Your Favilla's order #${orderId} is ready for payment.
+Your Francesco's order #${orderId} is ready for payment.
 
 Total: $${total.toFixed(2)}
 

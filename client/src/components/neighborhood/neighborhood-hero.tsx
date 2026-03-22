@@ -6,21 +6,21 @@ import { MapPin, Clock } from "lucide-react";
 interface NeighborhoodHeroProps {
   neighborhoodName: string;
   subheadline: string;
-  distanceFromFavillas: string;
+  distanceFromFrancescos: string;
   deliveryTime: string;
 }
 
 const NeighborhoodHero: React.FC<NeighborhoodHeroProps> = ({
   neighborhoodName,
   subheadline,
-  distanceFromFavillas,
+  distanceFromFrancescos,
   deliveryTime
 }) => {
   return (
     <section className="relative h-screen lg:h-[600px] bg-cover bg-center -mt-20 lg:-mt-20" style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}>
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-10 text-center">
-        <img src="/images/logo.png" alt="Favilla's Pizza Logo" className="w-[140px] md:w-[170px] mb-4" loading="eager" fetchpriority="high" />
+        <img src="/images/logo.png" alt="Francesco's Pizza Logo" className="w-[140px] md:w-[170px] mb-4" loading="eager" fetchpriority="high" />
 
         <div className="text-yellow-400 text-xl md:text-2xl mb-3">⭐⭐⭐⭐⭐ <span className="text-white text-sm md:text-base ml-2">4.5 / 1,081+ Reviews</span></div>
 
@@ -38,7 +38,7 @@ const NeighborhoodHero: React.FC<NeighborhoodHeroProps> = ({
         <div className="flex flex-col sm:flex-row gap-4 mb-6 text-white">
           <div className="flex items-center gap-2">
             <MapPin className="w-5 h-5 text-[#f2c94c]" />
-            <span className="text-sm md:text-base">{distanceFromFavillas} from Favilla's</span>
+            <span className="text-sm md:text-base">{distanceFromFrancescos} from Francesco's</span>
           </div>
           <div className="flex items-center gap-2">
             <Clock className="w-5 h-5 text-[#f2c94c]" />

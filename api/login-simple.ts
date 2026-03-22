@@ -37,7 +37,7 @@ export const handler: Handler = async (event, context) => {
           user: {
             id: 1,
             username: 'admin',
-            email: 'admin@favillas.com',
+            email: 'admin@francescos.com',
             role: 'admin'
           }
         })

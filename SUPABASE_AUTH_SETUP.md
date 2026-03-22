@@ -25,12 +25,12 @@ In Supabase Dashboard → **Authentication** → **URL Configuration**:
 
 **Site URL:**
 ```
-https://favillasnypizza.netlify.app
+https://francescos.netlify.app
 ```
 
 **Redirect URLs:**
 ```
-https://favillasnypizza.netlify.app/auth/callback
+https://francescos.netlify.app/auth/callback
 http://localhost:3000/auth/callback
 ```
 
@@ -50,7 +50,7 @@ Update your Google OAuth client redirect URIs to:
 **Authorized redirect URIs:**
 ```
 https://your-project-ref.supabase.co/auth/v1/callback
-https://favillasnypizza.netlify.app/auth/callback
+https://francescos.netlify.app/auth/callback
 ```
 
 ## Benefits of Supabase Auth

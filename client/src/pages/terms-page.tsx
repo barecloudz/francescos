@@ -6,7 +6,7 @@ export default function TermsPage() {
   return (
     <>
       <Helmet>
-        <title>Terms & Conditions | Favilla's NY Pizza</title>
+        <title>Terms & Conditions | Francesco's</title>
       </Helmet>
 
       <main className="min-h-screen bg-gray-50 py-8 md:pt-[72px] pt-14">
@@ -22,7 +22,7 @@ export default function TermsPage() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">1. Acceptance of Terms</h2>
                 <p className="text-gray-700">
-                  By accessing and placing an order with Favilla's NY Pizza, you confirm that you are in agreement with and bound by the terms and conditions contained in the Terms & Conditions outlined below. These terms apply to the entire website and any email or other type of communication between you and Favilla's NY Pizza.
+                  By accessing and placing an order with Francesco's, you confirm that you are in agreement with and bound by the terms and conditions contained in the Terms & Conditions outlined below. These terms apply to the entire website and any email or other type of communication between you and Francesco's.
                 </p>
               </section>
 
@@ -90,7 +90,7 @@ export default function TermsPage() {
                   <li>You must disclose any food allergies or dietary restrictions in your special instructions</li>
                   <li>Our kitchen handles common allergens including wheat, dairy, eggs, soy, and nuts</li>
                   <li>While we take precautions, we cannot guarantee allergen-free preparation</li>
-                  <li><strong>Favilla's NY Pizza is not responsible for allergic reactions resulting from undisclosed allergies or dietary restrictions</strong></li>
+                  <li><strong>Francesco's is not responsible for allergic reactions resulting from undisclosed allergies or dietary restrictions</strong></li>
                   <li>If you have severe allergies, please contact us directly before ordering</li>
                 </ul>
               </section>
@@ -112,7 +112,7 @@ export default function TermsPage() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">8. Limitation of Liability</h2>
                 <p className="text-gray-700">
-                  To the fullest extent permitted by law, Favilla's NY Pizza shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of our services.
+                  To the fullest extent permitted by law, Francesco's shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of our services.
                 </p>
               </section>
 
@@ -129,8 +129,8 @@ export default function TermsPage() {
                   For questions about these Terms & Conditions, please contact us at:
                 </p>
                 <p className="text-gray-700 mt-2">
-                  <strong>Favilla's NY Pizza</strong><br />
-                  Email: info@favillaspizzeria.com<br />
+                  <strong>Francesco's</strong><br />
+                  Email: info@francescospizzeria.com<br />
                   Phone: (828) 225-2885
                 </p>
               </section>

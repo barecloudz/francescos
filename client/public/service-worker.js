@@ -1,4 +1,4 @@
-// Favilla's PWA Service Worker
+// Francesco's PWA Service Worker
 // Safe caching strategy - does NOT cache kitchen page or API endpoints
 
 const CACHE_NAME = 'favilias-v1';

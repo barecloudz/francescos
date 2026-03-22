@@ -1175,8 +1175,8 @@ const CheckoutPage = () => {
   return (
     <>
       <Helmet>
-        <title>Checkout | Favilla's NY Pizza</title>
-        <meta name="description" content="Complete your order at Favilla's NY Pizza. Easy and secure checkout with multiple payment options." />
+        <title>Checkout | Francesco's</title>
+        <meta name="description" content="Complete your order at Francesco's. Easy and secure checkout with multiple payment options." />
       </Helmet>
 
       <main className="bg-gray-50 py-12 md:pt-[72px] pt-14">
@@ -1992,7 +1992,7 @@ const CheckoutPage = () => {
                           className="min-h-[100px]"
                         />
                         <p className="text-xs text-gray-500 mt-2 text-center">
-                          Please note any food allergies or dietary restrictions in your special instructions. Favilla's NY Pizza is not responsible for allergic reactions resulting from undisclosed allergies or dietary restrictions.
+                          Please note any food allergies or dietary restrictions in your special instructions. Francesco's is not responsible for allergic reactions resulting from undisclosed allergies or dietary restrictions.
                         </p>
                       </div>
 

@@ -18,15 +18,15 @@ const NeighborhoodPageTemplate: React.FC<NeighborhoodPageTemplateProps> = ({ dat
         <title>{data.title}</title>
         <meta name="description" content={data.metaDescription} />
         <meta name="keywords" content={data.keywords.join(", ")} />
-        <link rel="canonical" href={`https://favillaspizzeria.com/${data.slug}`} />
+        <link rel="canonical" href={`https://francescospizzeria.com/${data.slug}`} />
 
         {/* Open Graph Tags for Facebook/LinkedIn */}
         <meta property="og:title" content={data.title} />
         <meta property="og:description" content={data.metaDescription} />
-        <meta property="og:url" content={`https://favillaspizzeria.com/${data.slug}`} />
+        <meta property="og:url" content={`https://francescospizzeria.com/${data.slug}`} />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Favilla's NY Pizza" />
-        <meta property="og:image" content="https://favillaspizzeria.com/images/hero-bg.jpg" />
+        <meta property="og:site_name" content="Francesco's" />
+        <meta property="og:image" content="https://francescospizzeria.com/images/hero-bg.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="en_US" />
@@ -35,21 +35,21 @@ const NeighborhoodPageTemplate: React.FC<NeighborhoodPageTemplateProps> = ({ dat
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={data.title} />
         <meta name="twitter:description" content={data.metaDescription} />
-        <meta name="twitter:image" content="https://favillaspizzeria.com/images/hero-bg.jpg" />
+        <meta name="twitter:image" content="https://francescospizzeria.com/images/hero-bg.jpg" />
 
         {/* Enhanced Local Business Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Restaurant",
-            "name": "Favilla's NY Pizza",
-            "alternateName": `Favilla's Pizzeria ${data.name}`,
+            "name": "Francesco's",
+            "alternateName": `Francesco's Pizzeria ${data.name}`,
             "description": data.metaDescription,
             "image": [
-              "https://favillaspizzeria.com/images/hero-bg.jpg",
-              "https://favillaspizzeria.com/images/lineup.jpg"
+              "https://francescospizzeria.com/images/hero-bg.jpg",
+              "https://francescospizzeria.com/images/lineup.jpg"
             ],
-            "logo": "https://favillaspizzeria.com/logo.png",
+            "logo": "https://francescospizzeria.com/logo.png",
             "servesCuisine": ["Pizza", "Italian", "New York Style Pizza"],
             "priceRange": "$$",
             "address": {
@@ -66,9 +66,9 @@ const NeighborhoodPageTemplate: React.FC<NeighborhoodPageTemplateProps> = ({ dat
               "longitude": "-82.5967883"
             },
             "telephone": "+1-828-225-2885",
-            "email": "info@favillaspizzeria.com",
-            "url": `https://favillaspizzeria.com/${data.slug}`,
-            "menu": "https://favillaspizzeria.com/menu",
+            "email": "info@francescospizzeria.com",
+            "url": `https://francescospizzeria.com/${data.slug}`,
+            "menu": "https://francescospizzeria.com/menu",
             "acceptsReservations": false,
             "paymentAccepted": ["Cash", "Credit Card", "Debit Card"],
             "currenciesAccepted": "USD",
@@ -132,7 +132,7 @@ const NeighborhoodPageTemplate: React.FC<NeighborhoodPageTemplateProps> = ({ dat
               "reviewBody": testimonial.text,
               "publisher": {
                 "@type": "Organization",
-                "name": "Favilla's NY Pizza"
+                "name": "Francesco's"
               }
             }))
           })}
@@ -144,7 +144,7 @@ const NeighborhoodPageTemplate: React.FC<NeighborhoodPageTemplateProps> = ({ dat
         <NeighborhoodHero
           neighborhoodName={data.name}
           subheadline={data.heroSubheadline}
-          distanceFromFavillas={data.distanceFromFavillas}
+          distanceFromFrancescos={data.distanceFromFrancescos}
           deliveryTime={data.deliveryTime}
         />
 

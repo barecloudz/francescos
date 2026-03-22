@@ -98,12 +98,12 @@ node scripts/run-migration.js migrations/add-payment-tokens.sql
 You need to update your VAPI assistant with:
 
 **A. New System Message**
-- File: `UPDATED_SYSTEM_MESSAGE.txt` (in phoneagent-favilla folder)
+- File: `UPDATED_SYSTEM_MESSAGE.txt` (in phoneagent-francesco folder)
 - Upload this to VAPI dashboard as the assistant's system message
 - Includes store hours and payment preference flow
 
 **B. Updated Tool Schema**
-- File: `submit-order-tool-preview.json` (in phoneagent-favilla folder)
+- File: `submit-order-tool-preview.json` (in phoneagent-francesco folder)
 - Update the `submit_order` tool in VAPI dashboard
 - Added `payment_preference` field (required enum: "payment_link" or "pay_at_store")
 

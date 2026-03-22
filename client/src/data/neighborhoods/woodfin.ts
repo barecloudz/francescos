@@ -3,11 +3,11 @@ import { NeighborhoodData } from "../neighborhoods";
 export const woodfinData: NeighborhoodData = {
   slug: "Woodfin",
   name: "Woodfin",
-  title: "Best Pizza in Woodfin NC | Favilla's NY Pizza - Pizza Delivery Woodfin",
-  metaDescription: "Craving pizza in Woodfin? Favilla's delivers authentic NY-style pizza to Woodfin, NC. Fast delivery north of Asheville. Order online!",
+  title: "Best Pizza in Woodfin NC | Francesco's - Pizza Delivery Woodfin",
+  metaDescription: "Craving pizza in Woodfin? Francesco's delivers authentic NY-style pizza to Woodfin, NC. Fast delivery north of Asheville. Order online!",
   heroSubheadline: "Bringing authentic NY-style pizza to Woodfin—dine-in, pickup, and delivery.",
-  introText: "Woodfin is a growing community just north of Asheville, and Favilla's is proud to serve you. We deliver hand-tossed NY-style pies, fresh calzones, and Italian classics right to your Woodfin home, hot and ready.",
-  distanceFromFavillas: "10 miles north",
+  introText: "Woodfin is a growing community just north of Asheville, and Francesco's is proud to serve you. We deliver hand-tossed NY-style pies, fresh calzones, and Italian classics right to your Woodfin home, hot and ready.",
+  distanceFromFrancescos: "10 miles north",
   deliveryTime: "35-45 minutes",
   areasServed: [
     "Downtown Woodfin",
@@ -21,18 +21,18 @@ export const woodfinData: NeighborhoodData = {
     "Woodfin Greenway",
     "I-26 North exits"
   ],
-  localAnecdote: "Woodfin is a fantastic mix of small-town charm and modern growth, and Favilla's is here for it all. Whether you're enjoying the Greenway, settling into your new Woodfin neighborhood, or just craving that perfect NY slice, we make the trip north worth it every single time. Quality pizza, delivered with care.",
+  localAnecdote: "Woodfin is a fantastic mix of small-town charm and modern growth, and Francesco's is here for it all. Whether you're enjoying the Greenway, settling into your new Woodfin neighborhood, or just craving that perfect NY slice, we make the trip north worth it every single time. Quality pizza, delivered with care.",
   testimonials: [
     {
       name: "Melissa R.",
       location: "Woodfin",
-      text: "So happy Favilla's delivers to Woodfin! The pizza is always fresh and hot. Best we've found in the area!",
+      text: "So happy Francesco's delivers to Woodfin! The pizza is always fresh and hot. Best we've found in the area!",
       rating: 5
     },
     {
       name: "Patrick S.",
       location: "Riverside Drive Woodfin",
-      text: "We order from Favilla's all the time. The quality is top-notch and they actually deliver all the way to Woodfin. Love it!",
+      text: "We order from Francesco's all the time. The quality is top-notch and they actually deliver all the way to Woodfin. Love it!",
       rating: 5
     },
     {

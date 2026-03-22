@@ -152,7 +152,7 @@ export function getOrderConfirmationTemplate(data: OrderConfirmationData): strin
   <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
     <p style="margin: 0; color: #666;">Questions about your order?</p>
     <p style="margin: 5px 0;"><strong>Call us:</strong> (828) 225-2885</p>
-    <p style="margin: 0;"><strong>Email:</strong> favillaspizza@gmail.com</p>
+    <p style="margin: 0;"><strong>Email:</strong> francescospizza@gmail.com</p>
   </div>
 
   <div style="text-align: center; margin-top: 20px; padding: 15px; color: #666; font-size: 12px;">

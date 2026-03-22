@@ -109,7 +109,7 @@ export const handler: Handler = async (event, context) => {
 
     // Set cookie
     const origin = event.headers.origin || '';
-    const isProduction = origin.includes('netlify.app') || origin.includes('favillasnypizza');
+    const isProduction = origin.includes('netlify.app') || origin.includes('francescos');
     const cookieOptions = `auth-token=${token}; HttpOnly; Path=/; Max-Age=${7 * 24 * 60 * 60}; SameSite=Lax${isProduction ? '; Secure' : ''}`;
 
     return {

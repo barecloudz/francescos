@@ -115,7 +115,7 @@ export const handler: Handler = async (event, context) => {
       const safeUser = {
         id: 1,
         username: 'superadmin',
-        email: 'superadmin@favillas.com',
+        email: 'superadmin@francescos.com',
         firstName: 'Super',
         lastName: 'Admin',
         role: 'super_admin',

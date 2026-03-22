@@ -74,10 +74,10 @@ CREATE INDEX IF NOT EXISTS idx_users_marketing_opt_in ON users(marketing_opt_in)
 Make sure these environment variables are set in your Netlify deployment:
 
 - `RESEND_API_KEY` - Your Resend API key for sending emails
-- `RESEND_FROM_EMAIL` - The email address to send from (e.g., noreply@favillaspizza.com)
+- `RESEND_FROM_EMAIL` - The email address to send from (e.g., noreply@francescospizza.com)
 - `DATABASE_URL` - Your Supabase/PostgreSQL connection string
 - `JWT_SECRET` or `SESSION_SECRET` - For admin authentication
-- `SITE_URL` - Your site URL (e.g., https://favillasnypizza.netlify.app)
+- `SITE_URL` - Your site URL (e.g., https://francescos.netlify.app)
 - `RESTAURANT_ADDRESS` - Your restaurant address for email footer
 - `RESTAURANT_PHONE` - Your restaurant phone for email footer
 

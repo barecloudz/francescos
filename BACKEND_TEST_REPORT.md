@@ -1,6 +1,6 @@
 # Backend System Test Report - Pizza Spin Rewards
 **Test Date:** 2025-10-04
-**Environment:** Production (https://favillaspizzeria.com)
+**Environment:** Production (https://francescospizzeria.com)
 **Tester:** Backend System Testing Specialist
 **Total Endpoints Tested:** 21
 **Pass Rate:** 95.2% (20/21 passed)

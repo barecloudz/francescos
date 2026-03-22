@@ -6,7 +6,7 @@ export default function PrivacyPage() {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy | Favilla's NY Pizza</title>
+        <title>Privacy Policy | Francesco's</title>
       </Helmet>
 
       <main className="min-h-screen bg-gray-50 py-8 md:pt-[72px] pt-14">
@@ -162,8 +162,8 @@ export default function PrivacyPage() {
                   If you have questions or concerns about this privacy policy or our data practices, please contact us at:
                 </p>
                 <p className="text-gray-700 mt-2">
-                  <strong>Favilla's NY Pizza</strong><br />
-                  Email: info@favillaspizzeria.com<br />
+                  <strong>Francesco's</strong><br />
+                  Email: info@francescospizzeria.com<br />
                   Phone: (828) 225-2885
                 </p>
               </section>

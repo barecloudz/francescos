@@ -13,7 +13,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     persistSession: true,
     detectSessionInUrl: true,
     storage: window.localStorage,
-    storageKey: 'favillasnypizza-auth-token',
+    storageKey: 'francescos-auth-token',
     flowType: 'pkce'
   }
 })

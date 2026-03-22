@@ -41,7 +41,7 @@ export const handler: Handler = async (event, context) => {
         await sql`
           CREATE TABLE IF NOT EXISTS store_settings (
             id SERIAL PRIMARY KEY,
-            store_name VARCHAR(255) NOT NULL DEFAULT 'Favillas NY Pizza',
+            store_name VARCHAR(255) NOT NULL DEFAULT 'Francescos NY Pizza',
             address TEXT NOT NULL,
             latitude DECIMAL(10, 8) NOT NULL,
             longitude DECIMAL(11, 8) NOT NULL,
@@ -79,7 +79,7 @@ export const handler: Handler = async (event, context) => {
         // Insert store location
         await sql`
           INSERT INTO store_settings (store_name, address, latitude, longitude, phone) VALUES
-          ('Favillas NY Pizza', '5 Regent Park Blvd #107, Asheville, NC 28806', 35.59039, -82.58198, '(828) 225-2885')
+          ('Francescos NY Pizza', '5 Regent Park Blvd #107, Asheville, NC 28806', 35.59039, -82.58198, '(828) 225-2885')
           ON CONFLICT DO NOTHING
         `;
 
@@ -175,7 +175,7 @@ export const handler: Handler = async (event, context) => {
             updated_at
           ) VALUES (
             'superadmin',
-            'superadmin@favillas.com',
+            'superadmin@francescos.com',
             ${hashedPassword},
             'Super',
             'Admin',

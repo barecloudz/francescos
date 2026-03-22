@@ -37,7 +37,7 @@ function formatReceiptForThermalPrinter(order: any, items: any[], customerName: 
   receipt += `${ESC}a\x01`; // Center align
   receipt += `${ESC}E\x01`; // Bold on
   receipt += `${GS}!\x11`; // Double height and width
-  receipt += `FAVILLAS NY PIZZA\n`;
+  receipt += `FRANCESCOS NY PIZZA\n`;
   receipt += `${GS}!\x00`; // Normal size
   receipt += `${ESC}E\x00`; // Bold off
   receipt += `\n`;

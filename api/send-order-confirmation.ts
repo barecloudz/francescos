@@ -99,7 +99,7 @@ const generateOrderConfirmationHTML = (data: OrderEmailData): string => {
         <li>✅ Saved your favorite orders for quick reordering</li>
         <li>✅ Received exclusive member-only offers</li>
       </ul>
-      <a href="${process.env.SITE_URL || 'https://favillasnypizza.netlify.app'}/auth?signup=true" class="track-button">
+      <a href="${process.env.SITE_URL || 'https://francescos.netlify.app'}/auth?signup=true" class="track-button">
         🚀 Create Your Free Account
       </a>
       <p style="font-size: 12px; opacity: 0.8; margin-top: 10px;">
@@ -164,7 +164,7 @@ const generateOrderConfirmationHTML = (data: OrderEmailData): string => {
     </div>
   ` : '';
 
-  const siteURL = process.env.SITE_URL || 'https://favillasnypizza.netlify.app';
+  const siteURL = process.env.SITE_URL || 'https://francescos.netlify.app';
 
   return `
 <!DOCTYPE html>
@@ -172,7 +172,7 @@ const generateOrderConfirmationHTML = (data: OrderEmailData): string => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Confirmation #${data.orderId} | Favilla's NY Pizza</title>
+    <title>Order Confirmation #${data.orderId} | Francesco's</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -464,21 +464,21 @@ const generateOrderConfirmationHTML = (data: OrderEmailData): string => {
                 <p>Contact us if you have any questions about your order</p>
                 <div class="contact-links">
                     <a href="tel:${process.env.RESTAURANT_PHONE || '(555) 123-4567'}">📞 Call Us</a>
-                    <a href="mailto:${process.env.RESTAURANT_EMAIL || 'info@favillaspizza.com'}">📧 Email Us</a>
+                    <a href="mailto:${process.env.RESTAURANT_EMAIL || 'info@francescospizza.com'}">📧 Email Us</a>
                     <a href="${siteURL}">🌐 Visit Website</a>
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            <h3 style="margin-top: 0;">Favilla's NY Pizza</h3>
+            <h3 style="margin-top: 0;">Francesco's</h3>
             <p>Authentic New York Style Pizza</p>
             <p>📍 ${process.env.RESTAURANT_ADDRESS || 'Your Restaurant Address'}</p>
             <p>📞 ${process.env.RESTAURANT_PHONE || '(555) 123-4567'} | 🌐 ${siteURL}</p>
 
             <div class="social-links">
-                <a href="https://www.facebook.com/favillaspizzeria/">Facebook</a> |
-                <a href="https://www.instagram.com/favillaspizza/">Instagram</a>
+                <a href="https://www.facebook.com/francescospizzeria/">Facebook</a> |
+                <a href="https://www.instagram.com/francescospizza/">Instagram</a>
             </div>
 
             <p style="margin-top: 30px; font-size: 12px;">
@@ -542,9 +542,9 @@ export const handler: Handler = async (event, context) => {
 
     // Send email via Resend
     const { data, error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || 'orders@favillaspizzeria.com',
+      from: process.env.RESEND_FROM_EMAIL || 'orders@francescospizzeria.com',
       to: [orderData.customerEmail],
-      subject: `Order Confirmation #${orderData.orderId} - Favilla's NY Pizza`,
+      subject: `Order Confirmation #${orderData.orderId} - Francesco's`,
       html: htmlContent,
       tags: [
         { name: 'category', value: 'order_confirmation' },

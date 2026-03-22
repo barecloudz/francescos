@@ -286,7 +286,7 @@ export const receiptTemplates = pgTable("receipt_templates", {
 
 export const loyaltyProgram = pgTable("loyalty_program", {
 	id: serial().primaryKey().notNull(),
-	name: text().default('Favilla\'s Loyalty Program').notNull(),
+	name: text().default('Francesco\'s Loyalty Program').notNull(),
 	description: text(),
 	pointsPerDollar: numeric("points_per_dollar", { precision: 10, scale:  2 }).default('1.00').notNull(),
 	bonusPointsThreshold: numeric("bonus_points_threshold", { precision: 10, scale:  2 }).default('50.00').notNull(),
@@ -600,11 +600,11 @@ export const halfHalfSettings = pgTable("half_half_settings", {
 
 export const restaurantSettings = pgTable("restaurant_settings", {
 	id: serial().primaryKey().notNull(),
-	restaurantName: text("restaurant_name").default('Favilla\'s NY Pizza').notNull(),
+	restaurantName: text("restaurant_name").default('Francesco\'s NY Pizza').notNull(),
 	address: text().default('123 Main Street, New York, NY 10001').notNull(),
 	phone: text().default('(555) 123-4567').notNull(),
-	email: text().default('info@favillas.com').notNull(),
-	website: text().default('https://favillas.com').notNull(),
+	email: text().default('info@francescos.com').notNull(),
+	website: text().default('https://francescos.com').notNull(),
 	currency: text().default('USD').notNull(),
 	timezone: text().default('America/New_York').notNull(),
 	deliveryFee: numeric("delivery_fee", { precision: 10, scale:  2 }).default('3.99').notNull(),
@@ -657,7 +657,7 @@ export const adminSettings = pgTable("admin_settings", {
 
 export const storeSettings = pgTable("store_settings", {
 	id: serial().primaryKey().notNull(),
-	storeName: varchar("store_name", { length: 255 }).default('Favillas NY Pizza').notNull(),
+	storeName: varchar("store_name", { length: 255 }).default('Francescos NY Pizza').notNull(),
 	address: text().notNull(),
 	latitude: numeric({ precision: 10, scale:  8 }).notNull(),
 	longitude: numeric({ precision: 11, scale:  8 }).notNull(),
