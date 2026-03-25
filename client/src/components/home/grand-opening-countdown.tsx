@@ -11,8 +11,8 @@ const GrandOpeningCountdown: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isExpired, setIsExpired] = useState(false);
 
-  // Grand opening: March 11, 2026 at 11:00 AM EST
-  const targetDate = new Date("2026-03-11T11:00:00-05:00").getTime();
+  // Grand opening: April 15, 2026 at 9:00 AM EST
+  const targetDate = new Date("2026-04-15T09:00:00-05:00").getTime();
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -90,7 +90,7 @@ const GrandOpeningCountdown: React.FC = () => {
             Grand Opening
           </h2>
           <p className="text-red-500 text-base md:text-lg mb-4 font-bold tracking-wide">
-            MARCH 11, 2026
+            APRIL 15, 2026
           </p>
 
           {/* Urgent countdown display */}

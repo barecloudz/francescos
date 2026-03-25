@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import GrandOpeningCountdown from "@/components/home/grand-opening-countdown";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "wouter";
 import { Helmet } from "react-helmet";
@@ -441,7 +442,8 @@ const MenuPage = () => {
           <meta name="description" content="Our online menu is coming soon. Francesco's Pizza & Pasta opens April 15th in Murrells Inlet, SC. Call us at (843) 299-2700." />
           <link rel="canonical" href="https://francescosmyrtlebeach.com/menu" />
         </Helmet>
-        <div className="min-h-screen bg-gray-50 lg:pt-20 pt-0 flex items-center justify-center">
+        <div className="min-h-screen bg-gray-50 lg:pt-20 pt-0">
+          <GrandOpeningCountdown />
           <div className="text-center px-6 py-20 max-w-lg mx-auto">
             <div className="text-7xl mb-6">🍕</div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Menu Coming Soon</h1>
