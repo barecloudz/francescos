@@ -456,10 +456,9 @@ const MenuPage = () => {
   return (
     <>
       <Helmet>
-        <title>Menu - Order Pizza Online in Asheville NC | Francesco's</title>
-        <meta name="description" content="Order authentic NY style pizza online in Asheville, NC. Browse our menu of pizzas, calzones, stromboli & more. Fast delivery & pickup available. Order now!" />
-        <meta name="keywords" content="pizza menu asheville, order pizza online asheville, ny pizza delivery asheville, pizza pickup asheville nc, italian food menu asheville" />
-        <link rel="canonical" href="https://francescospizzeria.com/menu" />
+        <title>Menu Coming Soon | Francesco's Pizza & Pasta</title>
+        <meta name="description" content="Our online menu is coming soon. Francesco's Pizza & Pasta opens April 15th in Murrells Inlet, SC. Call us at (843) 299-2700." />
+        <link rel="canonical" href="https://francescosmyrtlebeach.com/menu" />
 
         {/* Open Graph Tags */}
         <meta property="og:title" content="Menu - Order Pizza Online | Francesco's" />
@@ -587,9 +586,35 @@ const MenuPage = () => {
         </script>
       </Helmet>
 
-      <div className="min-h-screen bg-gray-50 lg:pt-20 pt-0">
-        {/* Vacation Mode Banner */}
-        {isOrderingPaused && (
+      <div className="min-h-screen bg-gray-50 lg:pt-20 pt-0 flex items-center justify-center">
+        <div className="text-center px-6 py-20 max-w-lg mx-auto">
+          <div className="text-7xl mb-6">🍕</div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Menu Coming Soon</h1>
+          <p className="text-lg text-gray-600 mb-2">
+            We're putting the finishing touches on our online menu.
+          </p>
+          <p className="text-lg text-gray-600 mb-8">
+            <strong>Opening April 15th</strong> — Murrells Inlet, SC
+          </p>
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
+            <p className="text-gray-700 font-medium mb-1">Want to know what's on the menu?</p>
+            <a
+              href="tel:+18432992700"
+              className="text-[#d73a31] font-bold text-xl hover:underline"
+            >
+              (843) 299-2700
+            </a>
+          </div>
+          <a
+            href="/"
+            className="inline-block bg-[#d73a31] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#b52e26] transition-colors"
+          >
+            Back to Home
+          </a>
+        </div>
+      </div>
+      {/* MENU PAGE TEMPORARILY HIDDEN - full menu code preserved below, do not delete */}
+      {false && isOrderingPaused && (
           <div className="bg-yellow-500 border-b-4 border-yellow-600 px-4 sm:px-6 lg:px-8 py-4">
             <div className="max-w-7xl mx-auto flex items-center gap-3 text-white">
               <AlertCircle className="h-6 w-6 flex-shrink-0" />
@@ -1059,6 +1084,7 @@ const MenuPage = () => {
           )}
         </DialogContent>
       </Dialog>
+      )}
 
     </>
   );
