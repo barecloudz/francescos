@@ -22,7 +22,7 @@ const HomePage = () => {
     <>
       <Helmet>
         <title>Best Pizza in Murrells Inlet | Pizza Near Me | Francesco's Pizza & Pasta</title>
-        <meta name="description" content="Best pizza in Murrells Inlet! Francesco's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria on Dick Pond Road. Order online for pickup!" />
+        <meta name="description" content="Best pizza in Murrells Inlet! Francesco's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria on US-17. Order online for pickup!" />
         <meta name="keywords" content="pizza near me, best pizza in murrells inlet, pizza murrells inlet, murrells inlet pizza, pizza delivery murrells inlet, pizza place near me, pizzeria murrells inlet, Francescos Pizza, NY style pizza, hand tossed pizza, pasta murrells inlet, italian food murrells inlet" />
         <link rel="canonical" href="https://francescospizzaandpasta.com/" />
 
@@ -55,7 +55,7 @@ const HomePage = () => {
             "logo": "https://francescospizzaandpasta.com/images/logo.png",
             "@id": "https://francescospizzaandpasta.com/#restaurant",
             "url": "https://francescospizzaandpasta.com/",
-            "telephone": "+1-843-831-0800",
+            "telephone": "+1-843-299-2700",
             "email": "francescopizzapasta@gmail.com",
             "priceRange": "$$",
             "servesCuisine": ["Pizza", "Italian", "Pasta", "New York Style Pizza"],
@@ -63,16 +63,16 @@ const HomePage = () => {
             "acceptsReservations": false,
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "4620 Dick Pond Rd",
+              "streetAddress": "2539 US-17S, #6",
               "addressLocality": "Murrells Inlet",
               "addressRegion": "SC",
-              "postalCode": "29588",
+              "postalCode": "29576",
               "addressCountry": "US"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "33.7376",
-              "longitude": "-78.8531"
+              "latitude": "33.5479",
+              "longitude": "-79.0481"
             },
             "openingHoursSpecification": [
               {
@@ -136,7 +136,7 @@ const HomePage = () => {
             "logo": "https://francescospizzaandpasta.com/images/logo.png",
             "contactPoint": {
               "@type": "ContactPoint",
-              "telephone": "+1-843-831-0800",
+              "telephone": "+1-843-299-2700",
               "contactType": "customer service",
               "areaServed": "US",
               "availableLanguage": "en"

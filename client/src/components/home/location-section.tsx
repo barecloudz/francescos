@@ -10,7 +10,7 @@ const LocationSection: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-[#d73a31]">VISIT US</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Experience our authentic Italian cuisine at our Murrells Inlet location on Dick Pond Road!
+            Experience our authentic Italian cuisine at our Murrells Inlet location on US-17!
             We're open 7 days a week to serve you the best NY style pizza and pasta in town!
           </p>
         </div>
@@ -20,7 +20,7 @@ const LocationSection: React.FC = () => {
             {/* Map Section */}
             <div className="h-[400px] md:h-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.0!2d-78.8531!3d33.7376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s4620%20Dick%20Pond%20Rd%2C%20Myrtle%20Beach%2C%20SC%2029588!5e0!3m2!1sen!2sus!4v1635555555555!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.0!2d-79.0481!3d33.5479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s2539%20US-17%20S%20%236%2C%20Murrells%20Inlet%2C%20SC%2029576!5e0!3m2!1sen!2sus!4v1635555555555!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -41,8 +41,8 @@ const LocationSection: React.FC = () => {
                     <div>
                       <h4 className="text-xl font-bold mb-2">Address</h4>
                       <address className="not-italic text-gray-700">
-                        <p>4620 Dick Pond Rd</p>
-                        <p>Murrells Inlet, SC 29588</p>
+                        <p>2539 US-17S, #6</p>
+                        <p>Murrells Inlet, SC 29576</p>
                       </address>
                     </div>
                   </div>
@@ -52,8 +52,8 @@ const LocationSection: React.FC = () => {
                     <div>
                       <h4 className="text-xl font-bold mb-2">Phone</h4>
                       <p>
-                        <a href="tel:+18438310800" className="text-gray-700 hover:text-[#d73a31] transition-colors">
-                          (843) 831-0800
+                        <a href="tel:+18432992700" className="text-gray-700 hover:text-[#d73a31] transition-colors">
+                          (843) 299-2700
                         </a>
                       </p>
                     </div>
@@ -81,7 +81,7 @@ const LocationSection: React.FC = () => {
 
               <div className="mt-8 text-center">
                 <a
-                  href="https://maps.google.com/?q=4620+Dick+Pond+Rd,+Myrtle+Beach,+SC+29588"
+                  href="https://maps.google.com/?q=2539+US-17+S+%236,+Murrells+Inlet,+SC+29576"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#d73a31] font-bold text-lg hover:underline"

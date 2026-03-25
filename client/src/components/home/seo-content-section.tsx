@@ -122,7 +122,7 @@ const SeoContentSection: React.FC = () => {
               including Murrells Inlet, Surfside Beach, Garden City, Murrells Inlet, and surrounding communities in South Carolina.
             </p>
             <p className="text-gray-700">
-              <strong>Our Location:</strong> Visit us at 4620 Dick Pond Rd, Murrells Inlet, SC 29588.
+              <strong>Our Location:</strong> Visit us at 2539 US-17S, #6, Murrells Inlet, SC 29576.
               Order online for pickup and enjoy the best NY style pizza in town!
             </p>
           </div>
