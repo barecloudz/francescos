@@ -596,10 +596,10 @@
   status = 200
   headers = {Cache-Control = "public, max-age=31536000, immutable"}
 
-# Old domain redirect - francescosmyrtlebeach.com → francescospizzaandpasta.com
+# Old domain redirect - francescosmyrtlebeach.com → francescosmurrellsinlet.com
 [[redirects]]
   from = "https://francescosmyrtlebeach.com/*"
-  to = "https://francescospizzaandpasta.com/:splat"
+  to = "https://francescosmurrellsinlet.com/:splat"
   status = 301
   force = true
 
