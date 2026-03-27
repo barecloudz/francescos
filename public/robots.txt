@@ -1,0 +1,12 @@
+# Robots.txt for Francesco's Pizza & Pasta - Murrells Inlet, SC
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /kitchen
+Disallow: /employee/
+Disallow: /api/
+Disallow: /debug
+Disallow: /test
+
+Sitemap: https://francescosmurrellsinlet.com/sitemap.xml
