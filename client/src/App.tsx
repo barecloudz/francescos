@@ -32,6 +32,7 @@ import FixPointsPage from "@/pages/fix-points-page";
 import TermsPage from "@/pages/terms-page";
 import PrivacyPage from "@/pages/privacy-page";
 import CommunityImpactPage from "@/pages/community-impact-page";
+import VipPage from "@/pages/vip-page";
 
 // Neighborhood pages
 import SouthAshevillePage from "@/pages/South-Asheville";
@@ -69,7 +70,7 @@ import { ChristmasCountdownButton } from "@/components/christmas/christmas-count
 import { AdventCalendarModal } from "@/components/christmas/advent-calendar-modal";
 
 // Pages that should NOT show the main header (standalone full-screen pages)
-const STANDALONE_PAGES = ['/kitchen', '/admin/dashboard', '/admin/faqs', '/admin/fix-points'];
+const STANDALONE_PAGES = ['/kitchen', '/admin/dashboard', '/admin/faqs', '/admin/fix-points', '/vip'];
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -107,6 +108,7 @@ function Router() {
         <Route path="/terms" component={TermsPage} />
         <Route path="/privacy" component={PrivacyPage} />
         <Route path="/community-impact" component={CommunityImpactPage} />
+        <Route path="/vip" component={VipPage} />
 
         {/* Neighborhood Pages */}
         <Route path="/South-Asheville" component={SouthAshevillePage} />

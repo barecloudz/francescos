@@ -232,6 +232,32 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Set up time tracking routes
   setupTimeTrackingRoutes(app);
 
+  // SMS VIP Lead capture
+  app.post("/api/sms-leads", async (req, res) => {
+    try {
+      const { name, phone } = req.body;
+      if (!name || !phone) {
+        return res.status(400).json({ message: "Name and phone are required." });
+      }
+      // Create table if it doesn't exist yet
+      await db.execute(sql`
+        CREATE TABLE IF NOT EXISTS sms_leads (
+          id SERIAL PRIMARY KEY,
+          name TEXT NOT NULL,
+          phone TEXT NOT NULL,
+          created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+        )
+      `);
+      await db.execute(sql`
+        INSERT INTO sms_leads (name, phone) VALUES (${name}, ${phone})
+      `);
+      res.json({ success: true });
+    } catch (err: any) {
+      log(`Error saving SMS lead: ${err.message}`, 'ERROR');
+      res.status(500).json({ message: "Failed to save. Please try again." });
+    }
+  });
+
   // TEST ROUTE to verify our routes are working
   console.log('=== REGISTERING TEST ROUTE: /api/test-route ===');
   app.get("/api/test-route", (req, res) => {
