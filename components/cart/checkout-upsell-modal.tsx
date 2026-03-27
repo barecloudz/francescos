@@ -200,7 +200,7 @@ const CheckoutUpsellModal: React.FC<CheckoutUpsellModalProps> = ({
 
 
     // Get admin settings for enabled categories
-    const savedSettings = localStorage.getItem('experimentalFeatureSettings');
+    const savedSettings = typeof localStorage !== 'undefined' ? localStorage.getItem('experimentalFeatureSettings') : null;
     let enabledUpsellCategories: string[] = ['Drinks', 'Desserts', 'Sides', 'Appetizers']; // Default
 
     if (savedSettings) {
@@ -261,7 +261,7 @@ const CheckoutUpsellModal: React.FC<CheckoutUpsellModalProps> = ({
 
   // Get category image from experimental settings
   const getCategoryImage = (categoryName: string): string | null => {
-    const savedSettings = localStorage.getItem('experimentalFeatureSettings');
+    const savedSettings = typeof localStorage !== 'undefined' ? localStorage.getItem('experimentalFeatureSettings') : null;
     if (savedSettings) {
       try {
         const settings = JSON.parse(savedSettings);

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useCart, CartItem } from "@/hooks/use-cart";
 import { useAuth } from "@/hooks/use-supabase-auth";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -85,7 +85,8 @@ const CartSidebar: React.FC = () => {
     }
   }, [isOpen, items, clearCart]);
   const { user } = useAuth();
-  const [, navigate] = useLocation();
+  const _router = useRouter();
+  const navigate = (path: string) => _router.push(path);
   
   const formatPrice = (price: number) => {
     if (isNaN(price) || price === null || price === undefined) {

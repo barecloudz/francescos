@@ -6,7 +6,6 @@ import { useAuth } from "@/hooks/use-supabase-auth";
 import { useQuery } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import { useWebSocket } from "@/hooks/use-websocket";
 import { useCart } from "@/hooks/use-cart";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -39,7 +38,6 @@ export default function OrderDetailsContent() {
   const [orderId, setOrderId] = useState<number | null>(null);
 
   // Initialize WebSocket for real-time updates
-  useWebSocket();
 
   // Get order ID from URL params
   useEffect(() => {

@@ -198,8 +198,9 @@ const KitchenContent = () => {
   }, [orderStatusMode, activeTab]);
   // Use localStorage to track printed orders across all browser tabs/devices
   const [printedOrders, setPrintedOrders] = useState<Set<number>>(() => {
+    if (typeof localStorage === 'undefined') return new Set<number>();
     const stored = localStorage.getItem('printedOrders');
-    const orderIds = stored ? new Set(JSON.parse(stored)) : new Set();
+    const orderIds = stored ? new Set<number>(JSON.parse(stored)) : new Set<number>();
     console.log(`🔄 Loaded ${orderIds.size} printed orders from localStorage (synced across tabs)`);
     return orderIds;
   });
@@ -240,6 +241,7 @@ const KitchenContent = () => {
   const [soundVolume, setSoundVolume] = useState(0.5);
   const [audioActivated, setAudioActivated] = useState(() => {
     // Check if user has already activated audio in this session
+    if (typeof sessionStorage === 'undefined') return false;
     return sessionStorage.getItem('audioActivated') === 'true';
   });
 

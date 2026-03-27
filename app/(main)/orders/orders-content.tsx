@@ -7,7 +7,6 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { useCart } from "@/hooks/use-cart";
-import { useWebSocket } from "@/hooks/use-websocket";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -45,7 +44,6 @@ export default function OrdersContent() {
   const [statusFilter, setStatusFilter] = useState("all");
 
   // Initialize WebSocket for real-time updates
-  useWebSocket();
 
   // Fetch user's orders
   const { data: orders = [], isLoading } = useQuery({

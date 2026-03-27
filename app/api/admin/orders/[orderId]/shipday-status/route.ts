@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { storage } from '@/lib/storage';
-import { shipdayService } from '@/server/shipday';
+import { shipdayService } from '@/lib/shipday';
 import { getAuthUser } from '@/lib/api-utils';
 
 interface Params { params: Promise<{ orderId: string }> }

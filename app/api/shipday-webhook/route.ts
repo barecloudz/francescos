@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { shipdayService } from '@/server/shipday';
+import { shipdayService } from '@/lib/shipday';
 
 export async function POST(request: NextRequest) {
   try {

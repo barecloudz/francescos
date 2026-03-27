@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { storage } from '@/lib/storage';
-import { shipdayService } from '@/server/shipday';
+import { shipdayService } from '@/lib/shipday';
 
 interface Params { params: Promise<{ id: string }> }
 

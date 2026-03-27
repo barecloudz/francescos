@@ -63,28 +63,25 @@ const TAX_RATE = 0.0825;
 // Local storage key
 const CART_STORAGE_KEY = "francescosCart";
 
-// Global function to clear cart data (useful for debugging)
-(window as any).clearFrancescosCart = () => {
-  localStorage.removeItem(CART_STORAGE_KEY);
-  localStorage.clear(); // Clear ALL localStorage data
-  console.log("ALL localStorage data cleared - reloading page");
-  window.location.reload();
-};
+// Global debug helpers — guarded for SSR/SSG
+if (typeof window !== 'undefined') {
+  (window as any).clearFrancescosCart = () => {
+    localStorage.removeItem(CART_STORAGE_KEY);
+    localStorage.clear();
+    console.log("ALL localStorage data cleared - reloading page");
+    window.location.reload();
+  };
 
-// Emergency function to reset everything
-(window as any).emergencyReset = () => {
-  // Clear all storage
-  localStorage.clear();
-  sessionStorage.clear();
-
-  // Clear all cookies
-  document.cookie.split(";").forEach(function(c) {
-    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-  });
-
-  console.log("EMERGENCY RESET: All data cleared");
-  window.location.href = window.location.origin;
-};
+  (window as any).emergencyReset = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+    document.cookie.split(";").forEach(function(c) {
+      document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+    console.log("EMERGENCY RESET: All data cleared");
+    window.location.href = window.location.origin;
+  };
+}
 
 // Provider component
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {

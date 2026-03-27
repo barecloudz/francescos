@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { storage } from '@/lib/storage';
 import { insertOrderSchema, insertOrderItemSchema } from '@shared/schema';
 import { getAuthUser } from '@/lib/api-utils';
-import { shipdayService } from '@/server/shipday';
+import { shipdayService } from '@/lib/shipday';
 import { z } from 'zod';
 
 export async function GET(request: NextRequest) {

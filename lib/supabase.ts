@@ -5,6 +5,13 @@ import { createBrowserClient } from '@supabase/ssr';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
+// SSR-safe localStorage adapter — no-ops on the server during SSG
+const safeStorage = {
+  getItem: (key: string) => (typeof localStorage !== 'undefined' ? localStorage.getItem(key) : null),
+  setItem: (key: string, value: string) => { if (typeof localStorage !== 'undefined') localStorage.setItem(key, value); },
+  removeItem: (key: string) => { if (typeof localStorage !== 'undefined') localStorage.removeItem(key); },
+};
+
 // Browser client — safe to use in client components
 export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey, {
   auth: {
@@ -13,6 +20,7 @@ export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey, {
     persistSession: true,
     detectSessionInUrl: true,
     storageKey: 'francescos-auth-token',
+    storage: safeStorage,
   },
 });
 

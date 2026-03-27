@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link"
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/use-supabase-auth";
 import { useCart } from "@/hooks/use-cart";
 import { useBranding } from "@/hooks/use-branding";
@@ -36,7 +36,9 @@ import { ChristmasCountdownButton } from "@/components/christmas/christmas-count
 import { AdventCalendarModal } from "@/components/christmas/advent-calendar-modal";
 
 const Header = () => {
-  const [location, navigate] = useLocation();
+  const location = usePathname();
+  const router = useRouter();
+  const navigate = (path: string) => router.push(path);
   const { user, signOut } = useAuth();
   const { items, toggleCart } = useCart();
   const { companyName, logoUrl } = useBranding();

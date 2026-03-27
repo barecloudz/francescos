@@ -6,7 +6,6 @@ import { useAuth } from "@/hooks/use-supabase-auth";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import { useWebSocket } from "@/hooks/use-websocket";
 import { useCart } from "@/hooks/use-cart";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -44,7 +43,6 @@ export default function RewardsContent() {
   const [redeemedReward, setRedeemedReward] = useState<any>(null);
 
   // Initialize WebSocket for real-time updates
-  useWebSocket();
 
   // Fetch user's points and rewards data
   const { data: userData, isLoading: userLoading, error: userError } = useQuery({

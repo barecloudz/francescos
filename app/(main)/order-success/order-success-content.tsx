@@ -7,7 +7,6 @@ import { useCart } from "@/hooks/use-cart";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import { useWebSocket } from "@/hooks/use-websocket";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -116,7 +115,6 @@ export default function OrderSuccessContent() {
   const [retryCount, setRetryCount] = useState(0);
 
   // Initialize WebSocket for real-time updates
-  useWebSocket();
 
   // CRITICAL: Hard timeout to prevent infinite loading
   useEffect(() => {
