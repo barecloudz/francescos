@@ -1,3 +1,5 @@
+"use client";
+
 import { useUpdateCheck } from '@/hooks/use-update-check';
 import { Button } from '@/components/ui/button';
 import { X, RefreshCw } from 'lucide-react';

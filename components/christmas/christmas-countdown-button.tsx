@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { Gift } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';

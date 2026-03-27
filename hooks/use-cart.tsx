@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
 import { useToast } from "./use-toast";
 import { useAuth } from "./use-supabase-auth";

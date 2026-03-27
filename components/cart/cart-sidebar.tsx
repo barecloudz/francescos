@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { useCart, CartItem } from "@/hooks/use-cart";
 import { useAuth } from "@/hooks/use-supabase-auth";

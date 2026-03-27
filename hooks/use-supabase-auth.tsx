@@ -1,4 +1,7 @@
+"use client";
+
 import { useState, useEffect, createContext, useContext, ReactNode } from 'react';
+import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import { Session, User } from '@supabase/supabase-js';
 import { useMutation, UseMutationResult } from '@tanstack/react-query';
@@ -6,7 +9,6 @@ import { insertUserSchema, User as SelectUser, InsertUser } from '@shared/schema
 import { apiRequest, queryClient } from '../lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
 import { mapSupabaseUser, MappedUser } from '@/lib/user-mapping';
-import { useLocation } from 'wouter';
 import { EmailConfirmationModal } from '@/components/auth/email-confirmation-modal';
 
 type LoginData = Pick<InsertUser, "email" | "password">;
@@ -36,7 +38,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [showEmailConfirmationModal, setShowEmailConfirmationModal] = useState(false);
   const [confirmationEmail, setConfirmationEmail] = useState<string>('');
   const { toast } = useToast();
-  const [, navigate] = useLocation();
+  const router = useRouter();
 
   // Fetch complete user profile including contact information
   const fetchUserProfile = async (): Promise<MappedUser | null> => {
@@ -84,7 +86,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setConfirmationEmail('');
     // Navigate back to auth screen unless user is already logged in
     if (!user || (user as any).emailConfirmationRequired) {
-      navigate('/auth?tab=login');
+      router.push('/auth?tab=login');
     }
   };
 
@@ -236,7 +238,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       queryClient.clear();
 
       // Navigate to home page
-      navigate('/');
+      router.push('/');
 
       setLoading(false);
     } catch (error) {
@@ -245,7 +247,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       console.warn('Logout error (continuing anyway):', error);
       // Still clear cache and navigate
       queryClient.clear();
-      navigate('/');
+      router.push('/');
     }
   };
 
@@ -336,7 +338,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       // The auth-page will check for user state and won't redirect if mutation is still pending
       // By navigating here directly, we ensure smooth transition without requiring back button
       setTimeout(() => {
-        navigate('/');
+        router.push('/');
       }, 100);
     },
     onError: (error: Error) => {

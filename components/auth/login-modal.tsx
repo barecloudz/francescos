@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { useAuth } from "@/hooks/use-supabase-auth";
 import { useToast } from "@/hooks/use-toast";

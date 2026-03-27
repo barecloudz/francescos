@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useCart } from "@/hooks/use-cart";
 import { Button } from "@/components/ui/button";

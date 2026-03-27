@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Facebook, Instagram, Phone, MapPin, Mail, Clock } from "lucide-react";
 import { useBranding } from "@/hooks/use-branding";

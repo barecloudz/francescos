@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useCallback } from 'react';
 import { useAuth } from './use-supabase-auth';
 import { useToast } from './use-toast';

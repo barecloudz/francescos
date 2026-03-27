@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { createChart, ColorType, IChartApi, ISeriesApi, AreaData, Time, AreaSeries, LineSeries } from 'lightweight-charts';
 
