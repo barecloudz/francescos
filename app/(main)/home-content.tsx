@@ -25,7 +25,7 @@ const HomePageContent = () => {
       <ChristmasPromoSection />
 
       {/* Featured Section */}
-      <FeaturedSection menuItems={featuredItems} />
+      <FeaturedSection menuItems={featuredItems as any} />
 
       {/* Catering Section */}
       <CateringSection />

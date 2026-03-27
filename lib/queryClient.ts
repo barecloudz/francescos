@@ -65,7 +65,7 @@ async function getAuthHeaders(): Promise<Record<string, string>> {
 }
 
 export async function apiRequest(
-  method: "GET" | "POST" | "PUT" | "DELETE",
+  method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE",
   url: string,
   data?: any,
   unauthorizedBehavior: UnauthorizedBehavior = "throw"
