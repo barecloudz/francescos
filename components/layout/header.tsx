@@ -174,25 +174,8 @@ const Header = () => {
                 </Link>
               </nav>
               
-              {/* Cart and User */}
+              {/* User (staff/admin only — no public login button) */}
               <div className="flex items-center space-x-4">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={toggleCart}
-                  className="relative hover:bg-gray-100"
-                  data-cart-button="true"
-                  data-desktop-cart="true"
-                  data-cart-icon="desktop"
-                >
-                  <ShoppingBag className="h-6 w-6 text-gray-700" />
-                  {cartItemCount > 0 && (
-                    <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-red-600 text-xs">
-                      {cartItemCount}
-                    </Badge>
-                  )}
-                </Button>
-                
                 {user ? (
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -215,26 +198,6 @@ const Header = () => {
                             <User className="h-5 w-5 text-blue-600" />
                           </div>
                           <span className="font-semibold text-gray-900 text-base">My Profile</span>
-                        </button>
-
-                        <button
-                          onClick={() => navigate("/orders")}
-                          className="w-full flex items-center space-x-3 px-5 py-4 rounded-xl bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-[1.02]"
-                        >
-                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm">
-                            <ShoppingBag className="h-5 w-5 text-green-600" />
-                          </div>
-                          <span className="font-semibold text-gray-900 text-base">My Orders</span>
-                        </button>
-
-                        <button
-                          onClick={() => navigate("/rewards")}
-                          className="w-full flex items-center space-x-3 px-5 py-4 rounded-xl bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-[1.02]"
-                        >
-                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm">
-                            <Star className="h-5 w-5 text-yellow-600" />
-                          </div>
-                          <span className="font-semibold text-gray-900 text-base">Rewards</span>
                         </button>
 
                         <button
@@ -303,13 +266,7 @@ const Header = () => {
                       </div>
                     </DropdownMenuContent>
                   </DropdownMenu>
-                ) : (
-                  <Link href="/auth">
-                    <Button className="bg-[#d73a31] hover:bg-[#c73128] text-white font-medium">
-                      Login
-                    </Button>
-                  </Link>
-                )}
+                ) : null}
               </div>
             </div>
           </div>
@@ -329,7 +286,7 @@ const Header = () => {
               </div>
             </Link>
             <div className="flex items-center space-x-2 w-20 justify-end">
-              {user ? (
+              {user && (
                 <Button variant="ghost" size="sm" onClick={() => setMobileProfileMenuOpen(true)}>
                   <Avatar className="h-6 w-6">
                     <AvatarFallback className="text-xs">
@@ -337,12 +294,6 @@ const Header = () => {
                     </AvatarFallback>
                   </Avatar>
                 </Button>
-              ) : (
-                <Link href="/auth">
-                  <Button size="sm" className="bg-[#d73a31] hover:bg-[#c73128] text-white">
-                    Login
-                  </Button>
-                </Link>
               )}
             </div>
           </div>
@@ -381,44 +332,26 @@ const Header = () => {
               </Link>
             )}
 
-            <div
-              className={`flex flex-col items-center space-y-1 relative transition-colors cursor-pointer ${
-                location === "/checkout" ? "text-[#d73a31]" : "text-gray-600 hover:text-[#d73a31]"
-              }`}
-              data-cart-button="true"
-              data-mobile-cart="true"
-              data-cart-icon="mobile"
-              onClick={toggleCart}
-            >
-              <ShoppingBag className="h-6 w-6" />
-              {cartItemCount > 0 && (
-                <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-[#d73a31] text-xs font-bold">
-                  {cartItemCount}
-                </Badge>
-              )}
-              <span className="text-xs font-semibold">Cart</span>
-            </div>
+            <Link href="/community-impact">
+              <div className={`flex flex-col items-center space-y-1 transition-colors ${
+                location === "/community-impact" ? "text-[#d73a31]" : "text-gray-600 hover:text-[#d73a31]"
+              }`}>
+                <HeartHandshake className="h-6 w-6" />
+                <span className="text-xs font-semibold">Community</span>
+              </div>
+            </Link>
 
-            <div className="flex flex-col items-center space-y-1">
-              {user ? (
-                <div
-                  className={`flex flex-col items-center space-y-1 cursor-pointer transition-colors ${
-                    location === "/profile" ? "text-[#d73a31]" : "text-gray-600 hover:text-[#d73a31]"
-                  }`}
-                  onClick={() => setMobileProfileMenuOpen(true)}
-                >
-                  <User className="h-6 w-6" />
-                  <span className="text-xs font-semibold">Profile</span>
-                </div>
-              ) : (
-                <Link href="/auth">
-                  <div className="flex flex-col items-center space-y-1 text-gray-600 hover:text-[#d73a31] transition-colors">
-                    <User className="h-6 w-6" />
-                    <span className="text-xs font-semibold">Login</span>
-                  </div>
-                </Link>
-              )}
-            </div>
+            {user && (
+              <div
+                className={`flex flex-col items-center space-y-1 cursor-pointer transition-colors ${
+                  location === "/profile" ? "text-[#d73a31]" : "text-gray-600 hover:text-[#d73a31]"
+                }`}
+                onClick={() => setMobileProfileMenuOpen(true)}
+              >
+                <User className="h-6 w-6" />
+                <span className="text-xs font-semibold">Profile</span>
+              </div>
+            )}
           </div>
         </nav>
 
@@ -467,32 +400,6 @@ const Header = () => {
                 <div className="flex-1 text-left">
                   <h3 className="font-semibold text-gray-900">My Profile</h3>
                   <p className="text-sm text-gray-500">View and edit your profile</p>
-                </div>
-              </button>
-
-              <button
-                onClick={() => handleNavigate("/orders")}
-                className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
-              >
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-green-50">
-                  <ShoppingBag className="h-6 w-6 text-green-600" />
-                </div>
-                <div className="flex-1 text-left">
-                  <h3 className="font-semibold text-gray-900">My Orders</h3>
-                  <p className="text-sm text-gray-500">Track your order history</p>
-                </div>
-              </button>
-
-              <button
-                onClick={() => handleNavigate("/rewards")}
-                className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
-              >
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-yellow-50">
-                  <Star className="h-6 w-6 text-yellow-600" />
-                </div>
-                <div className="flex-1 text-left">
-                  <h3 className="font-semibold text-gray-900">Rewards</h3>
-                  <p className="text-sm text-gray-500">View your points and rewards</p>
                 </div>
               </button>
 
