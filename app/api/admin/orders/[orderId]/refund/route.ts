@@ -3,13 +3,12 @@ import Stripe from 'stripe';
 import { storage } from '@/lib/storage';
 import { getAuthUser } from '@/lib/api-utils';
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('STRIPE_SECRET_KEY environment variable is required');
+function getStripe() {
+  if (!process.env.STRIPE_SECRET_KEY) {
+    throw new Error('STRIPE_SECRET_KEY environment variable is required');
+  }
+  return new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: '2023-10-16' });
 }
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2023-10-16',
-});
 
 interface Params { params: Promise<{ orderId: string }> }
 
@@ -37,6 +36,7 @@ export async function POST(request: NextRequest, { params }: Params) {
       ? Math.round(amount * 100)
       : Math.round(parseFloat(order.total) * 100);
 
+    const stripe = getStripe();
     const refund = await stripe.refunds.create({
       payment_intent: order.paymentIntentId,
       amount: refundAmount,

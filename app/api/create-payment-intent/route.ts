@@ -3,13 +3,12 @@ import Stripe from 'stripe';
 import { storage } from '@/lib/storage';
 import { getAuthUser } from '@/lib/api-utils';
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('STRIPE_SECRET_KEY environment variable is required');
+function getStripe() {
+  if (!process.env.STRIPE_SECRET_KEY) {
+    throw new Error('STRIPE_SECRET_KEY environment variable is required');
+  }
+  return new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: '2023-10-16' });
 }
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2023-10-16',
-});
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,6 +16,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { amount, orderId } = body;
 
+    const stripe = getStripe();
     const paymentIntent = await stripe.paymentIntents.create({
       amount: Math.round(amount * 100), // Convert dollars to cents
       currency: 'usd',
