@@ -415,6 +415,37 @@ const MenuContent = () => {
     });
   };
 
+  // FLIP TO false ON APRIL 15 TO GO LIVE
+  const COMING_SOON = true;
+  if (COMING_SOON) {
+    return (
+      <div className="min-h-screen bg-gray-50 lg:pt-20 pt-0">
+        <div className="text-center px-6 py-20 max-w-lg mx-auto">
+          <div className="text-7xl mb-6">🍕</div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Menu Coming Soon</h1>
+          <p className="text-lg text-gray-600 mb-2">
+            We&apos;re putting the finishing touches on our online menu.
+          </p>
+          <p className="text-lg text-gray-600 mb-8">
+            <strong>Opening April 15th</strong> — Murrells Inlet, SC
+          </p>
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
+            <p className="text-gray-700 font-medium mb-1">Want to know what&apos;s on the menu?</p>
+            <a href="tel:+18432992700" className="text-[#d73a31] font-bold text-xl hover:underline">
+              (843) 299-2700
+            </a>
+          </div>
+          <a
+            href="/"
+            className="inline-block bg-[#d73a31] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#b52e26] transition-colors"
+          >
+            Back to Home
+          </a>
+        </div>
+      </div>
+    );
+  }
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
