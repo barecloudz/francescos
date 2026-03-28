@@ -48,8 +48,12 @@ const CommunityContent: React.FC = () => {
   const { data: settings, isLoading: settingsLoading } = useQuery({
     queryKey: ['/api/community-impact/settings'],
     queryFn: async () => {
-      const response = await apiRequest('GET', '/api/community-impact/settings');
-      return await response.json();
+      try {
+        const response = await apiRequest('GET', '/api/community-impact/settings');
+        return await response.json();
+      } catch {
+        return { comingSoon: true };
+      }
     }
   });
 
@@ -57,8 +61,12 @@ const CommunityContent: React.FC = () => {
   const { data: charities, isLoading: charitiesLoading } = useQuery({
     queryKey: ['/api/charities/active'],
     queryFn: async () => {
-      const response = await apiRequest('GET', '/api/charities/active');
-      return await response.json();
+      try {
+        const response = await apiRequest('GET', '/api/charities/active');
+        return await response.json();
+      } catch {
+        return [];
+      }
     }
   });
 
