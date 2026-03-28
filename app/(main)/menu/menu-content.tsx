@@ -25,6 +25,8 @@ import { useStoreStatus } from "@/hooks/use-store-status";
 import MenuItemSimple from "@/components/menu/menu-item-simple";
 import MenuItemWithChoices from "@/components/menu/menu-item-with-choices";
 
+const TOAST_ORDER_URL = "https://order.toasttab.com/online/genovas-pizza-murrells-inlet-2520-u-s-17-business";
+
 const MenuContent = () => {
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -250,12 +252,9 @@ const MenuContent = () => {
     return acc;
   }, {});
 
-  // Handle clicking on item card to open modal
-  const handleItemClick = (item: any) => {
-    setSelectedItem(item);
-    setSelectedChoices({});
-    setQuantity(1);
-    setIsChoiceModalOpen(true);
+  // Clicking a menu item sends the user to Toast Online Ordering
+  const handleItemClick = (_item: any) => {
+    window.open(TOAST_ORDER_URL, '_blank', 'noopener,noreferrer');
   };
 
 
@@ -416,37 +415,6 @@ const MenuContent = () => {
     });
   };
 
-  // COMING SOON -- set to false to restore full menu
-  const COMING_SOON = true;
-  if (COMING_SOON) {
-    return (
-      <div className="min-h-screen bg-gray-50 lg:pt-20 pt-0">
-        <div className="text-center px-6 py-20 max-w-lg mx-auto">
-          <div className="text-7xl mb-6">🍕</div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Menu Coming Soon</h1>
-          <p className="text-lg text-gray-600 mb-2">
-            We&apos;re putting the finishing touches on our online menu.
-          </p>
-          <p className="text-lg text-gray-600 mb-8">
-            <strong>Opening April 15th</strong> — Murrells Inlet, SC
-          </p>
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
-            <p className="text-gray-700 font-medium mb-1">Want to know what&apos;s on the menu?</p>
-            <a href="tel:+18432992700" className="text-[#d73a31] font-bold text-xl hover:underline">
-              (843) 299-2700
-            </a>
-          </div>
-          <a
-            href="/"
-            className="inline-block bg-[#d73a31] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#b52e26] transition-colors"
-          >
-            Back to Home
-          </a>
-        </div>
-      </div>
-    );
-  }
-
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -517,27 +485,37 @@ const MenuContent = () => {
           </div>
         )}
 
+        {/* Toast Online Ordering Banner */}
+        <div className="bg-[#d73a31] px-4 sm:px-6 lg:px-8 py-4 sticky top-0 z-40 shadow-md">
+          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="text-white text-center sm:text-left">
+              <p className="font-bold text-lg leading-tight">Browse our menu below</p>
+              <p className="text-red-100 text-sm">Ready to order? Place your order online through Toast</p>
+            </div>
+            <a
+              href={TOAST_ORDER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 bg-white text-[#d73a31] font-bold px-6 py-3 rounded-lg hover:bg-red-50 transition-colors text-sm sm:text-base whitespace-nowrap shadow-sm"
+            >
+              Order Online →
+            </a>
+          </div>
+        </div>
+
         {/* Header */}
         <div className="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-6">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <h1 className="text-2xl font-bold text-gray-900">Menu</h1>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => router.push("/checkout")}
-              className="relative"
-              data-cart-button="true"
-              data-desktop-cart="true"
-              disabled={isOrderingPaused || isPastCutoff}
+            <a
+              href={TOAST_ORDER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-[#d73a31] text-white font-semibold px-4 py-2 rounded-lg hover:bg-[#b52e26] transition-colors text-sm"
             >
-              <ShoppingCart className="h-4 w-4 mr-2" />
-              Cart
-              {items.length > 0 && (
-                <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-red-600 text-xs">
-                  {items.length}
-                </Badge>
-              )}
-            </Button>
+              <ShoppingCart className="h-4 w-4" />
+              Order Now
+            </a>
           </div>
         </div>
 
