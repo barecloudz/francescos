@@ -25,7 +25,7 @@ import { useStoreStatus } from "@/hooks/use-store-status";
 import MenuItemSimple from "@/components/menu/menu-item-simple";
 import MenuItemWithChoices from "@/components/menu/menu-item-with-choices";
 
-const TOAST_ORDER_URL = "https://order.toasttab.com/online/genovas-pizza-murrells-inlet-2520-u-s-17-business";
+const TOAST_ORDER_URL = "https://order.toasttab.com/online/francesco's-pizza-pasta-murrells-inlet";
 
 const MenuContent = () => {
   const router = useRouter();
