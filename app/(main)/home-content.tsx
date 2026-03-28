@@ -2,6 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import HeroSection from "@/components/home/hero-section";
+import GrandOpeningCountdown from "@/components/home/grand-opening-countdown";
 import ChristmasPromoSection from "@/components/home/christmas-promo-section";
 import FeaturedSection from "@/components/home/featured-section";
 import CateringSection from "@/components/home/catering-section";
@@ -20,6 +21,9 @@ const HomePageContent = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Grand Opening Countdown - hides automatically after April 15 */}
+      <GrandOpeningCountdown />
 
       {/* Christmas Promo Section - Only shows in December */}
       <ChristmasPromoSection />
