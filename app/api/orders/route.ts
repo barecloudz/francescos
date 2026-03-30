@@ -107,7 +107,7 @@ export async function POST(request: NextRequest) {
           specialInstructions: body.specialInstructions || '',
           restaurantName: "Francesco's",
           restaurantPhone: '(843) 299-2700',
-          restaurantAddress: '2539 US-17S #6, Murrells Inlet SC 29576',
+          restaurantAddress: '2520 US-17 BUS, Murrells Inlet, SC 29576',
           fulfillmentTime: completedOrder.fulfillmentTime || 'asap',
           scheduledTime: completedOrder.scheduledTime
             ? completedOrder.scheduledTime.toISOString()

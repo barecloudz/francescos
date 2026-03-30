@@ -73,7 +73,7 @@ export default function RootLayout({
               servesCuisine: ["Italian", "Pizza", "Pasta"],
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "2539 US-17S, #6",
+                streetAddress: "2520 US-17 BUS",
                 addressLocality: "Murrells Inlet",
                 addressRegion: "SC",
                 postalCode: "29576",

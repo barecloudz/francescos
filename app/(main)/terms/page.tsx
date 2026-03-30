@@ -129,7 +129,7 @@ export default function TermsPage() {
               </p>
               <p className="text-gray-700 mt-2">
                 <strong>Francesco&apos;s Pizza &amp; Pasta</strong><br />
-                2539 US-17S #6, Murrells Inlet, SC 29576<br />
+                2520 US-17 BUS, Murrells Inlet, SC 29576<br />
                 Phone: (843) 299-2700
               </p>
             </section>
