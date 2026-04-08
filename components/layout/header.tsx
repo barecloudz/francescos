@@ -120,7 +120,7 @@ const Header = () => {
                 <div className="flex items-center space-x-4">
                   <img src={logoUrl} alt={companyName} className="h-12" />
                   <div className="hidden lg:block">
-                    <h1 className="text-xl font-bold text-[#c0392b] font-playfair">{companyName}</h1>
+                    <h1 className="font-playfair text-sm font-normal text-[#f5f0e8] uppercase" style={{letterSpacing:'0.2em'}}>{companyName}</h1>
                   </div>
                 </div>
               </Link>
@@ -282,7 +282,7 @@ const Header = () => {
             <Link href="/" className="flex items-center space-x-2">
               <img src={logoUrl} alt={companyName} className="h-8" />
               <div>
-                <h1 className="text-sm font-bold text-[#c0392b] font-playfair">{companyName}</h1>
+                <h1 className="font-playfair text-xs font-normal text-[#f5f0e8] uppercase" style={{letterSpacing:'0.15em'}}>{companyName}</h1>
               </div>
             </Link>
             <div className="flex items-center space-x-2 w-20 justify-end">
