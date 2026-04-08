@@ -35,31 +35,31 @@ const GrandOpeningCountdown: React.FC = () => {
   if (isExpired) return null;
 
   const TimeBlock = ({ value, label }: { value: number; label: string }) => (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center flex-1">
       <div
         style={{
           background: '#111111',
           border: '1px solid rgba(192,57,43,0.3)',
           borderTop: '2px solid #c0392b',
-          padding: '1rem 1.5rem',
-          minWidth: '72px',
+          padding: 'clamp(0.5rem, 2vw, 1rem) 0',
+          width: '100%',
           textAlign: 'center',
         }}
       >
         <span
           className="font-playfair font-bold"
-          style={{ fontSize: '2.25rem', color: '#f5f0e8', lineHeight: 1 }}
+          style={{ fontSize: 'clamp(1.6rem, 7vw, 2.5rem)', color: '#f5f0e8', lineHeight: 1 }}
         >
           {value.toString().padStart(2, "0")}
         </span>
       </div>
       <span
         style={{
-          fontSize: '0.6rem',
-          letterSpacing: '0.3em',
+          fontSize: 'clamp(0.5rem, 1.8vw, 0.65rem)',
+          letterSpacing: '0.2em',
           textTransform: 'uppercase',
-          color: '#888888',
-          marginTop: '0.5rem',
+          color: '#aaaaaa',
+          marginTop: '0.4rem',
         }}
       >
         {label}
@@ -73,7 +73,7 @@ const GrandOpeningCountdown: React.FC = () => {
         background: '#0a0a0a',
         borderTop: '1px solid rgba(192,57,43,0.2)',
         borderBottom: '1px solid rgba(192,57,43,0.2)',
-        padding: '3rem 1rem',
+        padding: '2.5rem 1rem',
       }}
     >
       <div className="container mx-auto px-4 text-center">
@@ -81,7 +81,7 @@ const GrandOpeningCountdown: React.FC = () => {
         <div className="section-divider"></div>
         <h2
           className="font-playfair font-bold"
-          style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)', color: '#f5f0e8', marginBottom: '0.5rem' }}
+          style={{ fontSize: 'clamp(1.6rem, 5vw, 2.5rem)', color: '#f5f0e8', marginBottom: '0.4rem' }}
         >
           Grand Opening
         </h2>
@@ -91,32 +91,33 @@ const GrandOpeningCountdown: React.FC = () => {
             letterSpacing: '0.4em',
             textTransform: 'uppercase',
             color: '#c0392b',
-            marginBottom: '2.5rem',
+            marginBottom: '2rem',
           }}
         >
           April 15, 2026
         </p>
 
-        <div className="flex justify-center items-start gap-4 md:gap-6">
+        {/* Single row, fluid blocks — fits any screen */}
+        <div className="flex justify-center items-start gap-2 md:gap-4 w-full max-w-sm mx-auto md:max-w-lg">
           <TimeBlock value={timeLeft.days} label="Days" />
-          <span className="font-playfair text-3xl text-[#c0392b] mt-3">·</span>
+          <span className="font-playfair text-2xl text-[#c0392b] mt-2 flex-none">·</span>
           <TimeBlock value={timeLeft.hours} label="Hours" />
-          <span className="font-playfair text-3xl text-[#c0392b] mt-3">·</span>
-          <TimeBlock value={timeLeft.minutes} label="Minutes" />
-          <span className="font-playfair text-3xl text-[#c0392b] mt-3">·</span>
-          <TimeBlock value={timeLeft.seconds} label="Seconds" />
+          <span className="font-playfair text-2xl text-[#c0392b] mt-2 flex-none">·</span>
+          <TimeBlock value={timeLeft.minutes} label="Min" />
+          <span className="font-playfair text-2xl text-[#c0392b] mt-2 flex-none">·</span>
+          <TimeBlock value={timeLeft.seconds} label="Sec" />
         </div>
 
         <p
           style={{
-            marginTop: '2.5rem',
-            fontSize: '0.7rem',
-            letterSpacing: '0.25em',
+            marginTop: '2rem',
+            fontSize: '0.65rem',
+            letterSpacing: '0.2em',
             textTransform: 'uppercase',
-            color: '#555555',
+            color: '#777777',
           }}
         >
-          Be the first to taste authentic NY style pizza in Murrells Inlet
+          Murrells Inlet · authentic NY style pizza
         </p>
       </div>
     </section>

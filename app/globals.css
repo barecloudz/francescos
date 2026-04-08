@@ -190,6 +190,17 @@ body::before {
   .font-playfair {
     font-family: 'Playfair Display', serif;
   }
+
+  /* Mobile readability: boost muted text brightness */
+  @media (max-width: 768px) {
+    .section-eyebrow {
+      font-size: 0.65rem;
+      color: #e05040;
+    }
+    body {
+      font-size: 1rem;
+    }
+  }
 }
 
 /* Ensure text content is selectable for SEO and user experience */

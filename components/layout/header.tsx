@@ -280,10 +280,7 @@ const Header = () => {
           <div className="flex items-center justify-between px-4 py-3">
             <div className="w-20"></div>
             <Link href="/" className="flex items-center space-x-2">
-              <img src={logoUrl} alt={companyName} className="h-8" />
-              <div>
-                <h1 className="font-playfair text-xs font-normal text-[#f5f0e8] uppercase" style={{letterSpacing:'0.15em'}}>{companyName}</h1>
-              </div>
+              <img src={logoUrl} alt={companyName} className="h-9" />
             </Link>
             <div className="flex items-center space-x-2 w-20 justify-end">
               {user && (

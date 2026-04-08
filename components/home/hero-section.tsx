@@ -75,7 +75,7 @@ const HeroSection: React.FC = () => {
         </p>
 
         {/* Body copy */}
-        <p className="text-[#cccccc] text-base md:text-lg mb-8 max-w-2xl leading-relaxed font-light mt-4">
+        <p className="text-[#e0dbd5] text-base md:text-lg mb-8 max-w-2xl leading-relaxed font-light mt-4">
           Welcome to Francesco's Pizza Kitchen. For over 40 years, we've carried forward the flavors
           of our Sicilian heritage — family traditions and recipes passed down by our Nonna,
           seasoned with laughter, memories, and love.
