@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import OrderDetailsContent from "./order-details-content";
 
 export const metadata: Metadata = {
-  title: "Order Details | Francesco's Pizza & Pasta",
+  title: "Order Details | Francesco's Pizza Kitchen",
   robots: { index: false, follow: false },
 };
 

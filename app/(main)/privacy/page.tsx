@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Francesco's Pizza & Pasta",
-  description: "Privacy policy for Francesco's Pizza & Pasta online ordering and rewards platform.",
+  title: "Privacy Policy | Francesco's Pizza Kitchen",
+  description: "Privacy policy for Francesco's Pizza Kitchen online ordering and rewards platform.",
 };
 
 export default function PrivacyPage() {
@@ -161,7 +161,7 @@ export default function PrivacyPage() {
                 If you have questions or concerns about this privacy policy or our data practices, please contact us at:
               </p>
               <p className="text-gray-700 mt-2">
-                <strong>Francesco&apos;s Pizza &amp; Pasta</strong><br />
+                <strong>Francesco&apos;s Pizza Kitchen</strong><br />
                 2520 US-17 BUS, Murrells Inlet, SC 29576<br />
                 Phone: (843) 299-2700
               </p>

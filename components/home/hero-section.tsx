@@ -22,25 +22,91 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative h-screen lg:h-[600px] bg-cover bg-center" style={{ backgroundImage: "url('/images/hero-bg.jpeg')" }}>
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+    <section
+      className="relative h-screen lg:h-[680px] bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/hero-bg.jpeg')" }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#0a0a0a]/70"></div>
+      {/* Radial red glow from top */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(192,57,43,0.12) 0%, transparent 65%)',
+        }}
+      ></div>
+
       <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-10 text-center">
-        <img src="/images/logo.png" alt="Francesco's Pizza & Pasta Logo" className="w-[140px] md:w-[170px] mb-4" loading="eager" fetchpriority="high" />
-        <h1 className="text-3xl md:text-5xl font-display text-white font-bold mb-3">BEST NY PIZZA IN MURRELLS INLET</h1>
-        <h2 className="text-xl md:text-2xl text-yellow-400 font-bold mb-4">Made with love for our community</h2>
-        <p className="text-base md:text-lg text-white mb-6 max-w-2xl">
-          Welcome to Francesco's Pizza & Pasta! For over 40 years, we've carried forward the flavors of our Sicilian heritage. Family traditions and recipes passed down by our Nonna, flavors seasoned with laughter, memories, and love.
+        <img
+          src="/images/logo.png"
+          alt="Francesco's Pizza Kitchen Logo"
+          className="w-[130px] md:w-[160px] mb-6 opacity-95"
+          loading="eager"
+        />
+
+        {/* Eyebrow label */}
+        <p className="section-eyebrow mb-0">Murrells Inlet, South Carolina</p>
+
+        {/* Divider */}
+        <div className="section-divider"></div>
+
+        {/* Main headline */}
+        <h1
+          className="font-playfair text-4xl md:text-6xl font-bold mb-4 leading-tight"
+          style={{
+            background: 'linear-gradient(135deg, #7a1a14, #c0392b, #e74c3c, #c0392b, #7a1a14)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}
+        >
+          Best NY Pizza in Murrells Inlet
+        </h1>
+
+        {/* Divider below heading */}
+        <div className="section-divider"></div>
+
+        {/* Subheadline */}
+        <p
+          className="text-[#888888] mb-2 max-w-xl"
+          style={{ fontSize: '0.75rem', letterSpacing: '0.25em', textTransform: 'uppercase' }}
+        >
+          Made with love for our community
         </p>
-        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+
+        {/* Body copy */}
+        <p className="text-[#cccccc] text-base md:text-lg mb-8 max-w-2xl leading-relaxed font-light mt-4">
+          Welcome to Francesco's Pizza Kitchen. For over 40 years, we've carried forward the flavors
+          of our Sicilian heritage — family traditions and recipes passed down by our Nonna,
+          seasoned with laughter, memories, and love.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-5">
           <Link href="/menu">
-            <Button className="bg-white hover:bg-gray-100 text-[#d73a31] px-6 md:px-8 py-4 md:py-6 text-lg rounded-full font-bold">ORDER ONLINE</Button>
+            <Button
+              className="px-8 py-5 text-sm font-bold tracking-widest uppercase text-[#f5f0e8] border-0"
+              style={{
+                background: 'linear-gradient(135deg, #7a1a14, #c0392b, #e74c3c, #c0392b, #7a1a14)',
+                backgroundSize: '200% auto',
+                transition: 'background-position 0.4s ease',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.backgroundPosition = 'right center';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.backgroundPosition = 'left center';
+              }}
+            >
+              Order Online
+            </Button>
           </Link>
-          <Button 
+          <Button
             onClick={handleRewardsClick}
-            variant="secondary" 
-            className="bg-[#f2c94c] hover:bg-[#e0b93e] text-black px-6 md:px-8 py-4 md:py-6 text-lg rounded-full font-bold"
+            variant="outline"
+            className="px-8 py-5 text-sm font-bold tracking-widest uppercase bg-transparent text-[#c0392b] border border-[#c0392b] hover:bg-[rgba(192,57,43,0.08)] transition-colors"
           >
-            REWARDS
+            Rewards
           </Button>
         </div>
       </div>

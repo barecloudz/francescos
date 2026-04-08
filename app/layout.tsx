@@ -5,12 +5,12 @@ import { Providers } from "@/components/providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Best Pizza & Pasta in Murrells Inlet SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza in Murrells Inlet SC | Francesco's Pizza Kitchen",
   description:
-    "Best pizza and pasta in Murrells Inlet! Francesco's Pizza & Pasta serves authentic Italian cuisine with fresh ingredients. Pizza, pasta, calzones & more. Order online now!",
+    "Best pizza in Murrells Inlet! Francesco's Pizza Kitchen serves authentic Italian cuisine with fresh ingredients. Pizza, pasta, calzones & more. Order online now!",
   keywords:
     "pizza murrells inlet, pasta murrells inlet, italian restaurant murrells inlet, best pizza murrells inlet, pizza delivery murrells inlet, calzones murrells inlet, francescos pizza",
-  authors: [{ name: "Francesco's Pizza & Pasta" }],
+  authors: [{ name: "Francesco's Pizza Kitchen" }],
   robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   alternates: {
     canonical: "https://francescosmurrellsinlet.com",
@@ -18,16 +18,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://francescosmurrellsinlet.com",
-    title: "Best Pizza & Pasta in Murrells Inlet SC | Francesco's Pizza & Pasta",
+    title: "Best Pizza in Murrells Inlet SC | Francesco's Pizza Kitchen",
     description:
-      "Best pizza and pasta in Murrells Inlet! Francesco's Pizza & Pasta serves authentic Italian cuisine with fresh ingredients. Order online now!",
+      "Best pizza in Murrells Inlet! Francesco's Pizza Kitchen serves authentic Italian cuisine with fresh ingredients. Order online now!",
     images: [{ url: "https://francescosmurrellsinlet.com/images/hero-bg.jpeg" }],
-    siteName: "Francesco's Pizza & Pasta",
+    siteName: "Francesco's Pizza Kitchen",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Pizza & Pasta in Murrells Inlet | Francesco's Pizza & Pasta",
+    title: "Best Pizza in Murrells Inlet | Francesco's Pizza Kitchen",
     description:
       "Best pizza and pasta in Murrells Inlet! Authentic Italian cuisine with fresh ingredients. Order online now!",
     images: ["https://francescosmurrellsinlet.com/images/hero-bg.jpeg"],
@@ -64,7 +64,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Restaurant",
               "@id": "https://francescosmurrellsinlet.com",
-              name: "Francesco's Pizza & Pasta",
+              name: "Francesco's Pizza Kitchen",
               image: "https://francescosmurrellsinlet.com/images/hero-bg.jpeg",
               logo: "https://francescosmurrellsinlet.com/images/logo.png",
               url: "https://francescosmurrellsinlet.com",

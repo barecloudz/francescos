@@ -1,4 +1,4 @@
-# Robots.txt for Francesco's Pizza & Pasta - Murrells Inlet, SC
+# Robots.txt for Francesco's Pizza Kitchen - Murrells Inlet, SC
 
 User-agent: *
 Allow: /

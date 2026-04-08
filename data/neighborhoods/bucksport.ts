@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const bucksportData: NeighborhoodData = {
   slug: "bucksport",
   name: "Bucksport",
-  title: "Best Pizza Near Bucksport SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Bucksport SC | Francesco's Pizza Kitchen",
   metaDescription: "Bucksport residents: enjoy authentic NY-style pizza from Francesco's in Murrells Inlet. Hand-tossed pizza, pasta & calzones. Order online!",
   heroSubheadline: "Authentic pizza and pasta serving the Bucksport community.",
-  introText: "Bucksport, a historic community along the Waccamaw River, is close enough to Murrells Inlet to enjoy Francesco's Pizza & Pasta for dinner any night of the week. Our authentic New York-style pizza, made with hand-tossed dough and fresh ingredients, brings a taste of the Northeast to this charming Lowcountry community.",
+  introText: "Bucksport, a historic community along the Waccamaw River, is close enough to Murrells Inlet to enjoy Francesco's Pizza Kitchen for dinner any night of the week. Our authentic New York-style pizza, made with hand-tossed dough and fresh ingredients, brings a taste of the Northeast to this charming Lowcountry community.",
   distanceFromFrancescos: "10 miles west",
   deliveryTime: "20-30 minutes",
   areasServed: ["Bucksport", "Bucksport Road", "Enterprise Road area", "Waccamaw River communities"],

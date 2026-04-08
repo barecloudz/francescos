@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const northMyrtleBeachData: NeighborhoodData = {
   slug: "north-myrtle-beach",
   name: "North Myrtle Beach",
-  title: "Best Pizza Near North Myrtle Beach SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near North Myrtle Beach SC | Francesco's Pizza Kitchen",
   metaDescription: "Looking for authentic NY-style pizza near North Myrtle Beach? Francesco's in Murrells Inlet is the Grand Strand's best pizzeria. Order online for pickup!",
   heroSubheadline: "Authentic Italian pizza worth the drive from North Myrtle Beach.",
-  introText: "North Myrtle Beach residents looking for truly authentic New York-style pizza make the trip to Francesco's Pizza & Pasta in Murrells Inlet. Our hand-tossed dough, homemade sauce, and premium toppings set us apart from every other pizza place on the Grand Strand. Whether you're craving a classic cheese slice or a loaded specialty pie, the drive is always worth it.",
+  introText: "North Myrtle Beach residents looking for truly authentic New York-style pizza make the trip to Francesco's Pizza Kitchen in Murrells Inlet. Our hand-tossed dough, homemade sauce, and premium toppings set us apart from every other pizza place on the Grand Strand. Whether you're craving a classic cheese slice or a loaded specialty pie, the drive is always worth it.",
   distanceFromFrancescos: "20 miles south",
   deliveryTime: "35-45 minutes",
   areasServed: ["North Myrtle Beach", "Cherry Grove", "Ocean Drive", "Crescent Beach", "Windy Hill"],

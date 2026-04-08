@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const gardenCityData: NeighborhoodData = {
   slug: "garden-city",
   name: "Garden City Beach",
-  title: "Best Pizza Near Garden City Beach SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Garden City Beach SC | Francesco's Pizza Kitchen",
   metaDescription: "Hungry near Garden City Beach? Francesco's in Murrells Inlet serves authentic NY-style pizza, pasta & more. Just minutes away. Order online for fast pickup!",
   heroSubheadline: "Serving Garden City Beach with authentic NY-style pizza, pickup and delivery.",
-  introText: "Garden City Beach residents and vacationers know that great pizza is just a short drive up US-17. Francesco's Pizza & Pasta in Murrells Inlet brings authentic New York-style pizza to the Grand Strand, and we're proud to serve the Garden City Beach community with hand-tossed pies, fresh pasta, calzones, and more. Whether you're coming off the beach or hosting a family get-together, we've got you covered.",
+  introText: "Garden City Beach residents and vacationers know that great pizza is just a short drive up US-17. Francesco's Pizza Kitchen in Murrells Inlet brings authentic New York-style pizza to the Grand Strand, and we're proud to serve the Garden City Beach community with hand-tossed pies, fresh pasta, calzones, and more. Whether you're coming off the beach or hosting a family get-together, we've got you covered.",
   distanceFromFrancescos: "2 miles north",
   deliveryTime: "15-20 minutes",
   areasServed: ["Garden City Beach", "Garden City", "Atlantic Avenue", "Waccamaw Drive"],

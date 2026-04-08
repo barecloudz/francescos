@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const andrewsData: NeighborhoodData = {
   slug: "andrews",
   name: "Andrews",
-  title: "Best Pizza Near Andrews SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Andrews SC | Francesco's Pizza Kitchen",
   metaDescription: "Andrews SC pizza lovers: Francesco's in Murrells Inlet has authentic NY-style pizza, pasta & Italian classics. Order online for pickup!",
   heroSubheadline: "Authentic NY-style pizza serving the Andrews community.",
-  introText: "Andrews, a charming small town in Georgetown County, is surrounded by the beauty of the Lowcountry -- and now it has access to authentic New York-style pizza at Francesco's Pizza & Pasta in Murrells Inlet. Whether you're heading to the coast for a day trip or looking for a special dinner destination, our hand-tossed pizzas and Italian classics are well worth the drive.",
+  introText: "Andrews, a charming small town in Georgetown County, is surrounded by the beauty of the Lowcountry -- and now it has access to authentic New York-style pizza at Francesco's Pizza Kitchen in Murrells Inlet. Whether you're heading to the coast for a day trip or looking for a special dinner destination, our hand-tossed pizzas and Italian classics are well worth the drive.",
   distanceFromFrancescos: "20 miles southwest",
   deliveryTime: "35-45 minutes",
   areasServed: ["Andrews", "Highway 521 corridor", "Kingstree area", "Georgetown County west"],

@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const carolinaForestData: NeighborhoodData = {
   slug: "carolina-forest",
   name: "Carolina Forest",
-  title: "Best Pizza Near Carolina Forest SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Carolina Forest SC | Francesco's Pizza Kitchen",
   metaDescription: "Carolina Forest families love Francesco's in Murrells Inlet for real NY-style pizza. Hand-tossed dough, fresh ingredients. Order online for fast pickup!",
   heroSubheadline: "Serving Carolina Forest families with authentic NY-style pizza.",
-  introText: "Carolina Forest, one of the largest master-planned communities on the Grand Strand, is home to thousands of families who appreciate quality food. Francesco's Pizza & Pasta in Murrells Inlet is quickly becoming Carolina Forest's favorite pizzeria, offering authentic New York-style pizza, fresh pasta dishes, and family-friendly catering that's perfect for neighborhood gatherings.",
+  introText: "Carolina Forest, one of the largest master-planned communities on the Grand Strand, is home to thousands of families who appreciate quality food. Francesco's Pizza Kitchen in Murrells Inlet is quickly becoming Carolina Forest's favorite pizzeria, offering authentic New York-style pizza, fresh pasta dishes, and family-friendly catering that's perfect for neighborhood gatherings.",
   distanceFromFrancescos: "12 miles north",
   deliveryTime: "25-30 minutes",
   areasServed: ["Carolina Forest", "Carolina Forest Boulevard", "River Oaks", "Waterford Plantation"],

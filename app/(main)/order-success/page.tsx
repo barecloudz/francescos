@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import OrderSuccessContent from "./order-success-content";
 
 export const metadata: Metadata = {
-  title: "Order Confirmed | Francesco's Pizza & Pasta",
+  title: "Order Confirmed | Francesco's Pizza Kitchen",
   robots: { index: false, follow: false },
 };
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ProfileContent from "./profile-content";
 
 export const metadata: Metadata = {
-  title: "My Profile | Francesco's Pizza & Pasta",
+  title: "My Profile | Francesco's Pizza Kitchen",
   robots: { index: false, follow: false },
 };
 

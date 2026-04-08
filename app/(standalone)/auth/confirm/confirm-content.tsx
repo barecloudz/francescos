@@ -135,7 +135,7 @@ function ConfirmContentInner() {
           </CardContent>
         </Card>
         <div className="text-center mt-6">
-          <p className="text-gray-500 text-sm">Francesco's Pizza & Pasta - Murrells Inlet, SC</p>
+          <p className="text-gray-500 text-sm">Francesco's Pizza Kitchen - Murrells Inlet, SC</p>
         </div>
       </div>
     </div>

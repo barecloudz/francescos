@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const litchfieldBeachData: NeighborhoodData = {
   slug: "litchfield-beach",
   name: "Litchfield Beach",
-  title: "Best Pizza Near Litchfield Beach SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Litchfield Beach SC | Francesco's Pizza Kitchen",
   metaDescription: "Hungry near Litchfield Beach? Francesco's in Murrells Inlet has authentic NY-style pizza, pasta & calzones. Order online for quick pickup!",
   heroSubheadline: "Authentic pizza and pasta just minutes from Litchfield Beach.",
-  introText: "Litchfield Beach's quiet, upscale community deserves upscale pizza. Francesco's Pizza & Pasta in Murrells Inlet crafts authentic New York-style pizza with premium ingredients and old-world techniques. Just a quick drive north on US-17, we're the perfect choice for a casual dinner after a day at the beach or a catered event at your Litchfield rental.",
+  introText: "Litchfield Beach's quiet, upscale community deserves upscale pizza. Francesco's Pizza Kitchen in Murrells Inlet crafts authentic New York-style pizza with premium ingredients and old-world techniques. Just a quick drive north on US-17, we're the perfect choice for a casual dinner after a day at the beach or a catered event at your Litchfield rental.",
   distanceFromFrancescos: "5 miles south",
   deliveryTime: "15-20 minutes",
   areasServed: ["Litchfield Beach", "Litchfield by the Sea", "Litchfield Country Club", "North Litchfield"],

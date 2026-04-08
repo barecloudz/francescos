@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const pawleysIslandData: NeighborhoodData = {
   slug: "pawleys-island",
   name: "Pawleys Island",
-  title: "Best Pizza Near Pawleys Island SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Pawleys Island SC | Francesco's Pizza Kitchen",
   metaDescription: "Craving great pizza near Pawleys Island? Francesco's in Murrells Inlet serves hand-tossed NY-style pizza, pasta & Italian classics. Just minutes away!",
   heroSubheadline: "NY-style pizza just a short drive from Pawleys Island.",
-  introText: "Pawleys Island is known for its laid-back charm and arrogantly shabby character -- and now it has access to world-class New York-style pizza at Francesco's Pizza & Pasta in Murrells Inlet. Just a few minutes north on US-17, we serve hand-tossed pizza, fresh pasta, and authentic Italian dishes that pair perfectly with the Pawleys Island lifestyle.",
+  introText: "Pawleys Island is known for its laid-back charm and arrogantly shabby character -- and now it has access to world-class New York-style pizza at Francesco's Pizza Kitchen in Murrells Inlet. Just a few minutes north on US-17, we serve hand-tossed pizza, fresh pasta, and authentic Italian dishes that pair perfectly with the Pawleys Island lifestyle.",
   distanceFromFrancescos: "6 miles south",
   deliveryTime: "20-25 minutes",
   areasServed: ["Pawleys Island", "Litchfield area", "Hagley Estates", "Waverly Road"],

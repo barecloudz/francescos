@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Francesco's Pizza & Pasta",
-  description: "Terms and conditions for Francesco's Pizza & Pasta online ordering and rewards platform.",
+  title: "Terms & Conditions | Francesco's Pizza Kitchen",
+  description: "Terms and conditions for Francesco's Pizza Kitchen online ordering and rewards platform.",
 };
 
 export default function TermsPage() {
@@ -21,7 +21,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-xl font-semibold mb-3">1. Acceptance of Terms</h2>
               <p className="text-gray-700">
-                By accessing and placing an order with Francesco&apos;s Pizza &amp; Pasta, you confirm that you are in agreement with and bound by the terms and conditions contained in the Terms &amp; Conditions outlined below. These terms apply to the entire website and any email or other type of communication between you and Francesco&apos;s Pizza &amp; Pasta.
+                By accessing and placing an order with Francesco&apos;s Pizza Kitchen, you confirm that you are in agreement with and bound by the terms and conditions contained in the Terms &amp; Conditions outlined below. These terms apply to the entire website and any email or other type of communication between you and Francesco&apos;s Pizza Kitchen.
               </p>
             </section>
 
@@ -89,7 +89,7 @@ export default function TermsPage() {
                 <li>You must disclose any food allergies or dietary restrictions in your special instructions</li>
                 <li>Our kitchen handles common allergens including wheat, dairy, eggs, soy, and nuts</li>
                 <li>While we take precautions, we cannot guarantee allergen-free preparation</li>
-                <li><strong>Francesco&apos;s Pizza &amp; Pasta is not responsible for allergic reactions resulting from undisclosed allergies or dietary restrictions</strong></li>
+                <li><strong>Francesco&apos;s Pizza Kitchen is not responsible for allergic reactions resulting from undisclosed allergies or dietary restrictions</strong></li>
                 <li>If you have severe allergies, please contact us directly before ordering</li>
               </ul>
             </section>
@@ -111,7 +111,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-xl font-semibold mb-3">8. Limitation of Liability</h2>
               <p className="text-gray-700">
-                To the fullest extent permitted by law, Francesco&apos;s Pizza &amp; Pasta shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of our services.
+                To the fullest extent permitted by law, Francesco&apos;s Pizza Kitchen shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of our services.
               </p>
             </section>
 
@@ -128,7 +128,7 @@ export default function TermsPage() {
                 For questions about these Terms &amp; Conditions, please contact us at:
               </p>
               <p className="text-gray-700 mt-2">
-                <strong>Francesco&apos;s Pizza &amp; Pasta</strong><br />
+                <strong>Francesco&apos;s Pizza Kitchen</strong><br />
                 2520 US-17 BUS, Murrells Inlet, SC 29576<br />
                 Phone: (843) 299-2700
               </p>

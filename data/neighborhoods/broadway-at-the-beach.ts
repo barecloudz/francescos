@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const broadwayAtTheBeachData: NeighborhoodData = {
   slug: "broadway-at-the-beach",
   name: "Broadway at the Beach",
-  title: "Best Pizza Near Broadway at the Beach SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Broadway at the Beach SC | Francesco's Pizza Kitchen",
   metaDescription: "Visiting Broadway at the Beach? Get real NY-style pizza at Francesco's in Murrells Inlet. Hand-tossed pizza, pasta & more. Order online for pickup!",
   heroSubheadline: "Authentic pizza just a short drive from Broadway at the Beach.",
-  introText: "After a day of shopping and entertainment at Broadway at the Beach, skip the overpriced tourist spots and head to Francesco's Pizza & Pasta in Murrells Inlet for authentic New York-style pizza. Our hand-tossed pies, homemade pasta, and classic Italian dishes offer a refreshing change from the usual chain fare -- and at prices that won't break the bank.",
+  introText: "After a day of shopping and entertainment at Broadway at the Beach, skip the overpriced tourist spots and head to Francesco's Pizza Kitchen in Murrells Inlet for authentic New York-style pizza. Our hand-tossed pies, homemade pasta, and classic Italian dishes offer a refreshing change from the usual chain fare -- and at prices that won't break the bank.",
   distanceFromFrancescos: "9 miles north",
   deliveryTime: "20-25 minutes",
   areasServed: ["Broadway at the Beach", "21st Avenue North", "Celebrity Circle", "US-17 Bypass"],

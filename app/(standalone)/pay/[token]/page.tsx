@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PayContent from "./pay-content";
 
 export const metadata: Metadata = {
-  title: "Complete Payment | Francesco's Pizza & Pasta",
+  title: "Complete Payment | Francesco's Pizza Kitchen",
   robots: { index: false, follow: false },
 };
 

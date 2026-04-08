@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const myrtleBeachData: NeighborhoodData = {
   slug: "myrtle-beach",
   name: "Myrtle Beach",
-  title: "Best Pizza in Myrtle Beach SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza in Myrtle Beach SC | Francesco's Pizza Kitchen",
   metaDescription: "Craving real NY-style pizza in Myrtle Beach? Francesco's in Murrells Inlet is worth the drive. Hand-tossed pizza, fresh pasta, calzones & more. Order online!",
   heroSubheadline: "Real New York pizza worth the drive from Myrtle Beach.",
-  introText: "Myrtle Beach visitors and locals alike are discovering what Murrells Inlet already knows: Francesco's Pizza & Pasta serves the best authentic NY-style pizza on the Grand Strand. Just a scenic drive south on US-17, our family-owned pizzeria offers hand-tossed pies, homemade pasta, and classic Italian dishes that transport you straight to a New York City pizzeria.",
+  introText: "Myrtle Beach visitors and locals alike are discovering what Murrells Inlet already knows: Francesco's Pizza Kitchen serves the best authentic NY-style pizza on the Grand Strand. Just a scenic drive south on US-17, our family-owned pizzeria offers hand-tossed pies, homemade pasta, and classic Italian dishes that transport you straight to a New York City pizzeria.",
   distanceFromFrancescos: "10 miles south",
   deliveryTime: "25-35 minutes",
   areasServed: ["Myrtle Beach", "South Myrtle Beach", "Kings Highway corridor", "Ocean Boulevard"],

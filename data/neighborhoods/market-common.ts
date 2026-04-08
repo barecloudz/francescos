@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const marketCommonData: NeighborhoodData = {
   slug: "market-common",
   name: "Market Common",
-  title: "Best Pizza Near Market Common SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Market Common SC | Francesco's Pizza Kitchen",
   metaDescription: "Market Common residents: discover Francesco's in Murrells Inlet for authentic NY-style pizza & pasta. Just minutes down US-17. Order online!",
   heroSubheadline: "Authentic pizza and Italian classics near Market Common.",
-  introText: "The Market Common neighborhood, built on the former Myrtle Beach Air Force Base, is a vibrant mixed-use community with discerning food tastes. Francesco's Pizza & Pasta in Murrells Inlet delivers the authentic New York-style pizza experience that Market Common residents expect -- hand-tossed dough, premium mozzarella, and homemade sauce, all just a short drive south on US-17.",
+  introText: "The Market Common neighborhood, built on the former Myrtle Beach Air Force Base, is a vibrant mixed-use community with discerning food tastes. Francesco's Pizza Kitchen in Murrells Inlet delivers the authentic New York-style pizza experience that Market Common residents expect -- hand-tossed dough, premium mozzarella, and homemade sauce, all just a short drive south on US-17.",
   distanceFromFrancescos: "8 miles north",
   deliveryTime: "20-25 minutes",
   areasServed: ["Market Common", "Farrow Parkway", "Howard Avenue", "Deville Street area"],

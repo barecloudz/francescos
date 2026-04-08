@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const conwayData: NeighborhoodData = {
   slug: "conway",
   name: "Conway",
-  title: "Best Pizza Near Conway SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Conway SC | Francesco's Pizza Kitchen",
   metaDescription: "Conway SC residents love Francesco's in Murrells Inlet for authentic NY-style pizza, pasta & Italian food. Order online or call (843) 299-2700!",
   heroSubheadline: "Conway's favorite spot for real New York-style pizza.",
-  introText: "Conway, the historic seat of Horry County, sits just west of the Grand Strand -- and residents here have discovered that the best pizza in the area is at Francesco's Pizza & Pasta in Murrells Inlet. Our authentic New York-style pizza, made with hand-tossed dough and homemade sauce, is worth the short drive from downtown Conway or the 501 corridor.",
+  introText: "Conway, the historic seat of Horry County, sits just west of the Grand Strand -- and residents here have discovered that the best pizza in the area is at Francesco's Pizza Kitchen in Murrells Inlet. Our authentic New York-style pizza, made with hand-tossed dough and homemade sauce, is worth the short drive from downtown Conway or the 501 corridor.",
   distanceFromFrancescos: "14 miles west",
   deliveryTime: "25-35 minutes",
   areasServed: ["Conway", "Downtown Conway", "Conway Medical Center area", "Highway 501 corridor"],

@@ -7,7 +7,7 @@ import ChristmasPromoSection from "@/components/home/christmas-promo-section";
 import FeaturedSection from "@/components/home/featured-section";
 import CateringSection from "@/components/home/catering-section";
 import WhyFrancescosSection from "@/components/home/why-francescos-section";
-import RewardsSection from "@/components/home/rewards-section";
+// import RewardsSection from "@/components/home/rewards-section"; // Hidden until Toast integration is approved
 import LocationSection from "@/components/home/location-section";
 import SeoContentSection from "@/components/home/seo-content-section";
 import FAQSection from "@/components/home/faq-section";
@@ -40,8 +40,8 @@ const HomePageContent = () => {
       {/* SEO Content Section - Rich keyword content for search engines */}
       <SeoContentSection />
 
-      {/* Rewards Section */}
-      <RewardsSection />
+      {/* Rewards Section — hidden until Toast integration is approved */}
+      {/* <RewardsSection /> */}
 
       {/* Location Section */}
       <LocationSection />

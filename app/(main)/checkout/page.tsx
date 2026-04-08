@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CheckoutContent from "./checkout-content";
 
 export const metadata: Metadata = {
-  title: "Checkout | Francesco's Pizza & Pasta",
+  title: "Checkout | Francesco's Pizza Kitchen",
   robots: { index: false, follow: false },
 };
 

@@ -21,14 +21,14 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Best Pizza in Murrells Inlet | Pizza Near Me | Francesco's Pizza & Pasta</title>
-        <meta name="description" content="Best pizza in Murrells Inlet! Francesco's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria on US-17. Order online for pickup!" />
+        <title>Best Pizza in Murrells Inlet | Pizza Near Me | Francesco's Pizza Kitchen</title>
+        <meta name="description" content="Best pizza in Murrells Inlet! Francesco's Pizza Kitchen offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria on US-17. Order online for pickup!" />
         <meta name="keywords" content="pizza near me, best pizza in murrells inlet, pizza murrells inlet, murrells inlet pizza, pizza delivery murrells inlet, pizza place near me, pizzeria murrells inlet, Francescos Pizza, NY style pizza, hand tossed pizza, pasta murrells inlet, italian food murrells inlet" />
         <link rel="canonical" href="https://francescospizzaandpasta.com/" />
 
         {/* Open Graph Tags */}
-        <meta property="og:title" content="Best Pizza in Murrells Inlet | Francesco's Pizza & Pasta" />
-        <meta property="og:description" content="Best pizza in Murrells Inlet! Francesco's Pizza & Pasta offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria." />
+        <meta property="og:title" content="Best Pizza in Murrells Inlet | Francesco's Pizza Kitchen" />
+        <meta property="og:description" content="Best pizza in Murrells Inlet! Francesco's Pizza Kitchen offers hand-tossed NY style pizza, pasta, calzones & subs. Family-owned pizzeria." />
         <meta property="og:url" content="https://francescospizzaandpasta.com/" />
         <meta property="og:type" content="restaurant" />
         <meta property="og:image" content="https://francescospizzaandpasta.com/images/hero-bg.jpeg" />
@@ -36,7 +36,7 @@ const HomePage = () => {
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Best Pizza in Murrells Inlet | Francesco's Pizza & Pasta" />
+        <meta name="twitter:title" content="Best Pizza in Murrells Inlet | Francesco's Pizza Kitchen" />
         <meta name="twitter:description" content="Best pizza in Murrells Inlet! Hand-tossed NY style pizza, pasta, calzones & subs." />
         <meta name="twitter:image" content="https://francescospizzaandpasta.com/images/hero-bg.jpeg" />
 
@@ -45,7 +45,7 @@ const HomePage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Restaurant",
-            "name": "Francesco's Pizza & Pasta",
+            "name": "Francesco's Pizza Kitchen",
             "alternateName": "Francescos Pizza",
             "description": "Family-owned authentic Italian pizzeria serving Murrells Inlet with hand-tossed NY style pizza, pasta, calzones, and subs. Over 40 years of Sicilian heritage.",
             "image": [
@@ -130,7 +130,7 @@ const HomePage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Francesco's Pizza & Pasta",
+            "name": "Francesco's Pizza Kitchen",
             "alternateName": "Francescos Pizza Murrells Inlet",
             "url": "https://francescospizzaandpasta.com/",
             "logo": "https://francescospizzaandpasta.com/images/logo.png",

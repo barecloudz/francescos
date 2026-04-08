@@ -438,8 +438,8 @@ const MenuPage = () => {
     return (
       <>
         <Helmet>
-          <title>Menu Coming Soon | Francesco's Pizza & Pasta</title>
-          <meta name="description" content="Our online menu is coming soon. Francesco's Pizza & Pasta opens April 15th in Murrells Inlet, SC. Call us at (843) 299-2700." />
+          <title>Menu Coming Soon | Francesco's Pizza Kitchen</title>
+          <meta name="description" content="Our online menu is coming soon. Francesco's Pizza Kitchen opens April 15th in Murrells Inlet, SC. Call us at (843) 299-2700." />
           <link rel="canonical" href="https://francescosmyrtlebeach.com/menu" />
         </Helmet>
         <div className="min-h-screen bg-gray-50 lg:pt-20 pt-0">
@@ -496,8 +496,8 @@ const MenuPage = () => {
   return (
     <>
       <Helmet>
-        <title>Menu Coming Soon | Francesco's Pizza & Pasta</title>
-        <meta name="description" content="Our online menu is coming soon. Francesco's Pizza & Pasta opens April 15th in Murrells Inlet, SC. Call us at (843) 299-2700." />
+        <title>Menu Coming Soon | Francesco's Pizza Kitchen</title>
+        <meta name="description" content="Our online menu is coming soon. Francesco's Pizza Kitchen opens April 15th in Murrells Inlet, SC. Call us at (843) 299-2700." />
         <link rel="canonical" href="https://francescosmyrtlebeach.com/menu" />
 
         {/* Open Graph Tags */}

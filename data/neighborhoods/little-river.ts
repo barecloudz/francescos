@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const littleRiverData: NeighborhoodData = {
   slug: "little-river",
   name: "Little River",
-  title: "Best Pizza Near Little River SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Little River SC | Francesco's Pizza Kitchen",
   metaDescription: "Little River SC pizza lovers: Francesco's in Murrells Inlet serves authentic NY-style pizza, pasta & Italian classics. Worth the drive! Order online.",
   heroSubheadline: "Authentic Italian pizza for the Little River community.",
-  introText: "Little River, known for its fishing heritage and casino boats, sits at the northern tip of the Grand Strand -- and pizza lovers here know that the best pie on the coast is at Francesco's Pizza & Pasta in Murrells Inlet. Our authentic New York-style pizza is crafted with the same passion and quality that Little River puts into its seafood traditions.",
+  introText: "Little River, known for its fishing heritage and casino boats, sits at the northern tip of the Grand Strand -- and pizza lovers here know that the best pie on the coast is at Francesco's Pizza Kitchen in Murrells Inlet. Our authentic New York-style pizza is crafted with the same passion and quality that Little River puts into its seafood traditions.",
   distanceFromFrancescos: "25 miles south",
   deliveryTime: "40-50 minutes",
   areasServed: ["Little River", "Little River Neck", "Calabash area", "Cherry Grove"],

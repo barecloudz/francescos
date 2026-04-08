@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const barefootResortData: NeighborhoodData = {
   slug: "barefoot-resort",
   name: "Barefoot Resort",
-  title: "Best Pizza Near Barefoot Resort SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Barefoot Resort SC | Francesco's Pizza Kitchen",
   metaDescription: "Staying at Barefoot Resort? Francesco's in Murrells Inlet has the best NY-style pizza on the Grand Strand. Order online for pickup or delivery!",
   heroSubheadline: "NY-style pizza and Italian food near Barefoot Resort.",
-  introText: "Barefoot Resort guests and residents in North Myrtle Beach have access to some of the Grand Strand's best dining -- and that includes Francesco's Pizza & Pasta in Murrells Inlet. Whether you're winding down after 18 holes of golf or planning a condo party, our authentic New York-style pizza and Italian classics are the perfect choice for any occasion.",
+  introText: "Barefoot Resort guests and residents in North Myrtle Beach have access to some of the Grand Strand's best dining -- and that includes Francesco's Pizza Kitchen in Murrells Inlet. Whether you're winding down after 18 holes of golf or planning a condo party, our authentic New York-style pizza and Italian classics are the perfect choice for any occasion.",
   distanceFromFrancescos: "18 miles south",
   deliveryTime: "30-40 minutes",
   areasServed: ["Barefoot Resort", "Barefoot Landing", "North Myrtle Beach south side", "US-17 North Myrtle Beach"],

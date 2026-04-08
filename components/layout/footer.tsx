@@ -17,163 +17,173 @@ const Footer = () => {
   const neighborhoods: { name: string; slug: string }[] = [];
   
   return (
-    <footer className="bg-[#222] text-white pt-16 pb-8">
+    <footer
+      className="pt-16 pb-8"
+      style={{
+        background: '#0a0a0a',
+        borderTop: '1px solid rgba(192,57,43,0.25)',
+      }}
+    >
       <div className="container mx-auto px-4">
         {/* Our Story Section */}
         <div id="story" className="mb-16 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#f2c94c] mb-8">OUR STORY</h2>
+            <p className="section-eyebrow mb-0">Our Heritage</p>
+            <div className="section-divider"></div>
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[#f5f0e8] mb-8">Our Story</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="text-left">
-                <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                  Welcome to Francesco's Pizza & Pasta, where authentic Italian tradition meets the heart of Murrells Inlet.
+                <p className="text-base text-[#cccccc] mb-6 leading-relaxed font-light">
+                  Welcome to Francesco's Pizza Kitchen, where authentic Italian tradition meets the heart of Murrells Inlet.
                   We've poured our passion into every dish we craft, using time-honored recipes,
                   fresh ingredients, and a whole lot of love.
                 </p>
-                <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                <p className="text-base text-[#cccccc] mb-6 leading-relaxed font-light">
                   Come taste the difference at Francesco's, where every bite feels like home.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <p className="text-lg font-bold text-[#d73a31]">
-                    Fresh Ingredients Daily
-                  </p>
-                  <div className="hidden sm:block w-0.5 bg-gray-600 mx-2"></div>
-                  <p className="text-lg font-bold text-[#d73a31]">
-                    Authentic Italian
-                  </p>
+                  <p className="section-eyebrow">Fresh Ingredients Daily</p>
+                  <div className="hidden sm:block w-px bg-[rgba(192,57,43,0.3)] mx-2"></div>
+                  <p className="section-eyebrow">Authentic Italian</p>
                 </div>
               </div>
               <div>
                 <img
                   src="/images/lineup.jpg"
-                  alt="Francesco's Pizza & Pasta Team"
-                  className="rounded-xl shadow-xl w-full h-64 object-cover"
+                  alt="Francesco's Pizza Kitchen Team"
+                  className="shadow-xl shadow-black/50 w-full h-64 object-cover"
+                  style={{ border: '1px solid rgba(192,57,43,0.2)' }}
                   loading="lazy"
                 />
               </div>
             </div>
           </div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Column 1 - About */}
           <div className="text-center md:text-left">
             <div className="mb-6 flex justify-center md:justify-start">
-              <img src={logoUrl} alt={companyName} className="w-[150px]" />
+              <img src={logoUrl} alt={companyName} className="w-[150px] opacity-90" />
             </div>
-            <p className="mb-6 text-gray-300">
+            <p className="mb-6 text-[#888888] text-sm leading-relaxed font-light">
               {companyTagline}
             </p>
-            <div className="flex space-x-4 justify-center md:justify-start">
+            <div className="flex space-x-3 justify-center md:justify-start">
               <a
                 href="https://www.facebook.com/profile.php?id=61580096004134"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#d73a31] hover:bg-[#f2c94c] text-white p-2 rounded-full transition-colors"
+                className="w-9 h-9 flex items-center justify-center border border-[rgba(192,57,43,0.3)] text-[#888888] hover:text-[#c0392b] hover:border-[#c0392b] transition-colors"
                 aria-label="Facebook"
               >
-                <Facebook size={20} />
+                <Facebook size={16} />
               </a>
               <a
                 href="https://www.instagram.com/francescosmurrellsinlet/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#d73a31] hover:bg-[#f2c94c] text-white p-2 rounded-full transition-colors"
+                className="w-9 h-9 flex items-center justify-center border border-[rgba(192,57,43,0.3)] text-[#888888] hover:text-[#c0392b] hover:border-[#c0392b] transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram size={20} />
+                <Instagram size={16} />
               </a>
             </div>
           </div>
-          
+
           {/* Column 2 - Quick Links */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold mb-6 text-[#f2c94c]">QUICK LINKS</h3>
+            <h3
+              className="mb-6 text-[#f5f0e8] font-playfair"
+              style={{ fontSize: '0.7rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}
+            >
+              Quick Links
+            </h3>
             <ul className="space-y-3">
-              <li>
-                <Link href="/">
-                  <div className="text-gray-300 hover:text-white hover:underline transition-colors cursor-pointer">Home</div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/menu">
-                  <div className="text-gray-300 hover:text-white hover:underline transition-colors cursor-pointer">Menu</div>
-                </Link>
-              </li>
-              <li>
-                <a href="#story" className="text-gray-300 hover:text-white hover:underline transition-colors cursor-pointer">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <Link href="/#locations">
-                  <div className="text-gray-300 hover:text-white hover:underline transition-colors cursor-pointer">Location</div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/auth">
-                  <div className="text-gray-300 hover:text-white hover:underline transition-colors cursor-pointer">Login / Register</div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/community-impact">
-                  <div className="text-gray-300 hover:text-white hover:underline transition-colors cursor-pointer">Community Impact</div>
-                </Link>
-              </li>
+              {[
+                { href: '/', label: 'Home' },
+                { href: '/menu', label: 'Menu' },
+                { href: '#story', label: 'About Us', isAnchor: true },
+                { href: '/#locations', label: 'Location' },
+                { href: '/auth', label: 'Login / Register' },
+                { href: '/community-impact', label: 'Community Impact' },
+              ].map(({ href, label, isAnchor }) => (
+                <li key={href}>
+                  {isAnchor ? (
+                    <a href={href} className="text-[#888888] hover:text-[#c0392b] transition-colors text-sm font-light">
+                      {label}
+                    </a>
+                  ) : (
+                    <Link href={href}>
+                      <div className="text-[#888888] hover:text-[#c0392b] transition-colors cursor-pointer text-sm font-light">{label}</div>
+                    </Link>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
-          
+
           {/* Column 3 - Contact */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold mb-6 text-[#f2c94c]">CONTACT US</h3>
+            <h3
+              className="mb-6 text-[#f5f0e8] font-playfair"
+              style={{ fontSize: '0.7rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}
+            >
+              Contact Us
+            </h3>
             <ul className="space-y-4">
               <li className="flex items-start justify-center md:justify-start">
-                <MapPin className="mt-1 mr-3 h-5 w-5 text-[#d73a31] flex-shrink-0" />
-                <span className="text-gray-300">{address}</span>
+                <MapPin className="mt-0.5 mr-3 h-4 w-4 text-[#c0392b] flex-shrink-0" />
+                <span className="text-[#888888] text-sm font-light">{address}</span>
               </li>
               <li className="flex items-start justify-center md:justify-start">
-                <Phone className="mt-1 mr-3 h-5 w-5 text-[#d73a31] flex-shrink-0" />
+                <Phone className="mt-0.5 mr-3 h-4 w-4 text-[#c0392b] flex-shrink-0" />
                 <a
                   href={`tel:${phone.replace(/[^\d]/g, '')}`}
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-[#888888] hover:text-[#c0392b] transition-colors text-sm font-light"
                 >
                   {phone}
                 </a>
               </li>
               <li className="flex items-start justify-center md:justify-start">
-                <Mail className="mt-1 mr-3 h-5 w-5 text-[#d73a31] flex-shrink-0" />
+                <Mail className="mt-0.5 mr-3 h-4 w-4 text-[#c0392b] flex-shrink-0" />
                 <a
                   href={`mailto:${email}`}
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-[#888888] hover:text-[#c0392b] transition-colors text-sm font-light"
                 >
                   {email}
                 </a>
               </li>
             </ul>
           </div>
-          
+
           {/* Column 4 - Hours */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold mb-6 text-[#f2c94c]">OPEN HOURS</h3>
+            <h3
+              className="mb-6 text-[#f5f0e8] font-playfair"
+              style={{ fontSize: '0.7rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}
+            >
+              Open Hours
+            </h3>
             <ul className="space-y-4">
-              <li className="text-gray-300">
+              <li className="text-[#888888]">
                 <span className="flex items-center mb-1 justify-center md:justify-start">
-                  <Clock className="mr-2 h-5 w-5 text-[#d73a31] flex-shrink-0" />
-                  <span className="font-semibold">Every Day</span>
+                  <Clock className="mr-2 h-4 w-4 text-[#c0392b] flex-shrink-0" />
+                  <span className="text-sm text-[#cccccc]">Every Day</span>
                 </span>
-                <span className="block pl-0 md:pl-7">11:00 AM - 9:00 PM</span>
+                <span className="block pl-0 md:pl-6 text-sm font-light">11:00 AM &ndash; 9:00 PM</span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Map Section */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
+        <div className="mt-12 pt-8" style={{ borderTop: '1px solid rgba(192,57,43,0.15)' }}>
           <div className="text-center mb-6">
-            <h3 className="text-xl font-bold text-[#f2c94c] mb-2">FIND US</h3>
-            <p className="text-gray-400 text-sm">Best Pizza & Pasta in Murrells Inlet, SC</p>
+            <p className="section-eyebrow mb-2">Visit Us</p>
+            <p className="text-[#888888] text-xs font-light tracking-widest uppercase">Best Pizza in Murrells Inlet, SC</p>
           </div>
-          <div className="rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto">
+          <div className="overflow-hidden shadow-lg shadow-black/50 max-w-4xl mx-auto" style={{ border: '1px solid rgba(192,57,43,0.2)' }}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.0!2d-79.0481!3d33.5479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s2520%20US-17%20BUS%2C%20Murrells%20Inlet%2C%20SC%2029576!5e0!3m2!1sen!2sus!4v1703097600000!5m2!1sen!2sus"
               width="100%"
@@ -182,34 +192,49 @@ const Footer = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Francesco's Pizza & Pasta Location - Best Pizza in Murrells Inlet"
+              title="Francesco's Pizza Kitchen Location - Best Pizza in Murrells Inlet"
             />
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="mt-12 pt-8" style={{ borderTop: '1px solid rgba(192,57,43,0.15)' }}>
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left mb-4">
-            <p className="text-gray-400">&copy; {new Date().getFullYear()} {companyName}. All rights reserved.</p>
-            <div className="mt-4 md:mt-0 space-x-6">
+            <p
+              className="text-[#555555]"
+              style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}
+            >
+              &copy; {new Date().getFullYear()} {companyName}. All rights reserved.
+            </p>
+            <div className="mt-4 md:mt-0 flex space-x-6">
               <Link href="/privacy">
-                <div className="text-sm text-gray-400 hover:text-white transition-colors cursor-pointer">Privacy Policy</div>
+                <div
+                  className="text-[#555555] hover:text-[#c0392b] transition-colors cursor-pointer"
+                  style={{ fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}
+                >
+                  Privacy Policy
+                </div>
               </Link>
               <Link href="/terms">
-                <div className="text-sm text-gray-400 hover:text-white transition-colors cursor-pointer">Terms & Conditions</div>
+                <div
+                  className="text-[#555555] hover:text-[#c0392b] transition-colors cursor-pointer"
+                  style={{ fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}
+                >
+                  Terms &amp; Conditions
+                </div>
               </Link>
             </div>
           </div>
 
           {/* Developer Credit */}
-          <div className="text-center pt-4 border-t border-gray-800">
-            <p className="text-sm text-gray-500">
+          <div className="text-center pt-4" style={{ borderTop: '1px solid rgba(192,57,43,0.1)' }}>
+            <p className="text-[#444444]" style={{ fontSize: '0.65rem', letterSpacing: '0.1em' }}>
               Developed by{" "}
               <a
                 href="https://nardonidigital.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors underline"
+                className="text-[#555555] hover:text-[#c0392b] transition-colors"
               >
                 Nardoni Digital
               </a>

@@ -10,12 +10,21 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        playfair: ['"Playfair Display"', 'serif'],
+        lato: ['Lato', 'sans-serif'],
+        sans: ['Lato', 'sans-serif'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        'brand-red': '#c0392b',
+        'brand-cream': '#f5f0e8',
+        'brand-dark': '#0a0a0a',
+        'brand-card': '#111111',
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

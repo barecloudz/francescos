@@ -13,8 +13,8 @@ interface BrandingSettings {
 }
 
 const defaultBranding: BrandingSettings = {
-  COMPANY_NAME: "FRANCESCO'S PIZZA & PASTA",
-  COMPANY_TAGLINE: "Authentic Italian Pizza & Pasta",
+  COMPANY_NAME: "FRANCESCO'S PIZZA KITCHEN",
+  COMPANY_TAGLINE: "Authentic Italian Pizza Kitchen",
   COMPANY_ADDRESS: "2539 US-17S, #6, Murrells Inlet, SC",
   COMPANY_PHONE: "(843) 299-2700",
   COMPANY_EMAIL: "info@francescospizzaandpasta.com",

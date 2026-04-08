@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const forestbrookData: NeighborhoodData = {
   slug: "forestbrook",
   name: "Forestbrook",
-  title: "Best Pizza Near Forestbrook SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Forestbrook SC | Francesco's Pizza Kitchen",
   metaDescription: "Forestbrook SC residents: get authentic NY-style pizza at Francesco's in Murrells Inlet. Fresh pizza, pasta & Italian dishes. Order online now!",
   heroSubheadline: "NY-style pizza serving the Forestbrook community.",
-  introText: "Forestbrook, nestled between Myrtle Beach and Murrells Inlet along the SC-707 corridor, is a growing residential area that's perfectly positioned to enjoy Francesco's Pizza & Pasta. Our Murrells Inlet location on US-17 is just minutes away, making it easy for Forestbrook families to grab authentic New York-style pizza for dinner any night of the week.",
+  introText: "Forestbrook, nestled between Myrtle Beach and Murrells Inlet along the SC-707 corridor, is a growing residential area that's perfectly positioned to enjoy Francesco's Pizza Kitchen. Our Murrells Inlet location on US-17 is just minutes away, making it easy for Forestbrook families to grab authentic New York-style pizza for dinner any night of the week.",
   distanceFromFrancescos: "5 miles northeast",
   deliveryTime: "15-20 minutes",
   areasServed: ["Forestbrook", "Forestbrook Road", "SC-707 corridor", "Waccamaw area"],

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import RewardsContent from "./rewards-content";
 
 export const metadata: Metadata = {
-  title: "Rewards | Francesco's Pizza & Pasta",
-  description: "Check your reward points and redeem exclusive offers at Francesco's Pizza & Pasta.",
+  title: "Rewards | Francesco's Pizza Kitchen",
+  description: "Check your reward points and redeem exclusive offers at Francesco's Pizza Kitchen.",
   robots: { index: false, follow: false },
 };
 

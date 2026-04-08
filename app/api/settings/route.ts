@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       restaurant: {
-        name: "Francesco's Pizza & Pasta",
+        name: "Francesco's Pizza Kitchen",
         phone: '(843) 299-2700',
         address: '2520 US-17 BUS, Murrells Inlet, SC 29576',
         hours: 'See store hours settings',

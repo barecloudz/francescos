@@ -3,7 +3,7 @@ import { storage } from '@/lib/storage';
 import { getAuthUser } from '@/lib/api-utils';
 
 function getDefaultCustomerTemplate(): string {
-  return `FRANCESCO'S PIZZA & PASTA
+  return `FRANCESCO'S PIZZA KITCHEN
 2520 US-17 BUS, Murrells Inlet, SC 29576
 (843) 299-2700
 ======================
@@ -64,7 +64,7 @@ ITEMS TO PREPARE:
 
 function getDefaultRecordsTemplate(): string {
   return `*** RECORDS COPY ***
-FRANCESCO'S PIZZA & PASTA
+FRANCESCO'S PIZZA KITCHEN
 ===================
 
 Order #: {{orderNumber}}

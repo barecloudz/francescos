@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const lorisData: NeighborhoodData = {
   slug: "loris",
   name: "Loris",
-  title: "Best Pizza Near Loris SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Loris SC | Francesco's Pizza Kitchen",
   metaDescription: "Loris SC residents: discover authentic NY-style pizza at Francesco's in Murrells Inlet. Hand-tossed pizza, fresh pasta, calzones & more!",
   heroSubheadline: "Real New York pizza for the Loris community.",
-  introText: "Loris, home of the famous Bog-Off festival and rich agricultural heritage, is a tight-knit community that values quality and tradition. Francesco's Pizza & Pasta in Murrells Inlet shares those values -- our authentic New York-style pizza is made with time-honored techniques and the freshest ingredients. For Loris residents looking for a special dinner out, we're worth the drive.",
+  introText: "Loris, home of the famous Bog-Off festival and rich agricultural heritage, is a tight-knit community that values quality and tradition. Francesco's Pizza Kitchen in Murrells Inlet shares those values -- our authentic New York-style pizza is made with time-honored techniques and the freshest ingredients. For Loris residents looking for a special dinner out, we're worth the drive.",
   distanceFromFrancescos: "25 miles northwest",
   deliveryTime: "40-50 minutes",
   areasServed: ["Loris", "Green Sea", "Tabor City area", "Highway 9 corridor"],

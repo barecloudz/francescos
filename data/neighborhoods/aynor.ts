@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const aynorData: NeighborhoodData = {
   slug: "aynor",
   name: "Aynor",
-  title: "Best Pizza Near Aynor SC | Francesco's Pizza & Pasta",
+  title: "Best Pizza Near Aynor SC | Francesco's Pizza Kitchen",
   metaDescription: "Aynor SC: discover authentic NY-style pizza at Francesco's in Murrells Inlet. Hand-tossed pizza, pasta & Italian classics worth the trip!",
   heroSubheadline: "Authentic Italian pizza for the Aynor community.",
-  introText: "Aynor, known as the 'Town of Friendly People,' sits in the rural heart of Horry County. When Aynor residents head toward the coast, Francesco's Pizza & Pasta in Murrells Inlet is the perfect stop for authentic New York-style pizza. Our hand-tossed pies and homemade Italian dishes are a treat that makes the drive to the beach even more rewarding.",
+  introText: "Aynor, known as the 'Town of Friendly People,' sits in the rural heart of Horry County. When Aynor residents head toward the coast, Francesco's Pizza Kitchen in Murrells Inlet is the perfect stop for authentic New York-style pizza. Our hand-tossed pies and homemade Italian dishes are a treat that makes the drive to the beach even more rewarding.",
   distanceFromFrancescos: "30 miles northwest",
   deliveryTime: "45-55 minutes",
   areasServed: ["Aynor", "Highway 501 north corridor", "Galivants Ferry", "Cool Springs"],

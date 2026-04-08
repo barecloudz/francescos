@@ -3,10 +3,10 @@ import { NeighborhoodData } from "../neighborhoods";
 export const murrellsInletData: NeighborhoodData = {
   slug: "murrells-inlet",
   name: "Murrells Inlet",
-  title: "Best Pizza in Murrells Inlet SC | Francesco's Pizza & Pasta",
-  metaDescription: "Francesco's Pizza & Pasta is Murrells Inlet's home for authentic NY-style pizza. Hand-tossed dough, fresh ingredients, family recipes. Order online or call (843) 299-2700!",
+  title: "Best Pizza in Murrells Inlet SC | Francesco's Pizza Kitchen",
+  metaDescription: "Francesco's Pizza Kitchen is Murrells Inlet's home for authentic NY-style pizza. Hand-tossed dough, fresh ingredients, family recipes. Order online or call (843) 299-2700!",
   heroSubheadline: "Murrells Inlet's home for authentic NY-style pizza and Italian food.",
-  introText: "Welcome to Francesco's Pizza & Pasta, proudly located right here in Murrells Inlet at 2539 US-17S #6. As part of the Murrells Inlet community, we're dedicated to bringing authentic New York-style pizza to the Seafood Capital of South Carolina. Our hand-tossed dough, homemade sauce, and premium ingredients make every pizza a celebration of Italian-American tradition.",
+  introText: "Welcome to Francesco's Pizza Kitchen, proudly located right here in Murrells Inlet at 2539 US-17S #6. As part of the Murrells Inlet community, we're dedicated to bringing authentic New York-style pizza to the Seafood Capital of South Carolina. Our hand-tossed dough, homemade sauce, and premium ingredients make every pizza a celebration of Italian-American tradition.",
   distanceFromFrancescos: "Right here in Murrells Inlet",
   deliveryTime: "10-15 minutes",
   areasServed: ["Murrells Inlet", "US-17 Business", "Wachesaw Road", "Brookgreen area", "Morse Park area"],
