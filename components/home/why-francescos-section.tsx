@@ -54,7 +54,7 @@ const WhyFrancescosSection: React.FC = () => {
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-[#f5f0e8]">
               Why Francesco's
             </h2>
-            <p className="mt-4 text-[#888888] text-sm font-light max-w-xl mx-auto leading-relaxed">
+            <p className="mt-4 text-[#b8b3ab] text-sm font-light max-w-xl mx-auto leading-relaxed">
               Over 40 years of Sicilian heritage &amp; family tradition, brought to the heart of Murrells Inlet.
             </p>
           </div>
@@ -66,7 +66,7 @@ const WhyFrancescosSection: React.FC = () => {
                 key={feature.title}
                 className="p-6 transition-all duration-300 hover:border-[rgba(192,57,43,0.4)]"
                 style={{
-                  background: '#111111',
+                  background: '#1a0907',
                   border: '1px solid rgba(192,57,43,0.2)',
                   borderTop: '1px solid rgba(192,57,43,0.2)',
                 }}
@@ -77,7 +77,7 @@ const WhyFrancescosSection: React.FC = () => {
                     <h3 className="font-playfair font-semibold text-lg text-[#f5f0e8] mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-[#888888] text-sm font-light leading-relaxed">{feature.body}</p>
+                    <p className="text-[#b8b3ab] text-sm font-light leading-relaxed">{feature.body}</p>
                   </div>
                 </div>
               </div>
@@ -88,7 +88,7 @@ const WhyFrancescosSection: React.FC = () => {
           <div
             className="mt-14 py-10 px-8 text-center"
             style={{
-              background: '#111111',
+              background: '#1a0907',
               border: '1px solid rgba(192,57,43,0.2)',
               borderTopWidth: '2px',
               borderTopStyle: 'solid',
@@ -102,7 +102,7 @@ const WhyFrancescosSection: React.FC = () => {
             <h3 className="font-playfair text-3xl font-bold text-[#f5f0e8] mb-4">
               Welcome to Our Family
             </h3>
-            <p className="text-[#888888] text-sm font-light mb-8 max-w-md mx-auto leading-relaxed">
+            <p className="text-[#b8b3ab] text-sm font-light mb-8 max-w-md mx-auto leading-relaxed">
               Experience the warmth of our Sicilian heritage. Order online for pickup today.
             </p>
             <a

@@ -114,7 +114,7 @@ const GrandOpeningCountdown: React.FC = () => {
             fontSize: '0.65rem',
             letterSpacing: '0.2em',
             textTransform: 'uppercase',
-            color: '#777777',
+            color: '#aaaaaa',
           }}
         >
           Murrells Inlet · authentic NY style pizza

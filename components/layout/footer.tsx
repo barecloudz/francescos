@@ -33,12 +33,12 @@ const Footer = () => {
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[#f5f0e8] mb-8">Our Story</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="text-left">
-                <p className="text-base text-[#cccccc] mb-6 leading-relaxed font-light">
+                <p className="text-base text-[#e8e3dc] mb-6 leading-relaxed font-light">
                   Welcome to Francesco's Pizza Kitchen, where authentic Italian tradition meets the heart of Murrells Inlet.
                   We've poured our passion into every dish we craft, using time-honored recipes,
                   fresh ingredients, and a whole lot of love.
                 </p>
-                <p className="text-base text-[#cccccc] mb-6 leading-relaxed font-light">
+                <p className="text-base text-[#e8e3dc] mb-6 leading-relaxed font-light">
                   Come taste the difference at Francesco's, where every bite feels like home.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -66,7 +66,7 @@ const Footer = () => {
             <div className="mb-6 flex justify-center md:justify-start">
               <img src={logoUrl} alt={companyName} className="w-[150px] opacity-90" />
             </div>
-            <p className="mb-6 text-[#888888] text-sm leading-relaxed font-light">
+            <p className="mb-6 text-[#b8b3ab] text-sm leading-relaxed font-light">
               {companyTagline}
             </p>
             <div className="flex space-x-3 justify-center md:justify-start">
@@ -74,7 +74,7 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=61580096004134"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center border border-[rgba(192,57,43,0.3)] text-[#888888] hover:text-[#c0392b] hover:border-[#c0392b] transition-colors"
+                className="w-9 h-9 flex items-center justify-center border border-[rgba(192,57,43,0.3)] text-[#b8b3ab] hover:text-[#c0392b] hover:border-[#c0392b] transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={16} />
@@ -83,7 +83,7 @@ const Footer = () => {
                 href="https://www.instagram.com/francescosmurrellsinlet/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center border border-[rgba(192,57,43,0.3)] text-[#888888] hover:text-[#c0392b] hover:border-[#c0392b] transition-colors"
+                className="w-9 h-9 flex items-center justify-center border border-[rgba(192,57,43,0.3)] text-[#b8b3ab] hover:text-[#c0392b] hover:border-[#c0392b] transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={16} />
@@ -110,12 +110,12 @@ const Footer = () => {
               ].map(({ href, label, isAnchor }) => (
                 <li key={href}>
                   {isAnchor ? (
-                    <a href={href} className="text-[#888888] hover:text-[#c0392b] transition-colors text-sm font-light">
+                    <a href={href} className="text-[#b8b3ab] hover:text-[#c0392b] transition-colors text-sm font-light">
                       {label}
                     </a>
                   ) : (
                     <Link href={href}>
-                      <div className="text-[#888888] hover:text-[#c0392b] transition-colors cursor-pointer text-sm font-light">{label}</div>
+                      <div className="text-[#b8b3ab] hover:text-[#c0392b] transition-colors cursor-pointer text-sm font-light">{label}</div>
                     </Link>
                   )}
                 </li>
@@ -134,13 +134,13 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start justify-center md:justify-start">
                 <MapPin className="mt-0.5 mr-3 h-4 w-4 text-[#c0392b] flex-shrink-0" />
-                <span className="text-[#888888] text-sm font-light">{address}</span>
+                <span className="text-[#b8b3ab] text-sm font-light">{address}</span>
               </li>
               <li className="flex items-start justify-center md:justify-start">
                 <Phone className="mt-0.5 mr-3 h-4 w-4 text-[#c0392b] flex-shrink-0" />
                 <a
                   href={`tel:${phone.replace(/[^\d]/g, '')}`}
-                  className="text-[#888888] hover:text-[#c0392b] transition-colors text-sm font-light"
+                  className="text-[#b8b3ab] hover:text-[#c0392b] transition-colors text-sm font-light"
                 >
                   {phone}
                 </a>
@@ -149,7 +149,7 @@ const Footer = () => {
                 <Mail className="mt-0.5 mr-3 h-4 w-4 text-[#c0392b] flex-shrink-0" />
                 <a
                   href={`mailto:${email}`}
-                  className="text-[#888888] hover:text-[#c0392b] transition-colors text-sm font-light"
+                  className="text-[#b8b3ab] hover:text-[#c0392b] transition-colors text-sm font-light"
                 >
                   {email}
                 </a>
@@ -166,10 +166,10 @@ const Footer = () => {
               Open Hours
             </h3>
             <ul className="space-y-4">
-              <li className="text-[#888888]">
+              <li className="text-[#b8b3ab]">
                 <span className="flex items-center mb-1 justify-center md:justify-start">
                   <Clock className="mr-2 h-4 w-4 text-[#c0392b] flex-shrink-0" />
-                  <span className="text-sm text-[#cccccc]">Every Day</span>
+                  <span className="text-sm text-[#e8e3dc]">Every Day</span>
                 </span>
                 <span className="block pl-0 md:pl-6 text-sm font-light">11:00 AM &ndash; 9:00 PM</span>
               </li>
@@ -181,7 +181,7 @@ const Footer = () => {
         <div className="mt-12 pt-8" style={{ borderTop: '1px solid rgba(192,57,43,0.15)' }}>
           <div className="text-center mb-6">
             <p className="section-eyebrow mb-2">Visit Us</p>
-            <p className="text-[#888888] text-xs font-light tracking-widest uppercase">Best Pizza in Murrells Inlet, SC</p>
+            <p className="text-[#b8b3ab] text-xs font-light tracking-widest uppercase">Best Pizza in Murrells Inlet, SC</p>
           </div>
           <div className="overflow-hidden shadow-lg shadow-black/50 max-w-4xl mx-auto" style={{ border: '1px solid rgba(192,57,43,0.2)' }}>
             <iframe
@@ -201,7 +201,7 @@ const Footer = () => {
         <div className="mt-12 pt-8" style={{ borderTop: '1px solid rgba(192,57,43,0.15)' }}>
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left mb-4">
             <p
-              className="text-[#555555]"
+              className="text-[#999999]"
               style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}
             >
               &copy; {new Date().getFullYear()} {companyName}. All rights reserved.
@@ -209,7 +209,7 @@ const Footer = () => {
             <div className="mt-4 md:mt-0 flex space-x-6">
               <Link href="/privacy">
                 <div
-                  className="text-[#555555] hover:text-[#c0392b] transition-colors cursor-pointer"
+                  className="text-[#999999] hover:text-[#c0392b] transition-colors cursor-pointer"
                   style={{ fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}
                 >
                   Privacy Policy
@@ -217,7 +217,7 @@ const Footer = () => {
               </Link>
               <Link href="/terms">
                 <div
-                  className="text-[#555555] hover:text-[#c0392b] transition-colors cursor-pointer"
+                  className="text-[#999999] hover:text-[#c0392b] transition-colors cursor-pointer"
                   style={{ fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}
                 >
                   Terms &amp; Conditions
@@ -234,7 +234,7 @@ const Footer = () => {
                 href="https://nardonidigital.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#555555] hover:text-[#c0392b] transition-colors"
+                className="text-[#999999] hover:text-[#c0392b] transition-colors"
               >
                 Nardoni Digital
               </a>

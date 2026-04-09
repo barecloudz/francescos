@@ -54,7 +54,7 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-[#f5f0e8]">
             Customer Favorites
           </h2>
-          <p className="mt-4 text-[#888888] text-sm font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-[#b8b3ab] text-sm font-light max-w-2xl mx-auto leading-relaxed">
             The best pizza in Murrells Inlet — authentic New York style pizzas made with Italian family recipes
             passed down through generations. Order online for pickup and experience Sicilian tradition.
           </p>
@@ -68,7 +68,7 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
                   key={item.id}
                   className="overflow-hidden transition-all duration-300 hover:border-[rgba(192,57,43,0.5)] group"
                   style={{
-                    background: '#111111',
+                    background: '#1a0907',
                     border: '1px solid rgba(192,57,43,0.2)',
                     borderTopWidth: '2px',
                     borderTopColor: '#c0392b',
@@ -92,7 +92,7 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
                     <h3 className="font-playfair text-xl font-semibold text-[#f5f0e8] mb-2">
                       {item.name || 'Unknown Item'}
                     </h3>
-                    <p className="text-[#888888] text-sm font-light mb-3 leading-relaxed">{item.description}</p>
+                    <p className="text-[#b8b3ab] text-sm font-light mb-3 leading-relaxed">{item.description}</p>
                     <p
                       className="text-sm font-bold text-[#c0392b] mb-5 tracking-widest uppercase"
                       style={{ fontSize: '0.7rem', letterSpacing: '0.2em' }}
@@ -115,7 +115,7 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
                   key={item.id}
                   className="overflow-hidden transition-all duration-300 hover:border-[rgba(192,57,43,0.5)] group"
                   style={{
-                    background: '#111111',
+                    background: '#1a0907',
                     border: '1px solid rgba(192,57,43,0.2)',
                     borderTopWidth: '2px',
                     borderTopColor: '#c0392b',
@@ -131,7 +131,7 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
                   </div>
                   <div className="p-6">
                     <h3 className="font-playfair text-xl font-semibold text-[#f5f0e8] mb-2">{item.name}</h3>
-                    <p className="text-[#888888] text-sm font-light mb-5 leading-relaxed">{item.description}</p>
+                    <p className="text-[#b8b3ab] text-sm font-light mb-5 leading-relaxed">{item.description}</p>
                     <Link href="/menu">
                       <Button
                         className="w-full text-xs font-bold tracking-widest uppercase text-[#f5f0e8] border-0"
@@ -155,7 +155,7 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
               View Full Menu
             </button>
           </Link>
-          <p className="mt-4 text-[#888888] text-xs tracking-widest uppercase font-light" style={{ fontSize: '0.65rem', letterSpacing: '0.2em' }}>
+          <p className="mt-4 text-[#b8b3ab] text-xs tracking-widest uppercase font-light" style={{ fontSize: '0.65rem', letterSpacing: '0.2em' }}>
             Discover all our authentic Italian specialties
           </p>
         </div>

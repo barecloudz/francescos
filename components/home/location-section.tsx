@@ -20,7 +20,7 @@ const LocationSection: React.FC = () => {
           <p className="section-eyebrow">Find Us</p>
           <div className="section-divider"></div>
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-[#f5f0e8]">Visit Us</h2>
-          <p className="mt-4 text-[#888888] text-sm font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-[#b8b3ab] text-sm font-light max-w-2xl mx-auto leading-relaxed">
             Experience our authentic Italian cuisine at our Murrells Inlet location on US-17.
             Open 7 days a week — the best NY style pizza and pasta in town.
           </p>
@@ -45,7 +45,7 @@ const LocationSection: React.FC = () => {
             </div>
 
             {/* Location details */}
-            <div className="p-8 md:p-12" style={{ background: '#111111' }}>
+            <div className="p-8 md:p-12" style={{ background: '#1a0907' }}>
               <p className="section-eyebrow mb-3">Our Location</p>
               <h3 className="font-playfair text-2xl font-bold text-[#f5f0e8] mb-8">
                 Francesco's Pizza Kitchen
@@ -65,7 +65,7 @@ const LocationSection: React.FC = () => {
                   </p>
                   <div className="flex items-start mt-1">
                     <MapPin className="w-4 h-4 text-[#c0392b] mr-3 mt-0.5 flex-shrink-0" />
-                    <address className="not-italic text-[#cccccc] text-sm font-light leading-relaxed">
+                    <address className="not-italic text-[#e8e3dc] text-sm font-light leading-relaxed">
                       <p>2520 US-17 BUS</p>
                       <p>Murrells Inlet, SC 29576</p>
                     </address>
@@ -87,7 +87,7 @@ const LocationSection: React.FC = () => {
                     <Phone className="w-4 h-4 text-[#c0392b] mr-3 mt-0.5 flex-shrink-0" />
                     <a
                       href="tel:+18432992700"
-                      className="text-[#cccccc] hover:text-[#c0392b] transition-colors text-sm font-light"
+                      className="text-[#e8e3dc] hover:text-[#c0392b] transition-colors text-sm font-light"
                     >
                       (843) 299-2700
                     </a>
@@ -107,7 +107,7 @@ const LocationSection: React.FC = () => {
                   </p>
                   <div className="flex items-start mt-1">
                     <Clock className="w-4 h-4 text-[#c0392b] mr-3 mt-0.5 flex-shrink-0" />
-                    <ul className="space-y-1 text-[#cccccc] text-sm font-light">
+                    <ul className="space-y-1 text-[#e8e3dc] text-sm font-light">
                       <li>Every Day: 11:00 AM &ndash; 9:00 PM</li>
                     </ul>
                   </div>

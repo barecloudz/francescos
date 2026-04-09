@@ -68,14 +68,14 @@ const HeroSection: React.FC = () => {
 
         {/* Subheadline */}
         <p
-          className="text-[#888888] mb-2 max-w-xl"
-          style={{ fontSize: '0.75rem', letterSpacing: '0.25em', textTransform: 'uppercase' }}
+          className="text-[#c8c2bb] mb-2 max-w-xl"
+          style={{ fontSize: '0.75rem', letterSpacing: '0.25em', textTransform: 'uppercase', textShadow: '0 1px 4px rgba(0,0,0,0.9)' }}
         >
           Made with love for our community
         </p>
 
         {/* Body copy */}
-        <p className="text-[#e0dbd5] text-base md:text-lg mb-8 max-w-2xl leading-relaxed font-light mt-4">
+        <p className="text-[#f0ece6] text-base md:text-lg mb-8 max-w-2xl leading-relaxed font-light mt-4" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}>
           Welcome to Francesco's Pizza Kitchen. For over 40 years, we've carried forward the flavors
           of our Sicilian heritage — family traditions and recipes passed down by our Nonna,
           seasoned with laughter, memories, and love.

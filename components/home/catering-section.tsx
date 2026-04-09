@@ -35,7 +35,7 @@ const CateringSection: React.FC = () => {
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-[#f5f0e8]">
               Catering for Any Occasion
             </h2>
-            <p className="mt-4 text-[#888888] text-sm font-light max-w-xl mx-auto leading-relaxed">
+            <p className="mt-4 text-[#b8b3ab] text-sm font-light max-w-xl mx-auto leading-relaxed">
               From office parties to family gatherings, let Francesco's bring authentic NY pizza to your next event.
             </p>
           </div>
@@ -47,7 +47,7 @@ const CateringSection: React.FC = () => {
                 key={title}
                 className="p-8 text-center transition-all duration-300 hover:border-[rgba(192,57,43,0.4)]"
                 style={{
-                  background: '#111111',
+                  background: '#1a0907',
                   border: '1px solid rgba(192,57,43,0.2)',
                   borderTopWidth: '2px',
                   borderTopColor: '#c0392b',
@@ -61,7 +61,7 @@ const CateringSection: React.FC = () => {
                 </div>
                 <p className="section-eyebrow mb-2">{label}</p>
                 <h3 className="font-playfair text-lg font-semibold text-[#f5f0e8] mb-3">{title}</h3>
-                <p className="text-[#888888] text-sm font-light leading-relaxed">{body}</p>
+                <p className="text-[#b8b3ab] text-sm font-light leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
@@ -77,10 +77,10 @@ const CateringSection: React.FC = () => {
                 Order Catering
               </button>
             </Link>
-            <p className="mt-4 text-[#888888] text-xs font-light tracking-widest uppercase" style={{ fontSize: '0.65rem', letterSpacing: '0.2em' }}>
+            <p className="mt-4 text-[#b8b3ab] text-xs font-light tracking-widest uppercase" style={{ fontSize: '0.65rem', letterSpacing: '0.2em' }}>
               Perfect for office lunches, birthday parties, game days &amp; more
             </p>
-            <p className="mt-2 text-[#555555] text-xs font-light" style={{ fontSize: '0.65rem' }}>
+            <p className="mt-2 text-[#999999] text-xs font-light" style={{ fontSize: '0.65rem' }}>
               Please submit catering orders at least 24 hours in advance
             </p>
           </div>
