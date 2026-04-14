@@ -59,11 +59,11 @@ const FAQSection: React.FC = () => {
 
       <section
         id="faq"
-        className="py-20"
+        className="py-32 md:py-40"
         style={{
-          background: 'rgba(192, 57, 43, 0.03)',
-          borderTop: '1px solid rgba(192,57,43,0.15)',
-          borderBottom: '1px solid rgba(192,57,43,0.15)',
+          background: '#fafaf8',
+          borderTop: '1px solid #e5e0d8',
+          borderBottom: '1px solid #e5e0d8',
         }}
       >
         <div className="container mx-auto px-4">
@@ -71,12 +71,9 @@ const FAQSection: React.FC = () => {
           <div className="text-center mb-14">
             <p className="section-eyebrow">Have Questions?</p>
             <div className="section-divider"></div>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-[#f5f0e8]">
+            <h2 className="font-playfair text-5xl md:text-7xl font-bold text-[#111111]">
               Frequently Asked Questions
             </h2>
-            <p className="mt-4 text-[#b8b3ab] text-sm font-light max-w-2xl mx-auto leading-relaxed">
-              Got questions about our pizza, delivery, or rewards? We've got answers.
-            </p>
           </div>
 
           <div className="max-w-3xl mx-auto">
@@ -84,7 +81,7 @@ const FAQSection: React.FC = () => {
             {isLoading && (
               <div className="flex items-center justify-center py-12">
                 <Loader2 className="w-6 h-6 animate-spin text-[#c0392b]" />
-                <span className="ml-3 text-[#b8b3ab] text-sm font-light">Loading FAQs...</span>
+                <span className="ml-3 text-[#555555] text-sm font-light">Loading FAQs...</span>
               </div>
             )}
 
@@ -98,7 +95,7 @@ const FAQSection: React.FC = () => {
 
             {/* Empty State */}
             {!isLoading && !error && faqData.length === 0 && (
-              <div className="text-center py-12 text-[#b8b3ab]">
+              <div className="text-center py-12 text-[#555555]">
                 <p className="text-sm font-light">No FAQs available at the moment.</p>
               </div>
             )}
@@ -110,22 +107,22 @@ const FAQSection: React.FC = () => {
                   <div
                     key={faq.id || index}
                     style={{
-                      borderBottom: '1px solid rgba(192,57,43,0.15)',
+                      borderBottom: '1px solid #e5e0d8',
                     }}
                   >
                     <button
                       onClick={() => toggleFAQ(index)}
-                      className="w-full flex justify-between items-center py-5 px-0 text-left transition-colors"
+                      className="w-full flex justify-between items-center py-7 px-0 text-left transition-colors"
                       aria-expanded={openIndex === index}
                       aria-controls={`faq-answer-${index}`}
                     >
-                      <h3 className="font-playfair text-lg font-semibold text-[#f5f0e8] pr-6 leading-snug">
+                      <h3 className="font-playfair text-xl font-semibold text-[#111111] pr-6 leading-snug">
                         {faq.question}
                       </h3>
                       {openIndex === index ? (
                         <ChevronUp className="w-5 h-5 text-[#c0392b] flex-shrink-0" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 text-[#b8b3ab] flex-shrink-0" />
+                        <ChevronDown className="w-5 h-5 text-[#555555] flex-shrink-0" />
                       )}
                     </button>
 
@@ -134,7 +131,7 @@ const FAQSection: React.FC = () => {
                         id={`faq-answer-${index}`}
                         className="pb-5"
                       >
-                        <p className="text-[#b8b3ab] text-sm font-light leading-relaxed">
+                        <p className="text-[#555555] text-sm font-light leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>
@@ -146,7 +143,7 @@ const FAQSection: React.FC = () => {
           </div>
 
           <div className="text-center mt-14">
-            <p className="text-[#b8b3ab] text-sm font-light mb-5">
+            <p className="text-[#555555] text-sm font-light mb-5">
               Have more questions? Give us a call.
             </p>
             <a

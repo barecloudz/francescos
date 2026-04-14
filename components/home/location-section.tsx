@@ -7,11 +7,11 @@ const LocationSection: React.FC = () => {
   return (
     <section
       id="location"
-      className="py-20"
+      className="py-32 md:py-40"
       style={{
-        background: 'rgba(192, 57, 43, 0.03)',
-        borderTop: '1px solid rgba(192,57,43,0.15)',
-        borderBottom: '1px solid rgba(192,57,43,0.15)',
+        background: '#f2ede8',
+        borderTop: '1px solid #e5e0d8',
+        borderBottom: '1px solid #e5e0d8',
       }}
     >
       <div className="container mx-auto px-4">
@@ -19,16 +19,12 @@ const LocationSection: React.FC = () => {
         <div className="text-center mb-14">
           <p className="section-eyebrow">Find Us</p>
           <div className="section-divider"></div>
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-[#f5f0e8]">Visit Us</h2>
-          <p className="mt-4 text-[#b8b3ab] text-sm font-light max-w-2xl mx-auto leading-relaxed">
-            Experience our authentic Italian cuisine at our Murrells Inlet location on US-17.
-            Open 7 days a week — the best NY style pizza and pasta in town.
-          </p>
+          <h2 className="font-playfair text-5xl md:text-7xl font-bold text-[#111111]">Visit Us</h2>
         </div>
 
         <div
           className="overflow-hidden"
-          style={{ border: '1px solid rgba(192,57,43,0.2)' }}
+          style={{ border: '1px solid #e5e0d8' }}
         >
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Map */}
@@ -45,9 +41,9 @@ const LocationSection: React.FC = () => {
             </div>
 
             {/* Location details */}
-            <div className="p-8 md:p-12" style={{ background: '#1a0907' }}>
+            <div className="p-12 md:p-16" style={{ background: '#ffffff' }}>
               <p className="section-eyebrow mb-3">Our Location</p>
-              <h3 className="font-playfair text-2xl font-bold text-[#f5f0e8] mb-8">
+              <h3 className="font-playfair text-3xl md:text-4xl font-bold text-[#111111] mb-8">
                 Francesco's Pizza Kitchen
               </h3>
 
@@ -65,7 +61,7 @@ const LocationSection: React.FC = () => {
                   </p>
                   <div className="flex items-start mt-1">
                     <MapPin className="w-4 h-4 text-[#c0392b] mr-3 mt-0.5 flex-shrink-0" />
-                    <address className="not-italic text-[#e8e3dc] text-sm font-light leading-relaxed">
+                    <address className="not-italic text-[#111111] text-sm font-light leading-relaxed">
                       <p>2520 US-17 BUS</p>
                       <p>Murrells Inlet, SC 29576</p>
                     </address>
@@ -87,7 +83,7 @@ const LocationSection: React.FC = () => {
                     <Phone className="w-4 h-4 text-[#c0392b] mr-3 mt-0.5 flex-shrink-0" />
                     <a
                       href="tel:+18432992700"
-                      className="text-[#e8e3dc] hover:text-[#c0392b] transition-colors text-sm font-light"
+                      className="text-[#111111] hover:text-[#c0392b] transition-colors text-sm font-light"
                     >
                       (843) 299-2700
                     </a>
@@ -107,7 +103,7 @@ const LocationSection: React.FC = () => {
                   </p>
                   <div className="flex items-start mt-1">
                     <Clock className="w-4 h-4 text-[#c0392b] mr-3 mt-0.5 flex-shrink-0" />
-                    <ul className="space-y-1 text-[#e8e3dc] text-sm font-light">
+                    <ul className="space-y-1 text-[#111111] text-sm font-light">
                       <li>Every Day: 11:00 AM &ndash; 9:00 PM</li>
                     </ul>
                   </div>

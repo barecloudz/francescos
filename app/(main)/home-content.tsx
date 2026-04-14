@@ -5,6 +5,7 @@ import HeroSection from "@/components/home/hero-section";
 import GrandOpeningCountdown from "@/components/home/grand-opening-countdown";
 import ChristmasPromoSection from "@/components/home/christmas-promo-section";
 import FeaturedSection from "@/components/home/featured-section";
+import LocationBanner from "@/components/home/location-banner";
 import CateringSection from "@/components/home/catering-section";
 import WhyFrancescosSection from "@/components/home/why-francescos-section";
 // import RewardsSection from "@/components/home/rewards-section"; // Hidden until Toast integration is approved
@@ -30,6 +31,9 @@ const HomePageContent = () => {
 
       {/* Featured Section */}
       <FeaturedSection menuItems={featuredItems as any} />
+
+      {/* Location Photo Banner */}
+      <LocationBanner />
 
       {/* Catering Section */}
       <CateringSection />

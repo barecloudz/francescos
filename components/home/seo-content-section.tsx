@@ -7,14 +7,14 @@ const SeoContentSection: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <section className="py-12 bg-[#0a0a0a]" style={{ borderTop: '1px solid rgba(192,57,43,0.1)' }}>
+    <section className="py-8 bg-[#fafaf8]" style={{ borderTop: '1px solid #e5e0d8' }}>
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Toggle button */}
           <div className="text-center mb-6">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="inline-flex items-center px-6 py-3 text-xs font-bold tracking-widest uppercase bg-transparent text-[#c0392b] transition-colors hover:text-[#f5f0e8]"
+              className="inline-flex items-center px-6 py-3 text-xs font-bold tracking-widest uppercase bg-transparent text-[#c0392b] transition-colors hover:text-[#111111]"
               style={{ border: '1px solid rgba(192,57,43,0.4)', fontSize: '0.65rem', letterSpacing: '0.2em' }}
             >
               {isExpanded ? (
@@ -37,57 +37,57 @@ const SeoContentSection: React.FC = () => {
             <div className="text-center mb-8">
               <p className="section-eyebrow mb-0">Murrells Inlet, South Carolina</p>
               <div className="section-divider"></div>
-              <h3 className="font-playfair text-3xl md:text-4xl font-bold text-[#f5f0e8]">
+              <h3 className="font-playfair text-3xl md:text-4xl font-bold text-[#111111]">
                 Best Pizza in Murrells Inlet, SC
               </h3>
-              <p className="mt-2 text-[#b8b3ab] text-xs font-light tracking-widest uppercase" style={{ letterSpacing: '0.2em' }}>
+              <p className="mt-2 text-[#555555] text-xs font-light tracking-widest uppercase" style={{ letterSpacing: '0.2em' }}>
                 Authentic NY Style Pizza
               </p>
             </div>
 
-            <div className="space-y-8" style={{ borderTop: '1px solid rgba(192,57,43,0.15)', paddingTop: '2rem' }}>
+            <div className="space-y-8" style={{ borderTop: '1px solid #e5e0d8', paddingTop: '2rem' }}>
               <div>
-                <h2 className="font-playfair text-2xl font-bold mb-3 text-[#f5f0e8]">
+                <h2 className="font-playfair text-2xl font-bold mb-3 text-[#111111]">
                   Authentic Sicilian Heritage — Over 40 Years of Family Tradition
                 </h2>
-                <p className="text-[#b8b3ab] text-sm font-light leading-relaxed">
-                  Welcome to <strong className="text-[#e8e3dc] font-normal">Francesco's Pizza Kitchen</strong>, Murrells Inlet's destination for{" "}
-                  <strong className="text-[#e8e3dc] font-normal">authentic NY style pizza</strong>,{" "}
-                  <strong className="text-[#e8e3dc] font-normal">fresh pasta</strong>, and traditional Italian cuisine.
+                <p className="text-[#555555] text-sm font-light leading-relaxed">
+                  Welcome to <strong className="text-[#111111] font-normal">Francesco's Pizza Kitchen</strong>, Murrells Inlet's destination for{" "}
+                  <strong className="text-[#111111] font-normal">authentic NY style pizza</strong>,{" "}
+                  <strong className="text-[#111111] font-normal">fresh pasta</strong>, and traditional Italian cuisine.
                   As a family-owned restaurant carrying forward over 40 years of Sicilian heritage, we've been serving the{" "}
-                  <strong className="text-[#e8e3dc] font-normal">best pizza in Murrells Inlet</strong> with recipes passed down by our Nonna.
+                  <strong className="text-[#111111] font-normal">best pizza in Murrells Inlet</strong> with recipes passed down by our Nonna.
                   Our commitment to traditional recipes and fresh, quality ingredients makes every bite a taste of home.
                 </p>
               </div>
 
               <div>
-                <h2 className="font-playfair text-2xl font-bold mb-3 text-[#f5f0e8]">
+                <h2 className="font-playfair text-2xl font-bold mb-3 text-[#111111]">
                   Hand-Tossed NY Style Pizza in Murrells Inlet
                 </h2>
-                <p className="text-[#b8b3ab] text-sm font-light leading-relaxed">
-                  Looking for <strong className="text-[#e8e3dc] font-normal">pizza near me in Murrells Inlet</strong>? Look no further! Our{" "}
-                  <strong className="text-[#e8e3dc] font-normal">New York style pizza</strong> features a perfectly thin, crispy crust that folds just right,
+                <p className="text-[#555555] text-sm font-light leading-relaxed">
+                  Looking for <strong className="text-[#111111] font-normal">pizza near me in Murrells Inlet</strong>? Look no further! Our{" "}
+                  <strong className="text-[#111111] font-normal">New York style pizza</strong> features a perfectly thin, crispy crust that folds just right,
                   topped with our signature sauce made from fresh Italian tomatoes and premium mozzarella cheese.
                   Every pie is hand-tossed and baked to perfection. We also serve delicious{" "}
-                  <strong className="text-[#e8e3dc] font-normal">Sicilian style pizza</strong> with a thick, fluffy crust that's a local favorite.
+                  <strong className="text-[#111111] font-normal">Sicilian style pizza</strong> with a thick, fluffy crust that's a local favorite.
                 </p>
               </div>
 
               <div>
-                <h2 className="font-playfair text-2xl font-bold mb-3 text-[#f5f0e8]">
+                <h2 className="font-playfair text-2xl font-bold mb-3 text-[#111111]">
                   Calzones, Pasta &amp; Italian Specialties
                 </h2>
-                <p className="text-[#b8b3ab] text-sm font-light leading-relaxed">
+                <p className="text-[#555555] text-sm font-light leading-relaxed">
                   Beyond our award-winning pizza, Francesco's offers an extensive menu of{" "}
-                  <strong className="text-[#e8e3dc] font-normal">Italian food in Murrells Inlet</strong>. Our{" "}
-                  <strong className="text-[#e8e3dc] font-normal">calzones</strong> are hand-folded masterpieces, stuffed with ricotta, mozzarella, and your choice of
-                  premium toppings. Try our fresh <strong className="text-[#e8e3dc] font-normal">pasta dishes</strong> — from classic spaghetti and meatballs
+                  <strong className="text-[#111111] font-normal">Italian food in Murrells Inlet</strong>. Our{" "}
+                  <strong className="text-[#111111] font-normal">calzones</strong> are hand-folded masterpieces, stuffed with ricotta, mozzarella, and your choice of
+                  premium toppings. Try our fresh <strong className="text-[#111111] font-normal">pasta dishes</strong> — from classic spaghetti and meatballs
                   to creamy fettuccine alfredo, each dish is made with love and authentic Italian flavors.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-playfair text-xl font-bold mb-4 text-[#f5f0e8]">Our Menu Features</h3>
+                <h3 className="font-playfair text-xl font-bold mb-4 text-[#111111]">Our Menu Features</h3>
                 <ul className="space-y-2">
                   {[
                     ['NY Style Pizza', 'Thin crust, hand-tossed perfection'],
@@ -100,8 +100,8 @@ const SeoContentSection: React.FC = () => {
                   ].map(([name, desc]) => (
                     <li key={name} className="flex items-start space-x-3">
                       <span className="text-[#c0392b] mt-1 text-xs flex-shrink-0" aria-hidden="true">&#9670;</span>
-                      <span className="text-[#b8b3ab] text-sm font-light">
-                        <strong className="text-[#e8e3dc] font-normal">{name}</strong> — {desc}
+                      <span className="text-[#555555] text-sm font-light">
+                        <strong className="text-[#111111] font-normal">{name}</strong> — {desc}
                       </span>
                     </li>
                   ))}
@@ -109,20 +109,20 @@ const SeoContentSection: React.FC = () => {
               </div>
 
               <div>
-                <h2 className="font-playfair text-2xl font-bold mb-3 text-[#f5f0e8]">
+                <h2 className="font-playfair text-2xl font-bold mb-3 text-[#111111]">
                   Order Online for Pickup in Murrells Inlet, SC
                 </h2>
-                <p className="text-[#b8b3ab] text-sm font-light leading-relaxed">
-                  Craving <strong className="text-[#e8e3dc] font-normal">pizza in Murrells Inlet</strong>? Order online for fast, convenient pickup.
-                  Searching for <strong className="text-[#e8e3dc] font-normal">best pizza near me</strong> or{" "}
-                  <strong className="text-[#e8e3dc] font-normal">Italian food near me</strong>? Francesco's offers
+                <p className="text-[#555555] text-sm font-light leading-relaxed">
+                  Craving <strong className="text-[#111111] font-normal">pizza in Murrells Inlet</strong>? Order online for fast, convenient pickup.
+                  Searching for <strong className="text-[#111111] font-normal">best pizza near me</strong> or{" "}
+                  <strong className="text-[#111111] font-normal">Italian food near me</strong>? Francesco's offers
                   easy online ordering — just place your order and we'll have your food ready when you arrive.
                   Our online ordering system makes it easy to customize your pizza, add sides, and earn rewards points with every order.
                 </p>
               </div>
 
               <div>
-                <h2 className="font-playfair text-2xl font-bold mb-3 text-[#f5f0e8]">
+                <h2 className="font-playfair text-2xl font-bold mb-3 text-[#111111]">
                   Why Francesco's is the Best Pizza in Murrells Inlet
                 </h2>
                 <ul className="space-y-2">
@@ -138,7 +138,7 @@ const SeoContentSection: React.FC = () => {
                   ].map((item) => (
                     <li key={item} className="flex items-start space-x-3">
                       <span className="text-[#c0392b] mt-1 text-xs flex-shrink-0" aria-hidden="true">&#9670;</span>
-                      <span className="text-[#b8b3ab] text-sm font-light">{item}</span>
+                      <span className="text-[#555555] text-sm font-light">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -148,20 +148,20 @@ const SeoContentSection: React.FC = () => {
               <div
                 className="p-6"
                 style={{
-                  background: '#111111',
-                  border: '1px solid rgba(192,57,43,0.2)',
+                  background: '#ffffff',
+                  border: '1px solid #e5e0d8',
                   borderLeft: '2px solid #c0392b',
                 }}
               >
-                <h3 className="font-playfair text-lg font-bold mb-3 text-[#f5f0e8]">
+                <h3 className="font-playfair text-lg font-bold mb-3 text-[#111111]">
                   Serving Murrells Inlet &amp; Surrounding Areas
                 </h3>
-                <p className="text-[#b8b3ab] text-sm font-light mb-3 leading-relaxed">
-                  <strong className="text-[#e8e3dc] font-normal">Murrells Inlet Pizza:</strong> We proudly serve customers from across the Grand Strand area
+                <p className="text-[#555555] text-sm font-light mb-3 leading-relaxed">
+                  <strong className="text-[#111111] font-normal">Murrells Inlet Pizza:</strong> We proudly serve customers from across the Grand Strand area
                   including Murrells Inlet, Surfside Beach, Garden City, and surrounding communities in South Carolina.
                 </p>
-                <p className="text-[#b8b3ab] text-sm font-light leading-relaxed">
-                  <strong className="text-[#e8e3dc] font-normal">Our Location:</strong> Visit us at 2520 US-17 BUS, Murrells Inlet, SC 29576.
+                <p className="text-[#555555] text-sm font-light leading-relaxed">
+                  <strong className="text-[#111111] font-normal">Our Location:</strong> Visit us at 2520 US-17 BUS, Murrells Inlet, SC 29576.
                   Order online for pickup and enjoy the best NY style pizza in town.
                 </p>
               </div>

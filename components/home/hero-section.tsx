@@ -23,7 +23,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <section
-      className="relative h-screen lg:h-[680px] bg-cover bg-center"
+      className="relative h-screen bg-cover bg-center"
       style={{ backgroundImage: "url('/images/hero-bg.jpeg')" }}
     >
       {/* Dark overlay */}
@@ -36,14 +36,7 @@ const HeroSection: React.FC = () => {
         }}
       ></div>
 
-      <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-10 text-center">
-        <img
-          src="/images/logo.png"
-          alt="Francesco's Pizza Kitchen Logo"
-          className="w-[130px] md:w-[160px] mb-6 opacity-95"
-          loading="eager"
-        />
-
+      <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-10 text-center pt-28 md:pt-32">
         {/* Eyebrow label */}
         <p className="section-eyebrow mb-0">Murrells Inlet, South Carolina</p>
 
@@ -52,15 +45,10 @@ const HeroSection: React.FC = () => {
 
         {/* Main headline */}
         <h1
-          className="font-playfair text-4xl md:text-6xl font-bold mb-4 leading-tight"
-          style={{
-            background: 'linear-gradient(135deg, #7a1a14, #c0392b, #e74c3c, #c0392b, #7a1a14)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}
+          className="font-playfair text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-tight text-white"
+          style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
         >
-          Best NY Pizza in Murrells Inlet
+          Best Pizza in Murrells Inlet
         </h1>
 
         {/* Divider below heading */}
@@ -68,24 +56,17 @@ const HeroSection: React.FC = () => {
 
         {/* Subheadline */}
         <p
-          className="text-[#c8c2bb] mb-2 max-w-xl"
+          className="text-[#c8c2bb] mb-10 max-w-xl"
           style={{ fontSize: '0.75rem', letterSpacing: '0.25em', textTransform: 'uppercase', textShadow: '0 1px 4px rgba(0,0,0,0.9)' }}
         >
           Made with love for our community
-        </p>
-
-        {/* Body copy */}
-        <p className="text-[#f0ece6] text-base md:text-lg mb-8 max-w-2xl leading-relaxed font-light mt-4" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}>
-          Welcome to Francesco's Pizza Kitchen. For over 40 years, we've carried forward the flavors
-          of our Sicilian heritage — family traditions and recipes passed down by our Nonna,
-          seasoned with laughter, memories, and love.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-5">
           <Link href="/menu">
             <Button
-              className="px-8 py-5 text-sm font-bold tracking-widest uppercase text-[#f5f0e8] border-0"
+              className="px-12 py-5 text-sm font-bold tracking-widest uppercase text-[#f5f0e8] border-0"
               style={{
                 background: 'linear-gradient(135deg, #7a1a14, #c0392b, #e74c3c, #c0392b, #7a1a14)',
                 backgroundSize: '200% auto',
@@ -103,8 +84,7 @@ const HeroSection: React.FC = () => {
           </Link>
           <Button
             onClick={handleRewardsClick}
-            variant="outline"
-            className="px-8 py-5 text-sm font-bold tracking-widest uppercase bg-transparent text-[#c0392b] border border-[#c0392b] hover:bg-[rgba(192,57,43,0.08)] transition-colors"
+            className="px-12 py-5 text-sm font-bold tracking-widest uppercase bg-transparent text-white border border-white/40 hover:bg-white/10 transition-colors"
           >
             Rewards
           </Button>

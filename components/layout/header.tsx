@@ -112,6 +112,13 @@ const Header = () => {
           paddingTop: 'env(safe-area-inset-top, 0px)',
           top: 'env(safe-area-inset-top, 0px)'
         }}>
+          {/* Announcement Bar */}
+          <div className="w-full text-center py-2 px-4 text-xs tracking-widest uppercase" style={{ background: '#c0392b', color: '#fff', letterSpacing: '0.2em' }}>
+            <span>Now Open in Murrells Inlet</span>
+            <Link href="/menu" className="ml-4 inline-block border border-white/60 px-3 py-0.5 text-[0.6rem] tracking-widest hover:bg-white hover:text-[#c0392b] transition-colors font-bold">
+              Order Now
+            </Link>
+          </div>
           {/* Main navigation */}
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
@@ -277,6 +284,10 @@ const Header = () => {
           paddingTop: 'env(safe-area-inset-top, 0px)',
           top: 'env(safe-area-inset-top, 0px)'
         }}>
+          {/* Announcement Bar */}
+          <div className="w-full text-center py-1.5 px-4 text-[0.6rem] tracking-widest uppercase" style={{ background: '#c0392b', color: '#fff' }}>
+            Now Open in Murrells Inlet
+          </div>
           <div className="flex items-center justify-between px-4 py-3">
             <div className="w-20"></div>
             <Link href="/" className="flex items-center space-x-2">

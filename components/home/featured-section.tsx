@@ -45,36 +45,32 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
   const hasMenuItems = menuItems && menuItems.length > 0;
 
   return (
-    <section className="py-20 bg-[#0a0a0a]" id="featured">
+    <section className="py-32 md:py-40 bg-[#fafaf8]" id="featured">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <div className="text-center mb-14">
           <p className="section-eyebrow">From Our Kitchen</p>
           <div className="section-divider"></div>
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-[#f5f0e8]">
+          <h2 className="font-playfair text-5xl md:text-7xl font-bold text-[#111111]">
             Customer Favorites
           </h2>
-          <p className="mt-4 text-[#b8b3ab] text-sm font-light max-w-2xl mx-auto leading-relaxed">
-            The best pizza in Murrells Inlet — authentic New York style pizzas made with Italian family recipes
-            passed down through generations. Order online for pickup and experience Sicilian tradition.
-          </p>
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {hasMenuItems
             ? menuItems.slice(0, 3).map((item) => (
                 <div
                   key={item.id}
-                  className="overflow-hidden transition-all duration-300 hover:border-[rgba(192,57,43,0.5)] group"
+                  className="overflow-hidden transition-all duration-300 hover:border-[rgba(192,57,43,0.4)] group"
                   style={{
-                    background: '#1a0907',
-                    border: '1px solid rgba(192,57,43,0.2)',
+                    background: '#ffffff',
+                    border: '1px solid #e5e0d8',
                     borderTopWidth: '2px',
                     borderTopColor: '#c0392b',
                   }}
                 >
-                  <div className="h-56 overflow-hidden">
+                  <div className="h-72 md:h-80 overflow-hidden">
                     {item.imageUrl ? (
                       <img
                         src={item.imageUrl}
@@ -88,17 +84,11 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
                       </div>
                     )}
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-playfair text-xl font-semibold text-[#f5f0e8] mb-2">
+                  <div className="p-8">
+                    <h3 className="font-playfair text-2xl font-semibold text-[#111111] mb-2">
                       {item.name || 'Unknown Item'}
                     </h3>
-                    <p className="text-[#b8b3ab] text-sm font-light mb-3 leading-relaxed">{item.description}</p>
-                    <p
-                      className="text-sm font-bold text-[#c0392b] mb-5 tracking-widest uppercase"
-                      style={{ fontSize: '0.7rem', letterSpacing: '0.2em' }}
-                    >
-                      From ${item.basePrice}
-                    </p>
+                    <p className="text-[#555555] text-sm font-light mb-5 leading-relaxed line-clamp-2">{item.description}</p>
                     <Link href={`/menu?item=${item.id}`}>
                       <Button
                         className="w-full text-xs font-bold tracking-widest uppercase text-[#f5f0e8] border-0"
@@ -113,15 +103,15 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
             : staticItems.map((item) => (
                 <div
                   key={item.id}
-                  className="overflow-hidden transition-all duration-300 hover:border-[rgba(192,57,43,0.5)] group"
+                  className="overflow-hidden transition-all duration-300 hover:border-[rgba(192,57,43,0.4)] group"
                   style={{
-                    background: '#1a0907',
-                    border: '1px solid rgba(192,57,43,0.2)',
+                    background: '#ffffff',
+                    border: '1px solid #e5e0d8',
                     borderTopWidth: '2px',
                     borderTopColor: '#c0392b',
                   }}
                 >
-                  <div className="h-56 overflow-hidden">
+                  <div className="h-72 md:h-80 overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.alt}
@@ -129,9 +119,9 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
                       loading="lazy"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-playfair text-xl font-semibold text-[#f5f0e8] mb-2">{item.name}</h3>
-                    <p className="text-[#b8b3ab] text-sm font-light mb-5 leading-relaxed">{item.description}</p>
+                  <div className="p-8">
+                    <h3 className="font-playfair text-2xl font-semibold text-[#111111] mb-2">{item.name}</h3>
+                    <p className="text-[#555555] text-sm font-light mb-5 leading-relaxed line-clamp-2">{item.description}</p>
                     <Link href="/menu">
                       <Button
                         className="w-full text-xs font-bold tracking-widest uppercase text-[#f5f0e8] border-0"
@@ -148,16 +138,10 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
         {/* View full menu CTA */}
         <div className="mt-14 text-center">
           <Link href="/menu">
-            <button
-              className="px-12 py-4 text-xs font-bold tracking-widest uppercase text-[#f5f0e8] transition-opacity hover:opacity-90"
-              style={{ background: 'linear-gradient(135deg, #7a1a14, #c0392b, #e74c3c, #c0392b, #7a1a14)' }}
-            >
+            <button className="px-16 py-5 text-xs font-bold tracking-widest uppercase border border-[#111111] bg-transparent text-[#111111] hover:bg-[#111111] hover:text-white transition-colors">
               View Full Menu
             </button>
           </Link>
-          <p className="mt-4 text-[#b8b3ab] text-xs tracking-widest uppercase font-light" style={{ fontSize: '0.65rem', letterSpacing: '0.2em' }}>
-            Discover all our authentic Italian specialties
-          </p>
         </div>
       </div>
     </section>
