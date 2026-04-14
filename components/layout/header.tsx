@@ -105,260 +105,184 @@ const Header = () => {
   if (!isStandalonePage) {
     return (
       <>
-        {/* Desktop Header */}
-        <header className={`fixed w-full top-0 z-50 transition-all duration-300 hidden lg:block ${
-          isScrolled ? "bg-[#0a0a0a] shadow-lg shadow-black/50" : "bg-[#0a0a0a]/95 backdrop-blur-sm"
-        } border-b border-[rgba(192,57,43,0.2)]`} style={{
+        {/* Desktop Header — 3 stacked rows like LTD */}
+        <header className="fixed w-full top-0 z-50 hidden lg:block" style={{
+          background: '#f5f2ec',
           paddingTop: 'env(safe-area-inset-top, 0px)',
           top: 'env(safe-area-inset-top, 0px)'
         }}>
-          {/* Announcement Bar */}
-          <div className="w-full text-center py-2 px-4 text-xs tracking-widest uppercase" style={{ background: '#c0392b', color: '#fff', letterSpacing: '0.2em' }}>
+          {/* Row 1: Announcement bar */}
+          <div className="w-full text-center py-2 px-4 text-xs tracking-widest uppercase" style={{ background: '#1a1a1a', color: '#f5f0e8', letterSpacing: '0.18em' }}>
             <span>Now Open in Murrells Inlet</span>
-            <Link href="/menu" className="ml-4 inline-block border border-white/60 px-3 py-0.5 text-[0.6rem] tracking-widest hover:bg-white hover:text-[#c0392b] transition-colors font-bold">
+            <Link href="/menu" className="ml-4 inline-block border border-[#f5f0e8]/50 px-3 py-0.5 text-[0.6rem] tracking-widest hover:bg-[#f5f0e8] hover:text-[#1a1a1a] transition-colors font-bold">
               Order Now
             </Link>
           </div>
-          {/* Main navigation */}
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              {/* Logo */}
-              <Link href="/">
-                <div className="flex items-center space-x-4">
-                  <img src={logoUrl} alt={companyName} className="h-12" />
-                  <div className="hidden lg:block">
-                    <h1 className="font-playfair text-sm font-normal text-[#f5f0e8] uppercase" style={{letterSpacing:'0.2em'}}>{companyName}</h1>
-                  </div>
-                </div>
+          {/* Row 2: Logo centered */}
+          <div className="flex justify-center py-4 border-b border-[#e0dbd0]">
+            <Link href="/">
+              <img src={logoUrl} alt={companyName} className="h-16" />
+            </Link>
+          </div>
+          {/* Row 3: Nav links full-width + social icons */}
+          <div className="flex items-center justify-between px-10 py-3 border-b border-[#e0dbd0]">
+            <nav className="flex items-center space-x-8">
+              <Link href="/menu">
+                <span className={`text-xs font-bold tracking-[0.18em] uppercase transition-colors ${location === "/menu" ? "text-[#c0392b]" : "text-[#1a1a1a] hover:text-[#c0392b]"}`}>Menu</span>
               </Link>
-
-              {/* Navigation Links */}
-              <nav className="hidden lg:flex items-center space-x-8">
-                <Link href="/">
-                  <div className={`text-base tracking-wide transition-colors ${
-                    location === "/" ? "text-[#c0392b]" : "text-[#cccccc] hover:text-[#f5f0e8]"
-                  }`}>
-                    Home
-                  </div>
-                </Link>
-                <Link href="/menu">
-                  <div className={`text-base tracking-wide transition-colors ${
-                    location === "/menu" ? "text-[#c0392b]" : "text-[#cccccc] hover:text-[#f5f0e8]"
-                  }`}>
-                    Menu
-                  </div>
-                </Link>
-                <button
-                  onClick={() => {
-                    if (location === "/") {
-                      // If already on home page, scroll to location section
-                      const locationSection = document.getElementById('location');
-                      if (locationSection) {
-                        locationSection.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    } else {
-                      // If on a different page, navigate to home page with hash
-                      window.location.href = '/#location';
-                    }
-                  }}
-                  className="text-base tracking-wide text-[#cccccc] hover:text-[#f5f0e8] transition-colors"
-                >
-                  Location
-                </button>
-                <Link href="/community-impact">
-                  <div className={`text-base tracking-wide transition-colors ${
-                    location === "/community-impact" ? "text-[#c0392b]" : "text-[#cccccc] hover:text-[#f5f0e8]"
-                  }`}>
-                    Community
-                  </div>
-                </Link>
-                <Link href="/catering">
-                  <div className={`text-base tracking-wide transition-colors ${
-                    location === "/catering" ? "text-[#c0392b]" : "text-[#cccccc] hover:text-[#f5f0e8]"
-                  }`}>
-                    Catering
-                  </div>
-                </Link>
-              </nav>
-
-              {/* User (staff/admin only — no public login button) */}
-              <div className="flex items-center space-x-4">
-                {user ? (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" className="hover:bg-[#1a1a1a] text-[#cccccc]">
-                        <Avatar className="h-6 w-6 mr-2">
-                          <AvatarFallback className="text-xs">
-                            {user.firstName?.[0]}{user.lastName?.[0]}
-                          </AvatarFallback>
-                        </Avatar>
-                        <span className="hidden sm:inline">{user.firstName}</span>
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="w-72 p-3 bg-[#111111] border border-[rgba(192,57,43,0.3)] shadow-2xl shadow-black/50">
-                      <div className="space-y-2">
-                        <button
-                          onClick={() => navigate("/profile")}
-                          className="w-full flex items-center space-x-3 px-4 py-3 bg-[#1a1a1a] hover:bg-[#222222] border border-[rgba(192,57,43,0.15)] hover:border-[rgba(192,57,43,0.4)] transition-all duration-200"
-                        >
-                          <div className="flex items-center justify-center w-9 h-9 bg-[#0a0a0a]">
-                            <User className="h-4 w-4 text-[#c0392b]" />
-                          </div>
-                          <span className="font-medium text-[#cccccc] text-sm tracking-wide">My Profile</span>
-                        </button>
-
-                        <button
-                          onClick={() => navigate("/community-impact")}
-                          className="w-full flex items-center space-x-3 px-4 py-3 bg-[#1a1a1a] hover:bg-[#222222] border border-[rgba(192,57,43,0.15)] hover:border-[rgba(192,57,43,0.4)] transition-all duration-200"
-                        >
-                          <div className="flex items-center justify-center w-9 h-9 bg-[#0a0a0a]">
-                            <HeartHandshake className="h-4 w-4 text-[#c0392b]" />
-                          </div>
-                          <span className="font-medium text-[#cccccc] text-sm tracking-wide">Community Impact</span>
-                        </button>
-
-                        {(user.role === "employee" || user.isAdmin) && (
-                          <button
-                            onClick={() => navigate("/employee/clock")}
-                            className="w-full flex items-center space-x-3 px-4 py-3 bg-[#1a1a1a] hover:bg-[#222222] border border-[rgba(192,57,43,0.15)] hover:border-[rgba(192,57,43,0.4)] transition-all duration-200"
-                          >
-                            <div className="flex items-center justify-center w-9 h-9 bg-[#0a0a0a]">
-                              <Clock className="h-4 w-4 text-[#c0392b]" />
-                            </div>
-                            <span className="font-medium text-[#cccccc] text-sm tracking-wide">Clock In/Out</span>
-                          </button>
-                        )}
-
-                        {user.isAdmin && (
-                          <>
-                            <div className="h-px bg-[rgba(192,57,43,0.2)] my-2"></div>
-                            <button
-                              onClick={() => navigate("/admin/dashboard")}
-                              className="w-full flex items-center space-x-3 px-4 py-3 bg-[#1a1a1a] hover:bg-[#222222] border border-[rgba(192,57,43,0.15)] hover:border-[rgba(192,57,43,0.4)] transition-all duration-200"
-                            >
-                              <div className="flex items-center justify-center w-9 h-9 bg-[#0a0a0a]">
-                                <BarChart3 className="h-4 w-4 text-[#c0392b]" />
-                              </div>
-                              <span className="font-medium text-[#cccccc] text-sm tracking-wide">Admin Dashboard</span>
-                            </button>
-                          </>
-                        )}
-
-                        {(user.isAdmin || user.role === "employee" || user.role === "kitchen" || user.role === "manager") && (
-                          <>
-                            {!user.isAdmin && <div className="h-px bg-[rgba(192,57,43,0.2)] my-2"></div>}
-                            <button
-                              onClick={() => navigate("/kitchen")}
-                              className="w-full flex items-center space-x-3 px-4 py-3 bg-[#1a1a1a] hover:bg-[#222222] border border-[rgba(192,57,43,0.15)] hover:border-[rgba(192,57,43,0.4)] transition-all duration-200"
-                            >
-                              <div className="flex items-center justify-center w-9 h-9 bg-[#0a0a0a]">
-                                <ChefHat className="h-4 w-4 text-[#c0392b]" />
-                              </div>
-                              <span className="font-medium text-[#cccccc] text-sm tracking-wide">Kitchen Display</span>
-                            </button>
-                          </>
-                        )}
-
-                        <div className="h-px bg-[rgba(192,57,43,0.2)] my-2"></div>
-
-                        <button
-                          onClick={handleLogout}
-                          className="w-full flex items-center space-x-3 px-4 py-3 bg-[#1a1a1a] hover:bg-[#200808] border border-[rgba(192,57,43,0.15)] hover:border-[rgba(192,57,43,0.6)] transition-all duration-200"
-                        >
-                          <div className="flex items-center justify-center w-9 h-9 bg-[#0a0a0a]">
-                            <LogOut className="h-4 w-4 text-[#c0392b]" />
-                          </div>
-                          <span className="font-medium text-[#c0392b] text-sm tracking-wide">Log Out</span>
-                        </button>
-                      </div>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                ) : null}
-              </div>
+              <Link href="/menu">
+                <span className={`text-xs font-bold tracking-[0.18em] uppercase transition-colors text-[#1a1a1a] hover:text-[#c0392b]`}>Order</span>
+              </Link>
+              <button
+                onClick={() => {
+                  if (location === "/") {
+                    document.getElementById('location')?.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = '/#location';
+                  }
+                }}
+                className="text-xs font-bold tracking-[0.18em] uppercase transition-colors text-[#1a1a1a] hover:text-[#c0392b]"
+              >
+                Visit Us
+              </button>
+              <Link href="/catering">
+                <span className={`text-xs font-bold tracking-[0.18em] uppercase transition-colors ${location === "/catering" ? "text-[#c0392b]" : "text-[#1a1a1a] hover:text-[#c0392b]"}`}>Catering</span>
+              </Link>
+              <Link href="/community-impact">
+                <span className={`text-xs font-bold tracking-[0.18em] uppercase transition-colors ${location === "/community-impact" ? "text-[#c0392b]" : "text-[#1a1a1a] hover:text-[#c0392b]"}`}>Community</span>
+              </Link>
+            </nav>
+            {/* Social icons + user */}
+            <div className="flex items-center space-x-4">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#1a1a1a] hover:text-[#c0392b] transition-colors">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#1a1a1a] hover:text-[#c0392b] transition-colors">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" className="hover:bg-[#e8e3d8] text-[#1a1a1a] h-8 px-2">
+                      <Avatar className="h-6 w-6 mr-1.5">
+                        <AvatarFallback className="text-xs bg-[#c0392b] text-white">
+                          {user.firstName?.[0]}{user.lastName?.[0]}
+                        </AvatarFallback>
+                      </Avatar>
+                      <span className="text-xs font-bold tracking-widest uppercase">{user.firstName}</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-56 p-1 bg-white border border-[#e0dbd0] shadow-lg rounded-none">
+                    <DropdownMenuItem onClick={() => navigate("/profile")} className="text-xs font-bold tracking-widest uppercase cursor-pointer hover:bg-[#f5f2ec] rounded-none">
+                      My Profile
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => navigate("/community-impact")} className="text-xs font-bold tracking-widest uppercase cursor-pointer hover:bg-[#f5f2ec] rounded-none">
+                      Community
+                    </DropdownMenuItem>
+                    {(user.role === "employee" || user.isAdmin) && (
+                      <DropdownMenuItem onClick={() => navigate("/employee/clock")} className="text-xs font-bold tracking-widest uppercase cursor-pointer hover:bg-[#f5f2ec] rounded-none">
+                        Clock In/Out
+                      </DropdownMenuItem>
+                    )}
+                    {user.isAdmin && (
+                      <DropdownMenuItem onClick={() => navigate("/admin/dashboard")} className="text-xs font-bold tracking-widest uppercase cursor-pointer hover:bg-[#f5f2ec] rounded-none">
+                        Admin
+                      </DropdownMenuItem>
+                    )}
+                    {(user.isAdmin || user.role === "employee" || user.role === "kitchen" || user.role === "manager") && (
+                      <DropdownMenuItem onClick={() => navigate("/kitchen")} className="text-xs font-bold tracking-widest uppercase cursor-pointer hover:bg-[#f5f2ec] rounded-none">
+                        Kitchen Display
+                      </DropdownMenuItem>
+                    )}
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleLogout} className="text-xs font-bold tracking-widest uppercase cursor-pointer text-[#c0392b] hover:bg-[#f5f2ec] rounded-none">
+                      Log Out
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : null}
             </div>
           </div>
         </header>
 
-        {/* Mobile Top Header */}
-        <header className="fixed top-0 left-0 right-0 z-40 bg-[#0a0a0a] border-b border-[rgba(192,57,43,0.2)] lg:hidden" style={{
+        {/* Mobile Top Header — logo left, icons + hamburger right */}
+        <header className="fixed top-0 left-0 right-0 z-40 lg:hidden" style={{
+          background: '#f5f2ec',
           paddingTop: 'env(safe-area-inset-top, 0px)',
           top: 'env(safe-area-inset-top, 0px)'
         }}>
           {/* Announcement Bar */}
-          <div className="w-full text-center py-1.5 px-4 text-[0.6rem] tracking-widest uppercase" style={{ background: '#c0392b', color: '#fff' }}>
+          <div className="w-full text-center py-1.5 px-4 text-[0.6rem] tracking-widest uppercase" style={{ background: '#1a1a1a', color: '#f5f0e8' }}>
             Now Open in Murrells Inlet
           </div>
-          <div className="flex items-center justify-between px-4 py-3">
-            <div className="w-20"></div>
-            <Link href="/" className="flex items-center space-x-2">
-              <img src={logoUrl} alt={companyName} className="h-9" />
+          <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#e0dbd0]">
+            {/* Logo left */}
+            <Link href="/">
+              <img src={logoUrl} alt={companyName} className="h-10" />
             </Link>
-            <div className="flex items-center space-x-2 w-20 justify-end">
-              {user && (
-                <Button variant="ghost" size="sm" onClick={() => setMobileProfileMenuOpen(true)} className="text-[#cccccc] hover:text-[#f5f0e8]">
+            {/* Right: social icons + user avatar + hamburger */}
+            <div className="flex items-center space-x-3">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#1a1a1a]">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#1a1a1a]">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              {user ? (
+                <Button variant="ghost" size="sm" onClick={() => setMobileProfileMenuOpen(true)} className="text-[#1a1a1a] hover:bg-[#e8e3d8] p-1">
                   <Avatar className="h-6 w-6">
                     <AvatarFallback className="text-xs bg-[#c0392b] text-white">
                       {user.firstName?.[0]}{user.lastName?.[0]}
                     </AvatarFallback>
                   </Avatar>
                 </Button>
+              ) : (
+                <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-[#1a1a1a] p-1">
+                  <MenuIcon className="w-5 h-5" />
+                </button>
               )}
             </div>
           </div>
+          {/* Mobile dropdown menu (when hamburger clicked) */}
+          {mobileMenuOpen && (
+            <div className="bg-[#f5f2ec] border-b border-[#e0dbd0] py-4 px-6 space-y-4">
+              <Link href="/menu" onClick={() => setMobileMenuOpen(false)}>
+                <div className="text-xs font-bold tracking-[0.18em] uppercase text-[#1a1a1a] py-2 border-b border-[#e0dbd0]">Menu</div>
+              </Link>
+              <Link href="/menu" onClick={() => setMobileMenuOpen(false)}>
+                <div className="text-xs font-bold tracking-[0.18em] uppercase text-[#1a1a1a] py-2 border-b border-[#e0dbd0]">Order</div>
+              </Link>
+              <Link href="/catering" onClick={() => setMobileMenuOpen(false)}>
+                <div className="text-xs font-bold tracking-[0.18em] uppercase text-[#1a1a1a] py-2 border-b border-[#e0dbd0]">Catering</div>
+              </Link>
+              <Link href="/community-impact" onClick={() => setMobileMenuOpen(false)}>
+                <div className="text-xs font-bold tracking-[0.18em] uppercase text-[#1a1a1a] py-2">Community</div>
+              </Link>
+            </div>
+          )}
         </header>
 
-        {/* Mobile Bottom Navigation */}
-        <nav className="fixed bottom-0 left-0 right-0 z-50 bg-[#0a0a0a] shadow-lg shadow-black/50 border-t border-[rgba(192,57,43,0.4)] lg:hidden" style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
-          <div className="flex justify-around items-center h-16 px-2">
-            <Link href="/">
-              <div className={`flex flex-col items-center space-y-1 transition-colors ${
-                location === "/" ? "text-[#c0392b]" : "text-[#888888] hover:text-[#f5f0e8]"
-              }`}>
-                <Home className="h-6 w-6" />
-                <span className="text-xs tracking-wide uppercase" style={{ fontSize: '0.6rem', letterSpacing: '0.08em' }}>Home</span>
-              </div>
-            </Link>
-
+        {/* Mobile Bottom Navigation — minimal like LTD */}
+        <nav className="fixed bottom-0 left-0 right-0 z-50 bg-[#1a1a1a] border-t border-[#333] lg:hidden" style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
+          <div className="flex justify-around items-center h-14 px-2">
             <Link href="/menu">
-              <div className={`flex flex-col items-center space-y-1 transition-colors ${
-                location === "/menu" ? "text-[#c0392b]" : "text-[#888888] hover:text-[#f5f0e8]"
-              }`}>
-                <MenuIcon className="h-6 w-6" />
-                <span className="text-xs tracking-wide uppercase" style={{ fontSize: '0.6rem', letterSpacing: '0.08em' }}>Menu</span>
-              </div>
+              <span className={`text-xs font-bold tracking-[0.18em] uppercase transition-colors ${location === "/menu" ? "text-[#c0392b]" : "text-[#f5f0e8] hover:text-[#c0392b]"}`}>Order</span>
             </Link>
-
-            {/* Catering Button - conditionally shown based on admin setting */}
             {cateringButtonEnabled && (
               <Link href="/catering">
-                <div className={`flex flex-col items-center space-y-1 transition-colors ${
-                  location === "/catering" ? "text-[#c0392b]" : "text-[#888888] hover:text-[#f5f0e8]"
-                }`}>
-                  <UtensilsCrossed className="h-6 w-6" />
-                  <span className="text-xs tracking-wide uppercase" style={{ fontSize: '0.6rem', letterSpacing: '0.08em' }}>Catering</span>
-                </div>
+                <span className={`text-xs font-bold tracking-[0.18em] uppercase transition-colors ${location === "/catering" ? "text-[#c0392b]" : "text-[#f5f0e8] hover:text-[#c0392b]"}`}>Catering</span>
               </Link>
             )}
-
             <Link href="/community-impact">
-              <div className={`flex flex-col items-center space-y-1 transition-colors ${
-                location === "/community-impact" ? "text-[#c0392b]" : "text-[#888888] hover:text-[#f5f0e8]"
-              }`}>
-                <HeartHandshake className="h-6 w-6" />
-                <span className="text-xs tracking-wide uppercase" style={{ fontSize: '0.6rem', letterSpacing: '0.08em' }}>Community</span>
-              </div>
+              <span className={`text-xs font-bold tracking-[0.18em] uppercase transition-colors ${location === "/community-impact" ? "text-[#c0392b]" : "text-[#f5f0e8] hover:text-[#c0392b]"}`}>Community</span>
             </Link>
-
             {user && (
-              <div
-                className={`flex flex-col items-center space-y-1 cursor-pointer transition-colors ${
-                  location === "/profile" ? "text-[#c0392b]" : "text-[#888888] hover:text-[#f5f0e8]"
-                }`}
+              <span
+                className={`text-xs font-bold tracking-[0.18em] uppercase cursor-pointer transition-colors ${location === "/profile" ? "text-[#c0392b]" : "text-[#f5f0e8] hover:text-[#c0392b]"}`}
                 onClick={() => setMobileProfileMenuOpen(true)}
               >
-                <User className="h-6 w-6" />
-                <span className="text-xs tracking-wide uppercase" style={{ fontSize: '0.6rem', letterSpacing: '0.08em' }}>Profile</span>
-              </div>
+                Profile
+              </span>
             )}
           </div>
         </nav>

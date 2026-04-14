@@ -1,12 +1,27 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/use-supabase-auth";
 
 const HeroSection: React.FC = () => {
   const { user } = useAuth();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    '/images/hero-bg.jpeg',
+    '/images/f1.png',
+    '/images/f2.jpg',
+    '/images/f3.jpg',
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide(i => (i + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
   const handleRewardsClick = () => {
     if (user) {
@@ -22,10 +37,17 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section
-      className="relative h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/hero-bg.jpeg')" }}
-    >
+    <section className="relative h-screen overflow-hidden">
+      {/* Crossfade slides */}
+      {slides.map((src, index) => (
+        <div
+          key={src}
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{ backgroundImage: `url('${src}')` }}
+        />
+      ))}
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#0a0a0a]/70"></div>
       {/* Radial red glow from top */}
@@ -36,7 +58,7 @@ const HeroSection: React.FC = () => {
         }}
       ></div>
 
-      <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-10 text-center pt-28 md:pt-32">
+      <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-10 text-center pt-24 lg:pt-44">
         {/* Eyebrow label */}
         <p className="section-eyebrow mb-0">Murrells Inlet, South Carolina</p>
 
