@@ -1245,24 +1245,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const toastMenus: any[] = await menuRes.json();
 
       // Step 3: Map Toast structure → existing menu item format
+      // The response shape: { menus, modifierGroupReferences, modifierOptionReferences }
+      const toastData = toastMenus as any;
+      const menus: any[] = toastData.menus || [];
+      const modGroupRefs: Record<string, any> = toastData.modifierGroupReferences || {};
+      const modOptionRefs: Record<string, any> = toastData.modifierOptionReferences || {};
+
       let id = 1;
       const items: any[] = [];
 
-      for (const menu of toastMenus) {
-        const groups: any[] = menu.groups || [];
+      for (const menu of menus) {
+        const groups: any[] = menu.menuGroups || [];
         for (const group of groups) {
           const categoryName: string = group.name || "Other";
-          const groupItems: any[] = group.items || [];
+          const groupItems: any[] = group.menuItems || [];
           for (const item of groupItems) {
-            // Skip items that are out of stock / hidden
-            if (item.visibility === "NONE") continue;
+            // Skip items with no online visibility
+            if (Array.isArray(item.visibility) && !item.visibility.includes("TOAST_ONLINE_ORDERING")) continue;
 
-            // Price: use first size price or flat price
+            // Resolve sizes from modifier groups
             let basePrice = 0;
+            let sizes: { name: string; price: string }[] | undefined;
+
             if (item.price != null) {
               basePrice = item.price;
-            } else if (item.sizes && item.sizes.length > 0) {
-              basePrice = item.sizes[0].price ?? 0;
+            } else if (item.pricingStrategy === "SIZE_PRICE") {
+              // Find the Size modifier group and resolve option prices
+              const sizeGroupRef = (item.modifierGroupReferences || [])
+                .map((refId: number) => modGroupRefs[String(refId)])
+                .find((g: any) => g?.name === "Size");
+
+              if (sizeGroupRef) {
+                const sizeOptions = (sizeGroupRef.modifierOptionReferences || [])
+                  .map((optId: number) => modOptionRefs[String(optId)])
+                  .filter(Boolean);
+
+                if (sizeOptions.length > 0) {
+                  basePrice = sizeOptions[0].price ?? 0;
+                  if (sizeOptions.length > 1) {
+                    sizes = sizeOptions.map((o: any) => ({
+                      name: o.name,
+                      price: (o.price ?? 0).toFixed(2),
+                    }));
+                  }
+                }
+              }
             }
 
             items.push({
@@ -1272,12 +1299,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
               description: item.description || "",
               basePrice: basePrice.toFixed(2),
               category: categoryName,
-              imageUrl: item.imageUrl || null,
-              isAvailable: !item.outOfStock,
-              // Pass sizes so frontend can show size options if present
-              sizes: item.sizes && item.sizes.length > 1
-                ? item.sizes.map((s: any) => ({ name: s.name, price: s.price?.toFixed(2) }))
-                : undefined,
+              imageUrl: item.image || null,
+              isAvailable: true,
+              sizes,
             });
           }
         }

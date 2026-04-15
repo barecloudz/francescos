@@ -63,9 +63,9 @@ const MenuContent = () => {
   };
 
   const { data: menuItems, isLoading, error } = useQuery({
-    queryKey: ["/api/menu"],
+    queryKey: ["/api/toast-menu"],
     queryFn: async () => {
-      const response = await fetch('/api/menu');
+      const response = await fetch('/api/toast-menu');
       if (response.ok) {
         return await response.json();
       }
@@ -416,7 +416,7 @@ const MenuContent = () => {
   };
 
   // FLIP TO false WHEN READY TO GO LIVE
-  const COMING_SOON = true;
+  const COMING_SOON = false;
   if (COMING_SOON) {
     return (
       <div className="min-h-screen bg-gray-50 lg:pt-20 pt-0">
