@@ -77,7 +77,7 @@ const GrandOpeningCountdown: React.FC = () => {
       }}
     >
       <div className="container mx-auto px-4 text-center">
-        <p className="section-eyebrow mb-0">Now Open</p>
+        <p className="section-eyebrow mb-0">Coming Very Soon</p>
         <div className="section-divider"></div>
         <h2
           className="font-playfair font-bold"
