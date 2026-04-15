@@ -1189,6 +1189,108 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Toast Menu API — fetches live menu from Toast POS
+  app.get("/api/toast-menu", async (req, res) => {
+    try {
+      const host = process.env.TOAST_API_HOST || "https://ws-api.toasttab.com";
+      const clientId = process.env.TOAST_CLIENT_ID;
+      const clientSecret = process.env.TOAST_CLIENT_SECRET;
+      const restaurantGuid = process.env.TOAST_RESTAURANT_GUID;
+
+      if (!clientId || !clientSecret || !restaurantGuid) {
+        res.status(500).json({ message: "Toast API credentials not configured" });
+        return;
+      }
+
+      // Step 1: Authenticate
+      const authRes = await fetch(`${host}/authentication/v1/authentication/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          clientId,
+          clientSecret,
+          userAccessType: "TOAST_MACHINE_CLIENT",
+        }),
+      });
+
+      if (!authRes.ok) {
+        const text = await authRes.text();
+        log(`Toast auth failed: ${authRes.status} ${text}`, "ERROR");
+        res.status(502).json({ message: "Toast authentication failed" });
+        return;
+      }
+
+      const authData: any = await authRes.json();
+      const accessToken = authData?.token?.accessToken;
+      if (!accessToken) {
+        res.status(502).json({ message: "No access token in Toast auth response" });
+        return;
+      }
+
+      // Step 2: Fetch menus
+      const menuRes = await fetch(`${host}/menus/v2/menus`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Toast-Restaurant-External-ID": restaurantGuid,
+        },
+      });
+
+      if (!menuRes.ok) {
+        const text = await menuRes.text();
+        log(`Toast menus fetch failed: ${menuRes.status} ${text}`, "ERROR");
+        res.status(502).json({ message: "Failed to fetch Toast menus" });
+        return;
+      }
+
+      const toastMenus: any[] = await menuRes.json();
+
+      // Step 3: Map Toast structure → existing menu item format
+      let id = 1;
+      const items: any[] = [];
+
+      for (const menu of toastMenus) {
+        const groups: any[] = menu.groups || [];
+        for (const group of groups) {
+          const categoryName: string = group.name || "Other";
+          const groupItems: any[] = group.items || [];
+          for (const item of groupItems) {
+            // Skip items that are out of stock / hidden
+            if (item.visibility === "NONE") continue;
+
+            // Price: use first size price or flat price
+            let basePrice = 0;
+            if (item.price != null) {
+              basePrice = item.price;
+            } else if (item.sizes && item.sizes.length > 0) {
+              basePrice = item.sizes[0].price ?? 0;
+            }
+
+            items.push({
+              id: id++,
+              toastGuid: item.guid,
+              name: item.name,
+              description: item.description || "",
+              basePrice: basePrice.toFixed(2),
+              category: categoryName,
+              imageUrl: item.imageUrl || null,
+              isAvailable: !item.outOfStock,
+              // Pass sizes so frontend can show size options if present
+              sizes: item.sizes && item.sizes.length > 1
+                ? item.sizes.map((s: any) => ({ name: s.name, price: s.price?.toFixed(2) }))
+                : undefined,
+            });
+          }
+        }
+      }
+
+      res.set("Cache-Control", "public, max-age=120");
+      res.json(items);
+    } catch (error: any) {
+      log(`Error in GET /api/toast-menu: ${error.message}`, "ERROR");
+      res.status(500).json({ message: "Failed to fetch Toast menu" });
+    }
+  });
+
   // Menu Items API
   app.get("/api/menu", async (req, res) => {
     try {

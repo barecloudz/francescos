@@ -61,9 +61,9 @@ const MenuPage = () => {
   };
 
   const { data: menuItems, isLoading, error } = useQuery({
-    queryKey: ["/api/menu"],
+    queryKey: ["/api/toast-menu"],
     queryFn: async () => {
-      const response = await fetch('/api/menu');
+      const response = await fetch('/api/toast-menu');
       if (response.ok) {
         return await response.json();
       }
@@ -432,8 +432,8 @@ const MenuPage = () => {
     });
   };
 
-  // COMING SOON — set to false to restore full menu
-  const COMING_SOON = true;
+  // COMING SOON — disabled, now pulling live menu from Toast
+  const COMING_SOON = false;
   if (COMING_SOON) {
     return (
       <>
