@@ -40,7 +40,7 @@ const SeoContentSection: React.FC = () => {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Authentic Sicilian Heritage - Over 40 Years of Family Tradition</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Welcome to <strong>Francesco's Pizza & Pasta</strong>, Murrells Inlet's destination for <strong>authentic NY style pizza</strong>,
+              Welcome to <strong>Francesco's Pizza Kitchen</strong>, Murrells Inlet's destination for <strong>authentic NY style pizza</strong>,
               <strong> fresh pasta</strong>, and traditional Italian cuisine.
               As a family-owned restaurant carrying forward over 40 years of Sicilian heritage, we've been serving the
               <strong> best pizza in Murrells Inlet</strong> with recipes passed down by our Nonna.

@@ -14,7 +14,7 @@ const sql = postgres(databaseUrl, {
   idle_timeout: 20, // Shorter timeout for serverless
   connect_timeout: 10, // Quick connection timeout
   prepare: false,   // Disable prepared statements for better serverless compatibility
-  keep_alive: false, // Disable keepalive for serverless
+  keep_alive: 0, // Disable keepalive for serverless
   types: {
     bigint: postgres.BigInt,
   },

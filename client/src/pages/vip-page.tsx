@@ -73,7 +73,7 @@ const VipPage = () => {
         {/* Logo */}
         <img
           src="/images/logo.png"
-          alt="Francesco's Pizza & Pasta"
+          alt="Francesco's Pizza Kitchen"
           className="w-28 md:w-36 mb-6 drop-shadow-lg"
         />
 
@@ -168,7 +168,7 @@ const VipPage = () => {
 
               {/* Consent */}
               <p className="text-gray-400 text-center text-[11px] font-sans mt-4 leading-relaxed">
-                By submitting, you agree to receive SMS marketing messages from Francesco's Pizza & Pasta. Message &amp; data rates may apply. Reply STOP to unsubscribe at any time.
+                By submitting, you agree to receive SMS marketing messages from Francesco's Pizza Kitchen. Message &amp; data rates may apply. Reply STOP to unsubscribe at any time.
               </p>
             </div>
           </>
@@ -190,7 +190,7 @@ const VipPage = () => {
 
             <div className="mt-8 flex items-center gap-3">
               <div className="h-px w-12 bg-[#f2c94c] opacity-40" />
-              <span className="text-[#f2c94c] text-xs tracking-widest uppercase font-sans">Francesco's Pizza &amp; Pasta</span>
+              <span className="text-[#f2c94c] text-xs tracking-widest uppercase font-sans">Francesco's Pizza Kitchen</span>
               <div className="h-px w-12 bg-[#f2c94c] opacity-40" />
             </div>
 
@@ -205,7 +205,7 @@ const VipPage = () => {
 
         {/* Footer */}
         <p className="text-gray-500 text-xs font-sans mt-8 text-center">
-          © {new Date().getFullYear()} Francesco's Pizza &amp; Pasta · Murrells Inlet, SC
+          © {new Date().getFullYear()} Francesco's Pizza Kitchen · Murrells Inlet, SC
         </p>
       </div>
     </div>

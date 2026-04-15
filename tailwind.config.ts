@@ -2,15 +2,29 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./hooks/**/*.{js,jsx,ts,tsx}",
+    "./lib/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {
+      fontFamily: {
+        playfair: ['"Playfair Display"', 'serif'],
+        lato: ['Lato', 'sans-serif'],
+        sans: ['Lato', 'sans-serif'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        'brand-red': '#c0392b',
+        'brand-cream': '#f5f0e8',
+        'brand-dark': '#0a0a0a',
+        'brand-card': '#111111',
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

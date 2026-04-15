@@ -24,7 +24,7 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="text-left">
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                  Welcome to Francesco's Pizza & Pasta, where authentic Italian tradition meets the heart of Murrells Inlet.
+                  Welcome to Francesco's Pizza Kitchen, where authentic Italian tradition meets the heart of Murrells Inlet.
                   We've poured our passion into every dish we craft, using time-honored recipes,
                   fresh ingredients, and a whole lot of love.
                 </p>
@@ -44,7 +44,7 @@ const Footer = () => {
               <div>
                 <img
                   src="/images/lineup.jpg"
-                  alt="Francesco's Pizza & Pasta Team"
+                  alt="Francesco's Pizza Kitchen Team"
                   className="rounded-xl shadow-xl w-full h-64 object-cover"
                   loading="lazy"
                 />
@@ -169,7 +169,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="text-center mb-6">
             <h3 className="text-xl font-bold text-[#f2c94c] mb-2">FIND US</h3>
-            <p className="text-gray-400 text-sm">Best Pizza & Pasta in Murrells Inlet, SC</p>
+            <p className="text-gray-400 text-sm">Best Pizza in Murrells Inlet, SC</p>
           </div>
           <div className="rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto">
             <iframe
@@ -180,7 +180,7 @@ const Footer = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Francesco's Pizza & Pasta Location - Best Pizza in Murrells Inlet"
+              title="Francesco's Pizza Kitchen Location - Best Pizza in Murrells Inlet"
             />
           </div>
         </div>
