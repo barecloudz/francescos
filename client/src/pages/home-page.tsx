@@ -167,10 +167,10 @@ const HomePage = () => {
       </Helmet>
 
       <div className="min-h-screen">
-        {/* Grand Opening Countdown */}
-        <div className="pt-12 lg:pt-20">
+        {/* Grand Opening Countdown - hidden */}
+        {/* <div className="pt-12 lg:pt-20">
           <GrandOpeningCountdown />
-        </div>
+        </div> */}
 
         {/* Hero Section */}
         <HeroSection />

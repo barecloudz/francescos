@@ -415,7 +415,7 @@ const MenuContent = () => {
     });
   };
 
-  // FLIP TO false ON APRIL 15 TO GO LIVE
+  // FLIP TO false WHEN READY TO GO LIVE
   const COMING_SOON = true;
   if (COMING_SOON) {
     return (
@@ -427,7 +427,7 @@ const MenuContent = () => {
             We&apos;re putting the finishing touches on our online menu.
           </p>
           <p className="text-lg text-gray-600 mb-8">
-            <strong>Opening April 15th</strong> — Murrells Inlet, SC
+            <strong>Coming Very Soon</strong> — Murrells Inlet, SC
           </p>
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
             <p className="text-gray-700 font-medium mb-1">Want to know what&apos;s on the menu?</p>

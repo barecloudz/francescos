@@ -439,11 +439,11 @@ const MenuPage = () => {
       <>
         <Helmet>
           <title>Menu Coming Soon | Francesco's Pizza Kitchen</title>
-          <meta name="description" content="Our online menu is coming soon. Francesco's Pizza Kitchen opens April 15th in Murrells Inlet, SC. Call us at (843) 299-2700." />
+          <meta name="description" content="Our online menu is coming soon. Francesco's Pizza Kitchen is coming very soon to Murrells Inlet, SC. Call us at (843) 299-2700." />
           <link rel="canonical" href="https://francescosmyrtlebeach.com/menu" />
         </Helmet>
         <div className="min-h-screen bg-gray-50 lg:pt-20 pt-0">
-          <GrandOpeningCountdown />
+          {/* <GrandOpeningCountdown /> */}
           <div className="text-center px-6 py-20 max-w-lg mx-auto">
             <div className="text-7xl mb-6">🍕</div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Menu Coming Soon</h1>
@@ -451,7 +451,7 @@ const MenuPage = () => {
               We're putting the finishing touches on our online menu.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              <strong>Opening April 15th</strong> — Murrells Inlet, SC
+              <strong>Coming Very Soon</strong> — Murrells Inlet, SC
             </p>
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
               <p className="text-gray-700 font-medium mb-1">Want to know what's on the menu?</p>
@@ -497,7 +497,7 @@ const MenuPage = () => {
     <>
       <Helmet>
         <title>Menu Coming Soon | Francesco's Pizza Kitchen</title>
-        <meta name="description" content="Our online menu is coming soon. Francesco's Pizza Kitchen opens April 15th in Murrells Inlet, SC. Call us at (843) 299-2700." />
+        <meta name="description" content="Our online menu is coming soon. Francesco's Pizza Kitchen is coming very soon to Murrells Inlet, SC. Call us at (843) 299-2700." />
         <link rel="canonical" href="https://francescosmyrtlebeach.com/menu" />
 
         {/* Open Graph Tags */}

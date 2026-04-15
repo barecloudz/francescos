@@ -23,8 +23,8 @@ const HomePageContent = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Grand Opening Countdown - hides automatically after April 15 */}
-      <GrandOpeningCountdown />
+      {/* Grand Opening Countdown - hidden */}
+      {/* <GrandOpeningCountdown /> */}
 
       {/* Christmas Promo Section - Only shows in December */}
       <ChristmasPromoSection />
