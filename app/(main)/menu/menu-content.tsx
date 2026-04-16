@@ -118,58 +118,21 @@ const MenuContent = () => {
     }
   });
 
-  // Fetch categories from backend (or use default if not available)
-  const { data: categoriesData } = useQuery({
-    queryKey: ["/api/categories"],
-    queryFn: async () => {
-      try {
-        const response = await fetch('/api/categories');
-        if (response.ok) {
-          const data = await response.json();
-          // Transform to ensure consistent field names
-          const categories = Array.isArray(data) ? data : data.categories || [];
-          return {
-            categories: categories.map((cat: any) => ({
-              ...cat,
-              isActive: cat.isActive ?? cat.is_active ?? true,
-              imageUrl: cat.imageUrl ?? cat.image_url ?? null,
-              isTemporarilyUnavailable: cat.isTemporarilyUnavailable ?? false,
-              unavailabilityReason: cat.unavailabilityReason ?? null,
-            }))
-          };
-        }
-      } catch (error) {
-        console.log('Categories API not available, using defaults');
+  // Derive categories directly from Toast menu items
+  const categoriesData = React.useMemo(() => {
+    if (!menuItems || menuItems.length === 0) return { categories: [] };
+    const seen = new Set<string>();
+    const categories: any[] = [];
+    let order = 1;
+    for (const item of menuItems) {
+      const name = item.category || 'Other';
+      if (!seen.has(name)) {
+        seen.add(name);
+        categories.push({ id: order, name, order: order++, isActive: true, imageUrl: null, isTemporarilyUnavailable: false });
       }
-      // Return default categories if API is not available
-      return {
-        categories: [
-          { id: 1, name: "Traditional Pizza", order: 1, isActive: true, imageUrl: null },
-          { id: 2, name: "10\" Specialty Gourmet Pizzas", order: 2, isActive: true, imageUrl: null },
-          { id: 3, name: "14\" Specialty Gourmet Pizzas", order: 3, isActive: true, imageUrl: null },
-          { id: 4, name: "16\" Specialty Gourmet Pizzas", order: 4, isActive: true, imageUrl: null },
-          { id: 5, name: "Sicilian Pizzas", order: 5, isActive: true, imageUrl: null },
-          { id: 6, name: "Appetizers", order: 6, isActive: true, imageUrl: null },
-          { id: 7, name: "Sides", order: 7, isActive: true, imageUrl: null },
-          { id: 8, name: "Desserts", order: 8, isActive: true, imageUrl: null },
-          { id: 9, name: "Beverages", order: 9, isActive: true, imageUrl: null },
-        ]
-      };
-    },
-    placeholderData: {
-      categories: [
-        { id: 1, name: "Traditional Pizza", order: 1, isActive: true },
-        { id: 2, name: "10\" Specialty Gourmet Pizzas", order: 2, isActive: true },
-        { id: 3, name: "14\" Specialty Gourmet Pizzas", order: 3, isActive: true },
-        { id: 4, name: "16\" Specialty Gourmet Pizzas", order: 4, isActive: true },
-        { id: 5, name: "Sicilian Pizzas", order: 5, isActive: true },
-        { id: 6, name: "Appetizers", order: 6, isActive: true },
-        { id: 7, name: "Sides", order: 7, isActive: true },
-        { id: 8, name: "Desserts", order: 8, isActive: true },
-        { id: 9, name: "Beverages", order: 9, isActive: true },
-      ]
     }
-  });
+    return { categories };
+  }, [menuItems]);
 
   // Get category and item from URL params
   const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : new URLSearchParams();
@@ -217,18 +180,14 @@ const MenuContent = () => {
     }
   }, [itemIdFromUrl, menuItems]);
 
-  // Create categories array with counts (filter out inactive and temporarily unavailable)
-  const categories = [
-    { id: null, name: "All", count: (menuItems || []).length },
-    ...(categoriesData?.categories || [])
-      .filter((cat: any) => cat.isActive && !cat.isTemporarilyUnavailable)
-      .sort((a: any, b: any) => a.order - b.order)
-      .map((cat: any) => ({
-        id: cat.name,
-        name: cat.name,
-        count: (menuItems || []).filter((item: any) => item.category === cat.name).length
-      }))
-  ];
+  // Categories with item counts derived from Toast data
+  const categories = (categoriesData?.categories || [])
+    .map((cat: any) => ({
+      id: cat.name,
+      name: cat.name,
+      count: (menuItems || []).filter((item: any) => item.category === cat.name).length
+    }))
+    .filter((cat: any) => cat.count > 0);
 
   const filteredItems = (menuItems || []).filter((item: any) => {
     const matchesCategory = !selectedCategory || item.category === selectedCategory;
@@ -570,13 +529,10 @@ const MenuContent = () => {
             <div className="max-w-7xl mx-auto">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Browse by Category</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                {categoriesData?.categories
-                  ?.filter((cat: any) => cat.isActive)
-                  .sort((a: any, b: any) => a.order - b.order)
-                  .map((category: any) => {
-                    const itemCount = (menuItems || []).filter((item: any) => item.category === category.name).length;
+                {categories.map((category: any) => {
+                    const itemCount = category.count;
                     const isExpanded = expandedCategories.has(category.name);
-                    const isUnavailable = category.isTemporarilyUnavailable;
+                    const isUnavailable = false;
 
                     if (itemCount === 0) return null;
 
