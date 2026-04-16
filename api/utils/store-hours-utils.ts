@@ -24,7 +24,7 @@ export interface StoreStatusResult {
   schedulingWindowEnd?: string; // When scheduling window ends (30 min after open)
 }
 
-const CUTOFF_MINUTES_BEFORE_CLOSE = 30;
+const CUTOFF_MINUTES_BEFORE_CLOSE = 0;
 const SCHEDULING_WINDOW_AFTER_OPEN = 30; // Allow scheduling until 30 min after opening
 
 /**
@@ -198,7 +198,7 @@ export function checkStoreStatus(storeHours: StoreHoursData[]): StoreStatusResul
     return {
       isOpen: true,
       isPastCutoff: true,
-      message: `ASAP orders have ended for the day. We stop taking new orders ${CUTOFF_MINUTES_BEFORE_CLOSE} minutes before closing to ensure quality service.`,
+      message: `ASAP orders have ended for the day.`,
       currentTime,
       storeHours: todayHours,
       minutesUntilClose
