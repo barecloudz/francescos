@@ -15,7 +15,7 @@ export function useVacationMode() {
   const { data, isLoading, error } = useQuery<VacationMode>({
     queryKey: ['/api/vacation-mode'],
     queryFn: async () => {
-      const response = await fetch('/.netlify/functions/vacation-mode');
+      const response = await fetch('/api/vacation-mode');
       if (!response.ok) {
         throw new Error('Failed to fetch vacation mode status');
       }

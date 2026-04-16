@@ -1,14 +1,11 @@
 import { NextResponse } from 'next/server';
+import { unstable_cache } from 'next/cache';
 import { getMenus } from '@/lib/toast-api';
 
-/**
- * GET /api/toast-menu
- * Fetches Toast menus and maps them to the flat item format the menu page expects.
- */
-export async function GET() {
-  try {
+// Cache the full menu build for 5 minutes — avoids hitting Toast API on every cold start
+const getCachedMenu = unstable_cache(
+  async () => {
     const data: any = await getMenus();
-
     const menus: any[] = data.menus || [];
     const modGroupRefs: Record<string, any> = data.modifierGroupReferences || {};
     const modOptionRefs: Record<string, any> = data.modifierOptionReferences || {};
@@ -20,7 +17,6 @@ export async function GET() {
       for (const group of menu.menuGroups || []) {
         const categoryName: string = group.name || 'Other';
         for (const item of group.menuItems || []) {
-          // Skip items not available for online ordering
           if (Array.isArray(item.visibility) && !item.visibility.includes('TOAST_ONLINE_ORDERING')) continue;
 
           let basePrice = 0;
@@ -64,9 +60,21 @@ export async function GET() {
         }
       }
     }
+    return items;
+  },
+  ['toast-menu'],
+  { revalidate: 300 } // refresh every 5 minutes
+);
 
+/**
+ * GET /api/toast-menu
+ * Returns the cached menu (refreshed every 5 minutes from Toast API).
+ */
+export async function GET() {
+  try {
+    const items = await getCachedMenu();
     return NextResponse.json(items, {
-      headers: { 'Cache-Control': 'public, max-age=120' },
+      headers: { 'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=60' },
     });
   } catch (error: any) {
     console.error('[Toast] Menu fetch error:', error.message);

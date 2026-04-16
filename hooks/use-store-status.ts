@@ -25,7 +25,7 @@ export function useStoreStatus() {
   const { data, isLoading, error } = useQuery<StoreStatus>({
     queryKey: ['/api/store-status'],
     queryFn: async () => {
-      const response = await fetch('/.netlify/functions/store-status');
+      const response = await fetch('/api/store-status');
       if (!response.ok) {
         throw new Error('Failed to fetch store status');
       }
