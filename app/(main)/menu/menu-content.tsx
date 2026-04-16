@@ -1,45 +1,38 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
-import { Search, Plus, ShoppingCart, X, ChevronDown, Minus, AlertCircle } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Search, ShoppingCart, AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { useCart } from "@/hooks/use-cart";
 import { useVacationMode } from "@/hooks/use-vacation-mode";
 import { useStoreStatus } from "@/hooks/use-store-status";
-import MenuItemSimple from "@/components/menu/menu-item-simple";
-import MenuItemWithChoices from "@/components/menu/menu-item-with-choices";
 
 const TOAST_ORDER_URL = "https://order.toasttab.com/online/francesco's-pizza-pasta-murrells-inlet";
 
+const CATEGORY_STYLES: Record<string, { emoji: string; bg: string }> = {
+  'Pizza': { emoji: '🍕', bg: 'bg-red-50' },
+  "Francesco's Squared": { emoji: '🍕', bg: 'bg-rose-50' },
+  'Cauliflower Pizza GF': { emoji: '🌿', bg: 'bg-green-50' },
+  'Stromboli': { emoji: '🥙', bg: 'bg-amber-50' },
+  'Cheese Calzone': { emoji: '🥪', bg: 'bg-orange-50' },
+  'Salads': { emoji: '🥗', bg: 'bg-emerald-50' },
+  'Appetizers': { emoji: '🧀', bg: 'bg-yellow-50' },
+  'Wings': { emoji: '🍗', bg: 'bg-orange-50' },
+  'Pasta Classics': { emoji: '🍝', bg: 'bg-yellow-50' },
+  'Baked Pasta': { emoji: '🍝', bg: 'bg-amber-50' },
+  'Entrees': { emoji: '🍽️', bg: 'bg-purple-50' },
+  'Heros': { emoji: '🥖', bg: 'bg-amber-50' },
+  'Wraps & Paninis': { emoji: '🌯', bg: 'bg-teal-50' },
+  'Desserts': { emoji: '🍰', bg: 'bg-pink-50' },
+};
+const DEFAULT_STYLE = { emoji: '🍴', bg: 'bg-gray-50' };
+
 const MenuContent = () => {
-  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [isChoiceModalOpen, setIsChoiceModalOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<any>(null);
-  const [selectedChoices, setSelectedChoices] = useState<{[key: number]: string[]}>({});
-  const [quantity, setQuantity] = useState(1);
-  const [animatingItem, setAnimatingItem] = useState<number | null>(null);
-  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
-  const { addItem, items } = useCart();
+  const tabBarRef = useRef<HTMLDivElement>(null);
   const { isOrderingPaused, displayMessage } = useVacationMode();
-  const { isPastCutoff, canPlaceAsapOrders, cutoffMessage, storeStatus } = useStoreStatus();
+  const { isPastCutoff, cutoffMessage, storeStatus } = useStoreStatus();
 
   // Check if delivery is available
   const { data: deliveryAvailability } = useQuery({
@@ -73,14 +66,12 @@ const MenuContent = () => {
     }
   });
 
-  // Re-enabled: Choice groups system
+  // Keep existing data fetching hooks
   const { data: choiceGroups = [] } = useQuery({
     queryKey: ['choice-groups'],
     queryFn: async () => {
       const response = await fetch('/api/choice-groups');
-      if (response.ok) {
-        return await response.json();
-      }
+      if (response.ok) return await response.json();
       return [];
     }
   });
@@ -89,9 +80,7 @@ const MenuContent = () => {
     queryKey: ['choice-items'],
     queryFn: async () => {
       const response = await fetch('/api/choice-items');
-      if (response.ok) {
-        return await response.json();
-      }
+      if (response.ok) return await response.json();
       return [];
     }
   });
@@ -100,9 +89,7 @@ const MenuContent = () => {
     queryKey: ['category-choice-groups'],
     queryFn: async () => {
       const response = await fetch('/api/category-choice-groups');
-      if (response.ok) {
-        return await response.json();
-      }
+      if (response.ok) return await response.json();
       return [];
     }
   });
@@ -111,9 +98,7 @@ const MenuContent = () => {
     queryKey: ['menu-item-choice-groups'],
     queryFn: async () => {
       const response = await fetch('/api/menu-item-choice-groups');
-      if (response.ok) {
-        return await response.json();
-      }
+      if (response.ok) return await response.json();
       return [];
     }
   });
@@ -140,36 +125,24 @@ const MenuContent = () => {
   const itemIdFromUrl = urlParams.get('item');
 
   // Set initial category from URL
-  React.useEffect(() => {
+  useEffect(() => {
     if (categoryFromUrl && !selectedCategory) {
       setSelectedCategory(categoryFromUrl);
     }
   }, [categoryFromUrl, selectedCategory]);
 
   // Handle direct link to specific item from homepage
-  const hasScrolledToItem = React.useRef(false);
+  const hasScrolledToItem = useRef(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (itemIdFromUrl && menuItems && menuItems.length > 0 && !hasScrolledToItem.current) {
       const targetItem = menuItems.find((item: any) => item.id === parseInt(itemIdFromUrl));
-
       if (targetItem) {
-        // Mark that we've handled this scroll
         hasScrolledToItem.current = true;
-
-        // Expand the category containing this item
-        setExpandedCategories(prev => {
-          const newExpanded = new Set(prev);
-          newExpanded.add(targetItem.category);
-          return newExpanded;
-        });
-
-        // Scroll to the item after a short delay to allow rendering
         setTimeout(() => {
           const itemElement = document.getElementById(`menu-item-${targetItem.id}`);
           if (itemElement) {
             itemElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            // Add a highlight effect
             itemElement.classList.add('ring-4', 'ring-red-500', 'ring-offset-2');
             setTimeout(() => {
               itemElement.classList.remove('ring-4', 'ring-red-500', 'ring-offset-2');
@@ -180,236 +153,71 @@ const MenuContent = () => {
     }
   }, [itemIdFromUrl, menuItems]);
 
-  // Categories with item counts derived from Toast data
+  // Categories with item counts
   const categories = (categoriesData?.categories || [])
     .map((cat: any) => ({
       id: cat.name,
       name: cat.name,
-      count: (menuItems || []).filter((item: any) => item.category === cat.name).length
+      count: (menuItems || []).filter((item: any) => item.category === cat.name).length,
     }))
     .filter((cat: any) => cat.count > 0);
 
-  const filteredItems = (menuItems || []).filter((item: any) => {
-    const matchesCategory = !selectedCategory || item.category === selectedCategory;
-    const matchesSearch = item?.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         (item.description && item.description.toLowerCase().includes(searchQuery.toLowerCase()));
+  const isSearchActive = searchQuery.trim().length > 0;
 
-    // Check if the item's category is marked as out of stock
+  const filteredItems = (menuItems || []).filter((item: any) => {
+    const matchesSearch =
+      item?.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (item.description && item.description.toLowerCase().includes(searchQuery.toLowerCase()));
+
     const itemCategory = categoriesData?.categories?.find((cat: any) => cat.name === item.category);
     const categoryUnavailable = itemCategory?.isTemporarilyUnavailable || false;
 
-    return matchesCategory && matchesSearch && item.isAvailable !== false && !categoryUnavailable;
+    if (item.isAvailable === false || categoryUnavailable) return false;
+
+    if (isSearchActive) return matchesSearch;
+
+    const matchesCategory = !selectedCategory || item.category === selectedCategory;
+    return matchesCategory;
   });
 
   // Group items by category for display
   const itemsByCategory = (filteredItems || []).reduce((acc: any, item: any) => {
     const category = item.category || "Other";
-    if (!acc[category]) {
-      acc[category] = [];
-    }
+    if (!acc[category]) acc[category] = [];
     acc[category].push(item);
     return acc;
   }, {});
 
-  // Clicking a menu item sends the user to Toast Online Ordering
-  const handleItemClick = (_item: any) => {
-    window.open(TOAST_ORDER_URL, '_blank', 'noopener,noreferrer');
-  };
-
-
-  // Get choice groups for a specific item
-  const getItemChoiceGroups = (item: any) => {
-    const relevantGroups: any[] = [];
-
-    // Get choice groups assigned directly to this menu item
-    const directGroups = menuItemChoiceGroups
-      .filter((micg: any) => micg.menu_item_id === item.id)
-      .map((micg: any) => micg.choice_group_id);
-
-    // Get choice groups assigned to this item's category
-    const categoryGroups = categoryChoiceGroups
-      .filter((ccg: any) => ccg.category_name === item.category)
-      .map((ccg: any) => ccg.choice_group_id);
-
-    // Combine and deduplicate
-    const allGroupIds = [...new Set([...directGroups, ...categoryGroups])];
-
-    // Get the actual choice group objects
-    allGroupIds.forEach(groupId => {
-      const group = choiceGroups.find((cg: any) => cg.id === groupId && cg.isActive);
-      if (group) {
-        // Include ALL active items, even if temporarily unavailable (we'll show them as "Out of Stock")
-        const groupItems = choiceItems.filter((ci: any) =>
-          ci.choiceGroupId === groupId &&
-          ci.isActive
-        );
-        relevantGroups.push({
-          ...group,
-          items: groupItems.sort((a: any, b: any) => a.order - b.order)
-        });
-      }
-    });
-
-    return relevantGroups.sort((a: any, b: any) => a.order - b.order);
-  };
-
-  // Pizza animation function
-  const createPizzaAnimation = (buttonId: string) => {
-    const button = document.getElementById(buttonId);
-
-    // Detect if we're on mobile by checking screen width and device characteristics
-    const isMobile = window.innerWidth < 768 ||
-                     ('ontouchstart' in window && window.innerWidth < 1024);
-
-    // Find the appropriate cart button based on screen size
-    let cartButton;
-    if (isMobile) {
-      // On mobile, target the bottom navigation cart button
-      cartButton = document.querySelector('[data-mobile-cart="true"]');
-
-      // Additional fallback for mobile - look for visible cart button in bottom nav
-      if (!cartButton) {
-        const bottomNav = document.querySelector('nav.fixed.bottom-0');
-        if (bottomNav) {
-          cartButton = bottomNav.querySelector('[data-cart-button]');
-        }
-      }
-    } else {
-      // On desktop, target the desktop cart button
-      cartButton = document.querySelector('[data-desktop-cart="true"]');
-
-      // Additional fallback for desktop - look for header cart button
-      if (!cartButton) {
-        const header = document.querySelector('header');
-        if (header) {
-          cartButton = header.querySelector('[data-cart-button]');
-        }
-      }
+  const sortedCategoryEntries = Object.entries(itemsByCategory).sort(
+    ([catA], [catB]) => {
+      const a = categoriesData?.categories?.find((c: any) => c.name === catA);
+      const b = categoriesData?.categories?.find((c: any) => c.name === catB);
+      return (a?.order || 999) - (b?.order || 999);
     }
+  );
 
-    // Final fallback to any visible cart button
-    if (!cartButton) {
-      const allCartButtons = document.querySelectorAll('[data-cart-button]');
-      // Find the first visible cart button
-      for (let i = 0; i < allCartButtons.length; i++) {
-        const btn = allCartButtons[i] as HTMLElement;
-        const rect = btn.getBoundingClientRect();
-        if (rect.width > 0 && rect.height > 0) {
-          cartButton = btn;
-          break;
-        }
-      }
-    }
-
-    if (!button || !cartButton) {
+  const handleCategoryTabClick = (catName: string | null) => {
+    setSelectedCategory(catName);
+    if (catName === null) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-
-    // Create animated pizza element
-    const pizza = document.createElement('div');
-    pizza.innerHTML = '🍕';
-    pizza.style.cssText = `
-      position: fixed;
-      font-size: 24px;
-      z-index: 1000;
-      pointer-events: none;
-      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    `;
-
-    // Get starting position from button
-    const buttonRect = button.getBoundingClientRect();
-    const cartRect = cartButton.getBoundingClientRect();
-
-    pizza.style.left = `${buttonRect.left + buttonRect.width / 2}px`;
-    pizza.style.top = `${buttonRect.top + buttonRect.height / 2}px`;
-
-    document.body.appendChild(pizza);
-
-    // Animate to cart
-    requestAnimationFrame(() => {
-      pizza.style.left = `${cartRect.left + cartRect.width / 2}px`;
-      pizza.style.top = `${cartRect.top + cartRect.height / 2}px`;
-      pizza.style.transform = 'scale(0.5) rotate(360deg)';
-      pizza.style.opacity = '0.8';
-    });
-
-    // Remove element after animation
+    // Wait a tick so the DOM updates if switching from filtered view
     setTimeout(() => {
-      pizza.remove();
-    }, 800);
-  };
-
-
-  const handleAddToCart = (item: any) => {
-    const itemChoiceGroups = getItemChoiceGroups(item);
-
-    // If item has choice groups, show selection modal
-    if (itemChoiceGroups.length > 0) {
-      setSelectedItem(item);
-      setSelectedChoices({});
-      setQuantity(1);
-      setIsChoiceModalOpen(true);
-      return;
-    }
-
-    // Create pizza animation
-    createPizzaAnimation(`add-to-cart-${item.id}`);
-
-    // If no choice groups, add directly to cart
-    // Ensure we have a valid price
-    let price = 0;
-    if (item.basePrice) {
-      if (typeof item.basePrice === 'string') {
-        price = parseFloat(item.basePrice) || 0;
-      } else if (typeof item.basePrice === 'number') {
-        price = item.basePrice;
+      const el = document.getElementById(`cat-section-${catName}`);
+      if (el) {
+        // Offset for sticky header + red banner + tab bar (~160px total)
+        const top = el.getBoundingClientRect().top + window.scrollY - 160;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
-    }
-
-    addItem({
-      id: item.id,
-      name: item?.name || 'Unknown Item',
-      price: price,
-      quantity: 1
-    });
+    }, 50);
   };
-
-  // FLIP TO false WHEN READY TO GO LIVE
-  const COMING_SOON = false;
-  if (COMING_SOON) {
-    return (
-      <div className="min-h-screen bg-gray-50 lg:pt-20 pt-0">
-        <div className="text-center px-6 py-20 max-w-lg mx-auto">
-          <div className="text-7xl mb-6">🍕</div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Menu Coming Soon</h1>
-          <p className="text-lg text-gray-600 mb-2">
-            We&apos;re putting the finishing touches on our online menu.
-          </p>
-          <p className="text-lg text-gray-600 mb-8">
-            <strong>Coming Very Soon</strong> — Murrells Inlet, SC
-          </p>
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
-            <p className="text-gray-700 font-medium mb-1">Want to know what&apos;s on the menu?</p>
-            <a href="tel:+18432992700" className="text-[#d73a31] font-bold text-xl hover:underline">
-              (843) 299-2700
-            </a>
-          </div>
-          <a
-            href="/"
-            className="inline-block bg-[#d73a31] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#b52e26] transition-colors"
-          >
-            Back to Home
-          </a>
-        </div>
-      </div>
-    );
-  }
 
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#d73a31] mx-auto mb-4"></div>
           <p className="text-gray-600">Loading menu...</p>
         </div>
       </div>
@@ -428,74 +236,75 @@ const MenuContent = () => {
   }
 
   return (
-    <>
-      <div className="min-h-screen bg-gray-50 lg:pt-20 pt-0">
-        {/* Vacation Mode Banner */}
-        {isOrderingPaused && (
-          <div className="bg-yellow-500 border-b-4 border-yellow-600 px-4 sm:px-6 lg:px-8 py-4">
-            <div className="max-w-7xl mx-auto flex items-center gap-3 text-white">
-              <AlertCircle className="h-6 w-6 flex-shrink-0" />
-              <div className="flex-1">
-                <p className="font-bold text-lg">ASAP Orders Temporarily Paused</p>
-                <p className="text-sm mb-1">{displayMessage}</p>
-                <p className="text-sm font-medium bg-yellow-600 bg-opacity-50 px-2 py-1 rounded inline-block">
-                  Scheduled orders for later pickup/delivery are still available!
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
+    <div className="min-h-screen bg-gray-50 lg:pt-20 pt-0">
 
-        {/* Store Hours Cutoff Banner */}
-        {!isOrderingPaused && isPastCutoff && (
-          <div className="bg-yellow-500 border-b-4 border-yellow-600 px-4 sm:px-6 lg:px-8 py-4">
-            <div className="max-w-7xl mx-auto flex items-center gap-3 text-white">
-              <AlertCircle className="h-6 w-6 flex-shrink-0" />
-              <div className="flex-1">
-                <p className="font-bold text-lg">ASAP Orders Closed</p>
-                <p className="text-sm mb-1">{cutoffMessage}</p>
-                <p className="text-sm font-medium bg-yellow-600 bg-opacity-50 px-2 py-1 rounded inline-block">
-                  You can still schedule an order for when we open{storeStatus?.nextOpenTime ? ` at ${storeStatus.nextOpenTime}` : ''}!
-                </p>
-              </div>
+      {/* Vacation Mode Banner */}
+      {isOrderingPaused && (
+        <div className="bg-yellow-500 border-b-4 border-yellow-600 px-4 sm:px-6 lg:px-8 py-4">
+          <div className="max-w-7xl mx-auto flex items-center gap-3 text-white">
+            <AlertCircle className="h-6 w-6 flex-shrink-0" />
+            <div className="flex-1">
+              <p className="font-bold text-lg">ASAP Orders Temporarily Paused</p>
+              <p className="text-sm mb-1">{displayMessage}</p>
+              <p className="text-sm font-medium bg-yellow-600 bg-opacity-50 px-2 py-1 rounded inline-block">
+                Scheduled orders for later pickup/delivery are still available!
+              </p>
             </div>
-          </div>
-        )}
-
-        {/* Delivery Unavailable Banner */}
-        {isDeliveryDisabled && (
-          <div className="bg-red-500 border-b-4 border-red-600 px-4 sm:px-6 lg:px-8 py-3">
-            <div className="max-w-7xl mx-auto flex items-center gap-3 text-white">
-              <AlertCircle className="h-5 w-5 flex-shrink-0" />
-              <div className="flex-1">
-                <p className="font-semibold">Delivery is currently unavailable. We are working to restore this.</p>
-                <p className="text-sm opacity-90">Pickup orders are still available!</p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Toast Online Ordering Banner */}
-        <div className="bg-[#d73a31] px-4 sm:px-6 lg:px-8 py-4 sticky top-0 z-40 shadow-md">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="text-white text-center sm:text-left">
-              <p className="font-bold text-lg leading-tight">Browse our menu below</p>
-              <p className="text-red-100 text-sm">Ready to order? Place your order online through Toast</p>
-            </div>
-            <a
-              href={TOAST_ORDER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 bg-white text-[#d73a31] font-bold px-6 py-3 rounded-lg hover:bg-red-50 transition-colors text-sm sm:text-base whitespace-nowrap shadow-sm"
-            >
-              Order Online →
-            </a>
           </div>
         </div>
+      )}
 
-        {/* Header */}
-        <div className="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-6">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
+      {/* Store Hours Cutoff Banner */}
+      {!isOrderingPaused && isPastCutoff && (
+        <div className="bg-yellow-500 border-b-4 border-yellow-600 px-4 sm:px-6 lg:px-8 py-4">
+          <div className="max-w-7xl mx-auto flex items-center gap-3 text-white">
+            <AlertCircle className="h-6 w-6 flex-shrink-0" />
+            <div className="flex-1">
+              <p className="font-bold text-lg">ASAP Orders Closed</p>
+              <p className="text-sm mb-1">{cutoffMessage}</p>
+              <p className="text-sm font-medium bg-yellow-600 bg-opacity-50 px-2 py-1 rounded inline-block">
+                You can still schedule an order for when we open{storeStatus?.nextOpenTime ? ` at ${storeStatus.nextOpenTime}` : ''}!
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Delivery Unavailable Banner */}
+      {isDeliveryDisabled && (
+        <div className="bg-red-500 border-b-4 border-red-600 px-4 sm:px-6 lg:px-8 py-3">
+          <div className="max-w-7xl mx-auto flex items-center gap-3 text-white">
+            <AlertCircle className="h-5 w-5 flex-shrink-0" />
+            <div className="flex-1">
+              <p className="font-semibold">Delivery is currently unavailable. We are working to restore this.</p>
+              <p className="text-sm opacity-90">Pickup orders are still available!</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Red "Browse / Order Online" sticky banner */}
+      <div className="bg-[#d73a31] px-4 sm:px-6 lg:px-8 py-4 sticky top-0 z-40 shadow-md">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="text-white text-center sm:text-left">
+            <p className="font-bold text-lg leading-tight">Browse our menu below</p>
+            <p className="text-red-100 text-sm">Ready to order? Place your order online through Toast</p>
+          </div>
+          <a
+            href={TOAST_ORDER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 bg-white text-[#d73a31] font-bold px-6 py-3 rounded-lg hover:bg-red-50 transition-colors text-sm sm:text-base whitespace-nowrap shadow-sm"
+          >
+            Order Online →
+          </a>
+        </div>
+      </div>
+
+      {/* Page header + search bar */}
+      <div className="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 pt-5 pb-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-between mb-4">
             <h1 className="text-2xl font-bold text-gray-900">Menu</h1>
             <a
               href={TOAST_ORDER_URL}
@@ -507,12 +316,9 @@ const MenuContent = () => {
               Order Now
             </a>
           </div>
-        </div>
-
-        {/* Search Bar */}
-        <div className="px-4 sm:px-6 lg:px-8 py-4">
-          <div className="max-w-7xl mx-auto relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+          {/* Search */}
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
             <Input
               type="text"
               placeholder="Search menu items..."
@@ -522,394 +328,159 @@ const MenuContent = () => {
             />
           </div>
         </div>
-
-        {/* Category Cards - Only show when no search query */}
-        {!searchQuery && (
-          <div className="px-4 sm:px-6 lg:px-8 pb-6">
-            <div className="max-w-7xl mx-auto">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Browse by Category</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                {categories.map((category: any) => {
-                    const itemCount = category.count;
-                    const isExpanded = expandedCategories.has(category.name);
-                    const isUnavailable = false;
-
-                    if (itemCount === 0) return null;
-
-                    return (
-                      <Card
-                        key={category.id}
-                        className={`transition-all duration-200 border-2 ${
-                          isUnavailable
-                            ? 'opacity-60 cursor-not-allowed bg-gray-100 border-gray-300'
-                            : isExpanded
-                              ? 'border-red-500 shadow-md cursor-pointer hover:shadow-lg'
-                              : 'border-transparent cursor-pointer hover:shadow-lg'
-                        }`}
-                        onClick={() => {
-                          if (isUnavailable) return;
-
-                          const newExpanded = new Set(expandedCategories);
-                          if (isExpanded) {
-                            newExpanded.delete(category.name);
-                          } else {
-                            newExpanded.add(category.name);
-                          }
-                          setExpandedCategories(newExpanded);
-
-                          // Scroll to category section
-                          setTimeout(() => {
-                            const element = document.getElementById(`category-${category.name}`);
-                            if (element) {
-                              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                            }
-                          }, 100);
-                        }}
-                      >
-                        <CardContent className="p-4">
-                          {category.imageUrl || category.image_url ? (
-                            <div className="aspect-square rounded-lg overflow-hidden mb-3 relative">
-                              <img
-                                src={category.imageUrl || category.image_url}
-                                alt={category.name}
-                                className={`w-full h-full object-cover transition-all duration-200 ${
-                                  isUnavailable
-                                    ? 'grayscale'
-                                    : !['Specialty Gourmet Pizzas', 'Salads', 'Drinks'].includes(category.name)
-                                      ? 'brightness-110 hover:brightness-125'
-                                      : 'hover:brightness-110'
-                                }`}
-                              />
-                              {isUnavailable && (
-                                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                                  <span className="text-white font-bold text-sm">OUT OF STOCK</span>
-                                </div>
-                              )}
-                            </div>
-                          ) : (
-                            <div className={`aspect-square rounded-lg flex items-center justify-center mb-3 relative ${
-                              isUnavailable
-                                ? 'bg-gray-200'
-                                : 'bg-gradient-to-br from-red-100 to-red-200'
-                            }`}>
-                              {isUnavailable ? (
-                                <span className="text-gray-600 font-bold text-sm text-center px-2">OUT OF STOCK</span>
-                              ) : (
-                                <ChevronDown className={`h-12 w-12 text-red-600 transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
-                              )}
-                            </div>
-                          )}
-                          <h3 className={`font-semibold text-center text-sm mb-1 ${isUnavailable ? 'text-gray-500' : ''}`}>
-                            {category.name}
-                          </h3>
-                          <p className="text-xs text-gray-500 text-center">
-                            {isUnavailable ? 'Temporarily Unavailable' : `${itemCount} items`}
-                          </p>
-                          {!isUnavailable && isExpanded && (
-                            <Badge className="mt-2 w-full justify-center bg-red-600">
-                              Viewing
-                            </Badge>
-                          )}
-                        </CardContent>
-                      </Card>
-                    );
-                  })}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Menu Items */}
-        <div className="px-4 sm:px-6 lg:px-8 pb-32">
-          <div className="max-w-7xl mx-auto">
-            {Object.keys(itemsByCategory).length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-gray-500 text-lg">No items found</p>
-              <p className="text-gray-400">Try adjusting your search or category filter</p>
-            </div>
-          ) : (
-            <div className="space-y-8">
-              {Object.entries(itemsByCategory)
-                .sort(([categoryA], [categoryB]) => {
-                  // Sort categories by their order value
-                  const catA = categoriesData?.categories?.find((c: any) => c.name === categoryA);
-                  const catB = categoriesData?.categories?.find((c: any) => c.name === categoryB);
-                  return (catA?.order || 999) - (catB?.order || 999);
-                })
-                .map(([categoryName, items]: [string, any]) => {
-                  // Only show categories that are expanded OR if search is active
-                  const isExpanded = expandedCategories.has(categoryName);
-                  if (!searchQuery && !isExpanded && expandedCategories.size > 0) {
-                    return null;
-                  }
-
-                  return (
-                    <div key={categoryName} id={`category-${categoryName}`} className="scroll-mt-24">
-                      <div className="flex items-center justify-between mb-4">
-                        <h2 className="text-xl font-bold text-gray-900">{categoryName}</h2>
-                        {!searchQuery && (
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => {
-                              const newExpanded = new Set(expandedCategories);
-                              if (isExpanded) {
-                                newExpanded.delete(categoryName);
-                              } else {
-                                newExpanded.add(categoryName);
-                              }
-                              setExpandedCategories(newExpanded);
-                            }}
-                          >
-                            {isExpanded ? 'Collapse' : 'Expand'}
-                            <ChevronDown className={`ml-2 h-4 w-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
-                          </Button>
-                        )}
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
-                        {items.map((item: any) => {
-                          const categoryInfo = categoriesData?.categories?.find((c: any) => c.name === categoryName);
-                          return (
-                            <div key={item.id} id={`menu-item-${item.id}`} className="transition-all duration-300">
-                              <MenuItemWithChoices
-                                item={item}
-                                choiceGroups={choiceGroups}
-                                choiceItems={choiceItems}
-                                menuItemChoiceGroups={menuItemChoiceGroups}
-                                isOrderingPaused={isOrderingPaused}
-                                categoryInfo={categoryInfo}
-                              />
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  );
-                })}
-            </div>
-          )}
-          </div>
-        </div>
       </div>
 
-      {/* Choice Selection Modal */}
-      <Dialog open={isChoiceModalOpen} onOpenChange={setIsChoiceModalOpen}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="flex items-center gap-3">
-              <span className="text-2xl">🍕</span>
-              {selectedItem?.name}
-            </DialogTitle>
-            {selectedItem?.description && (
-              <p className="text-gray-600 text-sm mt-2">{selectedItem.description}</p>
-            )}
-          </DialogHeader>
+      {/* Category tab bar — hidden when search is active */}
+      {!isSearchActive && (
+        <div className="bg-white border-b border-gray-100 sticky top-[72px] z-30 shadow-sm">
+          <div
+            ref={tabBarRef}
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-2 overflow-x-auto py-3 scrollbar-none"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {/* "All" pill */}
+            <button
+              onClick={() => handleCategoryTabClick(null)}
+              className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
+                selectedCategory === null
+                  ? 'bg-[#d73a31] text-white shadow-sm'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:border-red-300'
+              }`}
+            >
+              All
+            </button>
 
-          {selectedItem && (
-            <div className="space-y-6">
-              {/* Item image */}
-              {selectedItem.imageUrl && (
-                <div className="w-full h-48 rounded-lg overflow-hidden">
-                  <img
-                    src={selectedItem.imageUrl}
-                    alt={selectedItem.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              )}
-
-              {/* Quantity selector */}
-              <div className="flex items-center justify-center space-x-4">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="h-8 w-8 rounded-full"
+            {categories.map((cat: any) => {
+              const style = CATEGORY_STYLES[cat.name] ?? DEFAULT_STYLE;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => handleCategoryTabClick(cat.name)}
+                  className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
+                    selectedCategory === cat.name
+                      ? 'bg-[#d73a31] text-white shadow-sm'
+                      : 'bg-white text-gray-700 border border-gray-200 hover:border-red-300'
+                  }`}
                 >
-                  <Minus className="h-4 w-4" />
-                </Button>
-                <div className="text-center">
-                  <div className="text-sm text-gray-600">Quantity</div>
-                  <div className="text-lg font-semibold">{quantity}</div>
-                </div>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => setQuantity(quantity + 1)}
-                  className="h-8 w-8 rounded-full"
-                >
-                  <Plus className="h-4 w-4" />
-                </Button>
-              </div>
-              {getItemChoiceGroups(selectedItem).map((group: any) => (
-                <div key={group.id} className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <Label className="text-base font-semibold">
-                      {group.name}
-                      {group.isRequired && <span className="text-red-500 ml-1">*</span>}
-                    </Label>
-                    <Badge variant="outline" className="text-xs">
-                      {group.isRequired ? 'Required' : 'Optional'}
-                    </Badge>
-                  </div>
+                  <span aria-hidden="true">{style.emoji}</span>
+                  {cat.name}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
-                  {group.description && (
-                    <p className="text-sm text-gray-600">{group.description}</p>
-                  )}
-
-                  {group.maxSelections === 1 ? (
-                    // Radio group for single selection
-                    <RadioGroup
-                      value={selectedChoices[group.id]?.[0] || ""}
-                      onValueChange={(value) => {
-                        setSelectedChoices(prev => ({
-                          ...prev,
-                          [group.id]: value ? [value] : []
-                        }));
-                      }}
-                    >
-                      {group.items.map((item: any) => (
-                        <div key={item.id} className="flex items-center justify-between">
-                          <div className="flex items-center space-x-2">
-                            <RadioGroupItem value={item.id.toString()} id={`choice-${item.id}`} />
-                            <Label htmlFor={`choice-${item.id}`} className="font-normal">
-                              {item.name}
-                              {item.description && (
-                                <span className="text-sm text-gray-500 block">{item.description}</span>
-                              )}
-                            </Label>
-                          </div>
-                          {parseFloat(item.price) > 0 && (
-                            <Badge variant="secondary">+${formatPrice(item.price)}</Badge>
-                          )}
-                        </div>
-                      ))}
-                    </RadioGroup>
-                  ) : (
-                    // Checkbox group for multiple selection
-                    <div className="space-y-2">
-                      {group.items.map((item: any) => (
-                        <div key={item.id} className="flex items-center justify-between">
-                          <div className="flex items-center space-x-2">
-                            <Checkbox
-                              id={`choice-${item.id}`}
-                              checked={selectedChoices[group.id]?.includes(item.id.toString()) || false}
-                              onCheckedChange={(checked) => {
-                                setSelectedChoices(prev => {
-                                  const currentSelections = prev[group.id] || [];
-                                  if (checked) {
-                                    // Check max selections limit
-                                    if (group.maxSelections && currentSelections.length >= group.maxSelections) {
-                                      return prev; // Don't add if limit reached
-                                    }
-                                    return {
-                                      ...prev,
-                                      [group.id]: [...currentSelections, item.id.toString()]
-                                    };
-                                  } else {
-                                    return {
-                                      ...prev,
-                                      [group.id]: currentSelections.filter((id: string) => id !== item.id.toString())
-                                    };
-                                  }
-                                });
-                              }}
-                            />
-                            <Label htmlFor={`choice-${item.id}`} className="font-normal">
-                              {item.name}
-                              {item.description && (
-                                <span className="text-sm text-gray-500 block">{item.description}</span>
-                              )}
-                            </Label>
-                          </div>
-                          {parseFloat(item.price) > 0 && (
-                            <Badge variant="secondary">+${formatPrice(item.price)}</Badge>
-                          )}
-                        </div>
-                      ))}
-                      {group.maxSelections && (
-                        <p className="text-xs text-gray-500">
-                          Max {group.maxSelections} selections
-                        </p>
-                      )}
+      {/* Menu items */}
+      <div className="px-4 sm:px-6 lg:px-8 py-6 pb-32">
+        <div className="max-w-7xl mx-auto">
+          {sortedCategoryEntries.length === 0 ? (
+            <div className="text-center py-16">
+              <p className="text-gray-500 text-lg">No items found</p>
+              <p className="text-gray-400 text-sm mt-1">Try adjusting your search or selecting a different category</p>
+            </div>
+          ) : (
+            <div className="space-y-10">
+              {sortedCategoryEntries.map(([categoryName, items]: [string, any]) => {
+                const style = CATEGORY_STYLES[categoryName] ?? DEFAULT_STYLE;
+                return (
+                  <section
+                    key={categoryName}
+                    id={`cat-section-${categoryName}`}
+                    className="scroll-mt-44"
+                    aria-labelledby={`cat-heading-${categoryName}`}
+                  >
+                    {/* Category heading */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0 ${style.bg}`} aria-hidden="true">
+                        {style.emoji}
+                      </div>
+                      <h2
+                        id={`cat-heading-${categoryName}`}
+                        className="text-xl font-bold text-gray-900"
+                      >
+                        {categoryName}
+                      </h2>
+                      <span className="text-sm text-gray-400 font-normal">
+                        {items.length} {items.length === 1 ? 'item' : 'items'}
+                      </span>
                     </div>
-                  )}
-                </div>
-              ))}
 
-              <div className="flex justify-end space-x-2 pt-4 border-t">
-                <Button variant="outline" onClick={() => setIsChoiceModalOpen(false)}>
-                  Cancel
-                </Button>
-                <Button
-                  id={`modal-add-to-cart-${selectedItem.id}`}
-                  onClick={() => {
-                    // Validate required selections
-                    const itemChoiceGroups = getItemChoiceGroups(selectedItem);
-                    const missingRequired = itemChoiceGroups.filter((group: any) =>
-                      group.isRequired &&
-                      (!selectedChoices[group.id] || selectedChoices[group.id].length === 0)
-                    );
+                    {/* Items grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {items.map((item: any) => {
+                        const hasSizes = item.sizes && item.sizes.length > 0;
+                        const displayPrice = hasSizes
+                          ? `from $${formatPrice(item.basePrice)}`
+                          : `$${formatPrice(item.basePrice)}`;
 
-                    if (missingRequired.length > 0) {
-                      alert(`Please select ${missingRequired.map((g: any) => g?.name || 'Unknown').join(', ')}`);
-                      return;
-                    }
+                        return (
+                          <div
+                            key={item.id}
+                            id={`menu-item-${item.id}`}
+                            className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100 overflow-hidden"
+                          >
+                            <div className="flex items-center gap-4 p-4">
+                              {/* Emoji icon */}
+                              <div
+                                className={`w-14 h-14 rounded-xl flex items-center justify-center text-3xl flex-shrink-0 ${style.bg}`}
+                                aria-hidden="true"
+                              >
+                                {style.emoji}
+                              </div>
 
-                    // Calculate total price with selections
-                    let totalPrice = parseFloat(selectedItem.basePrice) || 0;
-                    const selectedOptions: any[] = [];
+                              {/* Content */}
+                              <div className="flex-1 min-w-0">
+                                <h3 className="font-semibold text-gray-900 leading-snug">
+                                  {item.name}
+                                </h3>
+                                {item.description && (
+                                  <p className="text-sm text-gray-500 mt-0.5 line-clamp-2 leading-snug">
+                                    {item.description}
+                                  </p>
+                                )}
+                                {hasSizes && (
+                                  <div className="flex flex-wrap gap-1 mt-1.5">
+                                    {item.sizes.map((size: any) => (
+                                      <span
+                                        key={size.name}
+                                        className="inline-flex items-center text-xs bg-gray-100 text-gray-600 rounded-full px-2 py-0.5"
+                                      >
+                                        {size.name} &mdash; ${formatPrice(size.price)}
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
 
-                    Object.entries(selectedChoices).forEach(([groupId, selections]) => {
-                      const group = itemChoiceGroups.find((g: any) => g.id === parseInt(groupId));
-                      if (group) {
-                        selections.forEach((selectionId: string) => {
-                          const choiceItem = group.items.find((item: any) => item.id === parseInt(selectionId));
-                          if (choiceItem) {
-                            totalPrice += parseFloat(choiceItem.price) || 0;
-                            selectedOptions.push({
-                              groupName: group.name,
-                              itemName: choiceItem.name,
-                              price: parseFloat(choiceItem.price) || 0
-                            });
-                          }
-                        });
-                      }
-                    });
-
-                    // Create pizza animation before closing modal
-                    createPizzaAnimation(`modal-add-to-cart-${selectedItem.id}`);
-
-                    // Add to cart with selections and quantity
-                    addItem({
-                      id: selectedItem.id,
-                      name: selectedItem?.name || 'Unknown Item',
-                      price: totalPrice,
-                      quantity: quantity,
-                      options: selectedOptions
-                    });
-
-                    setIsChoiceModalOpen(false);
-                    setSelectedItem(null);
-                    setSelectedChoices({});
-                    setQuantity(1);
-                  }}
-                  className="bg-[#d73a31] hover:bg-[#c73128] text-white"
-                >
-                  Add {quantity > 1 ? `${quantity} ` : ''}to Cart
-                  {quantity > 1 && (
-                    <Badge variant="secondary" className="ml-2 bg-white text-[#d73a31]">
-                      ${formatPrice((parseFloat(selectedItem.basePrice) || 0) * quantity)}
-                    </Badge>
-                  )}
-                </Button>
-              </div>
+                              {/* Price + order link */}
+                              <div className="flex flex-col items-end gap-2 flex-shrink-0 pl-2">
+                                <span className="text-[#d73a31] font-bold text-base whitespace-nowrap">
+                                  {displayPrice}
+                                </span>
+                                <a
+                                  href={TOAST_ORDER_URL}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-xs font-semibold text-[#d73a31] hover:text-[#b52e26] transition-colors whitespace-nowrap"
+                                  aria-label={`Order ${item.name} online`}
+                                >
+                                  Order →
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </section>
+                );
+              })}
             </div>
           )}
-        </DialogContent>
-      </Dialog>
-
-    </>
+        </div>
+      </div>
+    </div>
   );
 };
 
