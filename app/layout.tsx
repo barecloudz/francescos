@@ -89,7 +89,7 @@ export default function RootLayout({
               ],
               menu: "https://francescosmurrellsinlet.com/menu",
               sameAs: [
-                "https://www.facebook.com/profile.php?id=61580096004134",
+                "https://www.facebook.com/profile.php?id=61575512932255",
                 "https://www.instagram.com/francescosmurrellsinlet/",
                 "https://www.tiktok.com/@francescosofmurrellsinlet",
               ],

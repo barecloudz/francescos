@@ -64,7 +64,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4 justify-center md:justify-start">
               <a
-                href="https://www.facebook.com/profile.php?id=61580096004134"
+                href="https://www.facebook.com/profile.php?id=61575512932255"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#d73a31] hover:bg-[#f2c94c] text-white p-2 rounded-full transition-colors"

@@ -477,8 +477,8 @@ const generateOrderConfirmationHTML = (data: OrderEmailData): string => {
             <p>📞 ${process.env.RESTAURANT_PHONE || '(555) 123-4567'} | 🌐 ${siteURL}</p>
 
             <div class="social-links">
-                <a href="https://www.facebook.com/francescospizzeria/">Facebook</a> |
-                <a href="https://www.instagram.com/francescospizza/">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61575512932255">Facebook</a> |
+                <a href="https://www.instagram.com/francescosmurrellsinlet/">Instagram</a>
             </div>
 
             <p style="margin-top: 30px; font-size: 12px;">

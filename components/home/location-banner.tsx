@@ -1,14 +1,51 @@
-import React from "react";
+'use client';
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
+const images = [
+  "/images/gallery/photo-02.jpg",
+  "/images/gallery/photo-03.jpg",
+  "/images/gallery/photo-04.jpg",
+  "/images/gallery/photo-05.jpg",
+  "/images/gallery/photo-06.jpg",
+  "/images/gallery/photo-07.jpg",
+  "/images/gallery/photo-08.jpg",
+  "/images/gallery/photo-10.jpg",
+  "/images/gallery/photo-11.jpg",
+  "/images/gallery/photo-12.jpg",
+  "/images/gallery/photo-13.jpg",
+  "/images/gallery/photo-15.jpg",
+  "/images/gallery/photo-16.jpg",
+  "/images/gallery/photo-18.jpg",
+  "/images/gallery/photo-19.jpg",
+  "/images/gallery/photo-20.jpg",
+];
+
 const LocationBanner: React.FC = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative overflow-hidden" style={{ height: '520px' }}>
-      {/* Background photo */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/f2.jpg')" }}
-      />
+      {/* Sliding background photos */}
+      {images.map((src, i) => (
+        <div
+          key={src}
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
+          style={{
+            backgroundImage: `url('${src}')`,
+            opacity: i === current ? 1 : 0,
+          }}
+        />
+      ))}
+
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/55" />
 

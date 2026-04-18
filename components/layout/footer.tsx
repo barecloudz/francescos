@@ -71,7 +71,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-3 justify-center md:justify-start">
               <a
-                href="https://www.facebook.com/profile.php?id=61580096004134"
+                href="https://www.facebook.com/profile.php?id=61575512932255"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center border border-[rgba(192,57,43,0.3)] text-[#b8b3ab] hover:text-[#c0392b] hover:border-[#c0392b] transition-colors"
