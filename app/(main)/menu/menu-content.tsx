@@ -213,6 +213,25 @@ const MenuContent = () => {
     }, 50);
   };
 
+  // Coming soon — menu not yet live on production
+  return (
+    <div className="min-h-screen bg-[#111] flex items-center justify-center px-4">
+      <div className="text-center max-w-lg">
+        <p className="text-[#c0392b] text-xs tracking-[0.3em] uppercase mb-6">Francesco&apos;s Pizza Kitchen</p>
+        <h1 className="font-playfair text-5xl md:text-6xl font-bold text-white mb-6">Menu Coming Soon</h1>
+        <p className="text-white/60 mb-10 text-sm leading-relaxed">
+          We&apos;re awaiting final approval from the city before we open our doors. Our full online menu will be live very soon — stay tuned!
+        </p>
+        <a
+          href="tel:8432992700"
+          className="inline-block px-10 py-4 text-xs font-bold tracking-widest uppercase text-white border border-white hover:bg-white hover:text-black transition-colors"
+        >
+          Call Us — (843) 299-2700
+        </a>
+      </div>
+    </div>
+  );
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">

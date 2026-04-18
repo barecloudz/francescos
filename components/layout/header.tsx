@@ -113,7 +113,7 @@ const Header = () => {
         }}>
           {/* Row 1: Announcement bar */}
           <div className="w-full text-center py-2 px-4 text-xs tracking-widest uppercase" style={{ background: '#1a1a1a', color: '#f5f0e8', letterSpacing: '0.18em' }}>
-            <span>Now Open in Murrells Inlet</span>
+            <span>Coming Very Soon to Murrells Inlet</span>
             <Link href="/menu" className="ml-4 inline-block border border-[#f5f0e8]/50 px-3 py-0.5 text-[0.6rem] tracking-widest hover:bg-[#f5f0e8] hover:text-[#1a1a1a] transition-colors font-bold">
               Order Now
             </Link>
@@ -213,7 +213,7 @@ const Header = () => {
         }}>
           {/* Announcement Bar */}
           <div className="w-full text-center py-1.5 px-4 text-[0.6rem] tracking-widest uppercase" style={{ background: '#1a1a1a', color: '#f5f0e8' }}>
-            Now Open in Murrells Inlet
+            Coming Very Soon to Murrells Inlet
           </div>
           <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#e0dbd0]">
             {/* Logo left */}
