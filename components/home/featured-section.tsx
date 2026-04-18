@@ -20,7 +20,7 @@ interface FeaturedSectionProps {
 const staticItems = [
   {
     id: 1,
-    image: "/images/f1.png",
+    image: "/images/gallery/photo-11.jpg",
     alt: "Traditional Pizza",
     name: "Traditional Pizza",
     description: "Our classic thin crust pizza with perfect New York style fold, topped with premium mozzarella and our signature sauce.",

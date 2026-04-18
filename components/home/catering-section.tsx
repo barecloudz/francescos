@@ -8,7 +8,7 @@ const CateringSection: React.FC = () => {
         {/* Left: Full-bleed photo */}
         <div
           className="relative h-80 lg:h-auto min-h-[400px] bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/f1.png')" }}
+          style={{ backgroundImage: "url('/images/gallery/photo-19.jpg')" }}
         >
           <div className="absolute inset-0 bg-black/20" />
         </div>
