@@ -10,10 +10,10 @@ const HeroSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    '/images/hero-bg.jpeg',
-    '/images/f1.png',
-    '/images/f2.jpg',
-    '/images/f3.jpg',
+    '/images/gallery/photo-02.jpg',
+    '/images/gallery/photo-05.jpg',
+    '/images/gallery/photo-08.jpg',
+    '/images/gallery/photo-13.jpg',
   ];
 
   useEffect(() => {
