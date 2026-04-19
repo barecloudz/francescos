@@ -19,7 +19,7 @@ const images = [
   "/images/gallery/photo-16.jpg",
   "/images/gallery/photo-18.jpg",
   "/images/gallery/photo-19.jpg",
-  "/images/gallery/photo-20.jpg",
+  "/images/team.jpg",
 ];
 
 const LocationBanner: React.FC = () => {

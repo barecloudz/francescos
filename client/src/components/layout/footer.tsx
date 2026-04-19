@@ -43,7 +43,7 @@ const Footer = () => {
               </div>
               <div>
                 <img
-                  src="/images/gallery/photo-20.jpg"
+                  src="/images/team.jpg"
                   alt="Francesco's Pizza Kitchen Team"
                   className="rounded-xl shadow-xl w-full h-64 object-cover"
                   loading="lazy"
