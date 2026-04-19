@@ -1332,7 +1332,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Fresh mozzarella, tomato sauce, and basil",
             basePrice: "12.99",
             category: "Traditional Pizza",
-            imageUrl: "/images/f1.png",
+            imageUrl: "/images/gallery/photo-11.jpg",
             isAvailable: true
           },
           {
@@ -1341,7 +1341,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Classic pepperoni with mozzarella and tomato sauce",
             basePrice: "14.99",
             category: "Traditional Pizza",
-            imageUrl: "/images/f2.jpg",
+            imageUrl: "/images/gallery/photo-03.jpg",
             isAvailable: true
           },
           
@@ -1352,7 +1352,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "BBQ sauce, grilled chicken, red onions, and mozzarella",
             basePrice: "16.99",
             category: "10\" Specialty Gourmet Pizzas",
-            imageUrl: "/images/f3.jpg",
+            imageUrl: "/images/gallery/photo-06.jpg",
             isAvailable: true
           },
           {
@@ -1361,7 +1361,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Buffalo sauce, grilled chicken, blue cheese, and celery",
             basePrice: "17.99",
             category: "10\" Specialty Gourmet Pizzas",
-            imageUrl: "/images/f4.jpg",
+            imageUrl: "/images/gallery/photo-04.jpg",
             isAvailable: true
           },
           
@@ -1372,7 +1372,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Pepperoni, sausage, bell peppers, onions, mushrooms, olives",
             basePrice: "22.99",
             category: "14\" Specialty Gourmet Pizzas",
-            imageUrl: "/images/f5.jpg",
+            imageUrl: "/images/gallery/photo-05.jpg",
             isAvailable: true
           },
           {
@@ -1381,7 +1381,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Ham, pineapple, and mozzarella cheese",
             basePrice: "20.99",
             category: "14\" Specialty Gourmet Pizzas",
-            imageUrl: "/images/f6.jpg",
+            imageUrl: "/images/gallery/photo-15.jpg",
             isAvailable: true
           },
           
@@ -1392,7 +1392,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Pepperoni, sausage, bacon, ham, and mozzarella",
             basePrice: "28.99",
             category: "16\" Specialty Gourmet Pizzas",
-            imageUrl: "/images/f1.png",
+            imageUrl: "/images/gallery/photo-11.jpg",
             isAvailable: true
           },
           
@@ -1403,7 +1403,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Thick crust Sicilian style with fresh mozzarella and basil",
             basePrice: "18.99",
             category: "Sicilian Pizzas",
-            imageUrl: "/images/f2.jpg",
+            imageUrl: "/images/gallery/photo-03.jpg",
             isAvailable: true
           },
           
@@ -1414,7 +1414,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Fresh baked bread with garlic butter and herbs",
             basePrice: "4.99",
             category: "Appetizers",
-            imageUrl: "/images/f3.jpg",
+            imageUrl: "/images/gallery/photo-06.jpg",
             isAvailable: true
           },
           {
@@ -1423,7 +1423,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Breaded mozzarella sticks served with marinara sauce",
             basePrice: "6.99",
             category: "Appetizers",
-            imageUrl: "/images/f4.jpg",
+            imageUrl: "/images/gallery/photo-04.jpg",
             isAvailable: true
           },
           
@@ -1434,7 +1434,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Fresh romaine lettuce, parmesan cheese, and caesar dressing",
             basePrice: "8.99",
             category: "Sides",
-            imageUrl: "/images/f5.jpg",
+            imageUrl: "/images/gallery/photo-05.jpg",
             isAvailable: true
           },
           {
@@ -1443,7 +1443,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Crispy golden fries served with ketchup",
             basePrice: "3.99",
             category: "Sides",
-            imageUrl: "/images/f6.jpg",
+            imageUrl: "/images/gallery/photo-15.jpg",
             isAvailable: true
           },
           
@@ -1454,7 +1454,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Classic Italian dessert with coffee and mascarpone",
             basePrice: "6.99",
             category: "Desserts",
-            imageUrl: "/images/f1.png",
+            imageUrl: "/images/gallery/photo-11.jpg",
             isAvailable: true
           },
           {
@@ -1463,7 +1463,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Warm chocolate cake with molten center",
             basePrice: "7.99",
             category: "Desserts",
-            imageUrl: "/images/f2.jpg",
+            imageUrl: "/images/gallery/photo-03.jpg",
             isAvailable: true
           },
           
@@ -1474,7 +1474,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Classic Coca-Cola soft drink",
             basePrice: "2.99",
             category: "Beverages",
-            imageUrl: "/images/f3.jpg",
+            imageUrl: "/images/gallery/photo-06.jpg",
             isAvailable: true
           },
           {
@@ -1483,7 +1483,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             description: "Sparkling water with flavored syrup",
             basePrice: "3.99",
             category: "Beverages",
-            imageUrl: "/images/f4.jpg",
+            imageUrl: "/images/gallery/photo-04.jpg",
             isAvailable: true
           }
         ];

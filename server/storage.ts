@@ -525,7 +525,7 @@ export class MemStorage implements IStorage {
       description: "Classic tomato sauce with mozzarella cheese and fresh basil",
       basePrice: "12.99",
       category: "Traditional Pizza",
-      imageUrl: "/images/f1.png",
+      imageUrl: "/images/gallery/photo-11.jpg",
       isAvailable: true,
       isPopular: true,
       options: {
@@ -557,7 +557,7 @@ export class MemStorage implements IStorage {
       description: "Spicy pepperoni with melted cheese and our signature sauce",
       basePrice: "14.99",
       category: "Traditional Pizza",
-      imageUrl: "/images/f2.jpg",
+      imageUrl: "/images/gallery/photo-03.jpg",
       isAvailable: true,
       isBestSeller: true,
       options: {
@@ -589,7 +589,7 @@ export class MemStorage implements IStorage {
       description: "BBQ sauce, grilled chicken, red onions, and mozzarella",
       basePrice: "16.99",
       category: "10\" Specialty Gourmet Pizzas",
-      imageUrl: "/images/f3.jpg",
+      imageUrl: "/images/gallery/photo-06.jpg",
       isAvailable: true,
       isNew: true,
       options: {

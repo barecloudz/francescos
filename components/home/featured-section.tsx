@@ -27,14 +27,14 @@ const staticItems = [
   },
   {
     id: 2,
-    image: "/images/f2.jpg",
+    image: "/images/gallery/photo-03.jpg",
     alt: "Grandma Caprese Pizza",
     name: "Grandma Caprese",
     description: "Fresh mozzarella, ripe tomatoes, fresh basil, and extra virgin olive oil on our signature grandma-style crust.",
   },
   {
     id: 3,
-    image: "/images/f3.jpg",
+    image: "/images/gallery/photo-06.jpg",
     alt: "Stromboli",
     name: "Stromboli",
     description: "Rolled with savory Italian meats, cheeses, and vegetables, then baked to golden perfection with our fresh dough.",

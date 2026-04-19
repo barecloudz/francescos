@@ -65,7 +65,7 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
               <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div className="h-60 overflow-hidden">
                   <img
-                    src="/images/f1.png"
+                    src="/images/gallery/photo-11.jpg"
                     alt="Traditional Pizza"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -85,7 +85,7 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
               <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div className="h-60 overflow-hidden">
                   <img
-                    src="/images/f2.jpg"
+                    src="/images/gallery/photo-03.jpg"
                     alt="Grandma Caprese Pizza"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -105,7 +105,7 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({ menuItems }) => {
               <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div className="h-60 overflow-hidden">
                   <img
-                    src="/images/f3.jpg"
+                    src="/images/gallery/photo-06.jpg"
                     alt="Stromboli"
                     className="w-full h-full object-cover"
                     loading="lazy"

@@ -246,7 +246,7 @@ async function setupDatabase() {
         description: 'Fresh mozzarella, tomato sauce, and basil',
         basePrice: 12.99,
         category: 'Traditional Pizza',
-        imageUrl: '/images/f1.png',
+        imageUrl: '/images/gallery/photo-11.jpg',
         isPopular: true,
         choiceGroups: ['Pizza Size', 'Crust Type', 'Toppings']
       },
@@ -255,7 +255,7 @@ async function setupDatabase() {
         description: 'Classic pepperoni with mozzarella and tomato sauce',
         basePrice: 14.99,
         category: 'Traditional Pizza',
-        imageUrl: '/images/f2.jpg',
+        imageUrl: '/images/gallery/photo-03.jpg',
         isPopular: true,
         isBestSeller: true,
         choiceGroups: ['Pizza Size', 'Crust Type', 'Toppings']
@@ -265,7 +265,7 @@ async function setupDatabase() {
         description: 'Pepperoni, sausage, mushrooms, bell peppers, and onions',
         basePrice: 18.99,
         category: 'Specialty Pizza',
-        imageUrl: '/images/f3.jpg',
+        imageUrl: '/images/gallery/photo-06.jpg',
         isNew: true,
         choiceGroups: ['Pizza Size', 'Crust Type']
       },
@@ -274,7 +274,7 @@ async function setupDatabase() {
         description: 'Fresh-baked garlic knots with marinara sauce',
         basePrice: 6.99,
         category: 'Appetizers',
-        imageUrl: '/images/f4.jpg',
+        imageUrl: '/images/gallery/photo-04.jpg',
         choiceGroups: ['Side Options']
       },
       {
@@ -282,7 +282,7 @@ async function setupDatabase() {
         description: 'Classic Coca-Cola soft drink',
         basePrice: 2.99,
         category: 'Beverages',
-        imageUrl: '/images/f5.jpg',
+        imageUrl: '/images/gallery/photo-05.jpg',
         choiceGroups: ['Drink Size']
       }
     ];

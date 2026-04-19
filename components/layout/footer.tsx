@@ -49,7 +49,7 @@ const Footer = () => {
               </div>
               <div>
                 <img
-                  src="/images/lineup.jpg"
+                  src="/images/gallery/photo-20.jpg"
                   alt="Francesco's Pizza Kitchen Team"
                   className="shadow-xl shadow-black/50 w-full h-64 object-cover"
                   style={{ border: '1px solid rgba(192,57,43,0.2)' }}

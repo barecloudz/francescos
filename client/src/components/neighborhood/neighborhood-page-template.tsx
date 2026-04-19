@@ -47,7 +47,7 @@ const NeighborhoodPageTemplate: React.FC<NeighborhoodPageTemplateProps> = ({ dat
             "description": data.metaDescription,
             "image": [
               "https://francescospizzeria.com/images/hero-bg.jpg",
-              "https://francescospizzeria.com/images/lineup.jpg"
+              "https://francescospizzeria.com/images/gallery/photo-20.jpg"
             ],
             "logo": "https://francescospizzeria.com/logo.png",
             "servesCuisine": ["Pizza", "Italian", "New York Style Pizza"],
