@@ -8,8 +8,8 @@ export async function GET() {
   try {
     const choiceItems = await storage.getAllChoiceItems();
     return NextResponse.json(choiceItems);
-  } catch (error: any) {
-    return NextResponse.json({ message: error.message }, { status: 500 });
+  } catch {
+    return NextResponse.json([]);
   }
 }
 
