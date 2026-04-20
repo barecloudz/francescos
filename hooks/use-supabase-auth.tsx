@@ -6,7 +6,7 @@ import { supabase } from '@/lib/supabase';
 import { Session, User } from '@supabase/supabase-js';
 import { useMutation, UseMutationResult } from '@tanstack/react-query';
 import { insertUserSchema, User as SelectUser, InsertUser } from '@shared/schema';
-import { apiRequest, queryClient } from '../lib/queryClient';
+import { apiRequest, queryClient, setCurrentAccessToken } from '../lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
 import { mapSupabaseUser, MappedUser } from '@/lib/user-mapping';
 import { EmailConfirmationModal } from '@/components/auth/email-confirmation-modal';
@@ -107,6 +107,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
 
         if (session) {
+          setCurrentAccessToken(session.access_token ?? null);
           setSession(session);
 
           // IMMEDIATE: Set user from session metadata (no blocking)
@@ -153,6 +154,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // Set up auth state listener
     const { data: authListener } = supabase.auth.onAuthStateChange(
       async (event, session) => {
+        // Store token immediately so getAuthHeaders() has it before storage is committed
+        setCurrentAccessToken(session?.access_token ?? null);
         setSession(session);
 
         if (session) {
