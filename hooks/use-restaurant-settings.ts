@@ -25,10 +25,10 @@ interface RestaurantSettings {
 }
 
 const defaultSettings: RestaurantSettings = {
-  restaurantName: "Francesco's",
-  address: "123 Main Street, New York, NY 10001",
-  phone: "(555) 123-4567",
-  email: "info@francescos.com",
+  restaurantName: "Francesco's Pizza Kitchen",
+  address: "2520 US-17 BUS, Murrells Inlet, SC 29576",
+  phone: "(843) 357-9990",
+  email: "info@francescosmurrellsinlet.com",
   website: "https://francescos.com",
   currency: "USD",
   timezone: "America/New_York",

@@ -105,7 +105,6 @@ const Footer = () => {
                 { href: '/menu', label: 'Menu' },
                 { href: '#story', label: 'About Us', isAnchor: true },
                 { href: '/#locations', label: 'Location' },
-                { href: '/auth', label: 'Login / Register' },
                 { href: '/community-impact', label: 'Community Impact' },
               ].map(({ href, label, isAnchor }) => (
                 <li key={href}>

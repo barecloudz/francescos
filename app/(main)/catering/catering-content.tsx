@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Progress } from "@/components/ui/progress";
+import Image from "next/image";
 import {
   ChevronLeft,
   ChevronRight,
@@ -48,26 +49,27 @@ interface CateringFormData {
   bestTimeToCall: string;
 }
 
-/* ─── Shared style tokens ─── */
-const darkCard = "bg-[#111111] border border-t-2 border-t-[#c0392b]" as const;
-const cardBorder = "border-[rgba(192,57,43,0.2)]" as const;
-const labelCls = "text-[#888888] text-xs tracking-widest uppercase" as const;
+/* ─── Style tokens ─── */
+const labelCls = "text-[#6b6560] text-xs tracking-widest uppercase font-medium" as const;
 const inputCls =
-  "bg-[#111] border-[rgba(192,57,43,0.3)] text-[#f5f0e8] placeholder:text-[#555] focus:border-[#c0392b] focus:ring-[#c0392b]" as const;
-const primaryBtn =
-  "rounded-none px-8 text-[#f5f0e8] font-semibold tracking-wide border-0" as const;
+  "bg-white border-[#d5cfc7] text-[#1a1a1a] placeholder:text-[#b0a89e] " +
+  "focus:border-[#c0392b] focus:ring-1 focus:ring-[#c0392b] rounded-md" as const;
 const primaryBtnStyle = {
   background: "linear-gradient(135deg, #7a1a14, #c0392b, #e74c3c, #c0392b, #7a1a14)",
 } as const;
+const primaryBtn =
+  "px-8 text-white font-semibold tracking-wide border-0 rounded-md hover:opacity-90 transition-opacity" as const;
 const outlineBtn =
-  "rounded-none border border-[#c0392b] bg-transparent text-[#c0392b] hover:bg-[rgba(192,57,43,0.08)]" as const;
+  "rounded-md border border-[#c0392b] bg-transparent text-[#c0392b] hover:bg-[rgba(192,57,43,0.06)] transition-colors" as const;
 
-/* Unselected option button */
+/* Card wrapper for each step */
+const stepCard = "bg-white rounded-xl shadow-lg shadow-black/8 border border-[#ece7e0] p-8" as const;
+
+/* Unselected / selected option buttons */
 const optionBase =
-  "border border-[rgba(192,57,43,0.2)] bg-[#111] transition-all hover:border-[#c0392b] hover:bg-[rgba(192,57,43,0.06)]" as const;
-/* Selected option button */
+  "border border-[#e0d9d0] bg-white rounded-lg transition-all hover:border-[#c0392b] hover:shadow-md hover:shadow-[rgba(192,57,43,0.08)] cursor-pointer" as const;
 const optionSelected =
-  "border border-[#c0392b] bg-[rgba(192,57,43,0.08)]" as const;
+  "border-2 border-[#c0392b] bg-[rgba(192,57,43,0.04)] rounded-lg shadow-md shadow-[rgba(192,57,43,0.12)]" as const;
 
 const CateringContent = () => {
   const { toast } = useToast();
@@ -162,59 +164,79 @@ const CateringContent = () => {
   /* ── Success state ── */
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-4">
-        <div
-          className={`max-w-md w-full mx-auto text-center ${darkCard} ${cardBorder} p-10`}
-        >
-          <div className="mx-auto w-16 h-16 bg-[rgba(192,57,43,0.12)] flex items-center justify-center mb-6 border border-[#c0392b]">
+      <div className="min-h-screen bg-[#faf8f5] flex items-center justify-center p-4">
+        <div className="max-w-md w-full mx-auto text-center bg-white rounded-xl shadow-lg border border-[#ece7e0] p-10">
+          <div className="mx-auto w-16 h-16 bg-[rgba(192,57,43,0.08)] rounded-full flex items-center justify-center mb-6 border border-[rgba(192,57,43,0.2)]">
             <Check className="w-8 h-8 text-[#c0392b]" />
           </div>
-          <h2 className="font-playfair text-3xl text-[#f5f0e8] mb-4">Thank You!</h2>
-          <p className="text-[#888888] mb-6">
+          <p className="text-[#c0392b] text-xs font-semibold uppercase tracking-[0.18em] mb-2">Confirmed</p>
+          <h2 className="font-playfair text-3xl text-[#1a1a1a] mb-4">Thank You!</h2>
+          <p className="text-[#6b6560] mb-6 leading-relaxed">
             Your catering inquiry has been submitted. Our catering specialist will contact
             you within 24 hours to discuss your event details and provide a custom quote.
           </p>
-          <div className="space-y-1 text-sm text-[#888888] mb-8">
+          <div className="space-y-1 text-sm text-[#6b6560] mb-8 bg-[#faf8f5] rounded-lg p-4 border border-[#ece7e0]">
             <p>We&apos;ll call you at {formData.phoneNumber}</p>
             <p>Confirmation email sent to {formData.email}</p>
             <p>Reference ID: CT-{Date.now()}</p>
           </div>
-          <Button
+          <button
             onClick={() => (window.location.href = "/")}
-            className={primaryBtn}
+            className={`w-full h-11 rounded-md font-semibold text-white tracking-wide ${primaryBtn}`}
             style={primaryBtnStyle}
           >
             Return Home
-          </Button>
+          </button>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
+    <div className="min-h-screen bg-[#faf8f5]">
 
-      {/* ── Header ── */}
-      <div className="border-b border-[rgba(192,57,43,0.2)] bg-[#0a0a0a]">
-        <div className="container mx-auto px-4 py-8 pt-24 md:pt-20">
-          <div className="text-center mb-8">
-            <h1 className="font-playfair text-4xl text-[#f5f0e8] mb-2">Catering Services</h1>
-            <p className="text-[#888888] text-xl">Let us make your next event delicious.</p>
-            <div className="mt-4 inline-flex items-center gap-2 bg-[#111] border border-[rgba(192,57,43,0.4)] text-[#cccccc] px-4 py-2 text-sm font-medium">
-              <Clock className="w-4 h-4 text-[#c0392b]" />
-              Please submit catering orders at least 24 hours in advance
-            </div>
+      {/* ── Hero Header ── */}
+      <div className="relative overflow-hidden" style={{ minHeight: 260 }}>
+        <Image
+          src="/images/hero-bg.jpeg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-black/65" />
+        <div
+          className="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
+          style={{ background: 'linear-gradient(to bottom, transparent, #faf8f5)' }}
+        />
+
+        <div className="relative z-10 container mx-auto px-4 pt-28 pb-12 text-center">
+          <p className="text-[#c0392b] text-xs font-semibold uppercase tracking-[0.18em] mb-3">
+            Events &amp; Gatherings
+          </p>
+          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-3">
+            Catering Services
+          </h1>
+          <p className="text-[#d5cfc7] text-lg mb-5">Let us make your next event delicious.</p>
+          <div className="inline-flex items-center gap-2 bg-black/40 border border-[rgba(192,57,43,0.5)] text-[#f5f0e8] px-4 py-2 rounded-full text-sm backdrop-blur-sm">
+            <Clock className="w-4 h-4 text-[#c0392b]" />
+            Please submit catering orders at least 24 hours in advance
           </div>
+        </div>
+      </div>
 
-          {/* Progress Bar */}
-          <div className="max-w-2xl mx-auto mb-8">
+      {/* ── Progress Bar ── */}
+      <div className="bg-white border-b border-[#ece7e0] shadow-sm">
+        <div className="container mx-auto px-4 py-4">
+          <div className="max-w-2xl mx-auto">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-[#888888]">Step {currentStep} of {totalSteps}</span>
-              <span className="text-sm text-[#888888]">{Math.round(progressPercentage)}% Complete</span>
+              <span className="text-sm text-[#6b6560]">Step {currentStep} of {totalSteps}</span>
+              <span className="text-sm font-medium text-[#c0392b]">{Math.round(progressPercentage)}% Complete</span>
             </div>
             <Progress
               value={progressPercentage}
-              className="h-1 bg-[#222]"
+              className="h-1.5 bg-[#ece7e0]"
               style={{ ["--progress-background" as string]: "#c0392b" }}
             />
           </div>
@@ -223,12 +245,13 @@ const CateringContent = () => {
 
       {/* ── Main Content ── */}
       <div className="container mx-auto px-4 py-10">
-        <div className="max-w-4xl mx-auto scroll-mt-16" ref={cardRef}>
+        <div className="max-w-4xl mx-auto scroll-mt-4" ref={cardRef}>
 
           {/* ─── Step 1: Event Type ─── */}
           {currentStep === 1 && (
-            <div className={`${darkCard} ${cardBorder} p-8`}>
-              <h2 className="font-playfair text-center text-2xl text-[#f5f0e8] flex items-center justify-center gap-2 mb-8">
+            <div className={stepCard}>
+              <p className="text-[#c0392b] text-xs font-semibold uppercase tracking-[0.18em] text-center mb-2">Step 1</p>
+              <h2 className="font-playfair text-center text-2xl text-[#1a1a1a] flex items-center justify-center gap-2 mb-8">
                 <Utensils className="w-6 h-6 text-[#c0392b]" />
                 What type of event are you planning?
               </h2>
@@ -244,7 +267,7 @@ const CateringContent = () => {
                   >
                     <div className="text-center">
                       <div className="text-[#c0392b] text-2xl mb-3 leading-none">◆</div>
-                      <div className="font-medium text-[#f5f0e8]">{option.label}</div>
+                      <div className="font-medium text-[#1a1a1a]">{option.label}</div>
                     </div>
                   </button>
                 ))}
@@ -266,22 +289,23 @@ const CateringContent = () => {
               )}
 
               <div className="flex justify-end mt-8">
-                <Button
+                <button
                   onClick={handleNext}
                   disabled={!formData.eventType}
-                  className={primaryBtn}
+                  className={`h-11 ${primaryBtn} disabled:opacity-50 disabled:cursor-not-allowed`}
                   style={primaryBtnStyle}
                 >
-                  Next <ChevronRight className="ml-2 w-4 h-4" />
-                </Button>
+                  Next <ChevronRight className="inline ml-2 w-4 h-4" />
+                </button>
               </div>
             </div>
           )}
 
           {/* ─── Step 2: Service Type ─── */}
           {currentStep === 2 && (
-            <div className={`${darkCard} ${cardBorder} p-8`}>
-              <h2 className="font-playfair text-center text-2xl text-[#f5f0e8] flex items-center justify-center gap-2 mb-8">
+            <div className={stepCard}>
+              <p className="text-[#c0392b] text-xs font-semibold uppercase tracking-[0.18em] text-center mb-2">Step 2</p>
+              <h2 className="font-playfair text-center text-2xl text-[#1a1a1a] flex items-center justify-center gap-2 mb-8">
                 <MapPin className="w-6 h-6 text-[#c0392b]" />
                 How would you like your catering delivered?
               </h2>
@@ -294,8 +318,8 @@ const CateringContent = () => {
                   }`}
                 >
                   <div className="text-[#c0392b] text-2xl mb-3 leading-none">◆</div>
-                  <h3 className="font-semibold text-lg text-[#f5f0e8] mb-2">Pickup Catering</h3>
-                  <p className="text-[#888888]">I&apos;ll collect the order from your location</p>
+                  <h3 className="font-semibold text-lg text-[#1a1a1a] mb-2">Pickup Catering</h3>
+                  <p className="text-[#6b6560]">I&apos;ll collect the order from your location</p>
                 </button>
 
                 <button
@@ -305,14 +329,14 @@ const CateringContent = () => {
                   }`}
                 >
                   <div className="text-[#c0392b] text-2xl mb-3 leading-none">◆</div>
-                  <h3 className="font-semibold text-lg text-[#f5f0e8] mb-2">Delivery &amp; Setup</h3>
-                  <p className="text-[#888888]">Deliver and set up at my event location</p>
+                  <h3 className="font-semibold text-lg text-[#1a1a1a] mb-2">Delivery &amp; Setup</h3>
+                  <p className="text-[#6b6560]">Deliver and set up at my event location</p>
                 </button>
               </div>
 
               {formData.serviceType === "delivery" && (
-                <div className="mt-8 p-6 bg-[#0d0d0d] border border-[rgba(192,57,43,0.15)]">
-                  <h4 className="font-playfair text-[#f5f0e8] mb-4">Delivery Details</h4>
+                <div className="mt-8 p-6 bg-[#faf8f5] rounded-lg border border-[#ece7e0]">
+                  <h4 className="font-playfair text-[#1a1a1a] mb-4 text-lg">Delivery Details</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="eventAddress" className={labelCls}>Event Address *</Label>
@@ -368,26 +392,27 @@ const CateringContent = () => {
                 <Button className={outlineBtn} onClick={handleBack}>
                   <ChevronLeft className="mr-2 w-4 h-4" /> Back
                 </Button>
-                <Button
+                <button
                   onClick={handleNext}
                   disabled={
                     !formData.serviceType ||
                     (formData.serviceType === "delivery" &&
                       (!formData.eventAddress || !formData.eventDate || !formData.eventTime))
                   }
-                  className={primaryBtn}
+                  className={`h-11 ${primaryBtn} disabled:opacity-50 disabled:cursor-not-allowed`}
                   style={primaryBtnStyle}
                 >
-                  Next <ChevronRight className="ml-2 w-4 h-4" />
-                </Button>
+                  Next <ChevronRight className="inline ml-2 w-4 h-4" />
+                </button>
               </div>
             </div>
           )}
 
           {/* ─── Step 3: Guest Count ─── */}
           {currentStep === 3 && (
-            <div className={`${darkCard} ${cardBorder} p-8`}>
-              <h2 className="font-playfair text-center text-2xl text-[#f5f0e8] flex items-center justify-center gap-2 mb-8">
+            <div className={stepCard}>
+              <p className="text-[#c0392b] text-xs font-semibold uppercase tracking-[0.18em] text-center mb-2">Step 3</p>
+              <h2 className="font-playfair text-center text-2xl text-[#1a1a1a] flex items-center justify-center gap-2 mb-8">
                 <Users className="w-6 h-6 text-[#c0392b]" />
                 How many people will you be serving?
               </h2>
@@ -403,7 +428,7 @@ const CateringContent = () => {
                   >
                     <div className="text-center">
                       <Users className="w-8 h-8 mx-auto mb-3 text-[#c0392b]" />
-                      <div className="font-medium text-[#f5f0e8]">{option.label}</div>
+                      <div className="font-medium text-[#1a1a1a]">{option.label}</div>
                     </div>
                   </button>
                 ))}
@@ -430,26 +455,27 @@ const CateringContent = () => {
                 <Button className={outlineBtn} onClick={handleBack}>
                   <ChevronLeft className="mr-2 w-4 h-4" /> Back
                 </Button>
-                <Button
+                <button
                   onClick={handleNext}
                   disabled={!formData.guestCount}
-                  className={primaryBtn}
+                  className={`h-11 ${primaryBtn} disabled:opacity-50 disabled:cursor-not-allowed`}
                   style={primaryBtnStyle}
                 >
-                  Next <ChevronRight className="ml-2 w-4 h-4" />
-                </Button>
+                  Next <ChevronRight className="inline ml-2 w-4 h-4" />
+                </button>
               </div>
             </div>
           )}
 
           {/* ─── Step 4a: View Packages prompt ─── */}
           {currentStep === 4 && !formData.viewPackages && (
-            <div className={`${darkCard} ${cardBorder} p-8`}>
-              <h2 className="font-playfair text-center text-2xl text-[#f5f0e8] flex items-center justify-center gap-2 mb-2">
+            <div className={stepCard}>
+              <p className="text-[#c0392b] text-xs font-semibold uppercase tracking-[0.18em] text-center mb-2">Step 4</p>
+              <h2 className="font-playfair text-center text-2xl text-[#1a1a1a] flex items-center justify-center gap-2 mb-2">
                 <Package className="w-6 h-6 text-[#c0392b]" />
                 Would you like to view our catering packages?
               </h2>
-              <p className="text-center text-[#888888] mb-8">
+              <p className="text-center text-[#6b6560] mb-8">
                 Based on serving{" "}
                 {formData.guestCount === "200+"
                   ? `${formData.customGuestCount || "200+"}`
@@ -464,8 +490,8 @@ const CateringContent = () => {
                 >
                   <div className="text-center">
                     <div className="text-[#c0392b] text-2xl mb-3 leading-none">◆</div>
-                    <h3 className="font-semibold text-lg text-[#f5f0e8] mb-2">Yes, show me packages</h3>
-                    <p className="text-[#888888] text-sm">
+                    <h3 className="font-semibold text-lg text-[#1a1a1a] mb-2">Yes, show me packages</h3>
+                    <p className="text-[#6b6560] text-sm">
                       View our pre-designed catering packages with recommended items for your group size
                     </p>
                   </div>
@@ -480,8 +506,8 @@ const CateringContent = () => {
                 >
                   <div className="text-center">
                     <div className="text-[#c0392b] text-2xl mb-3 leading-none">◆</div>
-                    <h3 className="font-semibold text-lg text-[#f5f0e8] mb-2">No, I&apos;ll customize my order</h3>
-                    <p className="text-[#888888] text-sm">Skip packages and tell us exactly what you need</p>
+                    <h3 className="font-semibold text-lg text-[#1a1a1a] mb-2">No, I&apos;ll customize my order</h3>
+                    <p className="text-[#6b6560] text-sm">Skip packages and tell us exactly what you need</p>
                   </div>
                 </button>
               </div>
@@ -498,8 +524,9 @@ const CateringContent = () => {
           {currentStep === 4 && formData.viewPackages === "yes" && (
             <div className="space-y-6">
               <div className="text-center mb-6">
-                <h2 className="font-playfair text-3xl text-[#f5f0e8] mb-2">Choose Your Catering Package</h2>
-                <p className="text-[#888888]">
+                <p className="text-[#c0392b] text-xs font-semibold uppercase tracking-[0.18em] mb-2">Choose a Package</p>
+                <h2 className="font-playfair text-3xl text-[#1a1a1a] mb-2">Catering Packages</h2>
+                <p className="text-[#6b6560]">
                   Perfect for{" "}
                   {formData.guestCount === "200+"
                     ? `${formData.customGuestCount || "200+"}`
@@ -510,24 +537,24 @@ const CateringContent = () => {
 
               {/* Pizza Party Package */}
               <div
-                className={`cursor-pointer transition-all ${
+                className={`cursor-pointer transition-all bg-white rounded-xl overflow-hidden ${
                   formData.selectedPackage === "pizza_party"
-                    ? `bg-[#111] border-2 border-[#c0392b] border-t-[#c0392b]`
-                    : `bg-[#111] border border-[rgba(192,57,43,0.2)] hover:border-[#c0392b]`
+                    ? "border-2 border-[#c0392b] shadow-lg shadow-[rgba(192,57,43,0.15)]"
+                    : "border border-[#ece7e0] shadow-md hover:border-[#c0392b] hover:shadow-lg"
                 }`}
                 onClick={() => updateFormData("selectedPackage", "pizza_party")}
               >
-                <div className="bg-[#0d0d0d] border-b border-[rgba(192,57,43,0.15)] px-6 py-4">
+                <div className="bg-[#faf8f5] border-b border-[#ece7e0] px-6 py-4">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="text-xs tracking-widest uppercase text-[#888888] border border-[rgba(192,57,43,0.3)] px-2 py-0.5 mb-2 inline-block">
+                      <span className="text-xs tracking-widest uppercase text-[#6b6560] border border-[#d5cfc7] px-2 py-0.5 mb-2 inline-block rounded">
                         Basic
                       </span>
-                      <h3 className="font-playfair text-2xl text-[#f5f0e8]">Pizza Party Package</h3>
-                      <p className="text-[#888888] mt-1">Classic pizza party favorites</p>
+                      <h3 className="font-playfair text-2xl text-[#1a1a1a]">Pizza Party Package</h3>
+                      <p className="text-[#6b6560] mt-1">Classic pizza party favorites</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-xs text-[#888888] uppercase tracking-widest">Starting at</p>
+                      <p className="text-xs text-[#6b6560] uppercase tracking-widest">Starting at</p>
                       <p className="text-3xl font-bold text-[#c0392b]">
                         ${formData.guestCount === "10-25" ? "150" :
                           formData.guestCount === "26-50" ? "275" :
@@ -540,10 +567,10 @@ const CateringContent = () => {
                 <div className="px-6 py-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h4 className="font-semibold text-[#f5f0e8] mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-[#1a1a1a] mb-2 flex items-center gap-2">
                         <span className="text-[#c0392b]">◆</span> What&apos;s Included:
                       </h4>
-                      <ul className="space-y-1 text-sm text-[#cccccc]">
+                      <ul className="space-y-1 text-sm text-[#6b6560]">
                         <li>Assorted NY Style Pizzas (Cheese, Pepperoni, Specialty)</li>
                         <li>Garden Salad (Half Tray)</li>
                         <li>French Fries (Half Tray)</li>
@@ -551,10 +578,10 @@ const CateringContent = () => {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-[#f5f0e8] mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-[#1a1a1a] mb-2 flex items-center gap-2">
                         <span className="text-[#c0392b]">◆</span> Serving Size:
                       </h4>
-                      <ul className="space-y-1 text-sm text-[#cccccc]">
+                      <ul className="space-y-1 text-sm text-[#6b6560]">
                         <li>10-25 guests: 4 Large Pizzas</li>
                         <li>26-50 guests: 8 Large Pizzas</li>
                         <li>51-100 guests: 15 Large Pizzas</li>
@@ -563,9 +590,9 @@ const CateringContent = () => {
                     </div>
                   </div>
                   {formData.selectedPackage === "pizza_party" && (
-                    <div className="mt-4 p-3 bg-[rgba(192,57,43,0.08)] border border-[#c0392b] text-center">
+                    <div className="mt-4 p-3 bg-[rgba(192,57,43,0.06)] border border-[rgba(192,57,43,0.3)] rounded-lg text-center">
                       <CheckCircle className="w-5 h-5 text-[#c0392b] inline mr-2" />
-                      <span className="text-[#f5f0e8] font-medium">Package Selected</span>
+                      <span className="text-[#c0392b] font-medium">Package Selected</span>
                     </div>
                   )}
                 </div>
@@ -573,24 +600,24 @@ const CateringContent = () => {
 
               {/* Italian Feast Package */}
               <div
-                className={`cursor-pointer transition-all ${
+                className={`cursor-pointer transition-all bg-white rounded-xl overflow-hidden ${
                   formData.selectedPackage === "italian_feast"
-                    ? `bg-[#111] border-2 border-[#c0392b]`
-                    : `bg-[#111] border border-[rgba(192,57,43,0.2)] hover:border-[#c0392b]`
+                    ? "border-2 border-[#c0392b] shadow-lg shadow-[rgba(192,57,43,0.15)]"
+                    : "border border-[#ece7e0] shadow-md hover:border-[#c0392b] hover:shadow-lg"
                 }`}
                 onClick={() => updateFormData("selectedPackage", "italian_feast")}
               >
-                <div className="bg-[#0d0d0d] border-b border-[rgba(192,57,43,0.15)] px-6 py-4">
+                <div className="bg-[#faf8f5] border-b border-[#ece7e0] px-6 py-4">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="text-xs tracking-widest uppercase text-[#c0392b] border border-[#c0392b] px-2 py-0.5 mb-2 inline-block">
+                      <span className="text-xs tracking-widest uppercase text-[#c0392b] border border-[rgba(192,57,43,0.4)] px-2 py-0.5 mb-2 inline-block rounded">
                         Most Popular
                       </span>
-                      <h3 className="font-playfair text-2xl text-[#f5f0e8]">Italian Feast Package</h3>
-                      <p className="text-[#888888] mt-1">A complete Italian dining experience</p>
+                      <h3 className="font-playfair text-2xl text-[#1a1a1a]">Italian Feast Package</h3>
+                      <p className="text-[#6b6560] mt-1">A complete Italian dining experience</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-xs text-[#888888] uppercase tracking-widest">Starting at</p>
+                      <p className="text-xs text-[#6b6560] uppercase tracking-widest">Starting at</p>
                       <p className="text-3xl font-bold text-[#c0392b]">
                         ${formData.guestCount === "10-25" ? "295" :
                           formData.guestCount === "26-50" ? "525" :
@@ -603,10 +630,10 @@ const CateringContent = () => {
                 <div className="px-6 py-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h4 className="font-semibold text-[#f5f0e8] mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-[#1a1a1a] mb-2 flex items-center gap-2">
                         <span className="text-[#c0392b]">◆</span> What&apos;s Included:
                       </h4>
-                      <ul className="space-y-1 text-sm text-[#cccccc]">
+                      <ul className="space-y-1 text-sm text-[#6b6560]">
                         <li>Assorted NY Style Pizzas</li>
                         <li>Choice of Pasta (Baked Ziti, Alla Vodka, or Primavera)</li>
                         <li>Wings or Mozzarella Sticks</li>
@@ -616,10 +643,10 @@ const CateringContent = () => {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-[#f5f0e8] mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-[#1a1a1a] mb-2 flex items-center gap-2">
                         <span className="text-[#c0392b]">◆</span> Popular Add-ons:
                       </h4>
-                      <ul className="space-y-1 text-sm text-[#cccccc]">
+                      <ul className="space-y-1 text-sm text-[#6b6560]">
                         <li>Fried Calamari (+$75-115)</li>
                         <li>Meatballs (+$70-115)</li>
                         <li>Chicken Parmigiana (+$75-130)</li>
@@ -628,9 +655,9 @@ const CateringContent = () => {
                     </div>
                   </div>
                   {formData.selectedPackage === "italian_feast" && (
-                    <div className="mt-4 p-3 bg-[rgba(192,57,43,0.08)] border border-[#c0392b] text-center">
+                    <div className="mt-4 p-3 bg-[rgba(192,57,43,0.06)] border border-[rgba(192,57,43,0.3)] rounded-lg text-center">
                       <CheckCircle className="w-5 h-5 text-[#c0392b] inline mr-2" />
-                      <span className="text-[#f5f0e8] font-medium">Package Selected</span>
+                      <span className="text-[#c0392b] font-medium">Package Selected</span>
                     </div>
                   )}
                 </div>
@@ -638,24 +665,24 @@ const CateringContent = () => {
 
               {/* Premium Full Service Package */}
               <div
-                className={`cursor-pointer transition-all ${
+                className={`cursor-pointer transition-all bg-white rounded-xl overflow-hidden ${
                   formData.selectedPackage === "full_service"
-                    ? `bg-[#111] border-2 border-[#c0392b]`
-                    : `bg-[#111] border border-[rgba(192,57,43,0.2)] hover:border-[#c0392b]`
+                    ? "border-2 border-[#c0392b] shadow-lg shadow-[rgba(192,57,43,0.15)]"
+                    : "border border-[#ece7e0] shadow-md hover:border-[#c0392b] hover:shadow-lg"
                 }`}
                 onClick={() => updateFormData("selectedPackage", "full_service")}
               >
-                <div className="bg-[#0d0d0d] border-b border-[rgba(192,57,43,0.15)] px-6 py-4">
+                <div className="bg-[#faf8f5] border-b border-[#ece7e0] px-6 py-4">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="text-xs tracking-widest uppercase text-[#888888] border border-[rgba(192,57,43,0.3)] px-2 py-0.5 mb-2 inline-block">
+                      <span className="text-xs tracking-widest uppercase text-[#6b6560] border border-[#d5cfc7] px-2 py-0.5 mb-2 inline-block rounded">
                         Premium
                       </span>
-                      <h3 className="font-playfair text-2xl text-[#f5f0e8]">Full Service Package</h3>
-                      <p className="text-[#888888] mt-1">The ultimate catering experience</p>
+                      <h3 className="font-playfair text-2xl text-[#1a1a1a]">Full Service Package</h3>
+                      <p className="text-[#6b6560] mt-1">The ultimate catering experience</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-xs text-[#888888] uppercase tracking-widest">Starting at</p>
+                      <p className="text-xs text-[#6b6560] uppercase tracking-widest">Starting at</p>
                       <p className="text-3xl font-bold text-[#c0392b]">
                         ${formData.guestCount === "10-25" ? "495" :
                           formData.guestCount === "26-50" ? "895" :
@@ -668,10 +695,10 @@ const CateringContent = () => {
                 <div className="px-6 py-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h4 className="font-semibold text-[#f5f0e8] mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-[#1a1a1a] mb-2 flex items-center gap-2">
                         <span className="text-[#c0392b]">◆</span> What&apos;s Included:
                       </h4>
-                      <ul className="space-y-1 text-sm text-[#cccccc]">
+                      <ul className="space-y-1 text-sm text-[#6b6560]">
                         <li>Assorted NY Style Pizzas</li>
                         <li>Two Pasta Selections</li>
                         <li>Chicken Parmigiana or Marsala</li>
@@ -683,10 +710,10 @@ const CateringContent = () => {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-[#f5f0e8] mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-[#1a1a1a] mb-2 flex items-center gap-2">
                         <span className="text-[#c0392b]">◆</span> Premium Extras:
                       </h4>
-                      <ul className="space-y-1 text-sm text-[#cccccc]">
+                      <ul className="space-y-1 text-sm text-[#6b6560]">
                         <li>Sausage &amp; Peppers</li>
                         <li>Eggplant Rollatini</li>
                         <li>Dessert Tray</li>
@@ -696,9 +723,9 @@ const CateringContent = () => {
                     </div>
                   </div>
                   {formData.selectedPackage === "full_service" && (
-                    <div className="mt-4 p-3 bg-[rgba(192,57,43,0.08)] border border-[#c0392b] text-center">
+                    <div className="mt-4 p-3 bg-[rgba(192,57,43,0.06)] border border-[rgba(192,57,43,0.3)] rounded-lg text-center">
                       <CheckCircle className="w-5 h-5 text-[#c0392b] inline mr-2" />
-                      <span className="text-[#f5f0e8] font-medium">Package Selected</span>
+                      <span className="text-[#c0392b] font-medium">Package Selected</span>
                     </div>
                   )}
                 </div>
@@ -706,53 +733,47 @@ const CateringContent = () => {
 
               {/* Build Your Own Package */}
               <div
-                className={`cursor-pointer transition-all ${
+                className={`cursor-pointer transition-all bg-white rounded-xl overflow-hidden ${
                   formData.selectedPackage === "custom"
-                    ? `bg-[#111] border-2 border-[#c0392b]`
-                    : `bg-[#111] border border-[rgba(192,57,43,0.2)] hover:border-[#c0392b]`
+                    ? "border-2 border-[#c0392b] shadow-lg shadow-[rgba(192,57,43,0.15)]"
+                    : "border border-[#ece7e0] shadow-md hover:border-[#c0392b] hover:shadow-lg"
                 }`}
                 onClick={() => updateFormData("selectedPackage", "custom")}
               >
-                <div className="bg-[#0d0d0d] border-b border-[rgba(192,57,43,0.15)] px-6 py-4">
+                <div className="bg-[#faf8f5] border-b border-[#ece7e0] px-6 py-4">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="text-xs tracking-widest uppercase text-[#888888] border border-[rgba(192,57,43,0.3)] px-2 py-0.5 mb-2 inline-block">
+                      <span className="text-xs tracking-widest uppercase text-[#6b6560] border border-[#d5cfc7] px-2 py-0.5 mb-2 inline-block rounded">
                         Flexible
                       </span>
-                      <h3 className="font-playfair text-2xl text-[#f5f0e8]">Build Your Own Package</h3>
-                      <p className="text-[#888888] mt-1">Mix and match from our full catering menu</p>
+                      <h3 className="font-playfair text-2xl text-[#1a1a1a]">Build Your Own Package</h3>
+                      <p className="text-[#6b6560] mt-1">Mix and match from our full catering menu</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-xs text-[#888888] uppercase tracking-widest">Price varies</p>
+                      <p className="text-xs text-[#6b6560] uppercase tracking-widest">Price varies</p>
                       <p className="text-2xl font-bold text-[#c0392b]">Custom Quote</p>
                     </div>
                   </div>
                 </div>
                 <div className="px-6 py-4">
-                  <p className="text-[#cccccc] mb-4">
+                  <p className="text-[#6b6560] mb-4">
                     Want something specific? Choose exactly what you need from our full catering menu:
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-sm">
-                    {[
-                      { label: "Appetizers" },
-                      { label: "Pasta" },
-                      { label: "Chicken" },
-                      { label: "Eggplant" },
-                      { label: "Salads" },
-                    ].map((item) => (
+                    {["Appetizers", "Pasta", "Chicken", "Eggplant", "Salads"].map((item) => (
                       <div
-                        key={item.label}
-                        className="bg-[#0d0d0d] border border-[rgba(192,57,43,0.2)] p-2 text-center text-[#cccccc]"
+                        key={item}
+                        className="bg-[#faf8f5] border border-[#ece7e0] rounded-lg p-2 text-center text-[#6b6560]"
                       >
                         <span className="block text-[#c0392b] text-base mb-1">◆</span>
-                        {item.label}
+                        {item}
                       </div>
                     ))}
                   </div>
                   {formData.selectedPackage === "custom" && (
-                    <div className="mt-4 p-3 bg-[rgba(192,57,43,0.08)] border border-[#c0392b] text-center">
+                    <div className="mt-4 p-3 bg-[rgba(192,57,43,0.06)] border border-[rgba(192,57,43,0.3)] rounded-lg text-center">
                       <CheckCircle className="w-5 h-5 text-[#c0392b] inline mr-2" />
-                      <span className="text-[#f5f0e8] font-medium">We&apos;ll help you customize!</span>
+                      <span className="text-[#c0392b] font-medium">We&apos;ll help you customize!</span>
                     </div>
                   )}
                 </div>
@@ -763,10 +784,10 @@ const CateringContent = () => {
                 <Button className={outlineBtn} onClick={() => updateFormData("viewPackages", "")}>
                   <ChevronLeft className="mr-2 w-4 h-4" /> Back
                 </Button>
-                <Button
+                <button
                   onClick={handleNext}
                   disabled={!formData.selectedPackage}
-                  className={primaryBtn}
+                  className={`h-11 ${primaryBtn} disabled:opacity-50 disabled:cursor-not-allowed`}
                   style={primaryBtnStyle}
                 >
                   Continue with{" "}
@@ -779,16 +800,17 @@ const CateringContent = () => {
                     : formData.selectedPackage === "custom"
                     ? "Custom"
                     : "Package"}
-                  <ChevronRight className="ml-2 w-4 h-4" />
-                </Button>
+                  <ChevronRight className="inline ml-2 w-4 h-4" />
+                </button>
               </div>
             </div>
           )}
 
           {/* ─── Step 5: Additional Details ─── */}
           {currentStep === 5 && (
-            <div className={`${darkCard} ${cardBorder} p-8`}>
-              <h2 className="font-playfair text-center text-2xl text-[#f5f0e8] flex items-center justify-center gap-2 mb-8">
+            <div className={stepCard}>
+              <p className="text-[#c0392b] text-xs font-semibold uppercase tracking-[0.18em] text-center mb-2">Step 5</p>
+              <h2 className="font-playfair text-center text-2xl text-[#1a1a1a] flex items-center justify-center gap-2 mb-8">
                 <Star className="w-6 h-6 text-[#c0392b]" />
                 Tell us more about your catering needs
               </h2>
@@ -804,7 +826,7 @@ const CateringContent = () => {
                     <SelectTrigger className={`mt-2 ${inputCls}`}>
                       <SelectValue placeholder="Select menu style..." />
                     </SelectTrigger>
-                    <SelectContent className="bg-[#111] border border-[rgba(192,57,43,0.3)] text-[#f5f0e8]">
+                    <SelectContent className="bg-white border border-[#d5cfc7] text-[#1a1a1a]">
                       <SelectItem value="buffet">Buffet Style</SelectItem>
                       <SelectItem value="plated">Plated Meals</SelectItem>
                       <SelectItem value="appetizers">Appetizers Only</SelectItem>
@@ -827,20 +849,14 @@ const CateringContent = () => {
                             checked={formData.dietaryRestrictions.includes(restriction)}
                             onCheckedChange={(checked) => {
                               if (checked) {
-                                updateFormData("dietaryRestrictions", [
-                                  ...formData.dietaryRestrictions,
-                                  restriction,
-                                ]);
+                                updateFormData("dietaryRestrictions", [...formData.dietaryRestrictions, restriction]);
                               } else {
-                                updateFormData(
-                                  "dietaryRestrictions",
-                                  formData.dietaryRestrictions.filter((r) => r !== restriction)
-                                );
+                                updateFormData("dietaryRestrictions", formData.dietaryRestrictions.filter((r) => r !== restriction));
                               }
                             }}
-                            className="border-[rgba(192,57,43,0.4)] data-[state=checked]:bg-[#c0392b] data-[state=checked]:border-[#c0392b]"
+                            className="border-[#d5cfc7] data-[state=checked]:bg-[#c0392b] data-[state=checked]:border-[#c0392b]"
                           />
-                          <Label htmlFor={restriction} className="text-sm text-[#cccccc]">
+                          <Label htmlFor={restriction} className="text-sm text-[#1a1a1a]">
                             {restriction}
                           </Label>
                         </div>
@@ -859,7 +875,7 @@ const CateringContent = () => {
                     <SelectTrigger className={`mt-2 ${inputCls}`}>
                       <SelectValue placeholder="Select budget range..." />
                     </SelectTrigger>
-                    <SelectContent className="bg-[#111] border border-[rgba(192,57,43,0.3)] text-[#f5f0e8]">
+                    <SelectContent className="bg-white border border-[#d5cfc7] text-[#1a1a1a]">
                       <SelectItem value="under-500">Under $500</SelectItem>
                       <SelectItem value="500-1000">$500 – $1,000</SelectItem>
                       <SelectItem value="1000-2500">$1,000 – $2,500</SelectItem>
@@ -882,20 +898,14 @@ const CateringContent = () => {
                             checked={formData.additionalServices.includes(service)}
                             onCheckedChange={(checked) => {
                               if (checked) {
-                                updateFormData("additionalServices", [
-                                  ...formData.additionalServices,
-                                  service,
-                                ]);
+                                updateFormData("additionalServices", [...formData.additionalServices, service]);
                               } else {
-                                updateFormData(
-                                  "additionalServices",
-                                  formData.additionalServices.filter((s) => s !== service)
-                                );
+                                updateFormData("additionalServices", formData.additionalServices.filter((s) => s !== service));
                               }
                             }}
-                            className="border-[rgba(192,57,43,0.4)] data-[state=checked]:bg-[#c0392b] data-[state=checked]:border-[#c0392b]"
+                            className="border-[#d5cfc7] data-[state=checked]:bg-[#c0392b] data-[state=checked]:border-[#c0392b]"
                           />
-                          <Label htmlFor={service} className="text-sm text-[#cccccc]">
+                          <Label htmlFor={service} className="text-sm text-[#1a1a1a]">
                             {service}
                           </Label>
                         </div>
@@ -921,14 +931,14 @@ const CateringContent = () => {
                   <Button className={outlineBtn} onClick={handleBack}>
                     <ChevronLeft className="mr-2 w-4 h-4" /> Back
                   </Button>
-                  <Button
+                  <button
                     onClick={handleNext}
                     disabled={!formData.menuStyle}
-                    className={primaryBtn}
+                    className={`h-11 ${primaryBtn} disabled:opacity-50 disabled:cursor-not-allowed`}
                     style={primaryBtnStyle}
                   >
-                    Next <ChevronRight className="ml-2 w-4 h-4" />
-                  </Button>
+                    Next <ChevronRight className="inline ml-2 w-4 h-4" />
+                  </button>
                 </div>
               </div>
             </div>
@@ -936,10 +946,11 @@ const CateringContent = () => {
 
           {/* ─── Step 6: Contact Information ─── */}
           {currentStep === 6 && (
-            <div className={`${darkCard} ${cardBorder} p-8`}>
-              <h2 className="font-playfair text-center text-2xl text-[#f5f0e8] flex items-center justify-center gap-2 mb-8">
+            <div className={stepCard}>
+              <p className="text-[#c0392b] text-xs font-semibold uppercase tracking-[0.18em] text-center mb-2">Step 6</p>
+              <h2 className="font-playfair text-center text-2xl text-[#1a1a1a] flex items-center justify-center gap-2 mb-8">
                 <Phone className="w-6 h-6 text-[#c0392b]" />
-                How can we reach you about your catering inquiry?
+                How can we reach you?
               </h2>
 
               <div className="space-y-6">
@@ -985,7 +996,7 @@ const CateringContent = () => {
                       <SelectTrigger className={`mt-2 ${inputCls}`}>
                         <SelectValue placeholder="Select preference..." />
                       </SelectTrigger>
-                      <SelectContent className="bg-[#111] border border-[rgba(192,57,43,0.3)] text-[#f5f0e8]">
+                      <SelectContent className="bg-white border border-[#d5cfc7] text-[#1a1a1a]">
                         <SelectItem value="phone">Phone Call</SelectItem>
                         <SelectItem value="email">Email</SelectItem>
                         <SelectItem value="text">Text Message</SelectItem>
@@ -1004,7 +1015,7 @@ const CateringContent = () => {
                     <SelectTrigger className={`mt-2 ${inputCls}`}>
                       <SelectValue placeholder="Select best time..." />
                     </SelectTrigger>
-                    <SelectContent className="bg-[#111] border border-[rgba(192,57,43,0.3)] text-[#f5f0e8]">
+                    <SelectContent className="bg-white border border-[#d5cfc7] text-[#1a1a1a]">
                       <SelectItem value="morning">Morning (9AM – 12PM)</SelectItem>
                       <SelectItem value="afternoon">Afternoon (12PM – 5PM)</SelectItem>
                       <SelectItem value="evening">Evening (5PM – 8PM)</SelectItem>
@@ -1014,65 +1025,66 @@ const CateringContent = () => {
                 </div>
 
                 {/* Order Summary */}
-                <div className="p-6 bg-[#0d0d0d] border border-[rgba(192,57,43,0.15)]">
-                  <h4 className="font-playfair text-[#f5f0e8] mb-4">Order Summary</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-[#cccccc]">
-                    <div>
-                      <span className="text-[#888888] uppercase tracking-widest text-xs">Event Type: </span>
-                      {formData.eventType === "other"
-                        ? formData.customEventType
-                        : eventTypeOptions.find((o) => o.id === formData.eventType)?.label}
+                <div className="p-6 bg-[#faf8f5] rounded-lg border border-[#ece7e0]">
+                  <h4 className="font-playfair text-[#1a1a1a] mb-4 text-lg">Order Summary</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                    <div className="flex gap-2">
+                      <span className="text-[#6b6560] uppercase tracking-widest text-xs whitespace-nowrap">Event:</span>
+                      <span className="text-[#1a1a1a]">
+                        {formData.eventType === "other"
+                          ? formData.customEventType
+                          : eventTypeOptions.find((o) => o.id === formData.eventType)?.label}
+                      </span>
                     </div>
-                    <div>
-                      <span className="text-[#888888] uppercase tracking-widest text-xs">Service: </span>
-                      {formData.serviceType === "pickup" ? "Pickup" : "Delivery & Setup"}
+                    <div className="flex gap-2">
+                      <span className="text-[#6b6560] uppercase tracking-widest text-xs whitespace-nowrap">Service:</span>
+                      <span className="text-[#1a1a1a]">{formData.serviceType === "pickup" ? "Pickup" : "Delivery & Setup"}</span>
                     </div>
-                    <div>
-                      <span className="text-[#888888] uppercase tracking-widest text-xs">Guests: </span>
-                      {formData.guestCount === "200+"
-                        ? `${formData.customGuestCount} people`
-                        : guestCountOptions.find((o) => o.id === formData.guestCount)?.label}
+                    <div className="flex gap-2">
+                      <span className="text-[#6b6560] uppercase tracking-widest text-xs whitespace-nowrap">Guests:</span>
+                      <span className="text-[#1a1a1a]">
+                        {formData.guestCount === "200+"
+                          ? `${formData.customGuestCount} people`
+                          : guestCountOptions.find((o) => o.id === formData.guestCount)?.label}
+                      </span>
                     </div>
-                    <div>
-                      <span className="text-[#888888] uppercase tracking-widest text-xs">Menu Style: </span>
-                      {formData.menuStyle}
+                    <div className="flex gap-2">
+                      <span className="text-[#6b6560] uppercase tracking-widest text-xs whitespace-nowrap">Menu:</span>
+                      <span className="text-[#1a1a1a]">{formData.menuStyle}</span>
                     </div>
                     {formData.selectedPackage && (
-                      <div>
-                        <span className="text-[#888888] uppercase tracking-widest text-xs">Package: </span>
-                        {formData.selectedPackage === "pizza_party"
-                          ? "Pizza Party"
-                          : formData.selectedPackage === "italian_feast"
-                          ? "Italian Feast"
-                          : formData.selectedPackage === "full_service"
-                          ? "Full Service"
-                          : formData.selectedPackage === "custom"
-                          ? "Custom Package"
-                          : formData.selectedPackage}
+                      <div className="flex gap-2">
+                        <span className="text-[#6b6560] uppercase tracking-widest text-xs whitespace-nowrap">Package:</span>
+                        <span className="text-[#1a1a1a]">
+                          {formData.selectedPackage === "pizza_party" ? "Pizza Party" :
+                           formData.selectedPackage === "italian_feast" ? "Italian Feast" :
+                           formData.selectedPackage === "full_service" ? "Full Service" :
+                           formData.selectedPackage === "custom" ? "Custom Package" : formData.selectedPackage}
+                        </span>
                       </div>
                     )}
                     {formData.eventDate && (
-                      <div>
-                        <span className="text-[#888888] uppercase tracking-widest text-xs">Event Date: </span>
-                        {new Date(formData.eventDate).toLocaleDateString()}
+                      <div className="flex gap-2">
+                        <span className="text-[#6b6560] uppercase tracking-widest text-xs whitespace-nowrap">Date:</span>
+                        <span className="text-[#1a1a1a]">{new Date(formData.eventDate).toLocaleDateString()}</span>
                       </div>
                     )}
                     {formData.eventTime && (
-                      <div>
-                        <span className="text-[#888888] uppercase tracking-widest text-xs">Event Time: </span>
-                        {formData.eventTime}
+                      <div className="flex gap-2">
+                        <span className="text-[#6b6560] uppercase tracking-widest text-xs whitespace-nowrap">Time:</span>
+                        <span className="text-[#1a1a1a]">{formData.eventTime}</span>
                       </div>
                     )}
                   </div>
                 </div>
 
                 {/* What happens next */}
-                <div className="bg-[#0d0d0d] border border-[rgba(192,57,43,0.2)] p-4">
+                <div className="bg-[rgba(192,57,43,0.04)] border border-[rgba(192,57,43,0.2)] rounded-lg p-4">
                   <div className="flex items-start gap-3">
                     <Clock className="w-5 h-5 text-[#c0392b] mt-0.5 shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-[#f5f0e8]">What happens next?</h4>
-                      <p className="text-[#888888] text-sm mt-1">
+                      <h4 className="font-semibold text-[#1a1a1a]">What happens next?</h4>
+                      <p className="text-[#6b6560] text-sm mt-1">
                         Our catering specialist will contact you within 24 hours to discuss menu
                         options, finalize details, and provide a custom quote for your event.
                       </p>
@@ -1084,16 +1096,14 @@ const CateringContent = () => {
                   <Button className={outlineBtn} onClick={handleBack}>
                     <ChevronLeft className="mr-2 w-4 h-4" /> Back
                   </Button>
-                  <Button
+                  <button
                     onClick={handleSubmit}
-                    disabled={
-                      !formData.fullName || !formData.phoneNumber || !formData.email || isSubmitting
-                    }
-                    className={primaryBtn}
+                    disabled={!formData.fullName || !formData.phoneNumber || !formData.email || isSubmitting}
+                    className={`h-11 ${primaryBtn} disabled:opacity-50 disabled:cursor-not-allowed`}
                     style={primaryBtnStyle}
                   >
                     {isSubmitting ? "Submitting..." : "Submit Inquiry"}
-                  </Button>
+                  </button>
                 </div>
               </div>
             </div>
