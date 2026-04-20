@@ -52,21 +52,21 @@ async function validateSupabaseToken(token: string): Promise<AuthResult> {
     console.log('🔍 AUTH-UTILS: Token length:', token?.length);
     console.log('🔍 AUTH-UTILS: Token prefix:', token?.substring(0, 20) + '...');
 
-    const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
-    const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY;
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
     console.log('🔍 AUTH-UTILS: Environment check:', {
       hasSupabaseUrl: !!supabaseUrl,
-      hasSupabaseAnonKey: !!supabaseAnonKey,
+      hasServiceKey: !!supabaseServiceKey,
       supabaseUrlPrefix: supabaseUrl?.substring(0, 20) + '...'
     });
 
-    if (!supabaseUrl || !supabaseAnonKey) {
-      console.log('❌ AUTH-UTILS: Missing Supabase environment variables');
+    if (!supabaseUrl || !supabaseServiceKey) {
+      console.log('❌ AUTH-UTILS: Missing Supabase environment variables (need NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY)');
       return { success: false, error: 'Supabase configuration missing' };
     }
 
-    const supabase = createClient(supabaseUrl, supabaseAnonKey);
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
     console.log('🔍 AUTH-UTILS: Created Supabase client, calling getUser...');
 
     const { data: { user }, error } = await supabase.auth.getUser(token);
