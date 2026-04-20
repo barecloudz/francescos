@@ -42,9 +42,13 @@ export async function getAuthUser(request: NextRequest): Promise<AuthUser | null
     const token = authHeader.substring(7);
     const { data: { user }, error } = await supabaseAdmin.auth.getUser(token);
 
-    if (!error && user) {
+    if (error) {
+      console.error('[getAuthUser] Bearer token validation failed:', error.message);
+    } else if (user) {
       return resolveDbUser(user);
     }
+  } else if (authHeader?.startsWith('Bearer ') && !supabaseAdmin) {
+    console.error('[getAuthUser] supabaseAdmin is null — SUPABASE_SERVICE_ROLE_KEY or NEXT_PUBLIC_SUPABASE_URL missing');
   }
 
   // --- Path 2: Session cookie ---
@@ -93,7 +97,8 @@ async function resolveDbUser(user: any): Promise<AuthUser | null> {
       isAdmin: dbUser.isAdmin,
       supabaseUserId: user.id,
     };
-  } catch {
+  } catch (error: any) {
+    console.error('[resolveDbUser] DB lookup failed for supabase user', user.id, ':', error.message);
     return null;
   }
 }
