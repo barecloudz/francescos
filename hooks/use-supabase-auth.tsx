@@ -158,6 +158,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setCurrentAccessToken(session?.access_token ?? null);
         setSession(session);
 
+        // INITIAL_SESSION is handled by initializeAuth() below — skip here to avoid
+        // a duplicate profile fetch before cookies are established.
+        if (event === 'INITIAL_SESSION') return;
+
         if (session) {
           // IMMEDIATE: Set user from session metadata (no blocking)
           const mappedUser = mapSupabaseUser(session?.user || null);
