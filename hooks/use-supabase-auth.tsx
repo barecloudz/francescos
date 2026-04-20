@@ -338,7 +338,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       // The auth-page will check for user state and won't redirect if mutation is still pending
       // By navigating here directly, we ensure smooth transition without requiring back button
       setTimeout(() => {
-        router.push('/');
+        if (mappedUser.isAdmin) {
+          router.push('/admin');
+        } else {
+          router.push('/');
+        }
       }, 100);
     },
     onError: (error: Error) => {

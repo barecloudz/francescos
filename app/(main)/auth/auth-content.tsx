@@ -326,22 +326,6 @@ function AuthContentInner() {
                     </form>
                   </Form>
 
-                  <div className="mt-6">
-                    <div className="relative flex items-center gap-3 mb-4">
-                      <div className="flex-1 h-px bg-[rgba(192,57,43,0.2)]" />
-                      <span className="text-[#6b6560] text-xs uppercase tracking-widest">or</span>
-                      <div className="flex-1 h-px bg-[rgba(192,57,43,0.2)]" />
-                    </div>
-                    <button
-                      type="button"
-                      onClick={handleGoogleSignIn}
-                      disabled={loading}
-                      className="w-full h-11 rounded-md flex items-center justify-center gap-3 text-sm font-medium text-[#f5f0e8] border border-[rgba(192,57,43,0.3)] bg-transparent hover:border-[#c0392b] hover:bg-[rgba(192,57,43,0.06)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
-                    >
-                      <GoogleIcon />
-                      {loading ? 'Signing in...' : 'Continue with Google'}
-                    </button>
-                  </div>
                 </>
               )}
             </TabsContent>
@@ -493,22 +477,6 @@ function AuthContentInner() {
                 </form>
               </Form>
 
-              <div className="mt-6">
-                <div className="relative flex items-center gap-3 mb-4">
-                  <div className="flex-1 h-px bg-[rgba(192,57,43,0.2)]" />
-                  <span className="text-[#6b6560] text-xs uppercase tracking-widest">or</span>
-                  <div className="flex-1 h-px bg-[rgba(192,57,43,0.2)]" />
-                </div>
-                <button
-                  type="button"
-                  onClick={handleGoogleSignIn}
-                  disabled={loading}
-                  className="w-full h-11 rounded-md flex items-center justify-center gap-3 text-sm font-medium text-[#f5f0e8] border border-[rgba(192,57,43,0.3)] bg-transparent hover:border-[#c0392b] hover:bg-[rgba(192,57,43,0.06)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
-                >
-                  <GoogleIcon />
-                  {loading ? 'Signing in...' : 'Continue with Google'}
-                </button>
-              </div>
             </TabsContent>
           </Tabs>
         </div>
