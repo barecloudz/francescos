@@ -635,7 +635,7 @@ const CateringContent = () => {
                       </h4>
                       <ul className="space-y-1 text-sm text-[#6b6560]">
                         <li>Assorted NY Style Pizzas</li>
-                        <li>Choice of Pasta (Baked Ziti, Alla Vodka, or Primavera)</li>
+                        <li>Choice of Pasta (Bolognese, Alla Vodka, or Primavera)</li>
                         <li>Wings or Mozzarella Sticks</li>
                         <li>Caesar Salad &amp; Garden Salad</li>
                         <li>Garlic Knots</li>
