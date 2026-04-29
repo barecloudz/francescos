@@ -91,33 +91,43 @@ async function validateSupabaseToken(token: string): Promise<AuthResult> {
 
     console.log('✅ AUTH-UTILS: JWT validated locally for user:', user.email);
 
-    // Get additional user data from our database - prioritize legacy users by email
-    const sql = getDB();
+    // Get additional user data via Supabase REST API (avoids postgres connection hangs in Netlify functions)
+    const supabaseUrl = 'https://gpvtdfljxucabjqokgdg.supabase.co';
+    const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwdnRkZmxqeHVjYWJqcW9rZ2RnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1NDM1ODUsImV4cCI6MjA4MzExOTU4NX0.S5I02lv6s3AI-rWpFrEgUTX6-WbIeZ--llxDkILiB4U';
+    const restHeaders = {
+      'apikey': supabaseAnonKey,
+      'Authorization': `Bearer ${supabaseAnonKey}`,
+      'Content-Type': 'application/json',
+    };
 
-    // First try to find legacy user by email (this gets user_id: 29 for barecloudz@gmail.com)
-    const legacyUsers = await sql`
-      SELECT id, username, email, role, is_admin, supabase_user_id
-      FROM users
-      WHERE email = ${user.email} AND id IS NOT NULL
-      ORDER BY created_at ASC
-      LIMIT 1
-    `;
+    // First try to find user by email
+    let dbUser: any = null;
+    if (user.email) {
+      const emailRes = await fetch(
+        `${supabaseUrl}/rest/v1/users?email=eq.${encodeURIComponent(user.email)}&id=not.is.null&order=created_at.asc&limit=1&select=id,username,email,role,is_admin,supabase_user_id`,
+        { headers: restHeaders }
+      );
+      if (emailRes.ok) {
+        const rows = await emailRes.json();
+        dbUser = rows[0] || null;
+      }
+    }
 
-    // If no legacy user found, try by supabase_user_id
-    const supabaseUsers = legacyUsers.length === 0 ? await sql`
-      SELECT id, username, email, role, is_admin, supabase_user_id
-      FROM users
-      WHERE supabase_user_id = ${user.id}
-      LIMIT 1
-    ` : [];
-
-    const dbUser = legacyUsers[0] || supabaseUsers[0];
+    // If no email match, try by supabase_user_id
+    if (!dbUser) {
+      const uuidRes = await fetch(
+        `${supabaseUrl}/rest/v1/users?supabase_user_id=eq.${encodeURIComponent(user.id)}&limit=1&select=id,username,email,role,is_admin,supabase_user_id`,
+        { headers: restHeaders }
+      );
+      if (uuidRes.ok) {
+        const rows = await uuidRes.json();
+        dbUser = rows[0] || null;
+      }
+    }
 
     console.log('🔍 AUTH-UTILS: Database user lookup result:', {
       email: user.email,
       supabaseUserId: user.id,
-      foundLegacyUser: !!legacyUsers[0],
-      foundSupabaseUser: !!supabaseUsers[0],
       finalDbUser: dbUser ? {
         id: dbUser.id,
         username: dbUser.username,
