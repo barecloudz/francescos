@@ -261,12 +261,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // Supabase-only login mutation
   const loginMutation = useMutation({
     mutationFn: async (credentials: LoginData) => {
-      // All authentication now goes through Supabase
-      console.log('📧 Using Supabase authentication...');
-
-      // Clear any stale session from a previous/deleted account
-      await supabase.auth.signOut().catch(() => {});
-
       const { data, error } = await supabase.auth.signInWithPassword({
         email: credentials.email,
         password: credentials.password,
