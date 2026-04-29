@@ -150,7 +150,7 @@
   --border: 0 0% 87%;
   --input: 0 0% 87%;
   --muted: 0 0% 93%;
-  --muted-foreground: 0 0% 45%;
+  --muted-foreground: 0 0% 35%;
   --popover: 0 0% 100%;
   --popover-foreground: 0 0% 9%;
   --secondary: 0 0% 93%;
@@ -160,6 +160,9 @@
   --primary: 4 55% 47%;
   --primary-foreground: 0 0% 98%;
   color-scheme: light;
+  /* Re-apply computed color so child elements inherit dark text, not body's cream */
+  color: hsl(0 0% 9%);
+  background-color: hsl(0 0% 96%);
 }
 
 /* Top accent line */
