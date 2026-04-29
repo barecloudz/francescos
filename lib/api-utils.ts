@@ -6,15 +6,16 @@ import { db } from '@/lib/db';
 import { users } from '@shared/schema';
 import { eq } from 'drizzle-orm';
 
-// Service-role Supabase client for verifying Bearer tokens from the Authorization header.
-// This is used when the frontend sends a JWT directly (not via cookies).
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-const supabaseAdmin =
-  supabaseUrl && supabaseServiceKey
-    ? createClient(supabaseUrl, supabaseServiceKey)
-    : null;
+// Lazy singleton — reads env vars at call time so Netlify runtime vars are available.
+let _supabaseAdmin: ReturnType<typeof createClient> | null = null;
+function getSupabaseAdmin() {
+  if (_supabaseAdmin) return _supabaseAdmin;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) return null;
+  _supabaseAdmin = createClient(url, key);
+  return _supabaseAdmin;
+}
 
 export interface AuthUser {
   id: number;
@@ -41,17 +42,19 @@ export interface AuthUser {
 export async function getAuthUser(request: NextRequest): Promise<AuthUser | null> {
   // --- Path 1: Bearer token ---
   const authHeader = request.headers.get('authorization');
-  if (authHeader?.startsWith('Bearer ') && supabaseAdmin) {
-    const token = authHeader.substring(7);
-    const { data: { user }, error } = await supabaseAdmin.auth.getUser(token);
-
-    if (error) {
-      console.error('[getAuthUser] Bearer token validation failed:', error.message);
-    } else if (user) {
-      return resolveDbUser(user);
+  if (authHeader?.startsWith('Bearer ')) {
+    const supabaseAdmin = getSupabaseAdmin();
+    if (!supabaseAdmin) {
+      console.error('[getAuthUser] supabaseAdmin is null — SUPABASE_SERVICE_ROLE_KEY or NEXT_PUBLIC_SUPABASE_URL missing');
+    } else {
+      const token = authHeader.substring(7);
+      const { data: { user }, error } = await supabaseAdmin.auth.getUser(token);
+      if (error) {
+        console.error('[getAuthUser] Bearer token validation failed:', error.message);
+      } else if (user) {
+        return resolveDbUser(user);
+      }
     }
-  } else if (authHeader?.startsWith('Bearer ') && !supabaseAdmin) {
-    console.error('[getAuthUser] supabaseAdmin is null — SUPABASE_SERVICE_ROLE_KEY or NEXT_PUBLIC_SUPABASE_URL missing');
   }
 
   // --- Path 2: Session cookie ---
