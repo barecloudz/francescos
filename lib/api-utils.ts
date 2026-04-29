@@ -2,6 +2,9 @@ import { createSupabaseServerClient } from './supabase-server';
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { storage } from '@/lib/storage';
+import { db } from '@/lib/db';
+import { users } from '@shared/schema';
+import { eq } from 'drizzle-orm';
 
 // Service-role Supabase client for verifying Bearer tokens from the Authorization header.
 // This is used when the frontend sends a JWT directly (not via cookies).
@@ -71,6 +74,16 @@ export async function getAuthUser(request: NextRequest): Promise<AuthUser | null
 async function resolveDbUser(user: any): Promise<AuthUser | null> {
   try {
     let dbUser = await storage.getUserBySupabaseId(user.id);
+
+    // Fallback: look up by email (handles recreated Supabase accounts or mismatched UUIDs)
+    if (!dbUser && user.email) {
+      dbUser = await storage.getUserByEmail(user.email);
+      if (dbUser) {
+        // Link the existing DB user to the new Supabase UUID
+        await db.update(users).set({ supabaseUserId: user.id }).where(eq(users.id, dbUser.id));
+        console.log('[resolveDbUser] Linked existing user', dbUser.id, 'to Supabase UUID', user.id);
+      }
+    }
 
     if (!dbUser) {
       dbUser = await storage.createUser({
