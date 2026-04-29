@@ -2,5 +2,5 @@
 // Used for: /vip, /kitchen, /admin/*
 
 export default function StandaloneLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return <div className="admin-light">{children}</div>;
 }
