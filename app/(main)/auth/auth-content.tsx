@@ -121,7 +121,7 @@ function AuthContentInner() {
 
   useEffect(() => {
     if (user && !loginMutation.isPending && !registerMutation.isPending) {
-      router.push(redirectTo);
+      router.push(user.isAdmin ? '/admin' : redirectTo);
     }
   }, [user, loginMutation.isPending, registerMutation.isPending, router, redirectTo]);
 

@@ -50,7 +50,7 @@ export function mapSupabaseUser(supabaseUser: User | null): MappedUser | null {
     city: userMetadata.city || '',
     state: userMetadata.state || '',
     zipCode: userMetadata.zipCode || userMetadata.postal_code || '',
-    isAdmin: appMetadata.isAdmin || userMetadata.role === 'admin' || userMetadata.role === 'superadmin',
+    isAdmin: appMetadata.isAdmin === true || appMetadata.role === 'super_admin' || appMetadata.role === 'admin' || userMetadata.role === 'admin' || userMetadata.role === 'superadmin',
     role: appMetadata.role || userMetadata.role || 'customer',
     avatarUrl: userMetadata.avatar_url || userMetadata.picture || '',
     isGoogleUser,
