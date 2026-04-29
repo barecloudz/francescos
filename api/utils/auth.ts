@@ -45,43 +45,37 @@ function getDB() {
   return dbConnection;
 }
 
-// Secure token validation using official Supabase SDK
+// Secure token validation — raw HTTP call to Supabase auth API
 async function validateSupabaseToken(token: string): Promise<AuthResult> {
   try {
-    console.log('🔍 AUTH-UTILS: Starting Supabase token validation');
-    console.log('🔍 AUTH-UTILS: Token length:', token?.length);
-    console.log('🔍 AUTH-UTILS: Token prefix:', token?.substring(0, 20) + '...');
+    if (!token) return { success: false, error: 'No token provided' };
 
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
-    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    // Hardcoded project URL is always available (no env var dependency)
+    const supabaseUrl = 'https://gpvtdfljxucabjqokgdg.supabase.co';
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwdnRkZmxqeHVjYWJqcW9rZ2RnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1NDM1ODUsImV4cCI6MjA4MzExOTU4NX0.S5I02lv6s3AI-rWpFrEgUTX6-WbIeZ--llxDkILiB4U';
+    const apiKey = serviceKey || anonKey;
 
-    console.log('🔍 AUTH-UTILS: Environment check:', {
-      hasSupabaseUrl: !!supabaseUrl,
-      hasServiceKey: !!supabaseServiceKey,
-      supabaseUrlPrefix: supabaseUrl?.substring(0, 20) + '...'
+    console.log('🔍 AUTH-UTILS: Calling Supabase auth API directly, hasServiceKey:', !!serviceKey);
+
+    // Direct fetch to Supabase auth API — no SDK, no env var issues
+    const resp = await fetch(`${supabaseUrl}/auth/v1/user`, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'apikey': apiKey,
+      },
     });
 
-    if (!supabaseUrl || !supabaseServiceKey) {
-      console.log('❌ AUTH-UTILS: Missing Supabase environment variables (need NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY)');
-      return { success: false, error: 'Supabase configuration missing' };
+    if (!resp.ok) {
+      const body = await resp.text().catch(() => '');
+      console.log('❌ AUTH-UTILS: Supabase auth API returned', resp.status, body);
+      return { success: false, error: `Supabase auth returned ${resp.status}` };
     }
 
-    const supabase = createClient(supabaseUrl, supabaseServiceKey);
-    console.log('🔍 AUTH-UTILS: Created Supabase client, calling getUser...');
-
-    const { data: { user }, error } = await supabase.auth.getUser(token);
-
-    console.log('🔍 AUTH-UTILS: Supabase getUser result:', {
-      hasUser: !!user,
-      hasError: !!error,
-      errorMessage: error?.message,
-      userId: user?.id,
-      userEmail: user?.email
-    });
-
-    if (error || !user) {
-      console.log('❌ AUTH-UTILS: Supabase token validation failed:', error?.message);
-      return { success: false, error: `Invalid Supabase token: ${error?.message}` };
+    const user = await resp.json();
+    if (!user?.id) {
+      console.log('❌ AUTH-UTILS: Supabase auth API returned no user');
+      return { success: false, error: 'No user in response' };
     }
 
     console.log('✅ AUTH-UTILS: Supabase token validation successful for user:', user.email);
