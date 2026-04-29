@@ -264,6 +264,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       // All authentication now goes through Supabase
       console.log('📧 Using Supabase authentication...');
 
+      // Clear any stale session from a previous/deleted account
+      await supabase.auth.signOut().catch(() => {});
+
       const { data, error } = await supabase.auth.signInWithPassword({
         email: credentials.email,
         password: credentials.password,
@@ -275,12 +278,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
 
       if (data.user) {
-        // Note: Don't manually set session here - the auth state change listener will handle it
-        // This prevents duplicate auth state changes
-
-        // Fetch complete user profile which will create database record if needed
+        // Fetch complete user profile with a 5-second timeout so login never hangs
         try {
-          const completeProfile = await fetchUserProfile();
+          const timeout = new Promise<null>((_, reject) =>
+            setTimeout(() => reject(new Error('Profile fetch timed out')), 5000)
+          );
+          const completeProfile = await Promise.race([fetchUserProfile(), timeout]);
           if (completeProfile) {
             return completeProfile;
           }
