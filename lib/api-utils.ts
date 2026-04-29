@@ -6,12 +6,14 @@ import { db } from '@/lib/db';
 import { users } from '@shared/schema';
 import { eq } from 'drizzle-orm';
 
-// Lazy singleton — reads env vars at call time so Netlify runtime vars are available.
+// Lazy singleton — prefer service role key, fall back to anon key.
+// NEXT_PUBLIC_* vars are baked into the bundle at build time so always available.
+// SUPABASE_SERVICE_ROLE_KEY may not be accessible in all Netlify Next.js SSR contexts.
 let _supabaseAdmin: ReturnType<typeof createClient> | null = null;
 function getSupabaseAdmin() {
   if (_supabaseAdmin) return _supabaseAdmin;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return null;
   _supabaseAdmin = createClient(url, key);
   return _supabaseAdmin;
