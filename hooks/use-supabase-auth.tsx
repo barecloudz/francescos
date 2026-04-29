@@ -272,31 +272,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
 
       if (data.user) {
-        // Fetch complete user profile with a 5-second timeout so login never hangs
-        try {
-          const timeout = new Promise<null>((_, reject) =>
-            setTimeout(() => reject(new Error('Profile fetch timed out')), 5000)
-          );
-          const completeProfile = await Promise.race([fetchUserProfile(), timeout]);
-          if (completeProfile) {
-            return completeProfile;
-          }
-        } catch (profileError) {
-          console.warn('Failed to fetch complete profile during login:', profileError);
-        }
-
-        // Fallback to basic user data from Supabase metadata
+        // Build user immediately from JWT claims — no DB call, no timeout
         const userMetadata = data.user.user_metadata || {};
+        const appMetadata = data.user.app_metadata || {};
 
-        // Return user data in the expected format
         return {
           id: data.user.id,
           email: data.user.email,
           username: data.user.email,
           firstName: userMetadata.first_name || userMetadata.full_name?.split(' ')[0] || 'User',
           lastName: userMetadata.last_name || userMetadata.full_name?.split(' ').slice(1).join(' ') || '',
-          role: userMetadata.role || 'customer',
-          isAdmin: userMetadata.role === 'admin' || userMetadata.role === 'super_admin' || userMetadata.is_admin === true,
+          role: appMetadata.role || userMetadata.role || 'customer',
+          isAdmin: appMetadata.isAdmin === true || appMetadata.role === 'super_admin' || appMetadata.role === 'admin' || userMetadata.role === 'admin',
           isActive: true,
           rewards: 0
         };
