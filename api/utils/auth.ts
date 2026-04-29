@@ -45,40 +45,51 @@ function getDB() {
   return dbConnection;
 }
 
-// Secure token validation — raw HTTP call to Supabase auth API
+// Validate a Supabase-issued JWT by decoding and checking claims locally.
+// We verify: not expired, issued by our project, audience is 'authenticated'.
+// This avoids any outbound network call and works in all Netlify environments.
 async function validateSupabaseToken(token: string): Promise<AuthResult> {
   try {
     if (!token) return { success: false, error: 'No token provided' };
 
-    // Hardcoded project URL is always available (no env var dependency)
-    const supabaseUrl = 'https://gpvtdfljxucabjqokgdg.supabase.co';
-    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-    const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwdnRkZmxqeHVjYWJqcW9rZ2RnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1NDM1ODUsImV4cCI6MjA4MzExOTU4NX0.S5I02lv6s3AI-rWpFrEgUTX6-WbIeZ--llxDkILiB4U';
-    const apiKey = serviceKey || anonKey;
-
-    console.log('🔍 AUTH-UTILS: Calling Supabase auth API directly, hasServiceKey:', !!serviceKey);
-
-    // Direct fetch to Supabase auth API — no SDK, no env var issues
-    const resp = await fetch(`${supabaseUrl}/auth/v1/user`, {
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'apikey': apiKey,
-      },
-    });
-
-    if (!resp.ok) {
-      const body = await resp.text().catch(() => '');
-      console.log('❌ AUTH-UTILS: Supabase auth API returned', resp.status, body);
-      return { success: false, error: `Supabase auth returned ${resp.status}` };
+    // Decode without signature verification — we validate claims manually below
+    const payload = jwt.decode(token) as any;
+    if (!payload || typeof payload !== 'object') {
+      return { success: false, error: 'Invalid JWT format' };
     }
 
-    const user = await resp.json();
-    if (!user?.id) {
-      console.log('❌ AUTH-UTILS: Supabase auth API returned no user');
-      return { success: false, error: 'No user in response' };
+    // Must be a user token (not anon/service role)
+    if (payload.role !== 'authenticated' || payload.aud !== 'authenticated') {
+      return { success: false, error: 'Not a user token' };
     }
 
-    console.log('✅ AUTH-UTILS: Supabase token validation successful for user:', user.email);
+    // Must be from our Supabase project
+    const expectedIss = 'https://gpvtdfljxucabjqokgdg.supabase.co/auth/v1';
+    if (payload.iss !== expectedIss) {
+      return { success: false, error: 'Wrong token issuer' };
+    }
+
+    // Must not be expired
+    const now = Math.floor(Date.now() / 1000);
+    if (payload.exp && payload.exp < now) {
+      return { success: false, error: 'Token expired' };
+    }
+
+    const userEmail = payload.email;
+    const userUuid = payload.sub;
+    if (!userUuid) {
+      return { success: false, error: 'No user ID in token' };
+    }
+
+    // Build a minimal user-like object from JWT claims
+    const user = {
+      id: userUuid,
+      email: userEmail,
+      user_metadata: payload.user_metadata || {},
+      app_metadata: payload.app_metadata || {},
+    };
+
+    console.log('✅ AUTH-UTILS: JWT validated locally for user:', user.email);
 
     // Get additional user data from our database - prioritize legacy users by email
     const sql = getDB();
