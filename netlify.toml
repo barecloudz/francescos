@@ -63,6 +63,13 @@
   status = 301
   force = true
 
+# Route user-profile API to the Netlify function (has service role key access)
+[[redirects]]
+  from = "/api/user-profile"
+  to = "/.netlify/functions/user-profile"
+  status = 200
+  force = true
+
 [dev]
   command = "npm run dev"
   port = 3000
